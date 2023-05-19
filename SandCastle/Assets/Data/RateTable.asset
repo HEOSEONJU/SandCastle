@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b098d2f15d8d544a3b286d97986e20, type: 3}
+  m_Name: RateTable
+  m_EditorClassIdentifier: 
+  associatedWorksheet: Rate
+  startINDEX_A1: DB_FIELD_NAMES
+  igonoreNames:
+  - DB_FIELD_TYPES
+  - DB_IGNORE
+  values:
+  - DB_FIELD_NAMES
+  - Rate000001
+  - Rate000002
+  - Rate000003
+  - Rate000004
+  - Rate000005
+  - Rate000006
+  - Rate000007
+  - Rate000008
+  - Rate000009
+  - Rate000010
+  - Rate000011
+  - Rate000012
+  - Rate000013
+  - Rate000014
+  - Rate000015
+  - Rate000016
+  - Rate000017
+  - Rate000018
+  hashKeyList:
+  - DB_FIELD_NAMES
+  - key
+  - group
+  - giveNum
+  - appearRate
+  - 2DImage
+  - animation
+  listCount: 19
