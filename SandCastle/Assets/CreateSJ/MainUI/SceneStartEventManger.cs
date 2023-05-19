@@ -12,12 +12,18 @@ namespace MainUI
 
         [SerializeField]
         GameObject LastGameObject;
+
+
+        [SerializeField]
+        List<GameObject> objectList = new List<GameObject>();
+        [SerializeField]
+        SubUI Reward;
         private void Start()
         {
             if(PlayerPrefs.HasKey("Scene"))
             {
-                Debug.Log(PlayerPrefs.GetString("Scene") + "불러올이름");
-                ChangeLast(transform.Find(PlayerPrefs.GetString("Scene")));
+                
+                ChangeLast(PlayerPrefs.GetString("Scene"));
                 PlayerPrefs.DeleteKey("Scene");
                 PlayerPrefs.Save();
             }
@@ -35,6 +41,7 @@ namespace MainUI
             {
                 
                 StartEvent(LastGameObject.GetComponent<UIOpenClose>());
+                Reward.OpenMy();
             }
         }
         void StartEvent(UIOpenClose go)
@@ -45,10 +52,11 @@ namespace MainUI
 
         }
 
-        public void ChangeLast(Transform go)
+        public void ChangeLast(string name)
         {
-            if(go != null)
-            LastGameObject = go.gameObject;
+            LastGameObject = objectList.Find(x=>x.name== name);
+
+            
         }
 
 

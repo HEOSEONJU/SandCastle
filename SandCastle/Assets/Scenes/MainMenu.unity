@@ -28276,6 +28276,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGameObject: {fileID: 1179909280}
   LastGameObject: {fileID: 0}
+  objectList:
+  - {fileID: 1179909275}
+  - {fileID: 521983861}
+  - {fileID: 600489213062396491}
+  - {fileID: 785250023}
+  - {fileID: 92967763}
+  Reward: {fileID: 488840335}
 --- !u!1 &1618384533
 GameObject:
   m_ObjectHideFlags: 0
