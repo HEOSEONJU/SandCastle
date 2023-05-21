@@ -12,7 +12,7 @@ namespace MainUI
         [SerializeField]
         GameObject leftBtn;
         [SerializeField]
-        GameObject RightBtn;
+        GameObject rightBtn;
 
         int stageIndex;
 
@@ -25,15 +25,26 @@ namespace MainUI
         public int StageIndex
         {
             get { return stageIndex; }
-            set { stageIndex = value; }
+            
         }
 
 
         private void Start()
         {
-            leftBtn.SetActive(false);
-            stageIndex = 0;
-            mainImage.sprite= stageList[stageIndex];
+            
+
+            stageIndex=PlayerPrefs.GetInt("Stage");
+            PlayerPrefs.DeleteKey("Stage");
+            mainImage.sprite = stageList[stageIndex];
+            if (stageIndex == 0)
+            {
+                leftBtn.SetActive(false);
+            }
+            else if(stageIndex==stageList.Count-1)
+            {
+                rightBtn.SetActive(false);
+            }
+            
         }
 
 
@@ -47,8 +58,8 @@ namespace MainUI
             }
             else
             {
-                if (!RightBtn.activeSelf)
-                    RightBtn.SetActive(true);
+                if (!rightBtn.activeSelf)
+                    rightBtn.SetActive(true);
             }
         }
         public void NextStage()
@@ -56,7 +67,7 @@ namespace MainUI
             mainImage.sprite = stageList[++stageIndex];
             if (stageIndex == stageList.Count - 1)
             {
-                RightBtn.SetActive(false);
+                rightBtn.SetActive(false);
             }
             else
             {

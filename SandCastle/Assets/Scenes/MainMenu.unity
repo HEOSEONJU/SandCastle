@@ -28851,6 +28851,7 @@ MonoBehaviour:
   openGameSceneObject:
   - {fileID: 488840332}
   - {fileID: 600489213062396491}
+  stageUI: {fileID: 0}
   moveSceneName: 
 --- !u!1 &1658017202
 GameObject:
@@ -31687,6 +31688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openGameSceneObject:
   - {fileID: 1639906153}
+  stageUI: {fileID: 600489212527877552}
   moveSceneName: GameScene
 --- !u!114 &1870004101
 MonoBehaviour:
@@ -37612,7 +37614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftBtn: {fileID: 600489211142506013}
-  RightBtn: {fileID: 600489210987614893}
+  rightBtn: {fileID: 600489210987614893}
   mainImage: {fileID: 600489212527877566}
   stageList:
   - {fileID: 21300000, guid: 3857131f9bee94db39b627fc870aa7b5, type: 3}

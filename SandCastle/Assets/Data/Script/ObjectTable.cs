@@ -190,7 +190,7 @@ public class DataEditor : Editor
 /// Debug.Log(data.items4[I]["resourceType"]);
 /////////////////
 
-
+//인터넷통신안될때 방법 강구하기
 
 
 

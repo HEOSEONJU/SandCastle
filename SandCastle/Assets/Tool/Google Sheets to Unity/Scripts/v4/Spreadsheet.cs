@@ -127,6 +127,11 @@ namespace GoogleSheetsToUnity
         {
             int start = valueRange.range.IndexOf("!") + 1;
             int end = valueRange.range.IndexOf(":", start);
+            if (start == 0 && end == -1)
+            {
+                Debug.LogError("not find");
+                return "";
+            }
             return valueRange.range.Substring(start, end - start);
         }
 

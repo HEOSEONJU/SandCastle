@@ -41,9 +41,13 @@ namespace InGame
         {
             IsAction = false;
 
-            Invoke("BackMainScene", 10);
-        }
+            
 
+        }
+        private void LateUpdate()
+        {
+            if(Input.GetKeyUp(KeyCode.Escape)) { BackMainScene(); }
+            }
 
         void Update()
         {

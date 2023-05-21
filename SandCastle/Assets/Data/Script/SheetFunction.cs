@@ -54,6 +54,7 @@ public class SheetFunction : MonoBehaviour
         if (dataEditors is null)
         {
             dataEditors = new List<DataEditor>();
+            
         }
         dataEditors.Clear();
         foreach (ObjectTable table in tables) 

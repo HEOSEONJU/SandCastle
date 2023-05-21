@@ -9,7 +9,8 @@ namespace MainUI
     {
         [SerializeField]
         List<GameObject> openGameSceneObject;
-
+        [SerializeField]
+        StageUI stageUI;
 
 
         [SerializeField]
@@ -17,11 +18,8 @@ namespace MainUI
 
         public void MoveScene()
         {
-            foreach (GameObject go in openGameSceneObject)
-            {
-                //go.SetActive(true);
-            }
-            //gameObject.SetActive(false);
+
+            PlayerPrefs.SetInt("Stage",stageUI.StageIndex);
 
             SceneMoveManager.Instance.AsyncChangeScne(moveSceneName);
 
