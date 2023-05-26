@@ -12,12 +12,6 @@ namespace InGame
         [SerializeField]
         InGame_Status status;
         [SerializeField]
-        InGame_Camera_Move cameraMove;
-        [SerializeField]
-        InGame_Harvest harvest;
-        [SerializeField]
-        InGame_Inventory inventory;
-        [SerializeField]
         Animator animator;
         [SerializeField]
         InGameAttack attack;
@@ -26,54 +20,42 @@ namespace InGame
         bool isAction;
 
         [SerializeField]
-        Transform spriteTransform;
+        SpriteRenderer spriteRenderer;
         public bool IsAction
         {
             get { return isAction; }
-            set {  isAction= value; }
+            set { isAction = value; }
         }
         public Animator Animator
         {
             get { return animator; }
         }
-
-        private void OnEnable()
+        public InGame_Move InGameMove
+            {
+            get {return move; }
+            }
+        public InGameAttack InGameAttack
         {
-            IsAction = false;
-
-            
-
+            get { return attack; }
         }
+        [SerializeField]
+        public InGame_Status InGameStatus
+        {
+            get{ return status; }
+        }
+
+        
+        public SpriteRenderer SpriteRenderer
+        {
+            get { return spriteRenderer; }
+        }
+
         private void LateUpdate()
         {
             if(Input.GetKeyUp(KeyCode.Escape)) { BackMainScene(); }
             }
 
-        void Update()
-        {
-            if (!IsAction)
-            {
-                move.MoveChar(Animator);
-                attack.PlayAttack(animator);
-                harvest.Harvest(Animator);
 
-                float angle = animator.GetFloat("Amount_X");
-                if (angle > 0)
-                {
-                    spriteTransform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-
-                }
-                else if(angle <0)
-                    spriteTransform.rotation = Quaternion.identity;
-            }
-            else
-            {
-                move.StopChar(Animator);
-            }
-            cameraMove.Clamp_Camera();
-            
-            
-        }
 
 
         public void OrderAttackTrigger()
@@ -82,7 +64,7 @@ namespace InGame
         }
         public void OrderHarvestTrigget()
         {
-            harvest.TargetHarvest();
+            //harvest.TargetHarvest();
             IsAction = false;
         }
 

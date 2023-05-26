@@ -14,21 +14,29 @@ public class SpwanEnemy : MonoBehaviour
         [SerializeField]
         Transform startPoint;
 
+
+        [SerializeField]
+        int count = 30;
         private void Start()
         {
             StartCoroutine(Spwan());
         }
-
+         
         IEnumerator Spwan()
         {
 
-            while (true)
+            while (count-->0)
             {
                 var a = ObjectPooling.GetObject(prefab.gameObject, this.transform);
                 a.transform.position = this.transform.position;
-                a.GetComponent<Enemy_Manager>().StartMove(startPoint);
                 
-                yield return new WaitForSeconds(3f);
+                a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
+                if (!(em is null))
+                {
+                    em.StartMove(startPoint);
+                    em.Reseting(1, 10);
+                }
+                yield return new WaitForSeconds(1f);
             }
         }
 

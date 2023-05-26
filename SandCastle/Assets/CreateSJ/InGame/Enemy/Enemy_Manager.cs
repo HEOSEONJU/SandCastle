@@ -6,21 +6,26 @@ namespace Enemy
 {
     public class Enemy_Manager : MonoBehaviour
     {
-        
+
 
         [SerializeField]
         Enemy_Move enemyMove;
         [SerializeField]
         Enemy_Status enemyStatus;
+        public Enemy_Move EnemyMove
+        { get { return enemyMove; } 
+        }
         
-        public void Start()
+        public void Reseting(float speed,float hp)
         {
-            
+            enemyMove.MoveSpeed = speed;
+            enemyStatus.Hp = hp;
         }
 
         public void StartMove(Transform point)
         {
-            enemyMove.Move_Next_Point(point.position - transform.position);
+            enemyMove.Move_Next_Point(point.position - transform.position, point.position);
+            enemyMove.StartCoroutine(enemyMove.MovePoint());
         }
         public void Hit(float value)
         {
@@ -32,22 +37,6 @@ namespace Enemy
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            
-         if(collision.CompareTag("Patrol"))
-            {
-                Debug.Log("충돌");
-                collision.TryGetComponent<PatrolPoint>(out PatrolPoint patrolpoint);
-                if(!(patrolpoint is null))
-                {
-                    Debug.Log("명령");
-                    
-                    patrolpoint.NextOrder(enemyMove);
-                }
-                
-            }
-        }
 
     }
 }

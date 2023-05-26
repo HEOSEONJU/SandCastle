@@ -345,6 +345,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f1527efbb79e0b140a8ee2e003000c21, type: 2}
   - {fileID: 11400000, guid: a6c2d52cb6be5354087f4486b4dec4e2, type: 2}
   - {fileID: 11400000, guid: acfa778dda613aa40975eb465fe01217, type: 2}
+  - {fileID: 11400000, guid: da111c545456ac346a1ebd57d131d2e0, type: 2}
   dataEditors: []
   Active: 1
   mainSceneName: MainMenu

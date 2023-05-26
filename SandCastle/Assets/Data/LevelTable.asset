@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b098d2f15d8d544a3b286d97986e20, type: 3}
+  m_Name: LevelTable
+  m_EditorClassIdentifier: 
+  associatedWorksheet: Level
+  startINDEX_A1: DB_FIELD_NAMES
+  igonoreNames:
+  - DB_FIELD_TYPES
+  - DB_IGNORE
+  values:
+  - DB_FIELD_NAMES
+  - shop_gacha1_ads
+  - shop_gacha1_jewel1
+  - shop_gacha1_jewel10
+  - shop_gacha2_ads
+  - shop_gacha2_jewel1
+  - shop_gacha2_jewel10
+  - shop_gacha3_ads
+  - shop_gacha3_jewel1
+  - shop_gacha3_jewel10
+  hashKeyList:
+  - DB_FIELD_NAMES
+  - tab
+  - order
+  - giveReward
+  - priceType
+  - price
+  listCount: 10

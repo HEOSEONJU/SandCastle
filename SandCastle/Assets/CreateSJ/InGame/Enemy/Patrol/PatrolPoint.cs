@@ -39,7 +39,7 @@ public class PatrolPoint : MonoBehaviour
         yield return null;
         yield return null;
         
-        enemymove.Move_Next_Point(nextToPoint.position - transform.position);
+        enemymove.Move_Next_Point(nextToPoint.position - transform.position, nextToPoint.position);
     }
 
 }

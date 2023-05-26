@@ -8,27 +8,30 @@ namespace InGame
     {
         [SerializeField]
         InGameMineSearch search;
-        [SerializeField]
-        InGame_Char inGameChar;
 
+        [SerializeField]
+        List<InGame_Char> IGC;
 
 
 
         [SerializeField]
         string harvestAniamtionBool = "Harvest";
-        private void OnEnable()
-        {
-            
-        }
+        
 
 
         
         [SerializeField]
         InGame_Inventory inventory;
 
-        public void Harvest(Animator animator)
+        public void Init(List<InGame_Char> igc)
         {
-            if((search.Target is null)|| inGameChar.IsAction )
+            IGC= igc;
+        }
+
+
+        public void Harvest()
+        {
+            if((search.Target is null)|| IGC.Find(x=>x.IsAction==true) )
             {
                 return;
             }
@@ -41,8 +44,13 @@ namespace InGame
 
             
             
-            animator.SetBool(harvestAniamtionBool, true);
-            inGameChar.IsAction = true;
+            
+            foreach(InGame_Char c in IGC)
+            {
+                c.Animator.SetBool(harvestAniamtionBool, true);
+                c.IsAction = true;
+            }
+            
             
             
         }
@@ -55,7 +63,11 @@ namespace InGame
         {
             
             search.Target.Collection(1,inventory);
-            inGameChar.IsAction = false;
+            foreach (InGame_Char c in IGC)
+            {
+                c.IsAction = false;
+            }
+            
         }
 
         

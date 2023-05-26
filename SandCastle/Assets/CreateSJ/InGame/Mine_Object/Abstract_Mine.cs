@@ -8,7 +8,8 @@ namespace InGame
 {
     public abstract class Abstract_Mine : MonoBehaviour
     {
-        protected List<GameObject> connectList = new List<GameObject>();
+        [SerializeField]
+        List<GameObject> connectList = new List<GameObject>();
         [SerializeField]
         protected string spriteFull;
         [SerializeField]
@@ -27,10 +28,15 @@ namespace InGame
         public bool IsReady;
 
 
-        
         public List<GameObject> ConnectList
         {
-            get { return connectList; }
+            get { 
+                if(connectList is null)
+                {
+                    connectList = new List<GameObject>();
+                }
+
+                return connectList; }
         }
         public float Amount
         {

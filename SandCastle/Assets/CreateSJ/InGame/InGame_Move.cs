@@ -8,30 +8,14 @@ namespace InGame
 {
     public class InGame_Move : MonoBehaviour
     {
-        [SerializeField]
-        InGame_Status status;
-        
-        [SerializeField]
-        Input_Joystikc inputJoystick;
 
-        
-        public float Speed
+
+        public void MoveChar(Animator animator,Vector2 inputvector)
         {
-            get { return status.MoveSpeed; }
-            
-        }
+            animator.SetInteger("Amount", Convert.ToInt32((MathF.Abs(inputvector.x) +MathF.Abs(inputvector.y))));
+            animator.SetFloat("Amount_X", inputvector.x);
+            animator.SetFloat("Amount_Y", inputvector.y);
 
-
-        [SerializeField]
-        Rigidbody2D rigid;
-
-
-        public void MoveChar(Animator animator)
-        {
-            animator.SetInteger("Amount", Convert.ToInt32((MathF.Abs( inputJoystick.inputVector.x) +MathF.Abs( inputJoystick.inputVector.y))));
-            animator.SetFloat("Amount_X", inputJoystick.inputVector.x);
-            animator.SetFloat("Amount_Y", inputJoystick.inputVector.y);
-            rigid.velocity = inputJoystick.inputVector.normalized * Speed;
 
         }
         public void StopChar(Animator animator)
@@ -39,7 +23,7 @@ namespace InGame
             
             animator.SetFloat("Amount_X", 0f);
             animator.SetFloat("Amount_Y", 0f);
-            rigid.velocity = Vector2.zero;
+
         }
 
         

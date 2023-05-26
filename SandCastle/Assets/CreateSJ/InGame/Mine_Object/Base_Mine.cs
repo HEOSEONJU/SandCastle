@@ -12,13 +12,12 @@ namespace InGame
         public float timer;
 
 
+        InGame_Harvest harvest;
+        
 
         public override void OnEnable()
         {
-            if(connectList is null)
-            {
-                connectList = new List<GameObject>();
-            }
+            
             ConnectList.Clear();
             sprites = Resources.LoadAll<Sprite>("mine-resources");
             
@@ -30,6 +29,7 @@ namespace InGame
             IsReady = false;
             Init_Object(1, 1);
             hp = 10;
+            
         }
 
 
@@ -44,17 +44,23 @@ namespace InGame
         }
         public override void ReadyMine()
         {
-            if(!IsDestory)
-            StartCoroutine(WaitPlayer());
+            
+            if (!IsDestory  )
+            {
+                StartCoroutine(WaitPlayer());
+            }
+
+            
         }
         public override void UnReadyMine()
         {
-            if (!IsDestory)
+            if (!IsDestory && ConnectList.Count==0 && IsReady)
             {
                 StopCoroutine(WaitPlayer());
                 IsReady = false;
                 filImage.fillAmount = 0f;
             }
+            
         }
         
         IEnumerator  WaitPlayer()
@@ -66,8 +72,18 @@ namespace InGame
                 filImage.fillAmount = timer / CollectTime;
                 if (timer>=CollectTime)
                 {
-                    IsReady = true;
                     
+                    ConnectList[0].TryGetComponent(out harvest);
+                    if(harvest !=null)
+                    {
+                        IsReady = true;
+                        harvest.Harvest();
+                    }
+                    else
+                    {
+                        Debug.Log("수확이없다");
+                    }
+
                     yield break;
 
                 }

@@ -20,11 +20,11 @@ namespace InGame
 
 
 
-
         private void OnEnable()
         {
             target = null;
             collider2d.radius = searchRange;
+            
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -34,12 +34,13 @@ namespace InGame
                 collision.TryGetComponent<Abstract_Mine>(out target);
                 if (!(target is null))
                 {
-                    if(target.ConnectList.Count==0)
-                    {
-                        target.ReadyMine();
-                    }
-
                     target.ConnectList.Add(this.gameObject);
+
+                    
+                        target.ReadyMine();
+                    
+
+                    
                     
                     
                 }
@@ -53,10 +54,9 @@ namespace InGame
                 if (!(target is null))
                 {
                     target.ConnectList.Remove(this.gameObject);
-                    if (target.ConnectList.Count == 0)
-                    {
+                    
                         target.UnReadyMine();
-                    }
+                    
                     
                     
                 }
