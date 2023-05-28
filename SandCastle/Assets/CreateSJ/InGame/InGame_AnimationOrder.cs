@@ -17,11 +17,7 @@ namespace InGame
 
 
 
-        public void AttackEvent()
-        {
-
-            inGameChar.OrderAttackTrigger();
-        }
+        
         public void HarvestEventend()
         {
             inGameChar.OrderHarvestTrigget();

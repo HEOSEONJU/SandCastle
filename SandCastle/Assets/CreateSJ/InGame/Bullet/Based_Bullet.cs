@@ -10,6 +10,7 @@ namespace inGame
     {
         public override void Move()
         {
+            attackCount = 1;
             StartCoroutine(MoveBullet());
         }
         protected override void Damaged(Enemy_Manager enemymanager)
@@ -26,9 +27,20 @@ namespace inGame
                 {
                     return;
                 }
-                Damaged(enemymanager);
-                StopCoroutine(MoveBullet()); 
-                gameObject.SetActive(false);
+                if (attackCount >= 1)
+                {
+                    attackCount--;
+                    Damaged(enemymanager);
+                    StopCoroutine(MoveBullet());
+                }
+                else if(attackCount == 0) 
+                {
+                    attackCount--;
+                    Damaged(enemymanager);
+                    StopCoroutine(MoveBullet());
+                    gameObject.SetActive(false);
+                }
+                
             }
         }
 

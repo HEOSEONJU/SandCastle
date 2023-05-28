@@ -19,6 +19,12 @@ namespace InGame
         [SerializeField]
         string localKeyName;
 
+        [SerializeField]
+        int maxMana;
+        [SerializeField]
+        int currentMana;
+
+
         private void Start()
         {
             MoveSpeed = 1f;
@@ -40,6 +46,21 @@ namespace InGame
         {
             get { return giveDamage; }
             set { giveDamage = value; }
+        }
+        public int CurrentMana
+        {
+            get { return currentMana; }
+            set { currentMana = value; }
+        }
+        public bool CanSkill
+        {
+            get 
+            { 
+                if (currentMana > maxMana) 
+                    return true;
+                else
+                return false;
+            }
         }
     }
 }

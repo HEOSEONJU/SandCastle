@@ -29,7 +29,10 @@ namespace InGame
                 if (!(temp is null))
                 {
                     target.Add(temp);
-                    
+                    if (Target.Count >= 2)
+                    {
+                        Target.Sort((a, b) => (a.transform.position - transform.position).magnitude.CompareTo((b.transform.position - transform.position).magnitude));
+                    }
 
                 }
             }
@@ -42,7 +45,10 @@ namespace InGame
                 if (!(target is null))
                 {
                     target.Remove(temp);
-                    
+                    if (Target.Count >= 2)
+                    {
+                        Target.Sort((a, b) => (a.transform.position - transform.position).magnitude.CompareTo((b.transform.position - transform.position).magnitude));
+                    }
 
                 }
             }

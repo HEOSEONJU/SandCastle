@@ -23,6 +23,7 @@ namespace inGame
 
         [SerializeField]
         InGame_Camera_Move cameraMove;
+        [SerializeField]
         float speed;
         public bool IsAction
         {
@@ -32,12 +33,8 @@ namespace inGame
         private void Start()
         {
             IsAction = false;
-            speed = 0;
-            foreach (InGame_Char IGC in inGameCharList)
-            {
-                speed += IGC.InGameStatus.MoveSpeed;
-            }
-            speed /= inGameCharList.Count;
+            speed = 1;
+
 
             harvest.Init(inGameCharList);
         }
@@ -51,16 +48,18 @@ namespace inGame
                 foreach (InGame_Char IGC in inGameCharList)
                 {
                     rigid.velocity = inputJoystick.inputVector.normalized * speed;
+
                     IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector);
-                    IGC.InGameAttack.PlayAttack(IGC.Animator);
+                    IGC.InGameAttack.PlayAttack();
 
                     if (angle > 0)
                     {
-                        IGC.SpriteRenderer.flipX= true;
+                        IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                        //IGC.SpriteRenderer.flipX= true;
 
                     }
                     else if (angle < 0)
-                        IGC.SpriteRenderer.flipX = false;
+                        IGC.transform.rotation = Quaternion.identity;
 
                 }
                 
@@ -79,7 +78,7 @@ namespace inGame
                 }
                 rigid.velocity = Vector2.zero;
             }
-            cameraMove.Clamp_Camera();
+            cameraMove.Clamp_Camera(this.transform);
         }
     }
 

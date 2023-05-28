@@ -58,10 +58,6 @@ namespace InGame
 
 
 
-        public void OrderAttackTrigger()
-        {
-            attack.Attack(animator);
-        }
         public void OrderHarvestTrigget()
         {
             //harvest.TargetHarvest();
