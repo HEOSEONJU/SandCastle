@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,511 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Char02_Water_Farm_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b92cfab9e280c746ac6edb553da25b4
+      internalID: -712869799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d4d062d081c3544918a9f457cb29a0
+      internalID: -2145731888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_2
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517bc584c902fc74ba9a2180d8dfddeb
+      internalID: 2092856855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_3
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7516ab9c5d8fa8c4da9573584d7955ee
+      internalID: -1777008037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_4
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a38f2784688d54ba7b4b7b47f569da
+      internalID: -1002075655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_5
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da791f6700d8548438d217001b29859b
+      internalID: 627049103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96447813166f9bc4e95aec05d8844106
+      internalID: -832535809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_7
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60963b449ea8b6447bd5e45c0282ca24
+      internalID: -1835172612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_8
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0be0891c6b1144eb43d544a6f5fd08
+      internalID: 1620443223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_9
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a244923bbe962e54dbe5c2ade483940c
+      internalID: 1446878502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_10
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b932b0dd84f27941a75a85235d575ab
+      internalID: -1492671925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_11
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36949c63cc403384c9f2e9d36dd18d0b
+      internalID: -2048224799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b6b69e52c068643b0e7a3e3cff022c
+      internalID: 684258653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_13
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57853a6316d10594ab512abd5b1b9253
+      internalID: 1888857303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_14
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2c9eb4feb5a0e40964f423b30f1b99
+      internalID: -272608903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_15
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9adaa8b40f7919f4095fd81dd4acbd3a
+      internalID: 91628080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_16
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bf3bbdcf1aa0942bd175fcb9189185
+      internalID: 159759608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_17
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9812542e6fd70d443b13491682149461
+      internalID: -495938900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f40b9aae85051408491802a5e2f402
+      internalID: -1020002165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_19
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca46af854e26214e8064b0d81d48c3d
+      internalID: 942755785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_20
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ec894930aee4741aaa8aa3dd10e8ea
+      internalID: 1158866627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_21
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa9104289d0ed94e9d47403e97993d1
+      internalID: 1343351960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_22
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcc635408ad07743855d766b3fad25f
+      internalID: 552796021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Water_Farm_23
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e670ffada0b6c9479977323dca64c08
+      internalID: 1489636604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +642,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Char02_Water_Farm_0: -712869799
+      Char02_Water_Farm_1: -2145731888
+      Char02_Water_Farm_10: -1492671925
+      Char02_Water_Farm_11: -2048224799
+      Char02_Water_Farm_12: 684258653
+      Char02_Water_Farm_13: 1888857303
+      Char02_Water_Farm_14: -272608903
+      Char02_Water_Farm_15: 91628080
+      Char02_Water_Farm_16: 159759608
+      Char02_Water_Farm_17: -495938900
+      Char02_Water_Farm_18: -1020002165
+      Char02_Water_Farm_19: 942755785
+      Char02_Water_Farm_2: 2092856855
+      Char02_Water_Farm_20: 1158866627
+      Char02_Water_Farm_21: 1343351960
+      Char02_Water_Farm_22: 552796021
+      Char02_Water_Farm_23: 1489636604
+      Char02_Water_Farm_3: -1777008037
+      Char02_Water_Farm_4: -1002075655
+      Char02_Water_Farm_5: 627049103
+      Char02_Water_Farm_6: -832535809
+      Char02_Water_Farm_7: -1835172612
+      Char02_Water_Farm_8: 1620443223
+      Char02_Water_Farm_9: 1446878502
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

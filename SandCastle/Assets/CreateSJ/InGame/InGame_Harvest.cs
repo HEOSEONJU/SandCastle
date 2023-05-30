@@ -10,7 +10,7 @@ namespace InGame
         InGameMineSearch search;
 
         [SerializeField]
-        List<InGame_Char> IGC;
+        InGame_Char iGC;
 
 
 
@@ -23,33 +23,49 @@ namespace InGame
         [SerializeField]
         InGame_Inventory inventory;
 
-        public void Init(List<InGame_Char> igc)
+        public void Init(InGame_Char igc,InGame_Inventory inventory)
         {
-            IGC= igc;
+            iGC = igc;
+            this.inventory = inventory;
         }
 
 
         public void Harvest()
         {
-            if((search.Target is null)|| IGC.Find(x=>x.IsAction==true) )
+            if(search.Target is null)
             {
+                Debug.Log("타겟없음");
                 return;
             }
-            if(search.Target.IsReady==false || search.Target.IsDestory)
+            if (iGC.IsAction == true)
             {
-                Debug.Log("전부디스트로이됨 && 아직 준비중");
+                Debug.Log("행동중");
+                return;
+            }
+            if (search.Target.IsDestory)
+            {
+                Debug.Log("전부디스트로이됨 ");
                 return;
             }
 
 
-            
-            
-            
-            foreach(InGame_Char c in IGC)
+
+
+            switch (search.Target.resourceType)
             {
-                c.Animator.SetBool(harvestAniamtionBool, true);
-                c.IsAction = true;
+                case ResourceEnum.sand:
+                    iGC.Animator.CrossFade("CharSand", 0.01f);
+                    break;
+                case ResourceEnum.water:
+                    iGC.Animator.CrossFade("CharWater", 0.01f);
+                    break;
+                case ResourceEnum.mud:
+                    iGC.Animator.CrossFade("CharMud", 0.01f);
+                    break;
             }
+            
+
+
             
             
             
@@ -62,11 +78,9 @@ namespace InGame
         public void TargetHarvest()
         {
             
-            search.Target.Collection(1,inventory);
-            foreach (InGame_Char c in IGC)
-            {
-                c.IsAction = false;
-            }
+            search.Target.Collection(1,inventory, iGC);
+            
+            
             
         }
 

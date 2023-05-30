@@ -9,7 +9,7 @@ namespace InGame
     {
         [SerializeField]
         Sprite[] sprites;
-        public float timer;
+        
 
 
         InGame_Harvest harvest;
@@ -18,98 +18,94 @@ namespace InGame
         public override void OnEnable()
         {
             
+            
+            
+            //Init_Object(1, 1);
+            //hp = 10;
+            
+        }
+        public override void Init_Object(string type, int amount, float maxhp, int amountMax, string imagefull, string imagedead)
+        {
+
+            switch (type)
+            {
+                case "sand":
+                    resourceType = ResourceEnum.sand;
+                    break;
+                case "water":
+                    resourceType = ResourceEnum.water;
+                    break;
+                case "mud":
+                    resourceType = ResourceEnum.mud;
+                    break;
+            }
+            Amount = amount;
+            Hp=MaxHp = maxhp;
+            spriteFull = imagefull;
+            spriteDead = imagedead;
+
+
             ConnectList.Clear();
             sprites = Resources.LoadAll<Sprite>("mine-resources");
-            
+
             spriteFull = "mine-resources_0";
             spriteDead = "mine-resources_2";
             Change_Image(spriteFull);
-            timer = 0;
+
             IsDestory = false;
-            IsReady = false;
-            Init_Object(1, 1);
-            hp = 10;
-            
         }
 
-
-        
-
-
-        public override void Init_Object(float time, float amount)
-        {
-            CollectTime = time;
-            Amount= amount;
-            timer = 0f;
-        }
         public override void ReadyMine()
         {
             
             if (!IsDestory  )
             {
-                StartCoroutine(WaitPlayer());
+                //StartCoroutine(WaitPlayer());
             }
 
             
         }
         public override void UnReadyMine()
         {
-            if (!IsDestory && ConnectList.Count==0 && IsReady)
+            if (!IsDestory && ConnectList.Count==0 )
             {
-                StopCoroutine(WaitPlayer());
-                IsReady = false;
-                filImage.fillAmount = 0f;
+                //StopCoroutine(WaitPlayer());
+                
+                
             }
             
         }
         
-        IEnumerator  WaitPlayer()
+
+
+        public override void Collection(float damagepoint,InGame_Inventory inventory,InGame_Char igc)
         {
-            while (true) 
-            {
-                timer += Time.deltaTime;
-
-                filImage.fillAmount = timer / CollectTime;
-                if (timer>=CollectTime)
-                {
-                    
-                    ConnectList[0].TryGetComponent(out harvest);
-                    if(harvest !=null)
-                    {
-                        IsReady = true;
-                        harvest.Harvest();
-                    }
-                    else
-                    {
-                        Debug.Log("수확이없다");
-                    }
-
-                    yield break;
-
-                }
-                yield return new WaitForSeconds(Time.deltaTime);
-            }
             
-            
-
-        }
-
-        public override void Collection(float damagepoint,InGame_Inventory inventory)
-        {
             if(IsDestory)
             {
+                
+                if(igc.Animator.GetBool("IsAction"))
+                igc.Animator.SetTrigger("HarvestExit");
+                return;
+            }
+            if(Hp>0)
+            {
+                Hp -= damagepoint;
+                if (Hp <= 0)
+                {
+                    inventory.Getter_Mine(AmountMax, resourceType);
+                    Change_Image(spriteDead);
+                    IsDestory = true;
+                    igc.Animator.SetTrigger("HarvestExit");
+                    return;
+                }
+                inventory.Getter_Mine(Amount, resourceType);
                 return;
             }
 
-            inventory.Getter_Mine(Amount);
-            hp -= damagepoint;
-            if(hp <= 0)
-            {
-                Change_Image(spriteDead);
-                IsDestory = true;
-                filImage.fillAmount = 0f;
-            }
-            
+
+            igc.Animator.SetTrigger("HarvestExit");
+
         }
 
         public override void Change_Image(string name)

@@ -15,7 +15,11 @@ namespace Enemy
         public Enemy_Move EnemyMove
         { get { return enemyMove; } 
         }
-        
+        public Enemy_Status EnemyStatus
+        {
+            get { return enemyStatus; }
+        }
+
         public void Reseting(float speed,float hp)
         {
             enemyMove.MoveSpeed = speed;

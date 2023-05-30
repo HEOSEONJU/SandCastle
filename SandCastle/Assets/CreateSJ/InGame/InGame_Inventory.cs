@@ -10,20 +10,48 @@ namespace InGame
         
         [SerializeField]
         float sandCount;
+        [SerializeField]
+        float waterCount;
+        [SerializeField]
+        float mudCount;
 
+        [SerializeField]
+         TextMeshProUGUI sandText;
+        [SerializeField]
+         TextMeshProUGUI waterText;
+        [SerializeField]
+         TextMeshProUGUI mudText;
 
         private void Start()
         {
             
             sandCount = 0;
-            InGame_UI.Instance.sandText.text = "0";
+            waterCount = 0;
+            mudCount = 0;
+            sandText.text = sandCount.ToString();
+            waterText.text = waterCount.ToString();
+            mudText.text = mudCount.ToString();
 
         }
 
-        public void Getter_Mine(float amount)
+        public void Getter_Mine(float amount,ResourceEnum resourceenum )
         {
-            sandCount += amount;
-            InGame_UI.Instance.sandText.text = sandCount.ToString();
+            switch(resourceenum)
+            {
+                case ResourceEnum.sand:
+                    sandCount += amount;
+                    sandText.text = sandCount.ToString();
+                    break;
+                case ResourceEnum.water:
+                    waterCount += amount;
+                    waterText.text = waterCount.ToString();
+                    break;
+                case ResourceEnum.mud:
+                    mudCount += amount;
+                    mudText.text = mudCount.ToString();
+                    break;
+            }
+            
             
 
         }

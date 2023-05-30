@@ -15,7 +15,9 @@ namespace InGame
         Abstract_Attack abstractAttack;
 
 
-
+        [Header("무기각도조정값")]
+        [SerializeField]
+        int value=-180;//
 
         private void Update()
         {
@@ -23,7 +25,7 @@ namespace InGame
             {
                 float angle = Mathf.Atan2(inGameEnemySearch.Target[0].transform.position.y, inGameEnemySearch.Target[0].transform.position.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.Rotate(new Vector3(0, 0, -90));
+                transform.Rotate(new Vector3(0, 0, value));
             }
         }
 

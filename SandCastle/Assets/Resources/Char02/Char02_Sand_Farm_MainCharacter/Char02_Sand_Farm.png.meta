@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,511 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51010602d61e81242ab97163728dba58
+      internalID: 1318918833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb38a14d7dea44c4a8d55a2381e7e1b3
+      internalID: -1404635949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_2
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd081646078d12a408c969dcb9c54ddb
+      internalID: 2050335616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_3
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382151076de0e6b46a33c0ee8bd25946
+      internalID: -727094937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_4
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e588a54172993b64f9c51c90bb42650e
+      internalID: -1597164431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_5
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 1350
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e9889263da9354ea7c10f4de64b7cc
+      internalID: 1226754331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f427875ed9ff94082f91ce14bf0db8
+      internalID: 1355536163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_7
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8408f9181452b814f8570b78207948cd
+      internalID: -1625747696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_8
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7c770f893c2ad42a79ee2b80740a95
+      internalID: -1222830091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_9
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee16291afc8e3041983fe990ff9123e
+      internalID: -1679502813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_10
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a710621a82669f43a23ebb3d3bb2454
+      internalID: -942030721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_11
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 900
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93cedfa1a488bbd4499a54df8fe32324
+      internalID: -556183693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e6e52675273d749b1f80f3c4876da7
+      internalID: -1717021831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_13
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318083a96d134c74680a0ba85b553cce
+      internalID: 206442010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_14
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a53bebe77c945e4e9d1f39d44980486
+      internalID: 1330526287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_15
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0151a5bd4f74dfa4aa2327d1b869ddf2
+      internalID: 1900945645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_16
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5568f76ed36114f87206bff42e2607
+      internalID: 1530638614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_17
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 450
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03618bc44b68ef549a66e0e19f28d37c
+      internalID: 1963152832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4947cca179ab72849894166aa2df4102
+      internalID: 1884872652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_19
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efd622d8eeb0cb498f77224ff6820f2
+      internalID: 2016001011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_20
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2736bae7e925a17459948f81907042d6
+      internalID: 1120248084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_21
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b225c56b37ba0c44ba77e1b718323a84
+      internalID: 786894810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_22
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3331c4fd4d413b4b9be543dca6fb044
+      internalID: -664467128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Sand_Farm_23
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 0
+        width: 410
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171c6d0c3c53fdd449653a8c42db1b56
+      internalID: 2104772078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +642,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Char02_Sand_Farm_0: 1318918833
+      Char02_Sand_Farm_1: -1404635949
+      Char02_Sand_Farm_10: -942030721
+      Char02_Sand_Farm_11: -556183693
+      Char02_Sand_Farm_12: -1717021831
+      Char02_Sand_Farm_13: 206442010
+      Char02_Sand_Farm_14: 1330526287
+      Char02_Sand_Farm_15: 1900945645
+      Char02_Sand_Farm_16: 1530638614
+      Char02_Sand_Farm_17: 1963152832
+      Char02_Sand_Farm_18: 1884872652
+      Char02_Sand_Farm_19: 2016001011
+      Char02_Sand_Farm_2: 2050335616
+      Char02_Sand_Farm_20: 1120248084
+      Char02_Sand_Farm_21: 786894810
+      Char02_Sand_Farm_22: -664467128
+      Char02_Sand_Farm_23: 2104772078
+      Char02_Sand_Farm_3: -727094937
+      Char02_Sand_Farm_4: -1597164431
+      Char02_Sand_Farm_5: 1226754331
+      Char02_Sand_Farm_6: 1355536163
+      Char02_Sand_Farm_7: -1625747696
+      Char02_Sand_Farm_8: -1222830091
+      Char02_Sand_Farm_9: -1679502813
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -9,6 +9,8 @@ namespace InGame
     public class InGameMineSearch : MonoBehaviour
     {
         [SerializeField]
+        InGame_Harvest harvest;
+        [SerializeField]
         Abstract_Mine target;
 
         [SerializeField]
@@ -31,12 +33,12 @@ namespace InGame
         {
             if(collision.CompareTag("Mine"))
             {
-                collision.TryGetComponent<Abstract_Mine>(out target);
+                collision.TryGetComponent<Abstract_Mine>(out  target);
                 if (!(target is null))
                 {
                     target.ConnectList.Add(this.gameObject);
-
                     
+                    harvest.Harvest();
                         target.ReadyMine();
                     
 

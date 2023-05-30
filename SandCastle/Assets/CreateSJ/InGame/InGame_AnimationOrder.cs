@@ -5,13 +5,9 @@ namespace InGame
 {
     public class InGame_AnimationOrder : MonoBehaviour
     {
-        InGame_Char inGameChar;
+        [SerializeField]
+        InGame_Harvest harvest;
 
-
-        private void Start()
-        {
-            inGameChar=  GetComponentInParent<InGame_Char>();
-        }
 
 
 
@@ -20,7 +16,7 @@ namespace InGame
         
         public void HarvestEventend()
         {
-            inGameChar.OrderHarvestTrigget();
+            harvest.TargetHarvest();
             
         }
     }

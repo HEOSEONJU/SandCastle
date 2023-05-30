@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PatrolSetting : MonoBehaviour
 {
-    private void Start()
+    public void Init()
     {
         int count = transform.childCount;
         PatrolPoint patrolpoint;
@@ -20,5 +20,9 @@ public class PatrolSetting : MonoBehaviour
         patrolpoint.NextToPoint = transform.GetChild(count-1).transform;
 
 
+    }
+    public Transform FirstPosition()
+    {
+        return transform.GetChild(0).transform; 
     }
 }

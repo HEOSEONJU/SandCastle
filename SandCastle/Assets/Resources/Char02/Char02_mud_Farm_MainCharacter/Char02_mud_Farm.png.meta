@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,511 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Char02_mud_Farm_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1266031f095bd46b054802924b2f39
+      internalID: -1923973804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5271060aee614e441a40c13dbb1d4eb5
+      internalID: 1098714945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c84f2d93ad713448c6f197f0d143e6
+      internalID: -841390258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e40b9ca4f8a24f47994da2eeaaffb68
+      internalID: 288523562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac50b474392ff7748b86cb8891aa9732
+      internalID: 1044142584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca64eaa87bdb6b3428c2c4cbc03888e0
+      internalID: 1866998693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4ea83361bdc184382ececc6ba2fd8f
+      internalID: -1283678075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ddee280732aee5488a0882e5e9bccfd
+      internalID: -1808488565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a717693bb6d3c54d85e3fff0ce51489
+      internalID: 766459277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_9
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9150ec8cb21e38e4984d769b4cbd4212
+      internalID: -990560681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc60b7a769480b43bd5ad1c99e2604d
+      internalID: -2091324075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_11
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e667a29366571a47b4e159f20c5ca5a
+      internalID: -1811489289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521ed6e7135aabd4e8629c664f76fb68
+      internalID: -1370861070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0049797a667c34798029b0a4a7c8b9
+      internalID: -200921537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ace415638d0e54d8b49be787fd2689
+      internalID: 1933039444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064ccde15998f0142929f2772bd9a51f
+      internalID: -289706571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_16
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56602ef595f83234f83362b04a1ff2fc
+      internalID: -268698609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_17
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5809a83fb172664882200f6db1c3f44
+      internalID: -523660428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a20d9b7d4be46942902b535b096f628
+      internalID: 1387360084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02cf1f202d9422419c3bcdf0362536a
+      internalID: -1480342278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78d04739b3096444a253d05ce2f78e0
+      internalID: -1176536771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_21
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe6b93109aafc64a96f6a0f37d0a245
+      internalID: -813298724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_22
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f47c4bc327691344adb7e97b4aa7f06
+      internalID: -428344708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_mud_Farm_23
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf94e7e4f06a7444592f12db57747c61
+      internalID: -1335062721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +642,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Char02_mud_Farm_0: -1923973804
+      Char02_mud_Farm_1: 1098714945
+      Char02_mud_Farm_10: -2091324075
+      Char02_mud_Farm_11: -1811489289
+      Char02_mud_Farm_12: -1370861070
+      Char02_mud_Farm_13: -200921537
+      Char02_mud_Farm_14: 1933039444
+      Char02_mud_Farm_15: -289706571
+      Char02_mud_Farm_16: -268698609
+      Char02_mud_Farm_17: -523660428
+      Char02_mud_Farm_18: 1387360084
+      Char02_mud_Farm_19: -1480342278
+      Char02_mud_Farm_2: -841390258
+      Char02_mud_Farm_20: -1176536771
+      Char02_mud_Farm_21: -813298724
+      Char02_mud_Farm_22: -428344708
+      Char02_mud_Farm_23: -1335062721
+      Char02_mud_Farm_3: 288523562
+      Char02_mud_Farm_4: 1044142584
+      Char02_mud_Farm_5: 1866998693
+      Char02_mud_Farm_6: -1283678075
+      Char02_mud_Farm_7: -1808488565
+      Char02_mud_Farm_8: 766459277
+      Char02_mud_Farm_9: -990560681
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

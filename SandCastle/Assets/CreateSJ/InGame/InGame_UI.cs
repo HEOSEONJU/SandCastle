@@ -39,8 +39,7 @@ namespace InGame
             }
 
         }
-        [SerializeField]
-        public TextMeshProUGUI sandText;
+        
 
     }
 }

@@ -101,8 +101,13 @@ public class ObjectTable : ScriptableObject
             
             return null;
         }
+        var e = hashTableList.Find(x => x[startINDEX_A1].ToString() == Key)[colum];
+        if( e is null)
+        {
+            return "";
+        }
 
-        return hashTableList.Find(x => x[startINDEX_A1].ToString() == Key)[colum].ToString();
+        return e.ToString();
     }
 
 

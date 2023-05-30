@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Char02_Left_Move_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e93e8ffcaeb5a43aa9fa9b0f244890
+      internalID: -1197043948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd215cd1a6b21d408a2edd987f93660
+      internalID: -246196810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71313d7997556384db0b7c9ac87c10a5
+      internalID: 448691239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6456990a3795bc9429266dbb51adc7b0
+      internalID: -1996895526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98da4a2a82c75f94f94d405df250ec6e
+      internalID: -217541823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8ddf29794f1604a86f3384b320cd7e
+      internalID: -1652145297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c1a699bd12c9d42aa735d6816b905e
+      internalID: -1798010889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 880
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a143cbcd8f1e7242a5a2454bc87bfd2
+      internalID: 535091865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c3afdb0935a3b429c0c830a82a644d
+      internalID: 1697327263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae4214e758062546accc03f208937c1
+      internalID: -245289960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3957f0a4d7db40c43837b722dabde1d5
+      internalID: 687840160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_11
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7000610d4a4746418bbd3c30f628712
+      internalID: -536915573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_12
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1320
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668f97e8d54571542b670788a5deb939
+      internalID: -303064965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_13
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 878
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f36f426b774a614b849765e6bc1f4c0
+      internalID: 1853579690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_14
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 440
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16cd4a3e061bea74796afbf22e48f1fe
+      internalID: -1227453628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Left_Move_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7c9b354be1cf34d8f42b5f73e2927d
+      internalID: -1610574852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +474,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Char02_Left_Move_0: -1197043948
+      Char02_Left_Move_1: -246196810
+      Char02_Left_Move_10: 687840160
+      Char02_Left_Move_11: -536915573
+      Char02_Left_Move_12: -303064965
+      Char02_Left_Move_13: 1853579690
+      Char02_Left_Move_14: -1227453628
+      Char02_Left_Move_15: -1610574852
+      Char02_Left_Move_2: 448691239
+      Char02_Left_Move_3: -1996895526
+      Char02_Left_Move_4: -217541823
+      Char02_Left_Move_5: -1652145297
+      Char02_Left_Move_6: -1798010889
+      Char02_Left_Move_7: 535091865
+      Char02_Left_Move_8: 1697327263
+      Char02_Left_Move_9: -245289960
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

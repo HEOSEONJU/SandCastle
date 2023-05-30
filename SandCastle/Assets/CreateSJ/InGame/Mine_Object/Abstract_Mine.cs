@@ -9,6 +9,9 @@ namespace InGame
     public abstract class Abstract_Mine : MonoBehaviour
     {
         [SerializeField]
+        public ResourceEnum resourceType;
+
+        [SerializeField]
         List<GameObject> connectList = new List<GameObject>();
         [SerializeField]
         protected string spriteFull;
@@ -16,16 +19,21 @@ namespace InGame
         protected string spriteDead;
 
 
-        float collectTime;
-        float amount;
-        [SerializeField]
-        protected float hp;
+        
+        int amount;
+        
+        float hp;
+        float maxHp;
+        int amountMax;
+
+
+
+
         [SerializeField]
         protected Image mainImage;
-        [SerializeField]
-        protected Image filImage;
+        
         public bool IsDestory;
-        public bool IsReady;
+        
 
 
         public List<GameObject> ConnectList
@@ -38,24 +46,33 @@ namespace InGame
 
                 return connectList; }
         }
-        public float Amount
+        public int Amount
         {
             get { return amount; }
             set { amount = value; }
         }
-
-        public float CollectTime
+        public float Hp
         {
-            get { return collectTime; }
-            set { collectTime = value; }
+            get { return hp; }
+            set { hp = value; }
+        }
+        public float MaxHp
+        {
+            get { return maxHp; }
+            set { maxHp = value; }
+        }
+        public int AmountMax
+        {
+            get { return amountMax; }
+            set { amountMax = value; }
         }
 
 
         public abstract void OnEnable();
 
-        public abstract void Init_Object(float time,float amount);//파밍할오브젝트 추가하기
+        public abstract void Init_Object(string type,int amount,float maxhp,int amountMax,string imagefull,string imagedead);//파밍할오브젝트 추가하기
 
-        public abstract void Collection(float damgepoint,InGame_Inventory inventory);
+        public abstract void Collection(float damgepoint,InGame_Inventory inventory,InGame_Char igc);
         public abstract void ReadyMine();
         public abstract void UnReadyMine();
 
@@ -64,5 +81,10 @@ namespace InGame
 
 
     }
-
+    public enum ResourceEnum
+    {
+        sand,
+        water,
+        mud
+    }
 }
