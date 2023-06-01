@@ -20,7 +20,7 @@ public class PatrolPoint : MonoBehaviour
 
     public void NextOrder(Enemy_Move enemymove)
     {
-        if (NextToPoint == enemymove.transform)
+        if (NextToPoint.position == enemymove.targetVector)
         {
             
             enemymove.StopMove(); 

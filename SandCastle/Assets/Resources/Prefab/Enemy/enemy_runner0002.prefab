@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f759b309fdbeeb6429f931071b8bcdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemymanager: {fileID: 1615358515289129747}
   targetVector: {x: 0, y: 0, z: 0}
   moveSpeed: 1
 --- !u!114 &1615358515289129745
@@ -203,6 +204,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  moveSpeed: 0
+  attackSpeed: 0
+  attackRange: 0
+  resistanceType: []
+  resistanceValue: 0
 --- !u!61 &1615358515289129758
 BoxCollider2D:
   m_ObjectHideFlags: 0

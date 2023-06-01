@@ -7,7 +7,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine.Tilemaps;
 using System.Linq;
-
+using AT.SerializableDictionary;
 namespace Roulette
 {
     public class Roulette : MonoBehaviour
@@ -146,7 +146,7 @@ namespace Roulette
                 
                 //Debug.Log(random + "³­¼ö°ª");
                 int appaer=0;
-                foreach(Hashtable ht in groupManager.Gacha[order])
+                foreach(SerializableDictionary<string, string> ht in groupManager.Gacha[order])
                 {
                     appaer += int.Parse(ht["appearRate"].ToString());
 

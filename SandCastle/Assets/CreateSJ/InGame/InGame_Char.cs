@@ -1,12 +1,13 @@
-using InGame;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace InGame
 {
     public class InGame_Char : MonoBehaviour
     {
+        public string CharName= "character000001";
+
         [SerializeField]
         InGame_Move move;
         [SerializeField]
@@ -21,6 +22,10 @@ namespace InGame
 
         [SerializeField]
         SpriteRenderer spriteRenderer;
+
+
+
+        IEnumerator RegenManaCoroutine;
         public bool IsAction
         {
             get { return isAction; }
@@ -56,7 +61,41 @@ namespace InGame
             }
 
 
+        
+        
+        private void Start()
+        {
+            StartRegneMana();
 
+
+
+        }
+
+        public void StartRegneMana()
+        {
+            if (RegenManaCoroutine == null)
+            {
+                RegenManaCoroutine = RegenMana();
+                StartCoroutine(RegenManaCoroutine);
+            }
+        }
+        
+        IEnumerator RegenMana()
+        {
+            while(true)
+            {
+                yield return new WaitForSeconds(1);
+                status.CurrentMana += 1;
+                if (status.CanSkill)
+                {
+                    status.CurrentMana = 0;
+                    StopCoroutine(RegenManaCoroutine);
+                    RegenManaCoroutine = null;
+                    Animator.CrossFade("CharSkill", 0.01f);
+                }
+                
+            }
+        }
 
         public void OrderHarvestTrigget()
         {

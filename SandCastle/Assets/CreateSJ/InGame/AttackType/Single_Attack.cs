@@ -10,6 +10,9 @@ namespace InGame
     public class Single_Attack : Abstract_Attack
     {
         [SerializeField]
+        InGame_Status status;
+
+        [SerializeField]
         GameObject bulletPrefab;
 
 
@@ -36,8 +39,8 @@ namespace InGame
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             bulletobject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            
-            
+
+            bulletobject.DamagePoint = status.GiveDamage;
             bulletobject.Move();
             CanAttack = false;
             StartCoroutine(Delay());

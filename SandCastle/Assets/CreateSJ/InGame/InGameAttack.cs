@@ -27,6 +27,13 @@ namespace InGame
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.Rotate(new Vector3(0, 0, value));
             }
+            
+        }
+
+        public void ResetAngle()
+        {
+            transform.rotation = Quaternion.identity;
+            
         }
 
         public void ChangeAttack(Abstract_Attack abstractattack)

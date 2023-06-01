@@ -18,7 +18,7 @@ namespace InGame
             if (instance is null)
             {
                 instance = this;
-                DontDestroyOnLoad(this);
+                
             }
             else
             {

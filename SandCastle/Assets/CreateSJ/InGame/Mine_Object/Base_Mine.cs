@@ -24,7 +24,7 @@ namespace InGame
             //hp = 10;
             
         }
-        public override void Init_Object(string type, int amount, float maxhp, int amountMax, string imagefull, string imagedead)
+        public override void Init_Object(string type, int amount, float maxhp, int amountmax, string imagefull, string imagedead)
         {
 
             switch (type)
@@ -40,7 +40,8 @@ namespace InGame
                     break;
             }
             Amount = amount;
-            Hp=MaxHp = maxhp;
+            AmountMax = amountmax;
+            Hp =MaxHp = maxhp;
             spriteFull = imagefull;
             spriteDead = imagedead;
 

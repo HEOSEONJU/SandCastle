@@ -17,3 +17,35 @@ namespace SandEnums
         jewel
     }
 }
+namespace SkillEnums
+{
+    public enum SkillPattern
+    {
+        Straight,
+        Bounce,
+        Wave,
+        Spin
+    }
+    public enum SkillSpwan
+    {
+        Player,
+        Target,
+        Position,
+        
+    }
+    public enum SkillTarget
+    {
+        Near,
+        Random,
+        Far,
+
+    }
+    public enum SkillTiming
+    {
+        Enter,
+        Stay,
+        Exit,
+
+    }
+
+}

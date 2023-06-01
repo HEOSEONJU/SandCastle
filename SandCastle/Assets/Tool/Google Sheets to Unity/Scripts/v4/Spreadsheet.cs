@@ -319,7 +319,14 @@ namespace GoogleSheetsToUnity
         public GstuSpreadSheet(GSTU_SpreadsheetResponce data, string titleColumn, int titleRow)
         {
             string startColumn = Regex.Replace(data.StartCell(), "[^a-zA-Z]", "");
-            int startRow = int.Parse(Regex.Replace(data.StartCell(), "[^0-9]", ""));
+            string startrowtemp = Regex.Replace(data.StartCell(), "[^0-9]", "");
+            int startRow;
+            if (startrowtemp=="")
+            {
+                startRow = 0;
+            }
+            else
+                startRow = int.Parse(startrowtemp);
 
             int startColumnAsInt = GoogleSheetsToUnityUtilities.NumberFromExcelColumn(startColumn);
             int currentRow = startRow;

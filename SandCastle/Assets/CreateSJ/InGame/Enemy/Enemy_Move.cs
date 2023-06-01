@@ -8,6 +8,8 @@ namespace Enemy
 {
     public class Enemy_Move : MonoBehaviour
     {
+        [SerializeField]
+        Enemy_Manager enemymanager;
         Vector3 movePoint;
         Vector3 direction;
 
@@ -15,6 +17,7 @@ namespace Enemy
         [SerializeField]
         float moveSpeed=1f;
         float speedValue=5f;//속도보정값
+        [SerializeField]
         bool active;//작동중
 
         public float MoveSpeed
@@ -39,6 +42,10 @@ namespace Enemy
             StopCoroutine(MovePoint());
             active = false;
 
+
+            enemymanager.BaseAttack();
+
+
         }
         public IEnumerator MovePoint()
         {
@@ -51,5 +58,6 @@ namespace Enemy
             }
             
         }
+        
     }
 }

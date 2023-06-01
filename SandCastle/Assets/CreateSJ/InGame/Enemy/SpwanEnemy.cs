@@ -81,7 +81,7 @@ namespace Enemy
                 if (!(em is null))
                 {
                     em.StartMove(nextPoint.transform);
-                    em.Reseting(1, 10);
+                    //em.Reseting(1, 10);
                 }
                 yield return new WaitForSeconds(1f);
             }

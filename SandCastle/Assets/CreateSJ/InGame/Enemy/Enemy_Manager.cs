@@ -40,6 +40,25 @@ namespace Enemy
                 gameObject.SetActive(false);
             }
         }
+        public void BaseAttack()
+        {
+            if (enemyStatus.Hp <= 0)
+            {
+                return;
+            }
+            
+            RaycastHit2D[] hitlist = Physics2D.BoxCastAll(transform.position, transform.localScale, 0, Vector2.zero);
+            
+            foreach (var hit in hitlist)
+            {
+                hit.collider.transform.TryGetComponent<BaseHP>(out BaseHP basehp);
+                if (basehp != null)
+                {
+                    Debug.Log("베이스적중");
+                }
+            }
+            gameObject.SetActive(false);
+        }
 
 
     }

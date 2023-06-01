@@ -11,8 +11,7 @@ public class SheetFunction : MonoBehaviour
 
     [SerializeField]
     List<ObjectTable> tables;
-    [SerializeField]
-    List<DataEditor> dataEditors;
+    
     [SerializeField]
     bool Active;
 
@@ -35,7 +34,13 @@ public class SheetFunction : MonoBehaviour
             if(Active)
             {
                 checkCount = 0;
-                ReadSheets();
+                OnlienReadSheets();
+                
+            }
+            else
+            {
+                StartCoroutine(delay());
+                checkCount=OffLineReadSheets();
                 
             }
 
@@ -44,31 +49,43 @@ public class SheetFunction : MonoBehaviour
         
         Destroy(gameObject);
     }
-    private void Update()
+
+    IEnumerator delay()
     {
+        while (checkCount!=tables.Count)
+        {
+            yield return null;
+        }
         
+        if(SceneMoveManager.Instance !=null)
+        SceneMoveManager.Instance.ImmediatelyChangeScne(mainSceneName);
     }
 
-    public void ReadSheets()
+    public void OnlienReadSheets()
     {
-        if (dataEditors is null)
-        {
-            dataEditors = new List<DataEditor>();
-            
-        }
-        dataEditors.Clear();
+        
         foreach (ObjectTable table in tables) 
         {
-
-            dataEditors.Add(new DataEditor());
-            dataEditors.Last().RESET(table);
-            
+            table.OnLineReading();
         }
 
         
         
     }
-    
+    public int OffLineReadSheets()
+    {
+        int c = 0;
+        foreach (ObjectTable table in tables)
+        {
+             c+=table.OffLineReading();
+            
+
+        }
+        return c;
+
+
+    }
+
     public void Check()
     {
         checkCount++;

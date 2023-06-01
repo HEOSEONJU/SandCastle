@@ -27,19 +27,18 @@ namespace inGame
                 {
                     return;
                 }
+                attackCount--;
+                Damaged(enemymanager);
+                StopCoroutine(MoveBullet());
                 if (attackCount >= 1)
                 {
-                    attackCount--;
-                    Damaged(enemymanager);
-                    StopCoroutine(MoveBullet());
+                    
+                    return;
                 }
-                else if(attackCount == 0) 
-                {
-                    attackCount--;
-                    Damaged(enemymanager);
-                    StopCoroutine(MoveBullet());
-                    gameObject.SetActive(false);
-                }
+                gameObject.SetActive(false);
+                
+                    
+                
                 
             }
         }

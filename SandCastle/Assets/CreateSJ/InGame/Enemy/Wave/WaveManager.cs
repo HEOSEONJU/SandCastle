@@ -40,13 +40,13 @@ public class WaveManager : MonoBehaviour
         string waveGroup=waveTable.FindData("Wave000000", "waveGroup");
         string[] WaveList = waveGroup.Split(',');
         spwanList=new List<SpwanEnemy>();
-        foreach (string enemykey in WaveList)
+        foreach (string wavespawnkey in WaveList)
         {
-            string enemyname = waveSpwanTable.FindData(enemykey, "enemyKey");
-            int summoncount = Convert.ToInt32(waveSpwanTable.FindData(enemykey, "count"));
+            string enemyname = waveSpwanTable.FindData(wavespawnkey, "enemyKey");
+            int summoncount = Convert.ToInt32(waveSpwanTable.FindData(wavespawnkey, "count"));
             
 
-            Debug.Log("소환할적" + waveGroup + "/ 소환수" + summoncount);
+            Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
             var e = Instantiate(spwanObject, this.transform);
             e.TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
             spwan.Init(enemyname, summoncount, this, patrolSetting.FirstPosition(),hpmultiply,giverewardtype, rewardamount, skillpointprobability);

@@ -31,12 +31,15 @@ public class SceneMoveManager : MonoBehaviour
 
     public void ImmediatelyChangeScne(string scenename)//즉시 씬이동
     {
+        if(SceneManager.GetActiveScene().name!= scenename)
+
         SceneManager.LoadScene(scenename);
 
     }
     public void AsyncChangeScne(string scenename)//비동기씬이동
     {
-        StartCoroutine(SceneLoading(scenename));
+        if (SceneManager.GetActiveScene().name != scenename)
+            StartCoroutine(SceneLoading(scenename));
 
     }
     public

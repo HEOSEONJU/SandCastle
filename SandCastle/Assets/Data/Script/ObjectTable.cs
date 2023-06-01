@@ -5,186 +5,157 @@ using System.Collections.Generic;
 
 using UnityEngine.Events;
 
+using  AT.SerializableDictionary;
+using System.IO;
+using Newtonsoft.Json;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 public class ObjectTable : ScriptableObject
 {
     [SerializeField]
     const string associatedSheet = "1SXq75YN6BygXd7AUDisqXGDNykMw2OtvlAqvVhyZe5s";
 
-    
+
     [SerializeField]
     public string associatedWorksheet = "";
 
+    
 
 
 
+    //public List<Hashtable> hashTableList;
+    //public List<Dictionary<string,string>> TableList;
+    public List<SerializableDictionary<string, string>> ViewTableList;
+    
 
 
-    public List<Hashtable> hashTableList;
-    [SerializeField]
-    public Hashtable last;
-
-
-    [Header ("시작하는A1의 인덱스")]
-    public string startINDEX_A1  = "DB_FIELD_NAMES";
+    [Header("시작하는A1의 인덱스")]
+    public string startINDEX_A1 = "DB_FIELD_NAMES";
     [Header("무시할A열의 값들")]
     public List<string> igonoreNames;
     [Header("읽어올 A열의 값들")]
     public List<string> values;
-    public List<string> hashKeyList;
+    //public List<string> hashKeyList;
+    public List<string> dictKeyList;
 
 
+    
     public string AssociatedSheet
     {
         get { return associatedSheet; }
     }
-
-
     [SerializeField]
     int listCount;
 
 
     public void INIT()
     {
-        if (hashTableList is null)
+        if (ViewTableList is null)
         {
-            hashTableList = new List<Hashtable>();
+            ViewTableList = new List<SerializableDictionary<string, string>>();
         }
-        hashTableList.Clear();
+        ViewTableList.Clear();
+
         if (igonoreNames is null)
         {
             igonoreNames = new List<string>();
         }
-        if (hashKeyList is null)
+
+        if (dictKeyList is null)
         {
-            hashKeyList = new List<string>();
+            dictKeyList = new List<string>();
         }
-        hashKeyList.Clear();
+        dictKeyList.Clear();
     }
 
     internal void UpdateStats(List<GSTU_Cell> list)
     {
-        if(startINDEX_A1 is null)
+        if (startINDEX_A1 is null)
         {
             return;
         }
-
-        
-        
-        
-        
-        Hashtable ht = new Hashtable();
-
-        foreach (GSTU_Cell cell in list)
+        SerializableDictionary<string, string> viewdict= new SerializableDictionary<string, string>();
+       foreach (GSTU_Cell cell in list)
         {
-            if ( (!cell.value.Equals("") ) &&  (!igonoreNames.Contains(cell.columnId)) )
+            if ((!cell.value.Equals("")) && (!igonoreNames.Contains(cell.columnId)))
             {
-                ht.Add(cell.columnId, cell.value);
-                if(hashKeyList.Contains(cell.columnId)==false)
-                    hashKeyList.Add(cell.columnId);
+
+                viewdict.Add(cell.columnId, cell.value);
+                if (dictKeyList.Contains(cell.columnId) == false)
+                    dictKeyList.Add(cell.columnId);
             }
         }
-        hashTableList.Add(ht);
-        last = ht;
-        listCount =hashTableList.Count;
-
-
+        ViewTableList.Add(viewdict);
+        listCount = ViewTableList.Count;
     }
     public string FindData(string Key, string colum)//  Key Value의 찾을오브젝트의아이디   colum 해시키리스트의 해시값
     {
-        
-        if(hashTableList == null)
+        if (ViewTableList == null)
         {
-            
+
             return null;
         }
-        var e = hashTableList.Find(x => x[startINDEX_A1].ToString() == Key)[colum];
-        if( e is null)
+        var temp = ViewTableList.Find(x => x[startINDEX_A1].ToString() == Key);
+        
+        if(temp.ContainsKey(colum))
         {
-            return "";
-        }
-
-        return e.ToString();
-    }
-
-
-
-}
-
-[CustomEditor(typeof(ObjectTable))]
-public class DataEditor : Editor
-{
-
-
-    public  ObjectTable staticData;
-    
-
-    
-    public  void RESET(ObjectTable data)
-    {
-        staticData = data;
-        UpdateStats(UpdateMethodOne);
-        
-    }
-
-
-
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-
-        GUILayout.Label("Read Data Examples");
-        
-
-        if (GUILayout.Button("Pull Data  One"))
-        {
-            //UpdateStats(UpdateMethodTwo);
-        }
-    }
-
-     void UpdateStats(UnityAction<GstuSpreadSheet> callback, bool mergedCells = false)
-    {
-
-        SpreadsheetManager.Read(new GSTU_Search(staticData.AssociatedSheet, staticData.associatedWorksheet), callback);
-        
-        
-    }
-
-     void UpdateMethodOne(GstuSpreadSheet ss)
-    {
-
-        staticData.values.Clear();
-        
-        foreach (GSTU_Cell INDEX in ss.columns[staticData.startINDEX_A1])
-        {
-
+            Debug.Log(temp[colum].ToString());
+            return temp[colum].ToString();
             
-            if (!staticData.igonoreNames.Contains(INDEX.rowId))
+        }
+
+        return "";
+    }
+
+
+
+
+
+    void UpdateStats(UnityAction<GstuSpreadSheet> callback, bool mergedCells = false)
+    {
+        SpreadsheetManager.Read(new GSTU_Search(this.AssociatedSheet, this.associatedWorksheet), callback);
+    }
+
+    void UpdateMethodOne(GstuSpreadSheet ss)
+    {
+        this.values.Clear();
+        foreach (GSTU_Cell INDEX in ss.columns[this.startINDEX_A1])
+        {
+            if (!this.igonoreNames.Contains(INDEX.rowId))
             {
-                
-                staticData.values.Add(INDEX.rowId);
+                this.values.Add(INDEX.rowId);
             }
-            
-
         }
-        staticData.INIT();
-        foreach (string dataName in staticData.values)
+        this.INIT();
+        foreach (string dataName in this.values)
         {
 
-            staticData.UpdateStats(ss.rows[dataName]);
+            this.UpdateStats(ss.rows[dataName]);
         }
 
         
+        string _path = Application.persistentDataPath + "/" + this.name + ".json";
+        string jsonString = JsonConvert.SerializeObject(ViewTableList);
+        File.WriteAllText(_path, jsonString);
+        
+
+
     }
-    
+    public void OnLineReading()
+    {
+        UpdateStats(UpdateMethodOne);
+    }
+    public int OffLineReading()
+    {
+        string _path = Application.persistentDataPath + "/" + this.name + ".json";
+        string data = File.ReadAllText(_path);
+        ViewTableList = JsonConvert.DeserializeObject<List<SerializableDictionary<string, string>>>(data);
+        return 1;
 
-
-
+    }
 }
-/////////////////
+
+
+////////////
 ///해시인덱스를 이용한 데이터탐색
 ///
 ///

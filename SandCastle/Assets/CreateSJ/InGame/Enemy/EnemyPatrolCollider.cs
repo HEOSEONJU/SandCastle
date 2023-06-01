@@ -13,11 +13,11 @@ namespace Enemy
 
             if (collision.CompareTag("Patrol"))
             {
-                Debug.Log("충돌");
+                
                 collision.TryGetComponent<PatrolPoint>(out PatrolPoint patrolpoint);
                 if (!(patrolpoint is null))
                 {
-                    Debug.Log("명령");
+                    
 
                     patrolpoint.NextOrder(enemyManager.EnemyMove);
                 }

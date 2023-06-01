@@ -19,11 +19,14 @@ namespace InGame
         protected string spriteDead;
 
 
-        
+
+        [SerializeField]    
         int amount;
-        
+        [SerializeField]
         float hp;
+        [SerializeField]
         float maxHp;
+        [SerializeField]
         int amountMax;
 
 
@@ -70,7 +73,7 @@ namespace InGame
 
         public abstract void OnEnable();
 
-        public abstract void Init_Object(string type,int amount,float maxhp,int amountMax,string imagefull,string imagedead);//파밍할오브젝트 추가하기
+        public abstract void Init_Object(string type,int amount,float maxhp,int amountmax,string imagefull,string imagedead);//파밍할오브젝트 추가하기
 
         public abstract void Collection(float damgepoint,InGame_Inventory inventory,InGame_Char igc);
         public abstract void ReadyMine();

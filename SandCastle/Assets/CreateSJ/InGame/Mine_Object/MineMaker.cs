@@ -24,7 +24,9 @@ public class MineMaker : MonoBehaviour
             
 
             string type = MineTable.FindData(mine.name, "resourceType");
+            
             int amount = Convert.ToInt32 (MineTable.FindData(mine.name, "amount"));
+            
             float maxhp = float.Parse(MineTable.FindData(mine.name, "maxHP"));
             int amountmax = Convert.ToInt32(MineTable.FindData(mine.name, "amountMax"));
             string imagefull= MineTable.FindData(mine.name, "imageFull");

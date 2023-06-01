@@ -12,6 +12,12 @@ namespace inGame
 
         [SerializeField]
         protected float damagePoint;
+
+        public float DamagePoint
+        {
+            get { return damagePoint; }
+            set { damagePoint = value; }
+        }
         [SerializeField]
         protected int attackCount=1;
         public abstract void Move();

@@ -5,9 +5,28 @@ namespace InGame
     public class InGame_Status : MonoBehaviour
     {
         [Header("Status")]
-         float moveSpeed;
-         float animationSpeed;
-         float giveDamage;
+        int currenthp;
+        int maxHp;
+
+        [SerializeField]
+        float moveSpeed;
+        [SerializeField]
+        float animationSpeed;
+        [SerializeField]
+        float giveDamage;
+        [SerializeField]
+        float sandGet;
+        [SerializeField]
+
+        float waterGet;
+        [SerializeField]
+        float mudGet;
+        [SerializeField]
+        float range;
+        [SerializeField]
+        int maxMana;
+        [SerializeField]
+        int currentMana;
         [Header("Animation_Name")]
         [SerializeField]
         string CharcaterImage;
@@ -19,48 +38,63 @@ namespace InGame
         [SerializeField]
         string localKeyName;
 
-        [SerializeField]
-        int maxMana;
-        [SerializeField]
-        int currentMana;
 
 
-        private void Start()
+
+
+
+
+
+
+        public int CurrentHp
         {
-            MoveSpeed = 1f;
-            AnimationSpeed = 1f;
-            GiveDamage = 1f;
+            get { return currenthp; }
         }
-
         public float MoveSpeed
         {
             get { return moveSpeed; }
-            set { moveSpeed = value;}
+
         }
         public float AnimationSpeed
         {
             get { return animationSpeed; }
-            set { animationSpeed = value; }
+
         }
         public float GiveDamage
         {
             get { return giveDamage; }
-            set { giveDamage = value; }
+
         }
         public int CurrentMana
         {
             get { return currentMana; }
-            set { currentMana = value; }
+            set { currentMana= value; }
+
         }
         public bool CanSkill
         {
-            get 
-            { 
-                if (currentMana > maxMana) 
+            get
+            {
+                if (currentMana > maxMana)
                     return true;
                 else
-                return false;
+                    return false;
             }
+        }
+
+        public void Init(float movespeed, float animationspeed, float givedamage, float sandget, float waterget, float mudget, float range, int maxmana, int startmana,int maxhp)
+        {
+            moveSpeed = movespeed;
+            animationSpeed = animationspeed;
+            giveDamage = givedamage;
+            sandGet = sandget;
+            waterGet = waterget;
+            mudGet= mudget;
+            this.range = range;
+            currentMana = startmana;
+            maxMana = maxmana;
+            currenthp = maxHp = maxhp;
+
         }
     }
 }
