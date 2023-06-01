@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using  AT.SerializableDictionary;
 using System.IO;
 using Newtonsoft.Json;
+using System;
 
 public class ObjectTable : ScriptableObject
 {
@@ -87,7 +88,7 @@ public class ObjectTable : ScriptableObject
         ViewTableList.Add(viewdict);
         listCount = ViewTableList.Count;
     }
-    public string FindData(string Key, string colum)//  Key Value의 찾을오브젝트의아이디   colum 해시키리스트의 해시값
+    public string FindString(string Key, string colum)//  Key Value의 찾을오브젝트의아이디   colum 해시키리스트의 해시값
     {
         if (ViewTableList == null)
         {
@@ -104,6 +105,40 @@ public class ObjectTable : ScriptableObject
         }
 
         return "";
+    }
+    public float Findfloat(string Key, string colum)//  Key Value의 찾을오브젝트의아이디   colum 해시키리스트의 해시값
+    {
+        if (ViewTableList == null)
+        {
+
+            return 0f;
+        }
+        var temp = ViewTableList.Find(x => x[startINDEX_A1].ToString() == Key);
+
+        if (temp.ContainsKey(colum))
+        {
+            Debug.Log(temp[colum].ToString());
+            return  float.Parse( temp[colum].ToString());
+
+        }
+        return 0f;
+    }
+    public int FindInt(string Key, string colum)//  Key Value의 찾을오브젝트의아이디   colum 해시키리스트의 해시값
+    {
+        if (ViewTableList == null)
+        {
+
+            return 0;
+        }
+        var temp = ViewTableList.Find(x => x[startINDEX_A1].ToString() == Key);
+
+        if (temp.ContainsKey(colum))
+        {
+            Debug.Log(temp[colum].ToString());
+            return Convert.ToInt32((temp[colum].ToString()));
+
+        }
+        return 0;
     }
 
 

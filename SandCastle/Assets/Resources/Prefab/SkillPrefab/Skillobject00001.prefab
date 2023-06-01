@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908108075802003841}
   - component: {fileID: -6362671044398036212}
+  - component: {fileID: -1441437481392588754}
   m_Layer: 0
   m_Name: Skillobject00001
   m_TagString: Untagged
@@ -84,3 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1441437481392588754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966596089616036222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74696161e9042494db9af9c661bf64a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillobjecttable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
+  pattern: 0
+  onMissTarget: 0
+  collider: {fileID: 0}
+  hitBoxSize: {x: 0, y: 0}

@@ -868,7 +868,7 @@ Transform:
   - {fileID: 34405821}
   - {fileID: 871443143}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &189692762
 MonoBehaviour:
@@ -1682,6 +1682,10 @@ MonoBehaviour:
   connectList: []
   spriteFull: 
   spriteDead: 
+  amount: 0
+  hp: 0
+  maxHp: 0
+  amountMax: 0
   mainImage: {fileID: 526950416}
   IsDestory: 0
   sprites: []
@@ -2183,7 +2187,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639676449
 GameObject:
@@ -2288,7 +2292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643803228}
   m_Layer: 0
-  m_Name: Pooling
+  m_Name: BulletPooling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2402,6 +2406,7 @@ GameObject:
   - component: {fileID: 703468463}
   - component: {fileID: 703468465}
   - component: {fileID: 703468466}
+  - component: {fileID: 703468467}
   m_Layer: 6
   m_Name: "\uCE90\uB9AD\uD1301\uBC30\uCE58 (1)"
   m_TagString: Player
@@ -2426,6 +2431,7 @@ MonoBehaviour:
   status: {fileID: 703468461}
   animator: {fileID: 2065360993}
   attack: {fileID: 1483090565}
+  skill: {fileID: 703468467}
   isAction: 0
   spriteRenderer: {fileID: 2065360990}
 --- !u!4 &703468458
@@ -2538,6 +2544,54 @@ MonoBehaviour:
   iGC: {fileID: 703468457}
   harvestAniamtionBool: Harvest
   inventory: {fileID: 1126179526}
+--- !u!114 &703468467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703468456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5685d7715d6044ca7cdd1b903ecc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillTable: {fileID: 11400000, guid: 67ca76fcc1156af47878c803fc1b6b3c, type: 2}
+  skillObjectTable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
+  inGameChar: {fileID: 703468457}
+  skillPrefab: {fileID: 0}
+  poolingParent: {fileID: 716710872}
+--- !u!1 &716710871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 716710872}
+  m_Layer: 0
+  m_Name: SkillPooling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &716710872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716710871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 20.111334, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748925229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,6 +2877,7 @@ GameObject:
   - component: {fileID: 840437894}
   - component: {fileID: 840437896}
   - component: {fileID: 840437897}
+  - component: {fileID: 840437898}
   m_Layer: 6
   m_Name: "\uCE90\uB9AD\uD1301\uBC30\uCE58"
   m_TagString: Player
@@ -2847,6 +2902,7 @@ MonoBehaviour:
   status: {fileID: 840437892}
   animator: {fileID: 85610188}
   attack: {fileID: 462954576}
+  skill: {fileID: 840437898}
   isAction: 0
   spriteRenderer: {fileID: 85610185}
 --- !u!4 &840437889
@@ -2959,6 +3015,23 @@ MonoBehaviour:
   iGC: {fileID: 840437888}
   harvestAniamtionBool: Harvest
   inventory: {fileID: 1126179526}
+--- !u!114 &840437898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840437887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5685d7715d6044ca7cdd1b903ecc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillTable: {fileID: 11400000, guid: 67ca76fcc1156af47878c803fc1b6b3c, type: 2}
+  skillObjectTable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
+  inGameChar: {fileID: 840437888}
+  skillPrefab: {fileID: 0}
+  poolingParent: {fileID: 716710872}
 --- !u!1 &856251308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,7 +3168,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856710624
 GameObject:
@@ -3587,7 +3660,7 @@ Transform:
   m_Children:
   - {fileID: 1443237160}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &937605479
 GameObject:
@@ -3784,6 +3857,10 @@ MonoBehaviour:
   connectList: []
   spriteFull: 
   spriteDead: 
+  amount: 0
+  hp: 0
+  maxHp: 0
+  amountMax: 0
   mainImage: {fileID: 1060746569}
   IsDestory: 0
   sprites: []
@@ -3993,7 +4070,7 @@ Transform:
   - {fileID: 543413161}
   - {fileID: 191676088}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1126179530
 BoxCollider2D:
@@ -4147,7 +4224,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1312289484
 GameObject:
@@ -4658,7 +4735,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1406213323
 MonoBehaviour:
@@ -5171,7 +5248,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562447204
 GameObject:
@@ -5490,6 +5567,7 @@ GameObject:
   - component: {fileID: 1597234669}
   - component: {fileID: 1597234671}
   - component: {fileID: 1597234672}
+  - component: {fileID: 1597234673}
   m_Layer: 6
   m_Name: "\uCE90\uB9AD\uD1301\uBC30\uCE58 (2)"
   m_TagString: Player
@@ -5514,6 +5592,7 @@ MonoBehaviour:
   status: {fileID: 1597234667}
   animator: {fileID: 370557810}
   attack: {fileID: 1349462492}
+  skill: {fileID: 1597234673}
   isAction: 0
   spriteRenderer: {fileID: 370557807}
 --- !u!4 &1597234664
@@ -5626,6 +5705,23 @@ MonoBehaviour:
   iGC: {fileID: 1597234663}
   harvestAniamtionBool: Harvest
   inventory: {fileID: 1126179526}
+--- !u!114 &1597234673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597234662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5685d7715d6044ca7cdd1b903ecc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillTable: {fileID: 11400000, guid: 67ca76fcc1156af47878c803fc1b6b3c, type: 2}
+  skillObjectTable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
+  inGameChar: {fileID: 1597234663}
+  skillPrefab: {fileID: 0}
+  poolingParent: {fileID: 716710872}
 --- !u!1 &1623472866
 GameObject:
   m_ObjectHideFlags: 0
@@ -6419,6 +6515,10 @@ MonoBehaviour:
   connectList: []
   spriteFull: 
   spriteDead: 
+  amount: 0
+  hp: 0
+  maxHp: 0
+  amountMax: 0
   mainImage: {fileID: 2094489851}
   IsDestory: 0
   sprites: []
@@ -6828,7 +6928,7 @@ Transform:
   - {fileID: 703468458}
   - {fileID: 1597234664}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2107204259
 GameObject:

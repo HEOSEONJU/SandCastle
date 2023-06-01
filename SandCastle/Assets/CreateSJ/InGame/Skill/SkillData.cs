@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using SkillEnums;
-public class SkillData : MonoBehaviour
+using System;
+using Google.GData.Extensions;
+
+public class SkillData
 {
     string skillObjectKey;
     SkillSpwan spwan;
@@ -11,7 +14,7 @@ public class SkillData : MonoBehaviour
     int repeat;
     int repeatInterval;
 
-    int targetType;
+
     bool targetAmount;//리피트할때마다 true면 재계산
     SkillTiming applyDamageTiming;
     float damage;
@@ -23,4 +26,100 @@ public class SkillData : MonoBehaviour
     float duration;
     float speed;
     int isPiercing;
+
+
+    public string SkillObjectKey
+    {
+        get { return skillObjectKey; }
+    }
+
+
+    public void InitData(string key, ObjectTable skillTable)
+    {
+        skillObjectKey = skillTable.FindString(key, "skillObjectKey");
+        switch (skillTable.FindString(key, "spawnType"))
+        {
+            case "Player":
+                spwan = SkillSpwan.Player;
+                break;
+            case "Target":
+                spwan = SkillSpwan.Target;
+                break;
+            case "Position":
+                spwan = SkillSpwan.Position;
+                break;
+        }
+        repeat = skillTable.FindInt(key, "repeat");
+        repeatInterval = skillTable.FindInt(key, "repeatInterval");
+
+
+
+        switch (skillTable.FindString(key, "targetType"))
+        {
+            case "Near":
+                target = SkillTarget.Near;
+                break;
+            case "Random":
+                target = SkillTarget.Random;
+                break;
+            case "Far":
+                target = SkillTarget.Far;
+                break;
+        }
+        if (skillTable.FindString(key, "targetAmount") == "TRUE")
+        {
+            targetAmount = true;
+        }
+        else
+        {
+            targetAmount = false;
+        }
+        switch (skillTable.FindString(key, "applyDamageTiming"))
+        {
+            case "Enter":
+                applyDamageTiming = SkillTiming.Enter;
+                break;
+            case "Stay":
+                applyDamageTiming = SkillTiming.Stay;
+                break;
+            case "Exit":
+                applyDamageTiming = SkillTiming.Exit;
+                break;
+        }
+
+        switch (skillTable.FindString(key, "chainTiming"))
+        {
+            case "Enter":
+                chainTiming = SkillTiming.Enter;
+                break;
+            case "Stay":
+                chainTiming = SkillTiming.Stay;
+                break;
+            case "Exit":
+                chainTiming = SkillTiming.Exit;
+                break;
+        }
+
+        damage = skillTable.Findfloat(key, "damage");
+        damageTime = skillTable.Findfloat(key, "damageTime");
+        AbnormalKey = skillTable.FindString(key, "AbnormalKey");
+        chainSkillKey = skillTable.FindString(key, "chainSkillKey");
+
+
+
+        duration = skillTable.Findfloat(key, "duration");
+        speed = skillTable.Findfloat(key, "speed");
+        
+        isPiercing = skillTable.FindInt(key, "isPiercing");
+
+
+
+
+    }
+    public SkillData Clone()
+    {
+        return this;
+    }
 }
+    
+

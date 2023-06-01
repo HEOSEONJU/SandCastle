@@ -16,7 +16,8 @@ namespace InGame
         Animator animator;
         [SerializeField]
         InGameAttack attack;
-
+        [SerializeField]
+        InGameSkill skill;
         [SerializeField]
         bool isAction;
 
@@ -66,7 +67,15 @@ namespace InGame
         private void Start()
         {
             StartRegneMana();
-
+            if(skill==null)
+            {
+                Debug.Log("스킬없음");
+            }
+            else
+            {
+                skill.Init();
+            }
+            
 
 
         }
@@ -92,6 +101,7 @@ namespace InGame
                     StopCoroutine(RegenManaCoroutine);
                     RegenManaCoroutine = null;
                     Animator.CrossFade("CharSkill", 0.01f);
+                    skill.ActiveSkill();
                 }
                 
             }

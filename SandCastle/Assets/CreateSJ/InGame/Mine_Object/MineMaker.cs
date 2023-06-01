@@ -23,14 +23,14 @@ public class MineMaker : MonoBehaviour
         {
             
 
-            string type = MineTable.FindData(mine.name, "resourceType");
-            
-            int amount = Convert.ToInt32 (MineTable.FindData(mine.name, "amount"));
-            
-            float maxhp = float.Parse(MineTable.FindData(mine.name, "maxHP"));
-            int amountmax = Convert.ToInt32(MineTable.FindData(mine.name, "amountMax"));
-            string imagefull= MineTable.FindData(mine.name, "imageFull");
-            string imagedead= MineTable.FindData(mine.name, "imageDead");
+            string type = MineTable.FindString(mine.name, "resourceType");
+            MineTable.FindInt(mine.name, "amount");
+            int amount = MineTable.FindInt(mine.name, "amount");
+
+            float maxhp = MineTable.Findfloat(mine.name, "maxHP");
+            int amountmax = MineTable.FindInt(mine.name, "amountMax");
+            string imagefull= MineTable.FindString(mine.name, "imageFull");
+            string imagedead= MineTable.FindString(mine.name, "imageDead");
             mine.Init_Object(type, amount, maxhp, amountmax, imagefull, imagedead);
         }
 

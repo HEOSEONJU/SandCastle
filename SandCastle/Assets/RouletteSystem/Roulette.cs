@@ -56,7 +56,7 @@ namespace Roulette
 
         public void Load()
         {
-            string type = shopTable.FindData(findid, "priceType");
+            string type = shopTable.FindString(findid, "priceType");
             if (type is null) return;
 
             
@@ -73,11 +73,11 @@ namespace Roulette
                     
             }
 
-            cost = int.Parse(shopTable.FindData(findid, "price") );
+            cost = shopTable.FindInt(findid, "price");
 
-            order = int.Parse(shopTable.FindData(findid, "order"));
+            order = shopTable.FindInt(findid, "order");
             
-            if (shopTable.FindData(findid, "giveReward").Last().Equals('1'))
+            if (shopTable.FindString(findid, "giveReward").Last().Equals('1'))
             {
                 ActionCount = 1;
             }

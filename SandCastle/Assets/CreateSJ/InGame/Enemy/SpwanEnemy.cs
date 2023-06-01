@@ -33,23 +33,23 @@ namespace Enemy
             waveManager = wavemanager;
             nextPoint = nextpoint;
             prefab = Resources.Load<GameObject>("Prefab/Enemy/" + enemykey);
-            string enemytablekey = enemyResourceTable.FindData(enemykey, "enemyKey");
-            string category = enemyTable.FindData(enemytablekey, "category");
-            string type = enemyTable.FindData(enemytablekey, "type");
-            float movespeed = float.Parse(enemyTable.FindData(enemytablekey, "moveSpeed"));
-            float hp = float.Parse(enemyTable.FindData(enemytablekey, "hp"));
-            float attackspeed = float.Parse(enemyTable.FindData(enemytablekey, "attackSpeed"));
-            float attackrange = float.Parse(enemyTable.FindData(enemytablekey, "attackRange"));
-            string resistancetypetemp = enemyTable.FindData(enemytablekey, "resistanceType");
+            string enemytablekey = enemyResourceTable.FindString(enemykey, "enemyKey");
+            string category = enemyTable.FindString(enemytablekey, "category");
+            string type = enemyTable.FindString(enemytablekey, "type");
+            float movespeed = enemyTable.Findfloat(enemytablekey, "moveSpeed");
+            float hp = enemyTable.Findfloat(enemytablekey, "hp");
+            float attackspeed = enemyTable.Findfloat(enemytablekey, "attackSpeed");
+            float attackrange = enemyTable.Findfloat(enemytablekey, "attackRange");
+            string resistancetypetemp = enemyTable.FindString(enemytablekey, "resistanceType");
 
             string[] resistancetype=null;
             if(resistancetypetemp!=null)
             {
-                resistancetype = enemyTable.FindData(enemytablekey, "resistanceType").Split(",");
+                resistancetype = enemyTable.FindString(enemytablekey, "resistanceType").Split(",");
             
             }
             float resistancevalue = 0;
-            string resistanceValueTemp = enemyTable.FindData(enemytablekey, "resistanceValue");
+            string resistanceValueTemp = enemyTable.FindString(enemytablekey, "resistanceValue");
             if (resistanceValueTemp != "")
             {
                 resistancevalue = float.Parse(resistanceValueTemp);

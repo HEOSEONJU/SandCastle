@@ -65,7 +65,7 @@ namespace Roulette
             for(int i=1;i< rateTable.ViewTableList.Count;i++)
             {
                 SerializableDictionary<string, string> ht = rateTable.ViewTableList[i];
-                int C =  (int)char.GetNumericValue(rateTable.FindData(ht[rateTable.startINDEX_A1], colum). Last());
+                int C =  (int)char.GetNumericValue(rateTable.FindString(ht[rateTable.startINDEX_A1], colum). Last());
                 
                 gacha[C].Add(ht);
 

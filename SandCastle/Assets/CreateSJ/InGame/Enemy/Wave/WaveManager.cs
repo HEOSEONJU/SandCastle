@@ -26,10 +26,10 @@ public class WaveManager : MonoBehaviour
     {
 
         
-        float hpmultiply = float.Parse(waveTable.FindData("Wave000000", "hpMultiply"));
-        string giverewardtype = waveTable.FindData("Wave000000", "giveRewardType");
-        int rewardamount = Convert.ToInt32(waveTable.FindData("Wave000000", "rewardAmount"));
-        int skillpointprobability = Convert.ToInt32(waveTable.FindData("Wave000000", "skillPointProbability"));
+        float hpmultiply = waveTable.Findfloat("Wave000000", "hpMultiply");
+        string giverewardtype = waveTable.FindString("Wave000000", "giveRewardType");
+        int rewardamount = waveTable.FindInt("Wave000000", "rewardAmount");
+        int skillpointprobability = waveTable.FindInt("Wave000000", "skillPointProbability");
 
 
 
@@ -37,13 +37,13 @@ public class WaveManager : MonoBehaviour
 
         patrolSetting.Init();
         currentWaveCount = 0;
-        string waveGroup=waveTable.FindData("Wave000000", "waveGroup");
+        string waveGroup=waveTable.FindString("Wave000000", "waveGroup");
         string[] WaveList = waveGroup.Split(',');
         spwanList=new List<SpwanEnemy>();
         foreach (string wavespawnkey in WaveList)
         {
-            string enemyname = waveSpwanTable.FindData(wavespawnkey, "enemyKey");
-            int summoncount = Convert.ToInt32(waveSpwanTable.FindData(wavespawnkey, "count"));
+            string enemyname = waveSpwanTable.FindString(wavespawnkey, "enemyKey");
+            int summoncount = waveSpwanTable.FindInt(wavespawnkey, "count");
             
 
             Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
