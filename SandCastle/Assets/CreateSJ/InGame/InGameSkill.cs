@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using SkillEnums;
 using inGame;
+using Unity.VisualScripting;
+using System;
+using UnityEditor.PackageManager;
+using System.Linq;
 
 namespace InGame
 {
@@ -14,10 +18,14 @@ namespace InGame
         ObjectTable skillObjectTable;
         [SerializeField]
         InGame_Char inGameChar;
+        [SerializeField]
+        InGameSkillSensor inGameSkillSensor;
 
         SkillData skillData;
         [SerializeField]
-        GameObject skillPrefab;
+        SkillObject skillPrefab;
+
+        public Transform target;
 
         [SerializeField]
         Transform poolingParent;
@@ -30,22 +38,61 @@ namespace InGame
             
             
             
-            skillPrefab = Resources.Load<GameObject>("Prefab/SkillPrefab/" + skillData.SkillObjectKey);
+            Resources.Load<GameObject>("Prefab/SkillPrefab/" + skillData.SkillObjectKey).TryGetComponent<SkillObject>(out skillPrefab);
             
 
 
             //ActiveSkill();
         }
 
+        public void SettingTarget()
+        {
+            
+            switch (skillData.Target)
+            {
+                case SkillTarget.Near:
+                    inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position));
+                    target = inGameSkillSensor.GameObjects.First().transform;
+
+                    break;
+                case SkillTarget.Random:
+                    target = inGameSkillSensor.GameObjects[UnityEngine.Random.Range(0, inGameSkillSensor.GameObjects.Count)].transform;
+
+                    break;
+                case SkillTarget.Far:
+                    target = inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position)).Last().transform;
+
+                    break;
+            }
+        }
 
 
         public void ActiveSkill()
         {
+            if(target== null)
+            {
+                return;
+            }
 
-            var e = ObjectPooling.GetObject(skillPrefab, poolingParent);//.TryGetComponent<Abstract_Bullet>(out Abstract_Bullet bulletobject);
+            var e = ObjectPooling.GetObject(skillPrefab.gameObject, poolingParent);//.TryGetComponent<Abstract_Bullet>(out Abstract_Bullet bulletobject);
 
             e.GetComponent<SkillObject>().Init(skillData);
+            
+            
+            
+            switch (skillData.Spwan)
+            {
+                case SkillSpwan.Player:
+                    e.GetComponent<SkillObject>().Active(transform,target);
+                    break;
+                case SkillSpwan.Target:
+                    e.GetComponent<SkillObject>().Active(target, target);
+                    break;
+                case SkillSpwan.Position:
 
+                    break;
+            }
+            //e.GetComponent<SkillObject>().Active()
             /*
             if (bulletobject is null)
             {

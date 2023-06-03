@@ -96,10 +96,13 @@ public class ObjectTable : ScriptableObject
             return null;
         }
         var temp = ViewTableList.Find(x => x[startINDEX_A1].ToString() == Key);
-        
+        if(temp ==null)
+        {
+            return "";
+        }
         if(temp.ContainsKey(colum))
         {
-            Debug.Log(temp[colum].ToString());
+            //Debug.Log(temp[colum].ToString());
             return temp[colum].ToString();
             
         }
@@ -117,7 +120,7 @@ public class ObjectTable : ScriptableObject
 
         if (temp.ContainsKey(colum))
         {
-            Debug.Log(temp[colum].ToString());
+            //Debug.Log(temp[colum].ToString());
             return  float.Parse( temp[colum].ToString());
 
         }
@@ -134,7 +137,7 @@ public class ObjectTable : ScriptableObject
 
         if (temp.ContainsKey(colum))
         {
-            Debug.Log(temp[colum].ToString());
+            //Debug.Log(temp[colum].ToString());
             return Convert.ToInt32((temp[colum].ToString()));
 
         }

@@ -23,6 +23,10 @@ namespace InGame
             harvest.TargetHarvest();
             
         }
+        public void SkillEvent()
+        {
+            inGameChar.InGameSkill.ActiveSkill();
+        }
         public void SkillEventend()
         {
             

@@ -1,28 +1,26 @@
 using Enemy;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
+
+
 namespace InGame
 {
-    public class InGameEnemySearch : MonoBehaviour
+    public class TowerSearch : MonoBehaviour
     {
         [SerializeField]
         List<Enemy_Manager> target;
-        [SerializeField]
-        float searchRange;
+        
 
-        [SerializeField]
-        CircleCollider2D collider2d;
+        
         public List<Enemy_Manager> Target { get { return target; } }
 
-        InGameAttack inGameAttack;
+        
 
         private void OnEnable()
         {
             target = new List<Enemy_Manager>();
-            collider2d.radius=searchRange;
-            TryGetComponent<InGameAttack>(out inGameAttack);
+            
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -55,10 +53,7 @@ namespace InGame
                     }
 
                 }
-                if(Target.Count==0)
-                {
-                    inGameAttack.ResetAngle();
-                }
+
             }
         }
 

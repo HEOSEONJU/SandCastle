@@ -6,25 +6,32 @@ using SkillEnums;
 using System;
 using Google.GData.Extensions;
 
+[System.Serializable]
 public class SkillData
 {
+    [SerializeField]
     string skillObjectKey;
+    [SerializeField]
     SkillSpwan spwan;
+    [SerializeField]
     SkillTarget target;
     int repeat;
     int repeatInterval;
 
 
     bool targetAmount;//리피트할때마다 true면 재계산
+    [SerializeField]
     SkillTiming applyDamageTiming;
     float damage;
     float damageTime;
     string AbnormalKey;
     string chainSkillKey;
+    [SerializeField]
     SkillTiming chainTiming;
-
+    [SerializeField]
     float duration;
     float speed;
+    [SerializeField]
     int isPiercing;
 
 
@@ -32,7 +39,35 @@ public class SkillData
     {
         get { return skillObjectKey; }
     }
-
+    public SkillTiming ApplyDamageTiming
+    {
+        get { return applyDamageTiming; }
+    }
+    public float Speed
+    {
+        get { return speed; }
+    }
+    public float Duration
+    {
+        get { return duration; }
+    }
+    public SkillSpwan Spwan
+    {
+        get { return spwan; }
+    }
+    public SkillTarget Target
+    {
+        get { return target; }
+    }
+    public int IsPiercing
+    {
+        get { return isPiercing; }
+        set { isPiercing = value; }
+    }
+    public float Damage
+    {
+        get { return damage; }
+    }
 
     public void InitData(string key, ObjectTable skillTable)
     {
@@ -66,6 +101,7 @@ public class SkillData
                 target = SkillTarget.Far;
                 break;
         }
+        
         if (skillTable.FindString(key, "targetAmount") == "TRUE")
         {
             targetAmount = true;
@@ -118,7 +154,7 @@ public class SkillData
     }
     public SkillData Clone()
     {
-        return this;
+        return (this.MemberwiseClone() as SkillData);
     }
 }
     

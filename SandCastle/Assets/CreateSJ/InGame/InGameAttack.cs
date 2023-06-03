@@ -19,13 +19,18 @@ namespace InGame
         [SerializeField]
         int value=-180;//
 
+        [SerializeField]
+        Animator animatorWeapon;
+        [SerializeField]
+        Animator particleWeapon;
         private void Update()
         {
             if (inGameEnemySearch.Target.Count != 0)
             {
-                float angle = Mathf.Atan2(inGameEnemySearch.Target[0].transform.position.y, inGameEnemySearch.Target[0].transform.position.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.Rotate(new Vector3(0, 0, value));
+                Vector2 T = new Vector2(transform.position.x - inGameEnemySearch.Target[0].transform.position.x, transform.position.y - inGameEnemySearch.Target[0].transform.position.y);
+                float angle = Mathf.Atan2(T.y,T.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle+value, Vector3.forward);
+                
             }
             
         }
@@ -47,13 +52,16 @@ namespace InGame
             {
                 return;
             }
-            Vector3 direction = inGameEnemySearch.Target[0].transform.position - transform.position;
-            abstractAttack.Attack(inGameEnemySearch.Target, direction);
-
+            animatorWeapon.SetTrigger("Fire");
+            particleWeapon.SetTrigger("Fire");
 
         }
 
-
+        public void EvnetAttack()
+        {
+            //Vector3 direction = inGameEnemySearch.Target[0].transform.position - transform.position;
+            abstractAttack.Attack(inGameEnemySearch.Target, -transform.right);
+        }
 
 
 

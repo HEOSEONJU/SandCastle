@@ -19,6 +19,8 @@ namespace InGame
         [SerializeField]
         InGameSkill skill;
         [SerializeField]
+        InGameSkillSensor sensor;
+        [SerializeField]
         bool isAction;
 
         [SerializeField]
@@ -49,8 +51,12 @@ namespace InGame
         {
             get{ return status; }
         }
+        public InGameSkill InGameSkill
+        {
+            get { return skill; }
+        }
 
-        
+
         public SpriteRenderer SpriteRenderer
         {
             get { return spriteRenderer; }
@@ -73,6 +79,7 @@ namespace InGame
             }
             else
             {
+                Debug.Log("스킬있음");
                 skill.Init();
             }
             
@@ -95,13 +102,14 @@ namespace InGame
             {
                 yield return new WaitForSeconds(1);
                 status.CurrentMana += 1;
-                if (status.CanSkill)
+                if (status.CanSkill && sensor.GameObjects.Count>0)
                 {
                     status.CurrentMana = 0;
                     StopCoroutine(RegenManaCoroutine);
                     RegenManaCoroutine = null;
                     Animator.CrossFade("CharSkill", 0.01f);
-                    skill.ActiveSkill();
+                    skill.SettingTarget();
+                    //skill.ActiveSkill();
                 }
                 
             }

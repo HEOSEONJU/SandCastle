@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 870
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313cb8b1f75a2364ba3ab640d128f155
+      internalID: -1351187846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 870
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1799ee70f55f7419ce8c71a0b3567d
+      internalID: -966105162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_2
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 870
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59ab41a7b2e5c547b7645db8d265665
+      internalID: -2128339824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 580
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a17c776928694438a9f26968709805
+      internalID: -1905822969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_4
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 580
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f486156b2efb534baaf1944389e039e
+      internalID: -1310814542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_5
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 580
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9991f55cde232db47a4f7518dd31aff0
+      internalID: -1524634818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3be40bd34146e489aed472dc3ac77f
+      internalID: 1691986423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_7
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 290
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf790643ba11614f85f00ee4425f80f
+      internalID: -1117360708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_8
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 290
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdeb281016d7aa4eb68235efc67ba4f
+      internalID: 1111101905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 330
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd493642a7e3d2842815346eb2d53f33
+      internalID: -1306458358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +348,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Weapon02_Pirate_Watergun_attack_0: -1351187846
+      Weapon02_Pirate_Watergun_attack_1: -966105162
+      Weapon02_Pirate_Watergun_attack_2: -2128339824
+      Weapon02_Pirate_Watergun_attack_3: -1905822969
+      Weapon02_Pirate_Watergun_attack_4: -1310814542
+      Weapon02_Pirate_Watergun_attack_5: -1524634818
+      Weapon02_Pirate_Watergun_attack_6: 1691986423
+      Weapon02_Pirate_Watergun_attack_7: -1117360708
+      Weapon02_Pirate_Watergun_attack_8: 1111101905
+      Weapon02_Pirate_Watergun_attack_9: -1306458358
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

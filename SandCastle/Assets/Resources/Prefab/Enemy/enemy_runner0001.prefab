@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1719390626475313076}
   m_Layer: 0
   m_Name: "\uD328\uD2B8\uB864\uCF5C\uB77C\uC774\uB354"
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   enemymanager: {fileID: 1615358515289129747}
   targetVector: {x: 0, y: 0, z: 0}
   moveSpeed: 1
+  active: 0
 --- !u!114 &1615358515289129745
 MonoBehaviour:
   m_ObjectHideFlags: 0

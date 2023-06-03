@@ -13,26 +13,74 @@ MonoBehaviour:
   m_Name: SkillObjectTable
   m_EditorClassIdentifier: 
   associatedWorksheet: SkillObject
+  ViewTableList:
+  - keys:
+    - DB_FIELD_NAMES
+    - objectType
+    - pattern
+    - onMissTarget
+    - hitBoxShape
+    - hitBoxSize
+    values:
+    - DB_FIELD_NAMES
+    - objectType
+    - pattern
+    - onMissTarget
+    - hitBoxShape
+    - hitBoxSize
+  - keys:
+    - DB_FIELD_NAMES
+    - objectType
+    - pattern
+    - onMissTarget
+    - hitBoxShape
+    - hitBoxSize
+    values:
+    - Skillobject00001
+    - Projectile
+    - Straight
+    - TRUE
+    - Square
+    - 1,1
+  - keys:
+    - DB_FIELD_NAMES
+    - objectType
+    - pattern
+    - hitBoxShape
+    - hitBoxSize
+    values:
+    - Skillobject00002
+    - Area
+    - Bounce
+    - Circle
+    - 1
+  - keys:
+    - DB_FIELD_NAMES
+    - pattern
+    values:
+    - Skillobject00003
+    - Wave
+  - keys:
+    - DB_FIELD_NAMES
+    - pattern
+    values:
+    - Skillobject00004
+    - Spin
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
   values:
   - DB_FIELD_NAMES
-  - shop_gacha1_ads
-  - shop_gacha1_jewel1
-  - shop_gacha1_jewel10
-  - shop_gacha2_ads
-  - shop_gacha2_jewel1
-  - shop_gacha2_jewel10
-  - shop_gacha3_ads
-  - shop_gacha3_jewel1
-  - shop_gacha3_jewel10
-  hashKeyList:
+  - Skillobject00001
+  - Skillobject00002
+  - Skillobject00003
+  - Skillobject00004
+  dictKeyList:
   - DB_FIELD_NAMES
-  - tab
-  - order
-  - giveReward
-  - priceType
-  - price
-  listCount: 10
+  - objectType
+  - pattern
+  - onMissTarget
+  - hitBoxShape
+  - hitBoxSize
+  listCount: 5
