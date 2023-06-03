@@ -1654,7 +1654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  searchRange: 15
   collider2d: {fileID: 462954575}
 --- !u!58 &462954575
 CircleCollider2D:
@@ -2774,6 +2773,7 @@ MonoBehaviour:
   tree: 
   water: 
   localKeyName: 
+  search: {fileID: 1483090563}
 --- !u!114 &703468462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,6 +3248,7 @@ MonoBehaviour:
   tree: 
   water: 
   localKeyName: 
+  search: {fileID: 462954574}
 --- !u!114 &840437893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4459,7 +4460,7 @@ MonoBehaviour:
   inputJoystick: {fileID: 475812344}
   rigid: {fileID: 1126179528}
   cameraMove: {fileID: 1249484415}
-  speed: 1
+  speed: 10
 --- !u!50 &1126179528
 Rigidbody2D:
   serializedVersion: 4
@@ -5192,7 +5193,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  searchRange: 15
   collider2d: {fileID: 1349462491}
 --- !u!58 &1349462491
 CircleCollider2D:
@@ -5873,7 +5873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  searchRange: 15
   collider2d: {fileID: 1483090564}
 --- !u!58 &1483090564
 CircleCollider2D:
@@ -6493,6 +6492,7 @@ MonoBehaviour:
   tree: 
   water: 
   localKeyName: 
+  search: {fileID: 1349462490}
 --- !u!114 &1597234668
 MonoBehaviour:
   m_ObjectHideFlags: 0

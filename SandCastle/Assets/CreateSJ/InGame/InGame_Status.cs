@@ -39,7 +39,8 @@ namespace InGame
         string localKeyName;
 
 
-
+        [SerializeField]
+        InGameEnemySearch search;
 
 
 
@@ -94,6 +95,13 @@ namespace InGame
             currentMana = startmana;
             maxMana = maxmana;
             currenthp = maxHp = maxhp;
+            if(range==0)
+            {
+                search.Collider2d.enabled= false;
+            }
+            else
+
+            search.Collider2d.radius = range;
 
         }
     }

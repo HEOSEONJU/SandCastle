@@ -153,7 +153,7 @@ namespace Roulette
                     //Debug.Log(appaer + "«ˆ¿ÁµÓ¿Â∞™");
                     if (appaer>=random)
                     {
-                        Debug.Log(ht["giveNum"].ToString()+"»πµÊ¿Ã∏ß");
+                        Debug.Log(ht["key"] +ht["group"] +ht["giveNum"].ToString()+"»πµÊ¿Ã∏ß");
                         break;
                     }
                 }

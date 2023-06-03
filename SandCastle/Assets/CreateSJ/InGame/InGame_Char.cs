@@ -20,6 +20,7 @@ namespace InGame
         InGameSkill skill;
         [SerializeField]
         InGameSkillSensor sensor;
+        
         [SerializeField]
         bool isAction;
 
@@ -73,15 +74,9 @@ namespace InGame
         private void Start()
         {
             StartRegneMana();
-            if(skill==null)
-            {
-                Debug.Log("스킬없음");
-            }
-            else
-            {
-                Debug.Log("스킬있음");
+            
                 skill.Init();
-            }
+            
             
 
 

@@ -12,7 +12,7 @@ namespace InGame
         Transform defaultPosition;
         [SerializeField]
         float value=0.1f;
-        public void MoveChar(Animator animator,Vector2 inputvector)
+        public void MoveChar(Animator animator,Vector2 inputvector,float speed)
         {
             if (Vector3.Distance(transform.position, defaultPosition.position) >= value)
             {
@@ -20,8 +20,9 @@ namespace InGame
                 animator.SetFloat("Amount", MathF.Abs(direction.x) + MathF.Abs(direction.y));
                 animator.SetFloat("Amount_X", direction.x);
                 animator.SetFloat("Amount_Y", direction.y);
+                float step = Time.deltaTime * speed;
 
-                transform.position = Vector3.MoveTowards(transform.position, defaultPosition.position, Time.deltaTime * 1f);
+                transform.position = Vector3.MoveTowards(transform.position, defaultPosition.position, step);
                 
             }
             

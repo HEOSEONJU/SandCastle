@@ -35,26 +35,28 @@ namespace inGame
             foreach (InGame_Char IGC in inGameCharList)
             {
                 
-                float movespeed = float.Parse(CharTable.FindString(IGC.CharName, "moveSpeed"));
-                float animationSpeed = float.Parse(CharTable.FindString(IGC.CharName, "animationSpeed"));
-                float giveDamage = float.Parse(CharTable.FindString(IGC.CharName, "giveDamage"));
-                float sandGet = float.Parse(CharTable.FindString(IGC.CharName, "sandGet"));
-                float waterGet = float.Parse(CharTable.FindString(IGC.CharName, "waterGet"));
-                float mudGet = float.Parse(CharTable.FindString(IGC.CharName, "mudGet"));
+                float movespeed = CharTable.Findfloat(IGC.CharName, "moveSpeed");
+                float animationSpeed = CharTable.Findfloat(IGC.CharName, "animationSpeed");
+                
+                float giveDamage = CharTable.Findfloat(IGC.CharName, "giveDamage");
+                float sandGet = CharTable.Findfloat(IGC.CharName, "sandGet");
+                float waterGet = CharTable.Findfloat(IGC.CharName, "waterGet");
+                float mudGet = CharTable.Findfloat(IGC.CharName, "mudGet");
                 string localKeyName = CharTable.FindString(IGC.CharName, "localKeyName");
                 
-                float range = float.Parse(CharTable.FindString(IGC.CharName, "range"));
-                float moveSpeedLV = float.Parse(CharTable.FindString(IGC.CharName, "moveSpeedLV"));
-                float animationSpeedLV = float.Parse(CharTable.FindString(IGC.CharName, "animationSpeedLV"));
-                float giveDamageLV = float.Parse(CharTable.FindString(IGC.CharName, "giveDamageLV"));
-                float sandGetLV = float.Parse(CharTable.FindString(IGC.CharName, "sandGetLV"));
-                float waterGetLV = float.Parse(CharTable.FindString(IGC.CharName, "waterGetLV"));
-                float mudGetLV = float.Parse(CharTable.FindString(IGC.CharName, "mudGetLV"));
-                int maxMana = Convert.ToInt32 (CharTable.FindString(IGC.CharName, "maxMana"));
-                int startMana = Convert.ToInt32(CharTable.FindString(IGC.CharName, "startMana"));
-                int maxhp = Convert.ToInt32(CharTable.FindString(IGC.CharName, "maxHP"));
+                float range = CharTable.Findfloat(IGC.CharName, "range");
+                float moveSpeedLV = CharTable.Findfloat(IGC.CharName, "moveSpeedLV");
+                float animationSpeedLV = CharTable.Findfloat(IGC.CharName, "animationSpeedLV");
+                float giveDamageLV = CharTable.Findfloat(IGC.CharName, "giveDamageLV");
+                float sandGetLV = CharTable.Findfloat(IGC.CharName, "sandGetLV");
+                float waterGetLV = CharTable.Findfloat(IGC.CharName, "waterGetLV");
+                float mudGetLV = CharTable.Findfloat(IGC.CharName, "mudGetLV");
+                int maxMana = CharTable.FindInt(IGC.CharName, "maxMana");
+                int startMana = CharTable.FindInt(IGC.CharName, "startMana");
+                int maxhp = CharTable.FindInt(IGC.CharName, "maxHP");
 
 
+                Debug.Log(movespeed);
                 IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana,maxhp);
 
             }
@@ -73,7 +75,7 @@ namespace inGame
 
                     if (IGC.Animator.GetBool("IsAction") is false)
                     {
-                        IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector);
+                        IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector,IGC.InGameStatus.MoveSpeed);
                         IGC.InGameAttack.PlayAttack();
 
                         if (angle > 0)

@@ -9,19 +9,21 @@ namespace InGame
     {
         [SerializeField]
         List<Enemy_Manager> target;
-        [SerializeField]
-        float searchRange;
+        
 
         [SerializeField]
         CircleCollider2D collider2d;
         public List<Enemy_Manager> Target { get { return target; } }
-
+        public CircleCollider2D Collider2d
+        {
+            get { return collider2d; }
+        }
         InGameAttack inGameAttack;
 
         private void OnEnable()
         {
             target = new List<Enemy_Manager>();
-            collider2d.radius=searchRange;
+            
             TryGetComponent<InGameAttack>(out inGameAttack);
         }
 
