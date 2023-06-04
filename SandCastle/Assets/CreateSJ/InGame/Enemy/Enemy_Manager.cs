@@ -20,11 +20,7 @@ namespace Enemy
             get { return enemyStatus; }
         }
 
-        public void Reseting(float speed,float hp)
-        {
-            enemyMove.MoveSpeed = speed;
-            enemyStatus.Hp = hp;
-        }
+        
 
         public void StartMove(Transform point)
         {

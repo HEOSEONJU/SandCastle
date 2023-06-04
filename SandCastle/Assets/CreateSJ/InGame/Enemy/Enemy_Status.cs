@@ -29,6 +29,10 @@ public class Enemy_Status : MonoBehaviour
 
     }
 
+    public float MoveSpeed
+    {
+        get { return this.moveSpeed; }
+    }
 
     public float Hp
     {

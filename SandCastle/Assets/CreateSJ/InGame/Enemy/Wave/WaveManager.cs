@@ -21,7 +21,9 @@ public class WaveManager : MonoBehaviour
     List<SpwanEnemy> spwanList;
     [SerializeField]
     GameObject spwanObject;
-    
+
+    IEnumerator WaveCorountine;
+
     private void Start()
     {
 
@@ -55,12 +57,12 @@ public class WaveManager : MonoBehaviour
 
         }
         spwanList[currentWaveCount++].Active();
-
+        WaveCorountine = WaitWaveTime();
 
     }
     public void PlayNextWave()
     {
-        StartCoroutine(WaitWaveTime());
+        StartCoroutine(WaveCorountine);
         
 
     }

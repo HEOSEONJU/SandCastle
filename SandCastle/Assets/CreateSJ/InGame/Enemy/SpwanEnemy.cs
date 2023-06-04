@@ -2,6 +2,7 @@ using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using UnityEngine;
 
 namespace Enemy
@@ -26,6 +27,8 @@ namespace Enemy
 
         [SerializeField]
         Transform nextPoint;
+
+        List<Enemy_Manager> GOList;
         public void Init(string enemykey, int count, WaveManager wavemanager, Transform nextpoint, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability)
         {
 
@@ -57,6 +60,7 @@ namespace Enemy
              
             Enemy_Manager e = prefab.GetComponent<Enemy_Manager>();
             e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
+            
         }
 
         public void Active()
@@ -66,7 +70,7 @@ namespace Enemy
 
         public void Complete()
         {
-            waveManager.PlayNextWave();
+            
         }
 
         IEnumerator Spwan()
@@ -85,7 +89,24 @@ namespace Enemy
                 }
                 yield return new WaitForSeconds(1f);
             }
-            Complete();
+            GOList = transform.GetComponentsInChildren<Enemy_Manager>().ToList();
+            Debug.Log(GOList.Count);
+            StartCoroutine(WaveComplete());
+            
+        }
+        
+        IEnumerator WaveComplete()
+        {
+
+            
+            while (GOList.FindIndex(x => x.gameObject.activeSelf == true) >=0)
+            {
+                
+                yield return null;
+
+            }
+            Debug.Log("모든웨이브처치완료");
+            waveManager.PlayNextWave();
         }
 
     }

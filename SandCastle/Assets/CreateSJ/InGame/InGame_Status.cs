@@ -5,7 +5,9 @@ namespace InGame
     public class InGame_Status : MonoBehaviour
     {
         [Header("Status")]
+        [SerializeField]
         int currenthp;
+        [SerializeField]
         int maxHp;
 
         [SerializeField]
