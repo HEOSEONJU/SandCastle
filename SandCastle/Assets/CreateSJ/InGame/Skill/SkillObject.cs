@@ -24,8 +24,7 @@ public class SkillObject : MonoBehaviour
     SkillPattern pattern;
     [SerializeField]
     bool onMissTarget;
-    [SerializeField]
-    Collider2D skillcollider;
+    
 
     IEnumerator moveCoroutine;
     IEnumerator destoryCorountine;
@@ -69,33 +68,23 @@ public class SkillObject : MonoBehaviour
         {
             onMissTarget = false;
         }
-        string[] sizelist = skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxSize").Split(",");
-        StringBuilder temp = new StringBuilder();
         
+
+        string[] sizelist = skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxSize").Split(",");
+
+
+        Collider2D skillcollider;
         switch (skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxShape"))
         {
             case "Square":
-                skillcollider = transform.AddComponent<BoxCollider2D>();
+                skillcollider = transform.GetComponent<BoxCollider2D>();
                 skillcollider.isTrigger = true;
-
-                for (int i = 0; i < sizelist[0].Length; i++)
-                {
-                    temp.Append(sizelist[0][i]);
-                }
-                
-                
-                int Wide = Convert.ToInt32(temp.ToString());
-                temp.Clear();
-                for (int i = 0; i < sizelist[1].Length; i++)
-                {
-                    temp.Append(sizelist[1][i]);
-                }
-                
-                int Height = Convert.ToInt32(temp.ToString());
+                int Wide = Convert.ToInt32(sizelist[0]);
+                int Height = Convert.ToInt32(sizelist[1]);
                 (skillcollider as BoxCollider2D).size = new Vector2(Wide,Height);
                 break;
             case "Circle":
-                skillcollider = transform.AddComponent<CircleCollider2D>();
+                skillcollider = transform.GetComponent<CircleCollider2D>();
                 skillcollider.isTrigger = true;
                 (skillcollider as CircleCollider2D).radius= Convert.ToInt32(sizelist[0]);
                 

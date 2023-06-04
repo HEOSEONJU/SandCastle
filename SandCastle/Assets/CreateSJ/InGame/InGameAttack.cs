@@ -23,6 +23,12 @@ namespace InGame
         Animator animatorWeapon;
         [SerializeField]
         Animator particleWeapon;
+
+        public Abstract_Attack AbstractAttack
+        {
+            get { return abstractAttack; }
+        }
+
         private void Update()
         {
             if (inGameEnemySearch.Target.Count != 0)

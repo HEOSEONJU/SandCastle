@@ -54,13 +54,20 @@ namespace inGame
                 int maxMana = CharTable.FindInt(IGC.CharName, "maxMana");
                 int startMana = CharTable.FindInt(IGC.CharName, "startMana");
                 int maxhp = CharTable.FindInt(IGC.CharName, "maxHP");
-
-
-                Debug.Log(movespeed);
+                float attackspeed = CharTable.Findfloat(IGC.CharName, "attackSpeed");
+                
+                if(speed<movespeed)
+                {
+                    speed = movespeed;
+                }
+                
                 IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana,maxhp);
+                
+                IGC.SettingAttackSpeed(attackspeed);
 
             }
 
+            speed += 1;
 
         }
 

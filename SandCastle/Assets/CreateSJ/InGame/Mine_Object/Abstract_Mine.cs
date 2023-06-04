@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+using InGameResourceEnums;
 namespace InGame
 {
     public abstract class Abstract_Mine : MonoBehaviour
@@ -71,23 +72,16 @@ namespace InGame
         }
 
 
-        public abstract void OnEnable();
 
         public abstract void Init_Object(string type,int amount,float maxhp,int amountmax,string imagefull,string imagedead);//파밍할오브젝트 추가하기
 
         public abstract void Collection(float damgepoint,InGame_Inventory inventory,InGame_Char igc);
-        public abstract void ReadyMine();
-        public abstract void UnReadyMine();
+
 
         public abstract void Change_Image(string name);
 
 
 
     }
-    public enum ResourceEnum
-    {
-        sand,
-        water,
-        mud
-    }
+
 }

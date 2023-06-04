@@ -37,7 +37,7 @@ namespace InGame
         [Header("Local")]
         [SerializeField]
         string localKeyName;
-
+        
 
         [SerializeField]
         InGameEnemySearch search;
@@ -82,6 +82,8 @@ namespace InGame
                     return false;
             }
         }
+        
+
 
         public void Init(float movespeed, float animationspeed, float givedamage, float sandget, float waterget, float mudget, float range, int maxmana, int startmana,int maxhp)
         {
@@ -95,7 +97,8 @@ namespace InGame
             currentMana = startmana;
             maxMana = maxmana;
             currenthp = maxHp = maxhp;
-            if(range==0)
+            
+            if (range==0)
             {
                 search.Collider2d.enabled= false;
             }

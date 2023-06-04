@@ -76,11 +76,16 @@ namespace InGame
             StartRegneMana();
             
                 skill.Init();
-            
+
             
 
 
         }
+        public void SettingAttackSpeed(float attackspped)
+        {
+            attack.AbstractAttack.CoolTime = attackspped;
+        }
+
 
         public void StartRegneMana()
         {

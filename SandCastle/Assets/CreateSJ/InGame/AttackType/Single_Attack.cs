@@ -20,7 +20,7 @@ namespace InGame
         Transform poolingParent;
         [SerializeField]
         Transform attackPoint;
-        private void OnEnable()
+        private void Start()
         {
             CanAttack= true;
         }

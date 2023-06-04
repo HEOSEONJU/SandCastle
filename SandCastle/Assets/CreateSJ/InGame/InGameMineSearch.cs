@@ -39,7 +39,7 @@ namespace InGame
                     target.ConnectList.Add(this.gameObject);
                     
                     harvest.Harvest();
-                        target.ReadyMine();
+                        
                     
 
                     
@@ -57,7 +57,7 @@ namespace InGame
                 {
                     target.ConnectList.Remove(this.gameObject);
                     
-                        target.UnReadyMine();
+                        
                     
                     
                     

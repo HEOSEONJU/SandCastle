@@ -1,3 +1,5 @@
+using InGameResourceEnums;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -54,6 +56,11 @@ namespace InGame
             
             
 
+        }
+
+        internal void Getter_Mine(int amount, ResourceEnum resourceType)
+        {
+            throw new NotImplementedException();
         }
     }
 }

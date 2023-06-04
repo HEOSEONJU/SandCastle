@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 908108075802003841}
   - component: {fileID: -6362671044398036212}
   - component: {fileID: -1441437481392588754}
+  - component: {fileID: 9125029173286111076}
   m_Layer: 0
   m_Name: Skillobject00001
   m_TagString: Untagged
@@ -109,3 +110,29 @@ MonoBehaviour:
   pattern: 0
   onMissTarget: 0
   skillcollider: {fileID: 0}
+--- !u!61 &9125029173286111076
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966596089616036222}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.07, y: 1.08}
+    newSize: {x: 3.66, y: 3.85}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.07, y: 1.08}
+  m_EdgeRadius: 0

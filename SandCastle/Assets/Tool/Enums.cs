@@ -16,7 +16,19 @@ namespace SandEnums
         AD,
         jewel
     }
+
 }
+namespace InGameResourceEnums
+{
+    public enum ResourceEnum
+    {
+        sand,
+        water,
+        mud
+    }
+
+}
+
 namespace SkillEnums
 {
     public enum SkillPattern
@@ -47,5 +59,6 @@ namespace SkillEnums
         Exit,
 
     }
+
 
 }

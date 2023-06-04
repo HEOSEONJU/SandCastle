@@ -25,6 +25,7 @@ namespace InGame
         public float CoolTime
         {
             get { return coolTime; }
+            set { coolTime = value; }
         }
         public int AttackCount
         {

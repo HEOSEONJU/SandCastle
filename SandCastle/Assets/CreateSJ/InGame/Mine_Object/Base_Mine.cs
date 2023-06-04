@@ -1,7 +1,9 @@
+using InGameResourceEnums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 namespace InGame
 {
@@ -15,15 +17,7 @@ namespace InGame
         InGame_Harvest harvest;
         
 
-        public override void OnEnable()
-        {
-            
-            
-            
-            //Init_Object(1, 1);
-            //hp = 10;
-            
-        }
+
         public override void Init_Object(string type, int amount, float maxhp, int amountmax, string imagefull, string imagedead)
         {
 
@@ -56,26 +50,7 @@ namespace InGame
             IsDestory = false;
         }
 
-        public override void ReadyMine()
-        {
-            
-            if (!IsDestory  )
-            {
-                //StartCoroutine(WaitPlayer());
-            }
 
-            
-        }
-        public override void UnReadyMine()
-        {
-            if (!IsDestory && ConnectList.Count==0 )
-            {
-                //StopCoroutine(WaitPlayer());
-                
-                
-            }
-            
-        }
         
 
 
@@ -92,6 +67,7 @@ namespace InGame
             if(Hp>0)
             {
                 Hp -= damagepoint;
+                inventory.Getter_Mine(Amount, resourceType);
                 if (Hp <= 0)
                 {
                     inventory.Getter_Mine(AmountMax, resourceType);
@@ -100,7 +76,7 @@ namespace InGame
                     igc.Animator.SetTrigger("HarvestExit");
                     return;
                 }
-                inventory.Getter_Mine(Amount, resourceType);
+                
                 return;
             }
 
