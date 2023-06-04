@@ -58,7 +58,8 @@ namespace InGame
 
 
                 bulletobject.DamagePoint = GiveDamage;
-                bulletobject.Move();
+                
+                bulletobject.Move(towerSearch.Target[0].transform);
                 CanAttack = false;
                 StartCoroutine(Delay());
             }

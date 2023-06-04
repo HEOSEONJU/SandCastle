@@ -25,7 +25,7 @@ namespace InGame
             CanAttack= true;
         }
 
-        public override void Attack(List<Enemy_Manager> enemymangers,Vector3 direction) 
+        public override void Attack(Transform target,Vector3 direction) 
         {
             
 
@@ -41,7 +41,7 @@ namespace InGame
 
 
             bulletobject.DamagePoint = status.GiveDamage;
-            bulletobject.Move();
+            bulletobject.Move(target);
             CanAttack = false;
             StartCoroutine(Delay());
         }

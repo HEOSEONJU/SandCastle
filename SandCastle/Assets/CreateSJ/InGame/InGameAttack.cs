@@ -24,6 +24,8 @@ namespace InGame
         [SerializeField]
         Animator particleWeapon;
 
+        [SerializeField]
+        Transform target;
         public Abstract_Attack AbstractAttack
         {
             get { return abstractAttack; }
@@ -60,13 +62,12 @@ namespace InGame
             }
             animatorWeapon.SetTrigger("Fire");
             particleWeapon.SetTrigger("Fire");
-
+            target = inGameEnemySearch.Target[0].transform;
         }
 
         public void EvnetAttack()
         {
-            //Vector3 direction = inGameEnemySearch.Target[0].transform.position - transform.position;
-            abstractAttack.Attack(inGameEnemySearch.Target, -transform.right);
+            abstractAttack.Attack(target, -transform.right);
         }
 
 

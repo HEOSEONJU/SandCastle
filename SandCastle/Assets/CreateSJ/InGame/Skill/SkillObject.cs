@@ -159,7 +159,10 @@ public class SkillObject : MonoBehaviour
                 while (duration>0)
                 {
                     duration -= Time.deltaTime;
-                    transform.localPosition += (transform.right).normalized * Time.deltaTime * skillData.Speed;
+
+                    
+                        
+                    transform.position += (transform.right).normalized * Time.deltaTime * skillData.Speed;
                     yield return null;
                 }
 
@@ -174,5 +177,7 @@ public class SkillObject : MonoBehaviour
         }
         
     }
+
+    
 
 }

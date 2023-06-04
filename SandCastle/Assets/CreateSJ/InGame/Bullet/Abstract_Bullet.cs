@@ -20,7 +20,7 @@ namespace inGame
         }
         [SerializeField]
         protected int attackCount=1;
-        public abstract void Move();
+        public abstract void Move(Transform target);
 
 
         protected abstract void Damaged(Enemy_Manager enemymanager);

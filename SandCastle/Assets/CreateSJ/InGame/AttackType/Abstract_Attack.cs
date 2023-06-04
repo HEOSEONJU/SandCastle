@@ -40,7 +40,7 @@ namespace InGame
             get { return range; }
         }
 
-        public abstract void Attack(List<Enemy_Manager> enemymangers,Vector3 direction);
+        public abstract void Attack(Transform target, Vector3 direction);
         public abstract bool Require();
 
 

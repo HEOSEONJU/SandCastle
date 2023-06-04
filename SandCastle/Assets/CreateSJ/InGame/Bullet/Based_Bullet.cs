@@ -8,8 +8,12 @@ namespace inGame
 {
     public class Based_Bullet : Abstract_Bullet
     {
-        public override void Move()
+
+        [SerializeField]
+        Transform target;
+        public override void Move(Transform target)
         {
+            this.target= target;
             attackCount = 1;
             StartCoroutine(MoveBullet());
         }
@@ -45,10 +49,10 @@ namespace inGame
 
         IEnumerator MoveBullet()
         {
-            while(true)
+            Vector3 direction = target.transform.position - transform.position;
+            while (true)
             {
-
-                transform.localPosition += (transform.right).normalized * Time.deltaTime*speed;
+                transform.position += direction * Time.deltaTime*speed;
                 yield return null;
             }
         }

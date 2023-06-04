@@ -58,9 +58,6 @@ namespace InGame
 
         }
 
-        internal void Getter_Mine(int amount, ResourceEnum resourceType)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

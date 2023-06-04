@@ -67,6 +67,9 @@ namespace InGame
             if(Hp>0)
             {
                 Hp -= damagepoint;
+                Debug.Log(inventory.name+igc.name);
+                
+
                 inventory.Getter_Mine(Amount, resourceType);
                 if (Hp <= 0)
                 {
