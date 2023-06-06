@@ -13,21 +13,11 @@ MonoBehaviour:
   m_Name: ObjectTable
   m_EditorClassIdentifier: 
   associatedWorksheet: Object
+  ViewTableList: []
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values:
-  - DB_FIELD_NAMES
-  - Object00001
-  - Object00002
-  hashKeyList:
-  - DB_FIELD_NAMES
-  - resourceType
-  - amount
-  - maxHP
-  - resourceTypeMax
-  - amountMax
-  - imageFull
-  - imageDead
-  listCount: 3
+  values: []
+  dictKeyList: []
+  listCount: 4

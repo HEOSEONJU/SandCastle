@@ -13,36 +13,11 @@ MonoBehaviour:
   m_Name: RateTable
   m_EditorClassIdentifier: 
   associatedWorksheet: Rate
+  ViewTableList: []
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values:
-  - DB_FIELD_NAMES
-  - Rate000001
-  - Rate000002
-  - Rate000003
-  - Rate000004
-  - Rate000005
-  - Rate000006
-  - Rate000007
-  - Rate000008
-  - Rate000009
-  - Rate000010
-  - Rate000011
-  - Rate000012
-  - Rate000013
-  - Rate000014
-  - Rate000015
-  - Rate000016
-  - Rate000017
-  - Rate000018
-  hashKeyList:
-  - DB_FIELD_NAMES
-  - key
-  - group
-  - giveNum
-  - appearRate
-  - 2DImage
-  - animation
+  values: []
+  dictKeyList: []
   listCount: 19

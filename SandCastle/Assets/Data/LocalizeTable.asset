@@ -13,16 +13,11 @@ MonoBehaviour:
   m_Name: LocalizeTable
   m_EditorClassIdentifier: 
   associatedWorksheet: Localize
+  ViewTableList: []
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values:
-  - DB_FIELD_NAMES
-  - Lo_Character_Name_1
-  - Lo_Character_Name_2
-  hashKeyList:
-  - DB_FIELD_NAMES
-  - ko
-  - en
+  values: []
+  dictKeyList: []
   listCount: 3

@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: DefineTable
   m_EditorClassIdentifier: 
   associatedWorksheet: Define
+  ViewTableList: []
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values:
-  - DB_FIELD_NAMES
-  hashKeyList:
-  - DB_FIELD_NAMES
-  - value
-  listCount: 1
+  values: []
+  dictKeyList: []
+  listCount: 3

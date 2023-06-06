@@ -13,26 +13,11 @@ MonoBehaviour:
   m_Name: CharSkillTable
   m_EditorClassIdentifier: 
   associatedWorksheet: CharSkill
+  ViewTableList: []
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values:
-  - DB_FIELD_NAMES
-  - shop_gacha1_ads
-  - shop_gacha1_jewel1
-  - shop_gacha1_jewel10
-  - shop_gacha2_ads
-  - shop_gacha2_jewel1
-  - shop_gacha2_jewel10
-  - shop_gacha3_ads
-  - shop_gacha3_jewel1
-  - shop_gacha3_jewel10
-  hashKeyList:
-  - DB_FIELD_NAMES
-  - tab
-  - order
-  - giveReward
-  - priceType
-  - price
-  listCount: 10
+  values: []
+  dictKeyList: []
+  listCount: 5

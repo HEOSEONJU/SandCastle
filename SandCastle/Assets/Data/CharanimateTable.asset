@@ -13,23 +13,11 @@ MonoBehaviour:
   m_Name: CharanimateTable
   m_EditorClassIdentifier: 
   associatedWorksheet: Charanimate
+  ViewTableList: []
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values:
-  - DB_FIELD_NAMES
-  - Char_Up_Attack
-  - Char_Down_Attack
-  - Char_Left_Attack
-  - Char_Right_Attack
-  - Char_LeftUp_Attack
-  - Char_LeftDown_Attack
-  - Char_RightUp_Attack
-  - Char_RightDown_Attack
-  hashKeyList:
-  - DB_FIELD_NAMES
-  - DegreeStart
-  - DegreeEnd
-  - AnimateName
+  values: []
+  dictKeyList: []
   listCount: 9

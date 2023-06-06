@@ -4,10 +4,9 @@ using UnityEngine;
 
 
 using SkillEnums;
-using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
+
 using System;
-using System.Text;
+
 using Enemy;
 
 public class SkillObject : MonoBehaviour

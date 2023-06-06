@@ -13,74 +13,11 @@ MonoBehaviour:
   m_Name: SkillObjectTable
   m_EditorClassIdentifier: 
   associatedWorksheet: SkillObject
-  ViewTableList:
-  - keys:
-    - DB_FIELD_NAMES
-    - objectType
-    - pattern
-    - onMissTarget
-    - hitBoxShape
-    - hitBoxSize
-    values:
-    - DB_FIELD_NAMES
-    - objectType
-    - pattern
-    - onMissTarget
-    - hitBoxShape
-    - hitBoxSize
-  - keys:
-    - DB_FIELD_NAMES
-    - objectType
-    - pattern
-    - onMissTarget
-    - hitBoxShape
-    - hitBoxSize
-    values:
-    - Skillobject00001
-    - Projectile
-    - Straight
-    - TRUE
-    - Square
-    - 1,1
-  - keys:
-    - DB_FIELD_NAMES
-    - objectType
-    - pattern
-    - hitBoxShape
-    - hitBoxSize
-    values:
-    - Skillobject00002
-    - Area
-    - Bounce
-    - Circle
-    - 1
-  - keys:
-    - DB_FIELD_NAMES
-    - pattern
-    values:
-    - Skillobject00003
-    - Wave
-  - keys:
-    - DB_FIELD_NAMES
-    - pattern
-    values:
-    - Skillobject00004
-    - Spin
+  ViewTableList: []
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values:
-  - DB_FIELD_NAMES
-  - Skillobject00001
-  - Skillobject00002
-  - Skillobject00003
-  - Skillobject00004
-  dictKeyList:
-  - DB_FIELD_NAMES
-  - objectType
-  - pattern
-  - onMissTarget
-  - hitBoxShape
-  - hitBoxSize
+  values: []
+  dictKeyList: []
   listCount: 5

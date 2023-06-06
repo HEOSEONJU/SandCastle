@@ -18,7 +18,8 @@ public class ADManager : MonoBehaviour
     public Text LogText;
     public Button FrontAdsBtn, RewardAdsBtn;
 
-    const string testDeviecId = "d3b47eeab14d4252";
+    //const string testDeviecId = "d3b47eeab14d4252"; s23+
+    const string testDeviecId = "83ffd4fd3b9b4d7d";//s9+
 
 
     public const string rewardTestID = "ca-app-pub-3940256099942544/5224354917";
@@ -30,6 +31,7 @@ public class ADManager : MonoBehaviour
         {
             instance = this;
 
+            /*
             MobileAds.RaiseAdEventsOnUnityMainThread = true;//기본스레드에서 콜백발생하게해주는기능
 
 
@@ -39,6 +41,7 @@ public class ADManager : MonoBehaviour
                 // This callback is called once the MobileAds SDK is initialized.
             });
             DontDestroyOnLoad(gameObject);
+            */
         }
         else
         {

@@ -34,8 +34,10 @@ public class SheetFunction : MonoBehaviour
             if(Active)
             {
                 checkCount = 0;
-                OnlienReadSheets();
                 
+                OnlienReadSheets();
+                //OnlienReadSheets();
+
             }
             else
             {
@@ -60,6 +62,10 @@ public class SheetFunction : MonoBehaviour
         if(SceneMoveManager.Instance !=null)
         SceneMoveManager.Instance.ImmediatelyChangeScne(mainSceneName);
     }
+
+    
+        
+
 
     public void OnlienReadSheets()
     {
@@ -91,10 +97,18 @@ public class SheetFunction : MonoBehaviour
         checkCount++;
         if (checkCount == tables.Count)
         {
-            Active = false;
-
-            SceneMoveManager.Instance.ImmediatelyChangeScne(mainSceneName);
+            StartCoroutine(WaitSceneMove());
         }
     }
-
+    IEnumerator WaitSceneMove()
+    {
+        Debug.Log(tables.Last().associatedWorksheet);
+        while (tables.Last().ViewTableList==null || tables.Last().ViewTableList.Count==0)
+        {
+            yield return null;
+        }
+        Active = false;
+        yield return new WaitForSeconds(1.5f);
+        SceneMoveManager.Instance.ImmediatelyChangeScne(mainSceneName);
+    }
 }

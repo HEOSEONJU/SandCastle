@@ -3,20 +3,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Interstitial : MonoBehaviour
+//https://developers.google.com/admob/unity/interstitial?hl=ko
+public class Interstitial : MonoBehaviour //전면광고
 {
     
 
-    private void Start()
+    
+
+    public void TestAD()
     {
-        
+        LoadInterstitialAd();
 
         ShowAd();
     }
+        
 
     public void ShowAd()
     {
+        if(interstitialAd ==null)
+        {
+            Debug.Log("널");
+        }
+        if(!interstitialAd.CanShowAd())
+        {
+            Debug.Log("보여주기불가능");
+        }
         if (interstitialAd != null && interstitialAd.CanShowAd())
         {
             Debug.Log("Showing interstitial ad.");
