@@ -647,7 +647,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: start
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -661,13 +661,13 @@ MonoBehaviour:
     m_Folders:
     - Assets/Temp_Resoureces/UI_TEMp/SCI-FI UI Components/SCI-FI UI Components/Textures/Window
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: start
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Temp_Resoureces/UI_TEMp/SCI-FI UI Components/SCI-FI UI Components/Textures/Window
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Git\SandCastle\SandCastle\SandCastle
+  m_LastProjectPath: C:\Users\PC\Project_SandCastle\SandCastle\SandCastle\SandCastle
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -1281,7 +1281,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
