@@ -28,6 +28,15 @@ namespace InGameResourceEnums
     }
 
 }
+namespace Roulette
+{
+    public enum GetCount
+    {
+        Single,
+        Multi
+    }
+}
+
 
 namespace SkillEnums
 {

@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 using SandEnums;
 using TMPro;
-using UnityEditor;
-using UnityEngine.Tilemaps;
+
 using System.Linq;
 using AT.SerializableDictionary;
 namespace Roulette
@@ -25,6 +23,13 @@ namespace Roulette
         [SerializeField]
         int cost = 500;
 
+
+
+        [SerializeField]
+        GetCount getCount;
+        [SerializeField]
+        [Range(0,10)]
+        int iD;
         
 
         [SerializeField]
@@ -59,19 +64,41 @@ namespace Roulette
             string type = shopTable.FindString(findid, "priceType");
             if (type is null) return;
 
+
+            findid = "shop_gacha" + iD;
+
+
             
 
             switch (type)
             {
                 case "ads":
                     costType = PriceType.AD;
+                    findid += "ads";
                     break;
                 case "jewel":
                     costType = PriceType.jewel;
+                    findid += "_jewel";
                     break;
-                
-                    
+
+
             }
+            switch (getCount)
+            {
+                case GetCount.Single:
+                    findid += "1";
+                    break;
+                case GetCount.Multi:
+                    findid += "10";
+                    break;
+            }
+
+
+
+
+
+
+
 
             cost = shopTable.FindInt(findid, "price");
 
