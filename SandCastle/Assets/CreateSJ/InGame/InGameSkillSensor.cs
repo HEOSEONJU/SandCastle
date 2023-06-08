@@ -11,6 +11,7 @@ namespace InGame
         public List<GameObject> GameObjects
         {
             get { return gameObjects; }
+            set { gameObjects = value; }
         }
         void Start()
         {

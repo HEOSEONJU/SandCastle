@@ -24,6 +24,8 @@ namespace InGame
         public Transform target;
 
         [SerializeField]
+        Transform spwanposi;
+        [SerializeField]
         Transform poolingParent;
         public void Init()
         {
@@ -47,7 +49,8 @@ namespace InGame
             switch (skillData.Target)
             {
                 case SkillTarget.Near:
-                    inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position));
+                    inGameSkillSensor.GameObjects =inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position)).ToList();
+                    
                     target = inGameSkillSensor.GameObjects.First().transform;
 
                     break;
@@ -56,7 +59,8 @@ namespace InGame
 
                     break;
                 case SkillTarget.Far:
-                    target = inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position)).Last().transform;
+                    inGameSkillSensor.GameObjects = inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position)).ToList();
+                    target = inGameSkillSensor.GameObjects.Last().transform;
 
                     break;
             }
@@ -79,7 +83,7 @@ namespace InGame
             switch (skillData.Spwan)
             {
                 case SkillSpwan.Player:
-                    e.GetComponent<SkillObject>().Active(transform,target);
+                    e.GetComponent<SkillObject>().Active(spwanposi, target);
                     break;
                 case SkillSpwan.Target:
                     e.GetComponent<SkillObject>().Active(target, target);

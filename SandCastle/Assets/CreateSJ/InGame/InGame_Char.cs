@@ -29,7 +29,6 @@ namespace InGame
 
 
 
-        IEnumerator RegenManaCoroutine;
         public bool IsAction
         {
             get { return isAction; }
@@ -73,7 +72,7 @@ namespace InGame
         
         private void Start()
         {
-            StartRegneMana();
+            
             
                 skill.Init();
 
@@ -81,39 +80,37 @@ namespace InGame
 
 
         }
-        public void SettingAttackSpeed(float attackspped)
+
+        
+        public void SettingAttack(float attackspped,float dspeed,float ddamage)
         {
             attack.AbstractAttack.CoolTime = attackspped;
+            attack.AbstractAttack.SettingBulletInfo(dspeed, ddamage);   
         }
 
 
-        public void StartRegneMana()
-        {
-            if (RegenManaCoroutine == null)
-            {
-                RegenManaCoroutine = RegenMana();
-                StartCoroutine(RegenManaCoroutine);
-            }
-        }
         
-        IEnumerator RegenMana()
+        public void RegenMana(int n)
         {
-            while(true)
-            {
-                yield return new WaitForSeconds(1);
-                status.CurrentMana += 1;
-                if (status.CanSkill && sensor.GameObjects.Count>0)
-                {
-                    status.CurrentMana = 0;
-                    StopCoroutine(RegenManaCoroutine);
-                    RegenManaCoroutine = null;
-                    Animator.CrossFade("CharSkill", 0.01f);
-                    skill.SettingTarget();
-                    //skill.ActiveSkill();
-                }
-                
-            }
+            status.CurrentMana += n;
+
+            
+
         }
+        public bool ActiveSKill()
+        {
+            if (status.CanSkill && sensor.GameObjects.Count > 0)
+            {
+                status.CurrentMana = 0;
+                Animator.CrossFade("CharSkill", 0.01f);
+                
+                skill.SettingTarget();
+                return true;
+                //skill.ActiveSkill();
+            }
+            return false;
+        }
+
 
         public void OrderHarvestTrigget()
         {

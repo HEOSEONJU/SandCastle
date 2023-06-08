@@ -31,6 +31,15 @@ namespace InGame
             get { return abstractAttack; }
         }
 
+        public Animator AnimatorWeapon
+        {
+            get { return animatorWeapon; }
+        }
+        public Animator ParticleWeapon
+        {
+            get { return particleWeapon; }
+        }
+
         private void Update()
         {
             if (inGameEnemySearch.Target.Count != 0)

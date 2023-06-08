@@ -290,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9564c471fd2ff514fa668f86de7bb792
-      internalID: -1993213708
+      spriteID: 9070a2927428fce44b5da90190a35c39
+      internalID: 796841903
       vertices: []
       indices: 
       edges: []
@@ -311,8 +311,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89b6eef7cce29847ae5bf97db4eed0f
-      internalID: -1917970102
+      spriteID: 34525a198e98e51428de4f88e47428eb
+      internalID: 1137272579
       vertices: []
       indices: 
       edges: []
@@ -335,8 +335,8 @@ TextureImporter:
       Weapon02_Pirate_Watergun_waterball_hit_4: 1543556160
       Weapon02_Pirate_Watergun_waterball_hit_5: 867369592
       Weapon02_Pirate_Watergun_waterball_hit_6: -1675406783
-      Weapon02_Pirate_Watergun_waterball_hit_7: -1993213708
-      Weapon02_Pirate_Watergun_waterball_hit_8: -1917970102
+      Weapon02_Pirate_Watergun_waterball_hit_7: 796841903
+      Weapon02_Pirate_Watergun_waterball_hit_8: 1137272579
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

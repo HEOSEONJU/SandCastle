@@ -10,6 +10,9 @@ namespace inGame
     {
         [SerializeField]
         ObjectTable CharTable;
+        [SerializeField]
+        ObjectTable DefineTable;
+
 
         [SerializeField]  
         List<InGame_Char> inGameCharList;
@@ -31,6 +34,9 @@ namespace inGame
         {
 
             speed = 1;
+
+            float defaultspeed = DefineTable.Findfloat("bulletdefaultspeed", "value");
+            float attackdamage = DefineTable.Findfloat("attackdamage", "value");
 
             foreach (InGame_Char IGC in inGameCharList)
             {
@@ -63,7 +69,7 @@ namespace inGame
                 
                 IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana,maxhp);
                 
-                IGC.SettingAttackSpeed(attackspeed);
+                IGC.SettingAttack(attackspeed,defaultspeed, attackdamage);
 
             }
 
@@ -83,9 +89,14 @@ namespace inGame
                     if (IGC.Animator.GetBool("IsAction") is false)
                     {
                         IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector,IGC.InGameStatus.MoveSpeed);
+                        if(!IGC.ActiveSKill())
+                        { 
                         IGC.InGameAttack.PlayAttack();
+                        }
+                        
+                    
 
-                        if (angle > 0)
+                    if (angle > 0)
                         {
                             //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
                             IGC.SpriteRenderer.flipX = true;

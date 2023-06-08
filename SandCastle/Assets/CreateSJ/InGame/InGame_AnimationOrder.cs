@@ -23,15 +23,21 @@ namespace InGame
             harvest.TargetHarvest();
             
         }
-        public void SkillEvent()
+
+
+        public void SkillFireEvent()
         {
-            inGameChar.InGameSkill.ActiveSkill();
+            inGameChar.InGameAttack.AnimatorWeapon.SetTrigger("Skill");
+            inGameChar.InGameAttack .ParticleWeapon.SetTrigger("Skill");
+            
         }
+
+        
         public void SkillEventend()
         {
             
             animator.SetTrigger("SkillExit");
-            inGameChar.StartRegneMana();
+            //
 
         }
     }

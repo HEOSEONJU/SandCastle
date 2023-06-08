@@ -97,7 +97,23 @@ public class SheetFunction : MonoBehaviour
         checkCount++;
         if (checkCount == tables.Count)
         {
-            StartCoroutine(WaitSceneMove());
+            StartCoroutine(newWait());
+        }
+    }
+    IEnumerator newWait()
+    {
+        Debug.Log(tables.Last().associatedWorksheet);
+        while (true)
+        {
+            yield return new WaitForSeconds(3f);
+
+            if(!(tables.Last().ViewTableList == null || tables.Last().ViewTableList.Count == 0))
+            {
+
+                Active = false;
+                SceneMoveManager.Instance.ImmediatelyChangeScne(mainSceneName);
+                yield break;
+            }
         }
     }
     IEnumerator WaitSceneMove()

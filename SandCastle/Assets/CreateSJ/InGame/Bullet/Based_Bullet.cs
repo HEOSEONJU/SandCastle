@@ -1,4 +1,6 @@
 using Enemy;
+using InGame;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -11,11 +13,24 @@ namespace inGame
 
         [SerializeField]
         Transform target;
-        public override void Move(Transform target)
+
+        public override void Init(float defaultspeed, float defaultdamage)
         {
+
+            this.speed = defaultspeed;
+
+
+            damagePoint = defaultdamage;
+        }
+        public override void Move(Transform target,InGame_Char igc=null)
+        {
+            if(igc!=null)
+            this.igc= igc;
             this.target= target;
             attackCount = 1;
-            StartCoroutine(MoveBullet());
+            moveCoroutine = MoveBullet();
+            StartCoroutine(moveCoroutine);
+            collider2d.enabled = true;
         }
         protected override void Damaged(Enemy_Manager enemymanager)
         {
@@ -33,19 +48,35 @@ namespace inGame
                 }
                 attackCount--;
                 Damaged(enemymanager);
-                StopCoroutine(MoveBullet());
+                if (igc != null)
+                    igc.RegenMana(1);
                 if (attackCount >= 1)
                 {
                     
                     return;
                 }
-                gameObject.SetActive(false);
+                animator.SetTrigger("Fire");
+
+                Vector3 dircetion = target.position - transform.position;
+
+                float angle = Mathf.Atan2(dircetion.y, dircetion.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                
+                StopCoroutine(moveCoroutine);
+                collider2d.enabled = false;
+                
                 
                     
                 
                 
             }
         }
+
+        public void Disable()
+        {
+            gameObject.SetActive(false);
+        }
+
 
         IEnumerator MoveBullet()
         {

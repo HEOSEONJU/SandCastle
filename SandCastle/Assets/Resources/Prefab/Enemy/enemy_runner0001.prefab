@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 8844628ca338eea4ea5f9c8f8b539178, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemymanager: {fileID: 1615358515289129747}
   targetVector: {x: 0, y: 0, z: 0}
-  moveSpeed: 1
+  speedValue: 5
   active: 0
 --- !u!114 &1615358515289129745
 MonoBehaviour:
@@ -204,12 +204,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73cfb545289555144bebbcbbe8d7be2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  moveSpeed: 0
+  hp: 80
+  moveSpeed: 0.5
   attackSpeed: 0
   attackRange: 0
-  resistanceType: []
-  resistanceValue: 0
+  resistanceType:
+  - all
+  resistanceValue: 0.5
 --- !u!61 &1615358515289129758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -234,7 +235,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &1615358515289129759
 Rigidbody2D:

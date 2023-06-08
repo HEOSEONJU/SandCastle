@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -125,9 +125,273 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335a5121917f26c4caac5623e1a68a63
+      internalID: -1862586292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0807ba34acc92e4da97bada46ca9b56
+      internalID: -877791361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c424082a6bcc40b4a90ee171d9d238bd
+      internalID: -755727867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03556f639692c344a9421593a5682632
+      internalID: 566399241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b0483e438193f47aebd533d61221e4
+      internalID: -329252444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9088f7859a451184ba24e27965dec5ba
+      internalID: 39273101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_6
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40083e2cb327646429551f48cfd8594f
+      internalID: -646637599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_7
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ecc8f9105563a488f64ad5b6c2bbc8
+      internalID: -200949196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb2b91efc690904f9d09ad1e4ee0cdb
+      internalID: -1433131016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693591d21a15d1d46b44271503a6c437
+      internalID: -1336699663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8eb43d00c15734bb845cfadc31be01
+      internalID: 545133854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char02_Skill_EFX1_MainCharacter_11
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899061a0113050543b54ecb8f9c33f96
+      internalID: -1396992527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +402,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Char02_Skill_EFX1_MainCharacter_0: -1862586292
+      Char02_Skill_EFX1_MainCharacter_1: -877791361
+      Char02_Skill_EFX1_MainCharacter_10: 545133854
+      Char02_Skill_EFX1_MainCharacter_11: -1396992527
+      Char02_Skill_EFX1_MainCharacter_2: -755727867
+      Char02_Skill_EFX1_MainCharacter_3: 566399241
+      Char02_Skill_EFX1_MainCharacter_4: -329252444
+      Char02_Skill_EFX1_MainCharacter_5: 39273101
+      Char02_Skill_EFX1_MainCharacter_6: -646637599
+      Char02_Skill_EFX1_MainCharacter_7: -200949196
+      Char02_Skill_EFX1_MainCharacter_8: -1433131016
+      Char02_Skill_EFX1_MainCharacter_9: -1336699663
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -10,6 +10,8 @@ namespace InGame
     public class Single_Attack : Abstract_Attack
     {
         [SerializeField]
+        InGame_Char igc;
+        [SerializeField]
         InGame_Status status;
 
         [SerializeField]
@@ -41,10 +43,17 @@ namespace InGame
 
 
             bulletobject.DamagePoint = status.GiveDamage;
-            bulletobject.Move(target);
+            bulletobject.Init(defaultspeed, defaultdamage*status.GiveDamage);
+            bulletobject.Move(target, igc);
             CanAttack = false;
             StartCoroutine(Delay());
         }
+        public override void SettingBulletInfo(float defaultspeed, float defaultdamage)
+        {
+            this.defaultspeed= defaultspeed;
+            this.defaultdamage=defaultdamage;
+        }
+
         public override bool Require()
         {
 
@@ -63,6 +72,12 @@ namespace InGame
         {
              yield return new WaitForSeconds(CoolTime);
             CanAttack = true;
+        }
+        public void SkillEvent()
+        {
+            igc.InGameSkill.SettingTarget();
+            igc.InGameSkill.ActiveSkill();
+            
         }
     }
 }

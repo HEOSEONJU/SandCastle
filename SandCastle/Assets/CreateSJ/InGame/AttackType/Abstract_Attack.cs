@@ -16,7 +16,10 @@ namespace InGame
         int attackCount;//°ø°ÝÈ½¼ö
         int multiCount;//¸ÖÆ¼¼¦È½¼ö
         int range;//¹üÀ§°ø°Ý
-        
+
+
+        protected float defaultspeed;
+        protected float defaultdamage;
         public AttackType Type
         {
             get { return type; }
@@ -39,6 +42,8 @@ namespace InGame
         {
             get { return range; }
         }
+
+        public abstract void SettingBulletInfo(float defaultspeed, float defaultdamage);
 
         public abstract void Attack(Transform target, Vector3 direction);
         public abstract bool Require();

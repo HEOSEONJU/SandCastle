@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,1267 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b199de3ad577a9449b2855fca924536f
+      internalID: -819621667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7754408c4b99c4b96e4cbdfd89f67b
+      internalID: -44391253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999b4b6f270da844ea7e547f1bee8458
+      internalID: 577086864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d69e3d3455fe6479d5210c52066726
+      internalID: -725902197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fedfe66fa09b98449a821c6355cee96
+      internalID: -1570760243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_5
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b2e4d9a32de6042b2fc5e03a2f5d56
+      internalID: 701466735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_6
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e413e7c97221c304aa72d63b0686d917
+      internalID: 248675243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_7
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1960
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8081adc1fb74344fb2434a51716858c
+      internalID: 1318003663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ffa37b43e51844da158dec60ebaf0d
+      internalID: 1117999604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a00ae5d7816bd94d891853db83e52c6
+      internalID: -1473767409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95943dde0a4e1e94c856f3b31da98bed
+      internalID: -298585384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_11
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9c29c0c5f17d64289b6c7a0ac4322f
+      internalID: 1458299694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_12
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7dc3bea50d27c4ba1ff859028e0e44
+      internalID: 38907941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_13
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c688b9648a1b7424c8f4f327ec0c342d
+      internalID: -1442882458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_14
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14219d3ff34cb884c91064ede3fe037a
+      internalID: 1037995232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_15
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1680
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71916b2fe4f3f564281c6c6a13d36281
+      internalID: 419496694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8f8abaaf8a16c48a1846e23c8d9f99
+      internalID: 449514531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078e7bf9820974045acd017ef77de6ef
+      internalID: 1574202246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_18
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fd6e7c2916980459129090e7c979b6
+      internalID: 608926018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_19
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb25f3ffe3ee00440a9c3824fcb096d7
+      internalID: 902338295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8401dd2f095b53749a191d9a707e5ad5
+      internalID: 1683850042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_21
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d2831c46226794ead19bbf3f6b9901
+      internalID: -567134319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_22
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9bf6046999731489057d9d8ab40cc1
+      internalID: -1327242597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_23
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1400
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63de9b3899b328647bd350770cdcc9c8
+      internalID: 584856476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a59c921adf4934fb63663343504412
+      internalID: -1150486694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a0137e0331ae8478b2543f8a01c4fa
+      internalID: -1490945392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba3cababb80b1847ad08afbe718ce20
+      internalID: -2051524770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_27
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7afdec4450bb224a9370d2a38a4fe93
+      internalID: 151738350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_28
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13dc6e7f2a9b1147aa0ce438a2b3562
+      internalID: 1210964430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_29
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ead2d236e2917d4d8b22b82dc13fd20
+      internalID: 466679401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_30
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b52439cddba054596bd17927e76149
+      internalID: 1388735440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_31
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1120
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a030beec65ae85541aa53e3b3646eae7
+      internalID: 2120816322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62b1087054e8394392773e56d197cc4
+      internalID: 1730253858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7764b817075ba14ca75a9b412a15ad7
+      internalID: 1857288024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_34
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1825bd977c0cb364faf04a4125d9c00d
+      internalID: -96446757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_35
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c549fd78a9086c40bc8a66f76793cab
+      internalID: 1264721850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_36
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13565a23a6ebfbf479f02aa2f6e72b78
+      internalID: -1284408093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_37
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614251e8ddc3a0541a0db9bf90273830
+      internalID: -1489035001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_38
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74718e898721c2448afa63ec8a28bfc6
+      internalID: 1488822603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3616f883ffa3af4396f721dfa6959dd
+      internalID: 1625988760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_40
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5c57576323e6e4186b6add9a5f8c95
+      internalID: -90462555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3364eeea7591edf418d0ed3644f66433
+      internalID: -1260334583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_42
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b705963071fe0ba4baef2de8e8e13424
+      internalID: -212129847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_43
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09b6457f7b807d4d92efe17f3de2408
+      internalID: 483461613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_44
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1258e6a7ab27d2d4ab349a10c07f0286
+      internalID: -1048745775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_45
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 560
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3293d552476ac142b3e672d9ea2e94d
+      internalID: -1604713827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cf5d08949ea044693691830cc71de5
+      internalID: 274030120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_47
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2b4826524f7964181fbf4e35bbd7de
+      internalID: 889987309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_48
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635be19bd8676f24eb312d2046999bc9
+      internalID: -1242754703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_49
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15892968e4cf49a4a9abd6c98f4a5bd0
+      internalID: -1881850191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_50
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4e090f885ed3a49bd07981cd30b789
+      internalID: -1962504168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_51
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6aacfcd734a14a47bb4ed2977b12f36
+      internalID: -31908876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_52
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 280
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c8b873e805d7d4e8c70d9edd0fbf02
+      internalID: 1025633760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a71dc2d1f535974aae62ce8900ea7f2
+      internalID: -104483315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_54
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81348e8b6306aa3409f62a5c04b20002
+      internalID: -1406596178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_55
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c42e72066fbf54090f57a5e7df7b99
+      internalID: 1817015774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_56
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddd060a7d794644294cd9268c8a6278
+      internalID: -943243944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_57
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7c3d87887d0af4ab84e1a58ff0ef71
+      internalID: -1550112823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_58
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b660d10cc490c874ab5ae0f6bd209314
+      internalID: -1509109246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_waterball_shot_59
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4507f7179492aeb499d0fc8078df633e
+      internalID: 694356855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +1398,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Weapon02_Pirate_Watergun_waterball_shot_0: -819621667
+      Weapon02_Pirate_Watergun_waterball_shot_1: -44391253
+      Weapon02_Pirate_Watergun_waterball_shot_10: -298585384
+      Weapon02_Pirate_Watergun_waterball_shot_11: 1458299694
+      Weapon02_Pirate_Watergun_waterball_shot_12: 38907941
+      Weapon02_Pirate_Watergun_waterball_shot_13: -1442882458
+      Weapon02_Pirate_Watergun_waterball_shot_14: 1037995232
+      Weapon02_Pirate_Watergun_waterball_shot_15: 419496694
+      Weapon02_Pirate_Watergun_waterball_shot_16: 449514531
+      Weapon02_Pirate_Watergun_waterball_shot_17: 1574202246
+      Weapon02_Pirate_Watergun_waterball_shot_18: 608926018
+      Weapon02_Pirate_Watergun_waterball_shot_19: 902338295
+      Weapon02_Pirate_Watergun_waterball_shot_2: 577086864
+      Weapon02_Pirate_Watergun_waterball_shot_20: 1683850042
+      Weapon02_Pirate_Watergun_waterball_shot_21: -567134319
+      Weapon02_Pirate_Watergun_waterball_shot_22: -1327242597
+      Weapon02_Pirate_Watergun_waterball_shot_23: 584856476
+      Weapon02_Pirate_Watergun_waterball_shot_24: -1150486694
+      Weapon02_Pirate_Watergun_waterball_shot_25: -1490945392
+      Weapon02_Pirate_Watergun_waterball_shot_26: -2051524770
+      Weapon02_Pirate_Watergun_waterball_shot_27: 151738350
+      Weapon02_Pirate_Watergun_waterball_shot_28: 1210964430
+      Weapon02_Pirate_Watergun_waterball_shot_29: 466679401
+      Weapon02_Pirate_Watergun_waterball_shot_3: -725902197
+      Weapon02_Pirate_Watergun_waterball_shot_30: 1388735440
+      Weapon02_Pirate_Watergun_waterball_shot_31: 2120816322
+      Weapon02_Pirate_Watergun_waterball_shot_32: 1730253858
+      Weapon02_Pirate_Watergun_waterball_shot_33: 1857288024
+      Weapon02_Pirate_Watergun_waterball_shot_34: -96446757
+      Weapon02_Pirate_Watergun_waterball_shot_35: 1264721850
+      Weapon02_Pirate_Watergun_waterball_shot_36: -1284408093
+      Weapon02_Pirate_Watergun_waterball_shot_37: -1489035001
+      Weapon02_Pirate_Watergun_waterball_shot_38: 1488822603
+      Weapon02_Pirate_Watergun_waterball_shot_39: 1625988760
+      Weapon02_Pirate_Watergun_waterball_shot_4: -1570760243
+      Weapon02_Pirate_Watergun_waterball_shot_40: -90462555
+      Weapon02_Pirate_Watergun_waterball_shot_41: -1260334583
+      Weapon02_Pirate_Watergun_waterball_shot_42: -212129847
+      Weapon02_Pirate_Watergun_waterball_shot_43: 483461613
+      Weapon02_Pirate_Watergun_waterball_shot_44: -1048745775
+      Weapon02_Pirate_Watergun_waterball_shot_45: -1604713827
+      Weapon02_Pirate_Watergun_waterball_shot_46: 274030120
+      Weapon02_Pirate_Watergun_waterball_shot_47: 889987309
+      Weapon02_Pirate_Watergun_waterball_shot_48: -1242754703
+      Weapon02_Pirate_Watergun_waterball_shot_49: -1881850191
+      Weapon02_Pirate_Watergun_waterball_shot_5: 701466735
+      Weapon02_Pirate_Watergun_waterball_shot_50: -1962504168
+      Weapon02_Pirate_Watergun_waterball_shot_51: -31908876
+      Weapon02_Pirate_Watergun_waterball_shot_52: 1025633760
+      Weapon02_Pirate_Watergun_waterball_shot_53: -104483315
+      Weapon02_Pirate_Watergun_waterball_shot_54: -1406596178
+      Weapon02_Pirate_Watergun_waterball_shot_55: 1817015774
+      Weapon02_Pirate_Watergun_waterball_shot_56: -943243944
+      Weapon02_Pirate_Watergun_waterball_shot_57: -1550112823
+      Weapon02_Pirate_Watergun_waterball_shot_58: -1509109246
+      Weapon02_Pirate_Watergun_waterball_shot_59: 694356855
+      Weapon02_Pirate_Watergun_waterball_shot_6: 248675243
+      Weapon02_Pirate_Watergun_waterball_shot_60: -1759556586
+      Weapon02_Pirate_Watergun_waterball_shot_61: -1595486014
+      Weapon02_Pirate_Watergun_waterball_shot_62: -1975476467
+      Weapon02_Pirate_Watergun_waterball_shot_7: 1318003663
+      Weapon02_Pirate_Watergun_waterball_shot_8: 1117999604
+      Weapon02_Pirate_Watergun_waterball_shot_9: -1473767409
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

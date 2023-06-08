@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 310853031}
   - component: {fileID: 310853030}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: "\uD0C0\uC6CC1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,9 +1668,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.9, y: 0}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 1
 --- !u!114 &462954576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,6 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolTime: 3
+  igc: {fileID: 840437888}
   status: {fileID: 840437892}
   bulletPrefab: {fileID: 8043778565096238361, guid: 65a773eece7d69448931269f2c019592, type: 3}
   poolingParent: {fileID: 643803228}
@@ -1991,8 +1992,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 720, y: 700}
-  m_SizeDelta: {x: 700, y: 700}
+  m_AnchoredPosition: {x: 539, y: 385}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475812344
 MonoBehaviour:
@@ -2570,7 +2571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.7852, y: 1410}
+  m_AnchoredPosition: {x: -352.31415, y: 889}
   m_SizeDelta: {x: 356.3141, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644740693
@@ -2862,6 +2863,7 @@ MonoBehaviour:
   inGameSkillSensor: {fileID: 1043187149}
   skillPrefab: {fileID: 0}
   target: {fileID: 0}
+  spwanposi: {fileID: 1483090562}
   poolingParent: {fileID: 716710872}
 --- !u!1 &716710871
 GameObject:
@@ -3339,6 +3341,7 @@ MonoBehaviour:
   inGameSkillSensor: {fileID: 1043187149}
   skillPrefab: {fileID: 0}
   target: {fileID: 0}
+  spwanposi: {fileID: 462954573}
   poolingParent: {fileID: 716710872}
 --- !u!1 &856251308
 GameObject:
@@ -4458,6 +4461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharTable: {fileID: 11400000, guid: f8ca78cb7ec180544b39cbc34244c6f0, type: 2}
+  DefineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
   inGameCharList:
   - {fileID: 840437888}
   - {fileID: 703468457}
@@ -4621,7 +4625,7 @@ GameObject:
   - component: {fileID: 1172390659}
   - component: {fileID: 1172390658}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: "\uD0C0\uC6CC2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4785,7 +4789,7 @@ GameObject:
   - component: {fileID: 1248025513}
   - component: {fileID: 1248025512}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: "\uD0C0\uC6CC3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5012,7 +5016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284539713}
   m_Layer: 0
-  m_Name: TowerParent
+  m_Name: "\uD0C0\uC6CC\uBD80\uBAA8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5212,9 +5216,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.9, y: 0}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 1
 --- !u!114 &1349462492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5246,6 +5250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolTime: 3
+  igc: {fileID: 1597234663}
   status: {fileID: 1597234667}
   bulletPrefab: {fileID: 8043778565096238361, guid: 65a773eece7d69448931269f2c019592, type: 3}
   poolingParent: {fileID: 643803228}
@@ -5893,9 +5898,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.9, y: 0}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 1
 --- !u!114 &1483090565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5927,6 +5932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolTime: 3
+  igc: {fileID: 703468457}
   status: {fileID: 703468461}
   bulletPrefab: {fileID: 8043778565096238361, guid: 65a773eece7d69448931269f2c019592, type: 3}
   poolingParent: {fileID: 643803228}
@@ -6587,6 +6593,7 @@ MonoBehaviour:
   inGameSkillSensor: {fileID: 1043187149}
   skillPrefab: {fileID: 0}
   target: {fileID: 0}
+  spwanposi: {fileID: 1349462489}
   poolingParent: {fileID: 716710872}
 --- !u!1 &1623472866
 GameObject:
@@ -6690,7 +6697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185.5289, y: 1410}
+  m_AnchoredPosition: {x: 4, y: 889}
   m_SizeDelta: {x: 356.3141, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690534677
@@ -8257,7 +8264,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 400}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107204261
 MonoBehaviour:
@@ -8334,7 +8341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 541.843, y: 1410}
+  m_AnchoredPosition: {x: 360.3141, y: 889}
   m_SizeDelta: {x: 356.3141, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140867085
