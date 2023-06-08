@@ -8,7 +8,7 @@ using System.Linq;
 using AT.SerializableDictionary;
 namespace Roulette
 {
-    public class Roulette : MonoBehaviour
+    public class RouletteFunction : MonoBehaviour
     {
         [SerializeField]
         ObjectTable shopTable;

@@ -15,6 +15,8 @@ namespace MainUI
             gainWindow.SetActive(true);
         }
 
+        
+
 
     }
 }

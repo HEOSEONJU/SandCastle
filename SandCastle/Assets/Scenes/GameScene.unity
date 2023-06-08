@@ -1688,6 +1688,7 @@ MonoBehaviour:
   value: 0
   animatorWeapon: {fileID: 462954579}
   particleWeapon: {fileID: 1782860950}
+  target: {fileID: 0}
 --- !u!114 &462954577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,7 +2512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643803228}
   m_Layer: 0
-  m_Name: BulletPooling
+  m_Name: "\uD0C4\uD658\uD480\uB9C1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2703,7 +2704,7 @@ GameObject:
   - component: {fileID: 703468466}
   - component: {fileID: 703468467}
   m_Layer: 6
-  m_Name: "\uCE90\uB9AD\uD1301\uBC30\uCE58 (1)"
+  m_Name: "\uCE90\uB9AD\uD1302"
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2760,6 +2761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d4442b2b218bf46849c2f6eadd6d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currenthp: 0
+  maxHp: 0
   moveSpeed: 0
   animationSpeed: 0
   giveDamage: 0
@@ -2870,7 +2873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716710872}
   m_Layer: 0
-  m_Name: SkillPooling
+  m_Name: "\uC2A4\uD0AC\uC624\uBE0C\uC81D\uD2B8\uD480\uB9C1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3178,7 +3181,7 @@ GameObject:
   - component: {fileID: 840437897}
   - component: {fileID: 840437898}
   m_Layer: 6
-  m_Name: "\uCE90\uB9AD\uD1301\uBC30\uCE58"
+  m_Name: "\uCE90\uB9AD\uD1301"
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3235,6 +3238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d4442b2b218bf46849c2f6eadd6d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currenthp: 0
+  maxHp: 0
   moveSpeed: 0
   animationSpeed: 0
   giveDamage: 0
@@ -3927,7 +3932,7 @@ GameObject:
   - component: {fileID: 930260547}
   - component: {fileID: 930260546}
   m_Layer: 0
-  m_Name: WaveManager
+  m_Name: "\uC6E8\uC774\uBE0C\uAD00\uB9AC\uC790 \uC801 \uBD80\uBAA8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4416,7 +4421,7 @@ GameObject:
   - component: {fileID: 1126179526}
   - component: {fileID: 1126179530}
   m_Layer: 7
-  m_Name: MasterController
+  m_Name: "\uD50C\uB808\uC774\uC5B4 \uCE74\uBA54\uB77C\uC870\uC815 \uC6C0\uC9C1\uC784"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4913,7 +4918,7 @@ GameObject:
   - component: {fileID: 1249484416}
   - component: {fileID: 1249484415}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: "\uBA54\uC778\uCE74\uBA54\uB77C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5227,6 +5232,7 @@ MonoBehaviour:
   value: 0
   animatorWeapon: {fileID: 1349462495}
   particleWeapon: {fileID: 1835520233}
+  target: {fileID: 0}
 --- !u!114 &1349462493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5907,6 +5913,7 @@ MonoBehaviour:
   value: 0
   animatorWeapon: {fileID: 1483090568}
   particleWeapon: {fileID: 1959269522}
+  target: {fileID: 0}
 --- !u!114 &1483090566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6114,7 +6121,7 @@ GameObject:
   - component: {fileID: 1562447206}
   - component: {fileID: 1562447205}
   m_Layer: 0
-  m_Name: Map
+  m_Name: "\uB9F5/\uC790\uC6D0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6317,7 +6324,7 @@ GameObject:
   - component: {fileID: 1592142164}
   - component: {fileID: 1592142163}
   m_Layer: 5
-  m_Name: JoyStick
+  m_Name: "\uC870\uC774\uC2A4\uD2F1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6422,7 +6429,7 @@ GameObject:
   - component: {fileID: 1597234672}
   - component: {fileID: 1597234673}
   m_Layer: 6
-  m_Name: "\uCE90\uB9AD\uD1301\uBC30\uCE58 (2)"
+  m_Name: "\uCE90\uB9AD\uD1303"
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6479,6 +6486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d4442b2b218bf46849c2f6eadd6d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currenthp: 0
+  maxHp: 0
   moveSpeed: 0
   animationSpeed: 0
   giveDamage: 0
@@ -8188,7 +8197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2097056380}
   m_Layer: 0
-  m_Name: Chars
+  m_Name: "\uCE90\uB9AD\uD130\uB4E4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

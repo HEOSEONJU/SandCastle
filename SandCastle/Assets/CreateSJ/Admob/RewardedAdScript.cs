@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,26 +21,54 @@ public class RewardedAdScript : MonoBehaviour
   private string _adUnitId = "unused";
 #endif
 
+    static RewardedAdScript instance;
 
-    [SerializeField]
-    TextMeshProUGUI T;
-    public void Start()
+
+    public void Awake()
     {
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize((InitializationStatus initStatus) =>
+
+        if (instance == null)
         {
-            // This callback is called once the MobileAds SDK is initialized.
-        });
+            instance = this;
+
+            
+            MobileAds.RaiseAdEventsOnUnityMainThread = true;//기본스레드에서 콜백발생하게해주는기능
+
+
+            // Initialize the Google Mobile Ads SDK.
+            MobileAds.Initialize((InitializationStatus initStatus) =>  //광고초기화 앱실행중 한번만 실행하면됨
+            {
+                // This callback is called once the MobileAds SDK is initialized.
+            });
+            DontDestroyOnLoad(gameObject);
+            
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+
+
     }
 
-    public void Showad()
+    static public RewardedAdScript Instance
     {
-        Screen.SetResolution(2960, 1440, true);
+        get { return instance; }
+    }
+
+    [SerializeField]
+    bool state = false;
+    
+
+    public void Showad(ADFunction adf)
+    {
+        
 
 
-        T.text = "";
-        T.text += "start\n";
-        LoadRewardedAd();
+        
+        LoadRewardedAd(adf);
         
     }
 
@@ -50,8 +79,14 @@ public class RewardedAdScript : MonoBehaviour
     /// <summary>
     /// Loads the rewarded ad.
     /// </summary>
-    public void LoadRewardedAd()
+    public void LoadRewardedAd(ADFunction adf)
     {
+        if(state)
+        {
+            return;
+        }
+
+        state= true;
         // Clean up the old ad before loading a new one.
         if (rewardedAd != null)
         {
@@ -60,7 +95,7 @@ public class RewardedAdScript : MonoBehaviour
         }
 
         Debug.Log("Loading the rewarded ad.");
-        T.text += "Loading the rewarded ad\n";
+        
         // create our request used to load the ad.
         var adRequest = new AdRequest();
         adRequest.Keywords.Add("unity-admob-sample");
@@ -74,12 +109,13 @@ public class RewardedAdScript : MonoBehaviour
             {
                     if(ad==null)
                     {
-                        T.text += "ad null " + "\n";
+                        
                     }
                     if(error != null)
                     {
                         Debug.LogError("Rewarded ad failed to load an ad " + "with error : " + error);
                     }
+                    state = false;
                     return;
                 }
                 
@@ -88,33 +124,34 @@ public class RewardedAdScript : MonoBehaviour
                           + ad.GetResponseInfo());
 
                 rewardedAd = ad;
-                ShowRewardedAd();
+                state = false;
+                ShowRewardedAd(adf);
             });
     }
 
 
 
-    public void ShowRewardedAd()//보상형광고 출시
+    public void ShowRewardedAd(ADFunction adf)//보상형광고 출시
     {
         const string rewardMsg ="Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
         
         if(rewardedAd == null)
         {
-            T.text += "Rewarded ad loaded with response : " + rewardedAd.GetResponseInfo() + "\n";
+            
         }
         if (!rewardedAd.CanShowAd())
         {
-            T.text = "can't show ad\n";
+            
         }
 
 
         if (rewardedAd != null && rewardedAd.CanShowAd())
         {
-            T.text += "show reward "+ "\n";
+            
             rewardedAd.Show((Reward reward) =>
             {
                 //보상리스트작성하면됨
-                SceneManager.LoadScene("StartScene");
+                adf.Reward();
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
         }
@@ -165,7 +202,7 @@ public class RewardedAdScript : MonoBehaviour
             Debug.Log("Rewarded Ad full screen content closed.");
 
             // Reload the ad so that we can show another as soon as possible.
-            LoadRewardedAd();
+          //  LoadRewardedAd();
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
@@ -174,7 +211,7 @@ public class RewardedAdScript : MonoBehaviour
                            "with error : " + error);
 
             // Reload the ad so that we can show another as soon as possible.
-            LoadRewardedAd();
+            //LoadRewardedAd();
         };
     }
 }
