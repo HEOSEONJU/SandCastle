@@ -6,9 +6,17 @@ namespace InGame
 {
     public class InGame_Camera_Move : MonoBehaviour
     {
-        float clampX=4.63f;
-        float clampY=1.73f;
-
+        [SerializeField]
+        float clampPlusX;
+        [SerializeField]
+        float clampMinusX;
+        [SerializeField]
+        float clampPlusY;
+        [SerializeField]
+        float clampMinusY;
+        
+        
+        [SerializeField]
         Vector3 origin = new Vector3(-0.31f, 0, -10f);
         public void Clamp_Camera(Transform master)
         {
@@ -18,16 +26,16 @@ namespace InGame
             
             Vector3 Temp = transform.position;
 
-            if(Temp.x<= (-clampX) ||Temp.x>=clampX ||Temp.y<=(-clampY) ||Temp.y>=clampY)
+            if(Temp.x<= (clampMinusX) ||Temp.x>= clampPlusX || Temp.y<=(clampMinusY) ||Temp.y>= clampPlusY)
             {
-                Temp.x = Mathf.Clamp(Temp.x, -clampX, clampX);
-                Temp.y = Mathf.Clamp(Temp.y, -clampY, clampY);
+                Temp.x = Mathf.Clamp(Temp.x, clampMinusX, clampPlusX);
+                Temp.y = Mathf.Clamp(Temp.y, clampMinusY, clampPlusY);
                 
                 transform.position = Temp;
                 return;
             }
             
-            
+
         }
 
     }

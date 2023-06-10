@@ -13,8 +13,7 @@ namespace Enemy
 
         public Vector3 targetVector;
         
-        [SerializeField]
-        float speedValue=5f;//속도보정값
+        
         [SerializeField]
         bool active;//작동중
 
@@ -48,7 +47,7 @@ namespace Enemy
             while(active) {
 
                 //transform.position += direction*moveSpeed*Time.deltaTime;
-                transform.position = Vector3.MoveTowards(gameObject.transform.position, targetVector, Time.deltaTime* enemymanager.EnemyStatus.MoveSpeed * speedValue);
+                transform.position = Vector3.MoveTowards(gameObject.transform.position, targetVector, Time.deltaTime* enemymanager.EnemyStatus.MoveSpeed);
                 yield return null;
             }
             

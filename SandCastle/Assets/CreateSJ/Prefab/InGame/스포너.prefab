@@ -47,10 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyResourceTable: {fileID: 11400000, guid: 5d16c7160da546f42862c890b78c958e, type: 2}
   enemyTable: {fileID: 11400000, guid: 72d59a2e1ebfe984bb96da87ec3a0622, type: 2}
+  defineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
   prefab: {fileID: 0}
   waveManager: {fileID: 0}
   count: 30
   nextPoint: {fileID: 0}
+  spwanTime: 0.3
 --- !u!212 &3289099258478906323
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -43,9 +43,12 @@ namespace InGame
             //ActiveSkill();
         }
 
-        public void SettingTarget()
+        public bool SettingTarget()
         {
-            
+            if(inGameSkillSensor.GameObjects.Count==0)
+            {
+                return false;
+            }
             switch (skillData.Target)
             {
                 case SkillTarget.Near:
@@ -64,6 +67,7 @@ namespace InGame
 
                     break;
             }
+            return true;
         }
 
 

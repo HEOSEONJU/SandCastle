@@ -15,6 +15,9 @@ namespace Enemy
         ObjectTable enemyTable;
 
         [SerializeField]
+        ObjectTable defineTable;
+
+        [SerializeField]
         GameObject prefab;
 
 
@@ -29,6 +32,9 @@ namespace Enemy
         Transform nextPoint;
 
         List<Enemy_Manager> GOList;
+
+        [SerializeField]
+        float spwanTime=1f;
         public void Init(string enemykey, int count, WaveManager wavemanager, Transform nextpoint, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability)
         {
 
@@ -57,7 +63,7 @@ namespace Enemy
             {
                 resistancevalue = float.Parse(resistanceValueTemp);
             }
-             
+            movespeed *= defineTable.Findfloat("monsterdefaultspeed", "value");
             Enemy_Manager e = prefab.GetComponent<Enemy_Manager>();
             e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
             
@@ -85,9 +91,9 @@ namespace Enemy
                 if (!(em is null))
                 {
                     em.StartMove(nextPoint.transform);
-                    //em.Reseting(1, 10);
+                    
                 }
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(spwanTime);
             }
             GOList = transform.GetComponentsInChildren<Enemy_Manager>().ToList();
             Debug.Log(GOList.Count);

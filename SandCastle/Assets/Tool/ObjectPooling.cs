@@ -27,12 +27,7 @@ public class ObjectPooling : MonoBehaviour
         }
     }
 
-    
-
-
-
-
-
+   
     public static GameObject GetObject(GameObject gameobject, Transform parent) //오프젝트가 필요할 때 다른 스크립트에서 호출되는 함수
     {
         for(int i=0;i< parent.childCount;i++)

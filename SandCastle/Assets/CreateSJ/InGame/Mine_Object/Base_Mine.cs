@@ -77,6 +77,7 @@ namespace InGame
                     Change_Image(spriteDead);
                     IsDestory = true;
                     igc.Animator.SetTrigger("HarvestExit");
+
                     return;
                 }
                 

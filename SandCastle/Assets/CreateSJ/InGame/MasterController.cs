@@ -14,14 +14,14 @@ namespace inGame
         ObjectTable DefineTable;
 
 
-        [SerializeField]  
+        [SerializeField]
         List<InGame_Char> inGameCharList;
 
         [SerializeField]
         Input_Joystikc inputJoystick;
 
-        
-        
+
+
         [SerializeField]
         Rigidbody2D rigid;
 
@@ -40,16 +40,16 @@ namespace inGame
 
             foreach (InGame_Char IGC in inGameCharList)
             {
-                
+
                 float movespeed = CharTable.Findfloat(IGC.CharName, "moveSpeed");
                 float animationSpeed = CharTable.Findfloat(IGC.CharName, "animationSpeed");
-                
+
                 float giveDamage = CharTable.Findfloat(IGC.CharName, "giveDamage");
                 float sandGet = CharTable.Findfloat(IGC.CharName, "sandGet");
                 float waterGet = CharTable.Findfloat(IGC.CharName, "waterGet");
                 float mudGet = CharTable.Findfloat(IGC.CharName, "mudGet");
                 string localKeyName = CharTable.FindString(IGC.CharName, "localKeyName");
-                
+
                 float range = CharTable.Findfloat(IGC.CharName, "range");
                 float moveSpeedLV = CharTable.Findfloat(IGC.CharName, "moveSpeedLV");
                 float animationSpeedLV = CharTable.Findfloat(IGC.CharName, "animationSpeedLV");
@@ -61,15 +61,15 @@ namespace inGame
                 int startMana = CharTable.FindInt(IGC.CharName, "startMana");
                 int maxhp = CharTable.FindInt(IGC.CharName, "maxHP");
                 float attackspeed = CharTable.Findfloat(IGC.CharName, "attackSpeed");
-                
-                if(speed<movespeed)
+
+                if (speed < movespeed)
                 {
                     speed = movespeed;
                 }
-                
-                IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana,maxhp);
-                
-                IGC.SettingAttack(attackspeed,defaultspeed, attackdamage);
+
+                IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana, maxhp);
+
+                IGC.SettingAttack(attackspeed, defaultspeed, attackdamage);
 
             }
 
@@ -80,40 +80,58 @@ namespace inGame
         // Update is called once per frame
         void Update()
         {
-            
-                float angle = inputJoystick.inputVector.x;
-                foreach (InGame_Char IGC in inGameCharList)
+
+            float angle = inputJoystick.inputVector.x;
+            foreach (InGame_Char IGC in inGameCharList)
+            {
+                if (IGC.Animator.GetBool("RecallEnd"))
                 {
-                    
 
-                    if (IGC.Animator.GetBool("IsAction") is false)
+                    Debug.Log(IGC.name+"公利吝"+"芭府"+ IGC.InGameMove.Distance());
+                    Debug.Log(IGC.InGameMove.Distance());
+                    if ((IGC.InGameMove.Distance() >= IGC.InGameMove.value))
                     {
-                        IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector,IGC.InGameStatus.MoveSpeed);
-                        if(!IGC.ActiveSKill())
-                        { 
-                        IGC.InGameAttack.PlayAttack();
-                        }
-                        
-                    
-
-                    if (angle > 0)
-                        {
-                            //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-                            IGC.SpriteRenderer.flipX = true;
-
-                        }
-                        else if (angle < 0)
-                        {
-                            //IGC.transform.rotation = Quaternion.identity;
-                            IGC.SpriteRenderer.flipX = false;
-                        }
+                        IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector, IGC.InGameStatus.MoveSpeed * 2f);
+                        Debug.Log(IGC.name + "公利汗蓖");
                     }
                     else
                     {
-                        IGC.InGameMove.StopChar(IGC.Animator);
+                        
+                        Debug.Log(IGC.name + "公利厚劝己拳");
+                        IGC.Animator.SetBool("Infinity", false);
+                        IGC.Animator.SetBool("RecallEnd", false);
                     }
 
                 }
+
+
+
+                if (IGC.Animator.GetBool("IsAction") is false)
+                {
+                    IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector, IGC.InGameStatus.MoveSpeed);
+                    if (!IGC.ActiveSKill())
+                    {
+                        IGC.InGameAttack.PlayAttack();
+                    }
+
+                    if (angle > 0)
+                    {
+                        //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                        IGC.SpriteRenderer.flipX = true;
+
+                    }
+                    else if (angle < 0)
+                    {
+                        //IGC.transform.rotation = Quaternion.identity;
+                        IGC.SpriteRenderer.flipX = false;
+                    }
+                }
+                else
+                {
+                    IGC.InGameMove.StopChar(IGC.Animator);
+                }
+
+            }
 
 
             //harvest.Harvest(Animator);

@@ -40,6 +40,12 @@ namespace InGame
             //
 
         }
+
+
+        public void RecallEvent()
+        {
+
+        }
     }
 
 }

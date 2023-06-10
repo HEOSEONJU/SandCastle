@@ -75,7 +75,7 @@ namespace InGame
         }
         public void SkillEvent()
         {
-            igc.InGameSkill.SettingTarget();
+            if(igc.InGameSkill.SettingTarget())
             igc.InGameSkill.ActiveSkill();
             
         }

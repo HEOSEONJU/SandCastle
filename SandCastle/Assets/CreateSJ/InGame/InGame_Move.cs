@@ -10,11 +10,11 @@ namespace InGame
     {
         [SerializeField]
         Transform defaultPosition;
-        [SerializeField]
-        float value=0.1f;
+        
+        public float value=0.1f;//거리보정값
         public void MoveChar(Animator animator,Vector2 inputvector,float speed)
         {
-            if (Vector3.Distance(transform.position, defaultPosition.position) >= value)
+            if (Distance() >= value)
             {
                 Vector3 direction = transform.position - defaultPosition.position;
                 animator.SetFloat("Amount", MathF.Abs(direction.x) + MathF.Abs(direction.y));
@@ -37,7 +37,10 @@ namespace InGame
 
         }
 
-        
+        public  float Distance()
+        {
+           return Vector3.Distance(transform.position , defaultPosition.position);
+        }
     }
 
 }

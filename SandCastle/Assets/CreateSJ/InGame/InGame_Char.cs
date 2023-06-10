@@ -104,8 +104,8 @@ namespace InGame
                 status.CurrentMana = 0;
                 Animator.CrossFade("CharSkill", 0.01f);
                 
-                skill.SettingTarget();
-                return true;
+                
+                return skill.SettingTarget();
                 //skill.ActiveSkill();
             }
             return false;
