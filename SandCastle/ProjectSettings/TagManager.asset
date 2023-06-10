@@ -8,6 +8,7 @@ TagManager:
   - Patrol
   - Enemy
   - Bullet
+  - Nexus
   layers:
   - Default
   - TransparentFX

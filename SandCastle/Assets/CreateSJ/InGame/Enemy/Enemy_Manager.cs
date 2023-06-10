@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace Enemy
@@ -24,8 +25,9 @@ namespace Enemy
 
         public void StartMove(Transform point)
         {
-            enemyMove.Move_Next_Point(point.position - transform.position, point.position);
-            enemyMove.StartCoroutine(enemyMove.MovePoint());
+            enemyMove.Move_Next_Point(point);
+            enemyMove.MovePoint();
+            
         }
         public void Hit(float value)
         {
@@ -38,13 +40,16 @@ namespace Enemy
         }
         public void BaseAttack()
         {
+            Debug.Log("베이스어택작동시작");
             if (enemyStatus.Hp <= 0)
             {
                 return;
             }
+
             
             RaycastHit2D[] hitlist = Physics2D.BoxCastAll(transform.position, transform.localScale, 0, Vector2.zero);
-            
+            Debug.Log("베이스어택작동" + hitlist.Length);
+
             foreach (var hit in hitlist)
             {
                 hit.collider.transform.TryGetComponent<BaseHP>(out BaseHP basehp);
@@ -55,6 +60,7 @@ namespace Enemy
             }
             gameObject.SetActive(false);
         }
+
 
 
     }

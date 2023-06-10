@@ -8,16 +8,18 @@ namespace Enemy
     {
         [SerializeField]
         Enemy_Manager enemymanager;
-        Vector3 movePoint;
-        Vector3 direction;
 
-        public Vector3 targetVector;
+
+        [SerializeField]
+        Transform target;
+        
         
         
         [SerializeField]
         bool active;//¿€µø¡ﬂ
 
         
+        public IEnumerator moveCoroutine;
 
         public bool Active
         {
@@ -25,32 +27,45 @@ namespace Enemy
         }
 
 
-        public void Move_Next_Point(Vector3 point,Vector3 t)
+        public void Move_Next_Point(Transform point)
         {
-            direction = point.normalized;
-            targetVector= t;
+            target = point;   
         }
 
         public void StopMove()
         {
-            StopCoroutine(MovePoint());
+            StopCoroutine(moveCoroutine);
             active = false;
 
 
-            enemymanager.BaseAttack();
+            
 
 
         }
-        public IEnumerator MovePoint()
+        public void MovePoint()
         {
-            active= true;
+            moveCoroutine = MoveCoroutine();
+            StartCoroutine(moveCoroutine);
+        }
+        
+        public IEnumerator MoveCoroutine()
+        {
+            
+            active = true;
             while(active) {
 
-                //transform.position += direction*moveSpeed*Time.deltaTime;
-                transform.position = Vector3.MoveTowards(gameObject.transform.position, targetVector, Time.deltaTime* enemymanager.EnemyStatus.MoveSpeed);
+                if(Vector3.Distance(transform.position, target.position)<=0.1f)
+                {
+                    active = false;
+                }
+
+                
+                transform.position = Vector3.MoveTowards(gameObject.transform.position,target.position, Time.deltaTime* enemymanager.EnemyStatus.MoveSpeed);
                 yield return null;
             }
-            
+
+            enemymanager.BaseAttack();
+
         }
         
     }

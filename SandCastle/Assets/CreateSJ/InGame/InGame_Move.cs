@@ -9,11 +9,26 @@ namespace InGame
     public class InGame_Move : MonoBehaviour
     {
         [SerializeField]
+        bool fix;
+
+
+
+
+        [SerializeField]
         Transform defaultPosition;
         
         public float value=0.1f;//거리보정값
+
+
+        public bool Fix
+        {
+            get { return fix; }
+        }
         public void MoveChar(Animator animator,float speed)
         {
+            if(Fix)
+            { return; }
+
             if (Distance() >= value)
             {
                 Vector3 direction = transform.position - defaultPosition.position;

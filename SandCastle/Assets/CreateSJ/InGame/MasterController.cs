@@ -81,8 +81,12 @@ namespace inGame
         // Update is called once per frame
         void Update()
         {
-
-            float angle = inputJoystick.inputVector.x;
+            float angle = 0;
+            if (inputJoystick!=null)
+            {
+                angle = inputJoystick.inputVector.x;
+            }
+            
             foreach (InGame_Char IGC in inGameCharList)
             {
 
@@ -124,10 +128,14 @@ namespace inGame
 
 
 
-
+            if(rigid!=null)
             rigid.velocity = inputJoystick.inputVector.normalized * speed;
             //rigid.velocity = Vector2.zero;
-            cameraMove.Clamp_Camera(this.transform);
+            if(cameraMove!=null) 
+            {
+                cameraMove.Clamp_Camera(this.transform);
+            }
+            
         }
 
         bool RecallChar(InGame_Char IGC)

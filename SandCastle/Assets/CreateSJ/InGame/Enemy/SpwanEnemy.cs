@@ -30,17 +30,21 @@ namespace Enemy
 
         [SerializeField]
         Transform nextPoint;
-
+        [SerializeField]
+        
+        
         List<Enemy_Manager> GOList;
 
+        PatrolSetting patrolSetting;
         [SerializeField]
         float spwanTime=1f;
-        public void Init(string enemykey, int count, WaveManager wavemanager, Transform nextpoint, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability)
+        public void Init(string enemykey, int count, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability)
         {
-
+            patrolSetting=patrolsetting; ;
+            
             this.count = count;
             waveManager = wavemanager;
-            nextPoint = nextpoint;
+            
             prefab = Resources.Load<GameObject>("Prefab/Enemy/" + enemykey);
             string enemytablekey = enemyResourceTable.FindString(enemykey, "enemyKey");
             string category = enemyTable.FindString(enemytablekey, "category");
@@ -85,12 +89,12 @@ namespace Enemy
             while (count-- > 0)
             {
                 var a = ObjectPooling.GetObject(prefab, this.transform);
-                a.transform.position = this.transform.position;
+                a.transform.position = patrolSetting.SwpanPoint().position;
 
                 a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
                 if (!(em is null))
                 {
-                    em.StartMove(nextPoint.transform);
+                    em.StartMove(patrolSetting.Nexus);
                     
                 }
                 yield return new WaitForSeconds(spwanTime);

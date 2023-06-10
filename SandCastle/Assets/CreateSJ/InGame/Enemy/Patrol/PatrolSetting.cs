@@ -1,28 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PatrolSetting : MonoBehaviour
 {
+    [SerializeField]
+    Transform nexus;
+
+    public Transform Nexus
+    {
+        get { return nexus; }
+    }
+
+    [SerializeField]
+    List<Transform> patrolPoint;
     public void Init()
     {
-        int count = transform.childCount;
-        PatrolPoint patrolpoint;
-
-        for(int i=0;i<count-1; i++) 
-        {
-            transform.GetChild(i).TryGetComponent<PatrolPoint>(out patrolpoint);
-            
-            patrolpoint.NextToPoint = transform.GetChild(i+1).transform;
-            
-        }
-        transform.GetChild(count-1).TryGetComponent<PatrolPoint>(out patrolpoint);
-        patrolpoint.NextToPoint = transform.GetChild(count-1).transform;
-
-
+        patrolPoint = transform.GetComponentsInChildren<Transform>().ToList();
+        patrolPoint.Remove(this.transform);
     }
-    public Transform FirstPosition()
+    
+
+    public Transform SwpanPoint()
     {
-        return transform.GetChild(0).transform; 
+
+        return patrolPoint[Random.Range(0, patrolPoint.Count)];
     }
 }

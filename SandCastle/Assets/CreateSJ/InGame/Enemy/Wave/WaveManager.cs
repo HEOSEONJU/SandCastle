@@ -51,7 +51,7 @@ public class WaveManager : MonoBehaviour
             Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
             var e = Instantiate(spwanObject, this.transform);
             e.TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-            spwan.Init(enemyname, summoncount, this, patrolSetting.FirstPosition(),hpmultiply,giverewardtype, rewardamount, skillpointprobability);
+            spwan.Init(enemyname, summoncount, this , patrolSetting, hpmultiply,giverewardtype, rewardamount, skillpointprobability);
             spwanList.Add(spwan);
                 
 
