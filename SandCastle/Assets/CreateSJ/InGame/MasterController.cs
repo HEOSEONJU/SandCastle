@@ -2,6 +2,7 @@ using InGame;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace inGame
@@ -84,31 +85,16 @@ namespace inGame
             float angle = inputJoystick.inputVector.x;
             foreach (InGame_Char IGC in inGameCharList)
             {
-                if (IGC.Animator.GetBool("RecallEnd"))
+
+                if(RecallChar(IGC))
                 {
-
-                    Debug.Log(IGC.name+"公利吝"+"芭府"+ IGC.InGameMove.Distance());
-                    Debug.Log(IGC.InGameMove.Distance());
-                    if ((IGC.InGameMove.Distance() >= IGC.InGameMove.value))
-                    {
-                        IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector, IGC.InGameStatus.MoveSpeed * 2f);
-                        Debug.Log(IGC.name + "公利汗蓖");
-                    }
-                    else
-                    {
-                        
-                        Debug.Log(IGC.name + "公利厚劝己拳");
-                        IGC.Animator.SetBool("Infinity", false);
-                        IGC.Animator.SetBool("RecallEnd", false);
-                    }
-
+                    continue;
                 }
-
 
 
                 if (IGC.Animator.GetBool("IsAction") is false)
                 {
-                    IGC.InGameMove.MoveChar(IGC.Animator, inputJoystick.inputVector, IGC.InGameStatus.MoveSpeed);
+                    IGC.InGameMove.MoveChar(IGC.Animator, IGC.InGameStatus.MoveSpeed);
                     if (!IGC.ActiveSKill())
                     {
                         IGC.InGameAttack.PlayAttack();
@@ -143,6 +129,44 @@ namespace inGame
             //rigid.velocity = Vector2.zero;
             cameraMove.Clamp_Camera(this.transform);
         }
-    }
 
+        bool RecallChar(InGame_Char IGC)
+        {
+            if (!IGC.Animator.GetBool("RecallEnd"))
+            {
+                return false;
+            }
+            if ((IGC.InGameMove.Distance() >= IGC.InGameMove.value))
+            {
+
+                float angle = IGC.InGameMove.Angle();
+
+                Debug.Log(angle);
+
+                if (angle < 0)
+                {
+                    //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                    IGC.SpriteRenderer.flipX = true;
+
+                }
+                else if (angle > 0)
+                {
+                    //IGC.transform.rotation = Quaternion.identity;
+                    IGC.SpriteRenderer.flipX = false;
+                }
+
+                IGC.InGameMove.MoveChar(IGC.Animator, IGC.InGameStatus.MoveSpeed * 2f);
+                
+            }
+            else
+            {
+
+                IGC.InGameMove.StopChar(IGC.Animator);
+                IGC.Animator.SetBool("Infinity", false);
+                IGC.Animator.SetBool("RecallEnd", false);
+            }
+
+            return true;
+        }
+    }
 }

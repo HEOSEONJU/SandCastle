@@ -235,7 +235,7 @@ Animator:
   m_GameObject: {fileID: 85610184}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 98b634a9423ad164e83c0e57a095acf0, type: 2}
+  m_Controller: {fileID: 9100000, guid: df419bf9ddf43a04e9455904edb8bad0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultPosition: {fileID: 543413161}
-  value: 0
+  value: 0.01
 --- !u!58 &703468463
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultPosition: {fileID: 1187477267}
-  value: 0
+  value: 0.01
 --- !u!58 &840437894
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3365,7 +3365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultPosition: {fileID: 191676088}
-  value: 0
+  value: 0.01
 --- !u!58 &1597234669
 CircleCollider2D:
   m_ObjectHideFlags: 0

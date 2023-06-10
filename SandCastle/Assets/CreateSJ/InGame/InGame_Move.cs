@@ -12,7 +12,7 @@ namespace InGame
         Transform defaultPosition;
         
         public float value=0.1f;//거리보정값
-        public void MoveChar(Animator animator,Vector2 inputvector,float speed)
+        public void MoveChar(Animator animator,float speed)
         {
             if (Distance() >= value)
             {
@@ -40,6 +40,15 @@ namespace InGame
         public  float Distance()
         {
            return Vector3.Distance(transform.position , defaultPosition.position);
+        }
+
+        public float Angle()
+        {
+            
+            
+
+
+            return Vector3.Cross(transform.up, defaultPosition.position - transform.position).z;
         }
     }
 
