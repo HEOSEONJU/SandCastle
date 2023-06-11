@@ -9,19 +9,7 @@ namespace InGame
 {
     public class Single_Attack : Abstract_Attack
     {
-        [SerializeField]
-        InGame_Char igc;
-        [SerializeField]
-        InGame_Status status;
-
-        [SerializeField]
-        GameObject bulletPrefab;
-
-
-        [SerializeField]
-        Transform poolingParent;
-        [SerializeField]
-        Transform attackPoint;
+        
         private void Start()
         {
             CanAttack= true;
@@ -36,7 +24,7 @@ namespace InGame
             {
                 return;
             }
-            bulletobject.transform.position = attackPoint.position;
+            bulletobject.transform.position = transform.position;
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             bulletobject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

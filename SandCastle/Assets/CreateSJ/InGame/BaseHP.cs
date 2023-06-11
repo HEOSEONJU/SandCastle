@@ -10,12 +10,21 @@ public class BaseHP : MonoBehaviour
     [SerializeField]
     List<InGame_Char> inGameCharList;
 
-    [SerializeField]
-    InGameCharInit inGameCharInit;
+    
 
-    private void Start()
+
+    public void InitBaseHP(InGameCharInit igci)
     {
-         inGameCharInit.CharsInit(inGameCharList);
+        igci.CharsInit(inGameCharList);
+    }
+    
+    public void InputChar(InGame_Char igc)
+    {
+        if(inGameCharList ==null)
+        {
+            inGameCharList=new List<InGame_Char>();
+        }
+        inGameCharList.Add(igc);
     }
 
     // Update is called once per frame
@@ -32,7 +41,7 @@ public class BaseHP : MonoBehaviour
 
             if (IGC.Animator.GetBool("IsAction") is false)
             {
-                IGC.InGameMove.MoveChar(IGC.Animator, IGC.InGameStatus.MoveSpeed);
+                
                 if (!IGC.ActiveSKill())
                 {
                     IGC.InGameAttack.PlayAttack();
@@ -50,10 +59,7 @@ public class BaseHP : MonoBehaviour
                     IGC.SpriteRenderer.flipX = false;
                 }
             }
-            else
-            {
-                IGC.InGameMove.StopChar(IGC.Animator);
-            }
+            
         }
     }
 

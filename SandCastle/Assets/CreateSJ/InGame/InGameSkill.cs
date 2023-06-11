@@ -8,10 +8,8 @@ namespace InGame
 {
     public class InGameSkill : MonoBehaviour
     {
-        [SerializeField]
-        ObjectTable skillTable;
-        [SerializeField]
-        ObjectTable skillObjectTable;
+        
+        
         [SerializeField]
         InGame_Char inGameChar;
         [SerializeField]
@@ -27,12 +25,13 @@ namespace InGame
         Transform spwanposi;
         [SerializeField]
         Transform poolingParent;
-        public void Init()
+        public void Init(InGameSkillSensor sensor,Transform parent,ObjectTable skilltable)
         {
-            
+            inGameSkillSensor= sensor;
+            poolingParent= parent;
             skillData = new SkillData();
             
-            skillData.InitData("Skill00001", skillTable);
+            skillData.InitData("Skill00001", skilltable);
             
             
             

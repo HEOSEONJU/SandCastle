@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
+
 namespace SandEnums
     {
     public class Enums : MonoBehaviour
@@ -15,6 +17,19 @@ namespace SandEnums
         None,
         AD,
         jewel
+    }
+
+}
+
+namespace InGame
+{
+    public enum AttackType
+    {
+        Single = 1,
+        Multi = 2,
+        Range = 4,
+        Continuous = 8,
+        Penetrating = 16
     }
 
 }

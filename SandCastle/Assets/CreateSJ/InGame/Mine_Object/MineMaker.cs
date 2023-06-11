@@ -14,14 +14,13 @@ public class MineMaker : MonoBehaviour
 
     
 
-    
-    private void Start()
+    public void InputMineData()
     {
-        mineList= GetComponentsInChildren<Abstract_Mine>().ToList();
+        mineList = GetComponentsInChildren<Abstract_Mine>().ToList();
 
-        foreach(Abstract_Mine mine in mineList) 
+        foreach (Abstract_Mine mine in mineList)
         {
-            
+
 
             string type = MineTable.FindString(mine.name, "resourceType");
             MineTable.FindInt(mine.name, "amount");
@@ -29,11 +28,10 @@ public class MineMaker : MonoBehaviour
 
             float maxhp = MineTable.Findfloat(mine.name, "maxHP");
             int amountmax = MineTable.FindInt(mine.name, "amountMax");
-            string imagefull= MineTable.FindString(mine.name, "imageFull");
-            string imagedead= MineTable.FindString(mine.name, "imageDead");
+            string imagefull = MineTable.FindString(mine.name, "imageFull");
+            string imagedead = MineTable.FindString(mine.name, "imageDead");
             mine.Init_Object(type, amount, maxhp, amountmax, imagefull, imagedead);
         }
-
-
     }
+    
 }

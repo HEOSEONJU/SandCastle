@@ -10,10 +10,10 @@ namespace inGame
 {
     public class MasterController : MonoBehaviour
     {
-        
 
 
-        
+
+
         [SerializeField]
         InGame_Char inGameChar;
         [SerializeField]
@@ -29,37 +29,48 @@ namespace inGame
         [SerializeField]
         float speed;
 
-        [SerializeField]
-        InGameCharInit inGameCharInit;
 
-        private void Start()
+
+        public void InitMasterController(InGame_Char igc, InGameCharInit igci)
         {
-           speed=inGameCharInit.CharInit(inGameChar);
+            inGameChar = igc;
+
+            speed = igci.CharInit(inGameChar);
         }
+
 
         // Update is called once per frame
         void Update()
         {
 
 
-            
+
             rigid.velocity = inputJoystick.inputVector.normalized * speed;
             cameraMove.Clamp_Camera(this.transform);
-            
+
 
 
             if (RecallChar(inGameChar))
             {
                 return;
             }
-            else if (inGameChar.Animator.GetBool("IsAction") is false)
+            if (inGameChar.Animator.GetBool("IsAction") is false)
             {
-                inGameChar.InGameMove.MoveChar(inGameChar.Animator, inGameChar.InGameStatus.MoveSpeed);
+                
                 if (!inGameChar.ActiveSKill())
                 {
                     inGameChar.InGameAttack.PlayAttack();
+
+                    
                 }
-                float  angle = inputJoystick.inputVector.x;
+                if (inputJoystick.inputVector.x == 0 && inputJoystick.inputVector.y == 0)
+                {
+                    inGameChar.InGameMove.StopChar(inGameChar.Animator);
+                    
+                    return;
+                }
+
+                float angle = inputJoystick.inputVector.x;
                 if (angle > 0)
                 {
                     //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
@@ -70,10 +81,12 @@ namespace inGame
                     //IGC.transform.rotation = Quaternion.identity;
                     inGameChar.SpriteRenderer.flipX = false;
                 }
+                inGameChar.InGameMove.MoveChar(inGameChar.Animator, inGameChar.InGameStatus.MoveSpeed);
             }
             else
             {
                 inGameChar.InGameMove.StopChar(inGameChar.Animator);
+
             }
 
         }
@@ -104,7 +117,7 @@ namespace inGame
                 }
 
                 IGC.InGameMove.MoveChar(IGC.Animator, IGC.InGameStatus.MoveSpeed * 2f);
-                
+
             }
             else
             {

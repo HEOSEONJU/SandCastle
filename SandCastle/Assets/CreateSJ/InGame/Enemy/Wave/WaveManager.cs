@@ -24,42 +24,39 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator WaveCorountine;
 
-    private void Start()
+    public void WaveInputStart()
     {
 
-        
         float hpmultiply = waveTable.Findfloat("Wave000000", "hpMultiply");
         string giverewardtype = waveTable.FindString("Wave000000", "giveRewardType");
         int rewardamount = waveTable.FindInt("Wave000000", "rewardAmount");
         int skillpointprobability = waveTable.FindInt("Wave000000", "skillPointProbability");
 
 
-
-
-
         patrolSetting.Init();
         currentWaveCount = 0;
-        string waveGroup=waveTable.FindString("Wave000000", "waveGroup");
+        string waveGroup = waveTable.FindString("Wave000000", "waveGroup");
         string[] WaveList = waveGroup.Split(',');
-        spwanList=new List<SpwanEnemy>();
+        spwanList = new List<SpwanEnemy>();
         foreach (string wavespawnkey in WaveList)
         {
             string enemyname = waveSpwanTable.FindString(wavespawnkey, "enemyKey");
             int summoncount = waveSpwanTable.FindInt(wavespawnkey, "count");
-            
+
 
             Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
             var e = Instantiate(spwanObject, this.transform);
             e.TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-            spwan.Init(enemyname, summoncount, this , patrolSetting, hpmultiply,giverewardtype, rewardamount, skillpointprobability);
+            spwan.Init(enemyname, summoncount, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability);
             spwanList.Add(spwan);
-                
+
 
         }
         spwanList[currentWaveCount++].Active();
         WaveCorountine = WaitWaveTime();
-
     }
+
+
     public void PlayNextWave()
     {
         StartCoroutine(WaveCorountine);

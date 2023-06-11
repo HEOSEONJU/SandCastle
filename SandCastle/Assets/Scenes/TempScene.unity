@@ -2079,6 +2079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4686028b693f02428965051169b1388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fix: 0
   defaultPosition: {fileID: 543413161}
   value: 0
 --- !u!58 &703468463
@@ -2557,6 +2558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4686028b693f02428965051169b1388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fix: 0
   defaultPosition: {fileID: 1187477267}
   value: 0
 --- !u!58 &840437894
@@ -3289,16 +3291,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbdc62bba236cf41925dbe800ace336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharTable: {fileID: 11400000, guid: f8ca78cb7ec180544b39cbc34244c6f0, type: 2}
-  DefineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
-  inGameCharList:
-  - {fileID: 840437888}
-  - {fileID: 703468457}
-  - {fileID: 1597234663}
+  inGameChar: {fileID: 0}
   inputJoystick: {fileID: 475812344}
   rigid: {fileID: 1126179528}
   cameraMove: {fileID: 1249484415}
   speed: 10
+  inGameCharInit: {fileID: 0}
 --- !u!50 &1126179528
 Rigidbody2D:
   serializedVersion: 4
@@ -3955,6 +3953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef72877d0e024354fa8ad4ea348b1a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inGameCharList: []
+  inGameCharInit: {fileID: 0}
 --- !u!1 &1469460518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4802,6 +4802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4686028b693f02428965051169b1388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fix: 0
   defaultPosition: {fileID: 191676088}
   value: 0
 --- !u!58 &1597234669

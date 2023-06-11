@@ -24,16 +24,16 @@ namespace InGame
         [SerializeField]
          TextMeshProUGUI mudText;
 
-        private void Start()
+
+        public void InitInventroy(float sand,float water,float mud)
         {
-            
-            sandCount = 0;
-            waterCount = 0;
-            mudCount = 0;
+
+            sandCount = sand;
+            waterCount = water;
+            mudCount = mud;
             sandText.text = sandCount.ToString();
             waterText.text = waterCount.ToString();
             mudText.text = mudCount.ToString();
-
         }
 
         public void Getter_Mine(float amount,ResourceEnum resourceenum )

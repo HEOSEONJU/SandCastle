@@ -20,15 +20,7 @@ namespace InGame
         
 
 
-        
-        [SerializeField]
-        InGame_Inventory inventory;
 
-        public void Init(InGame_Char igc,InGame_Inventory inventory)
-        {
-            iGC = igc;
-            this.inventory = inventory;
-        }
 
 
         public void Harvest()
@@ -79,7 +71,7 @@ namespace InGame
         public void TargetHarvest()
         {
             
-            search.Target.Collection(1,inventory, iGC);
+            search.Target.Collection(1, iGC);
             
             
             

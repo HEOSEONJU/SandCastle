@@ -11,14 +11,5 @@ namespace InGame
 
     }
 
-    public enum AttackType
-    {
-        Single=1,
-        Multi=2,
-        Range=4,
-        Continuous=8,
-        Penetrating=16
-    }
-
 
 }

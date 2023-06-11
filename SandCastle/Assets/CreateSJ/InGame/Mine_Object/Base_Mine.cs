@@ -54,7 +54,7 @@ namespace InGame
         
 
 
-        public override void Collection(float damagepoint,InGame_Inventory inventory,InGame_Char igc)
+        public override void Collection(float damagepoint,InGame_Char igc)
         {
             
             if(IsDestory)
@@ -67,13 +67,13 @@ namespace InGame
             if(Hp>0)
             {
                 Hp -= damagepoint;
-                Debug.Log(inventory.name+igc.name);
+                
                 
 
-                inventory.Getter_Mine(Amount, resourceType);
+                igc.Inventory.Getter_Mine(Amount, resourceType);
                 if (Hp <= 0)
                 {
-                    inventory.Getter_Mine(AmountMax, resourceType);
+                    igc.Inventory.Getter_Mine(AmountMax, resourceType);
                     Change_Image(spriteDead);
                     IsDestory = true;
                     igc.Animator.SetTrigger("HarvestExit");

@@ -29,6 +29,7 @@ namespace InGame
             if(Fix)
             { return; }
 
+            Debug.Log(Distance());
             if (Distance() >= value)
             {
                 Vector3 direction = transform.position - defaultPosition.position;
@@ -49,7 +50,19 @@ namespace InGame
             
             animator.SetFloat("Amount_X", 0f);
             animator.SetFloat("Amount_Y", 0f);
+            animator.SetFloat("Amount", 0f);
 
+        }
+
+        public void SettingPosi(Transform T=null)
+        {
+            if(T is null)
+            {
+                fix = true;
+                return;
+            }
+            defaultPosition = T;
+            fix = false;
         }
 
         public  float Distance()
