@@ -2605,6 +2605,7 @@ GameObject:
   - component: {fileID: 1126179527}
   - component: {fileID: 1126179526}
   - component: {fileID: 1126179530}
+  - component: {fileID: 1126179531}
   m_Layer: 7
   m_Name: "\uD50C\uB808\uC774\uC5B4 \uCE74\uBA54\uB77C\uC870\uC815 \uC6C0\uC9C1\uC784"
   m_TagString: Untagged
@@ -2642,14 +2643,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbdc62bba236cf41925dbe800ace336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharTable: {fileID: 11400000, guid: f8ca78cb7ec180544b39cbc34244c6f0, type: 2}
-  DefineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
-  inGameCharList:
-  - {fileID: 840437888}
+  inGameChar: {fileID: 840437888}
   inputJoystick: {fileID: 475812344}
   rigid: {fileID: 1126179528}
   cameraMove: {fileID: 1249484415}
   speed: 10
+  inGameCharInit: {fileID: 1126179531}
 --- !u!50 &1126179528
 Rigidbody2D:
   serializedVersion: 4
@@ -2714,6 +2713,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &1126179531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126179525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fde0d1c1a49d04cb23172a139ed889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
+  CharTable: {fileID: 11400000, guid: f8ca78cb7ec180544b39cbc34244c6f0, type: 2}
+  defaultSpeed: 0
+  attackDamage: 0
 --- !u!4 &1172390657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5926822339434319365, guid: b9590ec9aaf59514db23f212aa4555df, type: 3}
@@ -3279,15 +3294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef72877d0e024354fa8ad4ea348b1a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharTable: {fileID: 11400000, guid: f8ca78cb7ec180544b39cbc34244c6f0, type: 2}
-  DefineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
   inGameCharList:
   - {fileID: 703468457}
   - {fileID: 1597234663}
-  inputJoystick: {fileID: 0}
-  rigid: {fileID: 0}
-  cameraMove: {fileID: 0}
-  speed: 0
+  inGameCharInit: {fileID: 1126179531}
 --- !u!1 &1443237158
 GameObject:
   m_ObjectHideFlags: 0
