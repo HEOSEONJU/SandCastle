@@ -9,6 +9,7 @@ using  AT.SerializableDictionary;
 using System.IO;
 using Newtonsoft.Json;
 using System;
+using System.Linq;
 
 public class ObjectTable : ScriptableObject
 {
@@ -82,7 +83,10 @@ public class ObjectTable : ScriptableObject
 
                 viewdict.Add(cell.columnId, cell.value);
                 if (dictKeyList.Contains(cell.columnId) == false)
-                    dictKeyList.Add(cell.columnId);
+                {
+                    
+                    dictKeyList.Add(cell.columnId.ToString());
+                }
             }
         }
         ViewTableList.Add(viewdict);
@@ -160,7 +164,8 @@ public class ObjectTable : ScriptableObject
         {
             if (!this.igonoreNames.Contains(INDEX.rowId))
             {
-                this.values.Add(INDEX.rowId);
+                this.values.Add(INDEX.rowId.ToString());
+                
             }
         }
         this.INIT();
@@ -184,9 +189,22 @@ public class ObjectTable : ScriptableObject
     }
     public int OffLineReading()
     {
+        INIT();
+
         string _path = Application.persistentDataPath + "/" + this.name + ".json";
         string data = File.ReadAllText(_path);
         ViewTableList = JsonConvert.DeserializeObject<List<SerializableDictionary<string, string>>>(data);
+        
+        foreach (var key in ViewTableList)
+        {
+            
+            values.Add(key.Values.First());
+        }
+        foreach(var key in ViewTableList.First())
+        {
+            dictKeyList.Add(key.Key);
+        }
+
         return 1;
 
     }

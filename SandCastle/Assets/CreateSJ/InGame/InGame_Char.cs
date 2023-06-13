@@ -127,6 +127,43 @@ namespace InGame
             IsAction = false;
         }
 
+        public bool RecallChar()
+        {
+            if (!Animator.GetBool("RecallEnd"))
+            {
+                return false;
+            }
+            if ((InGameMove.Distance() >= InGameMove.value))
+            {
+
+                float angle = InGameMove.Angle();
+
+                Debug.Log(angle);
+
+                if (angle < 0)
+                {
+                    //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                    SpriteRenderer.flipX = true;
+
+                }
+                else if (angle > 0)
+                {
+                    //IGC.transform.rotation = Quaternion.identity;
+                    SpriteRenderer.flipX = false;
+                }   
+
+                InGameMove.MoveChar(Animator, InGameStatus.MoveSpeed * 2f);
+
+            }
+            else
+            {
+                InGameMove.StopChar(Animator);
+                Animator.SetBool("Infinity", false);
+                Animator.SetBool("RecallEnd", false);
+            }
+            return true;
+        }
+
         string HASH= "Scene";
 
         string OpenObjectName = "ÀüÅõ¹öÅ÷Äµ¹ö½º";

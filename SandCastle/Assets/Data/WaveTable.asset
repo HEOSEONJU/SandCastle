@@ -13,11 +13,125 @@ MonoBehaviour:
   m_Name: WaveTable
   m_EditorClassIdentifier: 
   associatedWorksheet: Wave
-  ViewTableList: []
+  ViewTableList:
+  - keys:
+    - DB_FIELD_NAMES
+    - stageType
+    - stageResourceKey
+    - waveGroup
+    - waveType
+    - hpMultiply
+    - giveRewardType
+    - rewardAmount
+    - skillPointProbability
+    values:
+    - DB_FIELD_NAMES
+    - stageType
+    - stageResourceKey
+    - waveGroup
+    - waveType
+    - hpMultiply
+    - giveRewardType
+    - rewardAmount
+    - skillPointProbability
+  - keys:
+    - DB_FIELD_NAMES
+    - stageType
+    - stageResourceKey
+    - waveGroup
+    - waveType
+    - hpMultiply
+    - giveRewardType
+    - rewardAmount
+    - skillPointProbability
+    values:
+    - Wave000000
+    - Main
+    - StageResource000001
+    - wave0001,wave0002,wave0003
+    - Normal
+    - 4
+    - mud
+    - 1
+    - 0
+  - keys:
+    - DB_FIELD_NAMES
+    - stageType
+    - stageResourceKey
+    - waveGroup
+    - waveType
+    - hpMultiply
+    - giveRewardType
+    - rewardAmount
+    - skillPointProbability
+    values:
+    - Wave000001
+    - Main
+    - StageResource000001
+    - 1_2
+    - Normal
+    - 4
+    - mud
+    - 1
+    - 0
+  - keys:
+    - DB_FIELD_NAMES
+    - stageType
+    - stageResourceKey
+    - waveGroup
+    - waveType
+    - hpMultiply
+    - giveRewardType
+    - rewardAmount
+    - skillPointProbability
+    values:
+    - Wave000002
+    - Main
+    - StageResource000001
+    - 1_3
+    - Normal
+    - 4
+    - mud
+    - 1
+    - 0
+  - keys:
+    - DB_FIELD_NAMES
+    - stageType
+    - stageResourceKey
+    - waveGroup
+    - waveType
+    - hpMultiply
+    - giveRewardType
+    - rewardAmount
+    - skillPointProbability
+    values:
+    - Wave000003
+    - Main
+    - StageResource000001
+    - 1_4
+    - Boss
+    - 4
+    - mud
+    - 1
+    - 20
   startINDEX_A1: DB_FIELD_NAMES
   igonoreNames:
   - DB_FIELD_TYPES
   - DB_IGNORE
-  values: []
-  dictKeyList: []
+  values:
+  - DB_FIELD_NAMES
+  - Wave000000
+  - Wave000001
+  - Wave000002
+  - Wave000003
+  dictKeyList:
+  - DB_FIELD_NAMES
+  - stageType
+  - stageResourceKey
+  - waveGroup
+  - waveType
+  - hpMultiply
+  - giveRewardType
+  - rewardAmount
+  - skillPointProbability
   listCount: 5

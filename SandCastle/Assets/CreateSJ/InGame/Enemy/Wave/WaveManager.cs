@@ -24,18 +24,18 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator WaveCorountine;
 
-    public void WaveInputStart()
+    public void WaveInputStart(string stagename)
     {
-
-        float hpmultiply = waveTable.Findfloat("Wave000000", "hpMultiply");
-        string giverewardtype = waveTable.FindString("Wave000000", "giveRewardType");
-        int rewardamount = waveTable.FindInt("Wave000000", "rewardAmount");
-        int skillpointprobability = waveTable.FindInt("Wave000000", "skillPointProbability");
+        
+        float hpmultiply = waveTable.Findfloat(stagename, "hpMultiply");
+        string giverewardtype = waveTable.FindString(stagename, "giveRewardType");
+        int rewardamount = waveTable.FindInt(stagename, "rewardAmount");
+        int skillpointprobability = waveTable.FindInt(stagename, "skillPointProbability");
 
 
         patrolSetting.Init();
         currentWaveCount = 0;
-        string waveGroup = waveTable.FindString("Wave000000", "waveGroup");
+        string waveGroup = waveTable.FindString(stagename, "waveGroup");
         string[] WaveList = waveGroup.Split(',');
         spwanList = new List<SpwanEnemy>();
         foreach (string wavespawnkey in WaveList)

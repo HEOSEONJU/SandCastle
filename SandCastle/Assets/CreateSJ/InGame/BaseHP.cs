@@ -37,7 +37,10 @@ public class BaseHP : MonoBehaviour
 
         foreach (InGame_Char IGC in inGameCharList)
         {
-
+            if(IGC.RecallChar())
+            {
+                return;
+            }
 
             if (IGC.Animator.GetBool("IsAction") is false)
             {

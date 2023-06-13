@@ -45,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 6853689653900274195}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df419bf9ddf43a04e9455904edb8bad0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 98b634a9423ad164e83c0e57a095acf0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -469,8 +469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5685d7715d6044ca7cdd1b903ecc38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillTable: {fileID: 11400000, guid: 67ca76fcc1156af47878c803fc1b6b3c, type: 2}
-  skillObjectTable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
   inGameChar: {fileID: 6853689654655104091}
   inGameSkillSensor: {fileID: 0}
   skillPrefab: {fileID: 0}

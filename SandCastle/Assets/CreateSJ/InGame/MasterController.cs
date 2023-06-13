@@ -50,7 +50,7 @@ namespace inGame
 
 
 
-            if (RecallChar(inGameChar))
+            if (inGameChar.RecallChar())
             {
                 return;
             }
@@ -63,12 +63,7 @@ namespace inGame
 
                     
                 }
-                if (inputJoystick.inputVector.x == 0 && inputJoystick.inputVector.y == 0)
-                {
-                    inGameChar.InGameMove.StopChar(inGameChar.Animator);
-                    
-                    return;
-                }
+                
 
                 float angle = inputJoystick.inputVector.x;
                 if (angle > 0)
@@ -91,41 +86,6 @@ namespace inGame
 
         }
 
-        bool RecallChar(InGame_Char IGC)
-        {
-            if (!IGC.Animator.GetBool("RecallEnd"))
-            {
-                return false;
-            }
-            if ((IGC.InGameMove.Distance() >= IGC.InGameMove.value))
-            {
-
-                float angle = IGC.InGameMove.Angle();
-
-                Debug.Log(angle);
-
-                if (angle < 0)
-                {
-                    //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-                    IGC.SpriteRenderer.flipX = true;
-
-                }
-                else if (angle > 0)
-                {
-                    //IGC.transform.rotation = Quaternion.identity;
-                    IGC.SpriteRenderer.flipX = false;
-                }
-
-                IGC.InGameMove.MoveChar(IGC.Animator, IGC.InGameStatus.MoveSpeed * 2f);
-
-            }
-            else
-            {
-                IGC.InGameMove.StopChar(IGC.Animator);
-                IGC.Animator.SetBool("Infinity", false);
-                IGC.Animator.SetBool("RecallEnd", false);
-            }
-            return true;
-        }
+        
     }
 }

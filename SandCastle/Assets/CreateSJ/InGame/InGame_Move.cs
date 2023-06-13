@@ -41,6 +41,10 @@ namespace InGame
                 transform.position = Vector3.MoveTowards(transform.position, defaultPosition.position, step);
                 
             }
+            else
+            {
+                StopChar(animator);
+            }
             
 
 
@@ -58,6 +62,7 @@ namespace InGame
         {
             if(T is null)
             {
+                defaultPosition = transform.parent;
                 fix = true;
                 return;
             }
