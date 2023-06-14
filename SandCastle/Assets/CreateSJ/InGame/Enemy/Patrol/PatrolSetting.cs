@@ -22,9 +22,9 @@ public class PatrolSetting : MonoBehaviour
     }
     
 
-    public Transform SwpanPoint()
+    public Transform SwpanPoint(int n)
     {
 
-        return patrolPoint[Random.Range(0, patrolPoint.Count)];
+        return patrolPoint[n];
     }
 }

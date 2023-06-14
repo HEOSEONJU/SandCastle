@@ -20,8 +20,7 @@ namespace InGame
         InGameSkill skill;
         [SerializeField]
         InGameSkillSensor sensor;
-        [SerializeField]
-        InGame_Inventory inventory;
+
         [SerializeField]
         bool isAction;
 
@@ -62,10 +61,7 @@ namespace InGame
         {
             get { return spriteRenderer; }
         }
-        public InGame_Inventory Inventory
-        {
-            get { return inventory; }
-        }
+
 
         private void LateUpdate()
         {
@@ -74,9 +70,9 @@ namespace InGame
 
 
         
-        public void InitChar(string name,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable  , Transform defaultposi=null)
+        public void InitChar(string name ,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable  , Transform defaultposi=null)
         {
-            this.inventory= inventory;
+
             CharName = name;
             this.sensor= sensor;
             move.SettingPosi(defaultposi);
