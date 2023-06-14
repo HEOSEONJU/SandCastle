@@ -9,7 +9,15 @@ namespace InGame
 {
     public class InGame_Inventory : MonoBehaviour
     {
+         static InGame_Inventory instance;
+
+        public static InGame_Inventory Instance
+        {
+            get { return instance; }
+        }
         
+
+
         [SerializeField]
         float sandCount;
         [SerializeField]
@@ -27,6 +35,8 @@ namespace InGame
 
         public void InitInventroy(float sand,float water,float mud)
         {
+            instance = this;
+
 
             sandCount = sand;
             waterCount = water;

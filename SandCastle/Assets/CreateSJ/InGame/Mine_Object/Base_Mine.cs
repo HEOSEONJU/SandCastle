@@ -67,13 +67,14 @@ namespace InGame
             if(Hp>0)
             {
                 Hp -= damagepoint;
-                
-                
 
-                igc.Inventory.Getter_Mine(Amount, resourceType);
+               
+
+                InGame_Inventory.Instance.Getter_Mine(Amount, resourceType);
                 if (Hp <= 0)
                 {
-                    igc.Inventory.Getter_Mine(AmountMax, resourceType);
+                    InGame_Inventory.Instance.Getter_Mine(AmountMax, resourceType);
+                    
                     Change_Image(spriteDead);
                     IsDestory = true;
                     igc.Animator.SetTrigger("HarvestExit");
