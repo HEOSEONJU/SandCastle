@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,8 @@ public class SheetFunction : MonoBehaviour
         get { return instance; }
         
     }
+
+    public bool error = false;
 
     private void Awake()
     {
@@ -69,7 +72,8 @@ public class SheetFunction : MonoBehaviour
 
     public void OnlienReadSheets()
     {
-        
+        Debug.Log("온라인리딩작동");
+            
         foreach (ObjectTable table in tables) 
         {
             table.OnLineReading();
@@ -102,7 +106,17 @@ public class SheetFunction : MonoBehaviour
     }
     IEnumerator newWait()
     {
-        Debug.Log(tables.Last().associatedWorksheet);
+        if(error)
+        {
+            Debug.Log("재시도");
+            error = false;
+            checkCount = 0;
+            OnlienReadSheets();
+            
+            yield break ;
+        }
+
+
         while (true)
         {
             yield return new WaitForSeconds(3f);

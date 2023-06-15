@@ -129,6 +129,7 @@ namespace GoogleSheetsToUnity
             int end = valueRange.range.IndexOf(":", start);
             if (start == 0 && end == -1)
             {
+                SheetFunction.Instacne.error = true;
                 Debug.LogError("not find");
                 return "";
             }
