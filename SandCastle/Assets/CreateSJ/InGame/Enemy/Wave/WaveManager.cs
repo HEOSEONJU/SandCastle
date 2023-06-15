@@ -2,85 +2,91 @@ using Enemy;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class WaveManager : MonoBehaviour
+namespace InGame
 {
-    [SerializeField]
-    ObjectTable waveTable;
-    [SerializeField]
-    ObjectTable waveSpwanTable;
-    [SerializeField]
-    PatrolSetting patrolSetting;
-
-
-    int currentWaveCount;
-    float waitTime = 10f;
-
-    List<SpwanEnemy> spwanList;
-    [SerializeField]
-    GameObject spwanObject;
-
-    IEnumerator WaveCorountine;
-
-    public void WaveInputStart(string stagename)
+    public class WaveManager : MonoBehaviour
     {
-        
-        float hpmultiply = waveTable.Findfloat(stagename, "hpMultiply");
-        string giverewardtype = waveTable.FindString(stagename, "giveRewardType");
-        int rewardamount = waveTable.FindInt(stagename, "rewardAmount");
-        int skillpointprobability = waveTable.FindInt(stagename, "skillPointProbability");
-        
+        [SerializeField]
+        ObjectTable waveTable;
+        [SerializeField]
+        ObjectTable waveSpwanTable;
+        [SerializeField]
+        PatrolSetting patrolSetting;
 
-        patrolSetting.Init();
-        currentWaveCount = 0;
-        string waveGroup = waveTable.FindString(stagename, "waveGroup");
-        string[] WaveList = waveGroup.Split(',');
-        spwanList = new List<SpwanEnemy>();
-        foreach (string wavespawnkey in WaveList)
+
+        int currentWaveCount;
+        float waitTime = 10f;
+
+        List<SpwanEnemy> spwanList;
+        [SerializeField]
+        GameObject spwanObject;
+
+        IEnumerator WaveCorountine;
+
+        public void WaveInputStart(string stagename)
         {
-            string enemyname = waveSpwanTable.FindString(wavespawnkey, "enemyKey");
-            int summoncount = waveSpwanTable.FindInt(wavespawnkey, "count");
-            string[] zenposition =waveSpwanTable.FindString(wavespawnkey, "waveZenType").Split(",");
-            
 
-                
-            List<int> zenpositionkeylist=new List<int>();
-            foreach(string zenpositionkey in zenposition)
+            float hpmultiply = waveTable.Findfloat(stagename, "hpMultiply");
+            string giverewardtype = waveTable.FindString(stagename, "giveRewardType");
+            int rewardamount = waveTable.FindInt(stagename, "rewardAmount");
+            int skillpointprobability = waveTable.FindInt(stagename, "skillPointProbability");
+
+
+            patrolSetting.Init();
+            currentWaveCount = 0;
+            string waveGroup = waveTable.FindString(stagename, "waveGroup");
+            string[] WaveList = waveGroup.Split(',');
+            spwanList = new List<SpwanEnemy>();
+            foreach (string wavespawnkey in WaveList)
             {
-                zenpositionkeylist.Add(Convert.ToInt32(zenpositionkey));
+                string enemyname = waveSpwanTable.FindString(wavespawnkey, "enemyKey");
+                
+                string[] zenposition = waveSpwanTable.FindString(wavespawnkey, "waveZenType").Split(",") ;
+
+
+
+                List<int> zenpositionkeylist = new List<int>();
+                foreach (string zenpositionkey in zenposition)
+                {
+                    zenpositionkeylist.Add(Convert.ToInt32(zenpositionkey));
+                }
+
+
+                //Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
+                var e = Instantiate(spwanObject, this.transform);
+                e.TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
+                spwan.Init(enemyname, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability, zenpositionkeylist);
+                spwanList.Add(spwan);
+
+
             }
-            
-
-            Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
-            var e = Instantiate(spwanObject, this.transform);
-            e.TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-            spwan.Init(enemyname, summoncount, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability, zenpositionkeylist);
-            spwanList.Add(spwan);
-
-
+            spwanList[currentWaveCount++].Active();
+            WaveCorountine = WaitWaveTime();
         }
-        spwanList[currentWaveCount++].Active();
-        WaveCorountine = WaitWaveTime();
-    }
 
 
-    public void PlayNextWave()
-    {
-        StartCoroutine(WaveCorountine);
-        
-
-    }
-    IEnumerator WaitWaveTime()
-    {
-        if (currentWaveCount == spwanList.Count)
+        public void PlayNextWave()
         {
-            yield break;
+            WaveCorountine = WaitWaveTime();
+            StartCoroutine(WaveCorountine);
+
+
         }
-        yield return new WaitForSeconds(waitTime);
+        IEnumerator WaitWaveTime()
+        {
+            Debug.Log(currentWaveCount +"/" + spwanList.Count);
+            if (currentWaveCount == spwanList.Count)
+            {
+                yield break;
+            }
+            yield return new WaitForSeconds(waitTime);
 
 
-        spwanList[currentWaveCount++].Active();
+            spwanList[currentWaveCount++].Active();
+        }
     }
 }

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using UnityEngine;
 using InGameResourceEnums;
+using InGame;
+using Unity.VisualScripting;
 
 namespace Enemy
 {
@@ -27,26 +29,25 @@ namespace Enemy
         WaveManager waveManager;
 
 
-        [SerializeField]
-        int count = 30;
+
 
         [SerializeField]
         Transform nextPoint;
         [SerializeField]
         
         
-        List<Enemy_Manager> GOList;
+        List<GameObject> GOList;
 
         PatrolSetting patrolSetting;
         [SerializeField]
         float spwanTime=1f;
 
-        List<int> zenList;
-        public void Init(string enemykey, int count, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,List<int>zenlist )
+        List<int> genList;
+        public void Init(string enemykey, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,List<int>genlist )
         {
             patrolSetting=patrolsetting; ;
-            zenList=zenlist;
-            this.count = count;
+            genList=genlist;
+            
             waveManager = wavemanager;
             
             prefab = Resources.Load<GameObject>("Prefab/Enemy/" + enemykey);
@@ -100,24 +101,58 @@ namespace Enemy
             
         }
 
+        public int CountGen()
+        {
+            int count = 0;
+            foreach (int t in genList)
+            {
+                count += t;
+            }
+
+            return count;
+        }
+
         IEnumerator Spwan()
         {
+            
 
-            while (count-- > 0)
+
+            while (CountGen() > 0)
             {
-                var a = ObjectPooling.GetObject(prefab, this.transform);
-                a.transform.position = patrolSetting.SwpanPoint(zenList.First()).position;
-                zenList.Remove(zenList.First());
-
-                a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
-                if (!(em is null))
+                for(int i=0;i<genList.Count;i++)
                 {
-                    em.StartMove(patrolSetting.Nexus);
+                    if (genList[i] == 0)
+                        continue;
+
+                    PatrolPoint patrolpoint = patrolSetting.SwpanPoint(i);
+
+                    for(int j=0;j<patrolpoint.PatrolPoints.Count;j++)
+                    {
+                        if (genList[i] == 0)
+                            break;
+
+                        var a = ObjectPooling.GetObject(prefab, this.transform);
+                        a.transform.position = patrolpoint.ReturnPosition().position;
+                        a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
+                        if (!(em is null))
+                        {
+                            em.StartMove(patrolSetting.Nexus);
+
+                        }
+                        genList[i]--;
+                        GOList.Add(a.gameObject);
+                    }
                     
+
+
+
                 }
                 yield return new WaitForSeconds(spwanTime);
+
+
+
             }
-            GOList = transform.GetComponentsInChildren<Enemy_Manager>().ToList();
+            
             Debug.Log(GOList.Count);
             StartCoroutine(WaveComplete());
             

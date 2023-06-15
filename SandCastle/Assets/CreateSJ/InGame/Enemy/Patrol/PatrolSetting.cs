@@ -3,28 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PatrolSetting : MonoBehaviour
+namespace InGame
 {
-    [SerializeField]
-    Transform nexus;
-
-    public Transform Nexus
+    public class PatrolSetting : MonoBehaviour
     {
-        get { return nexus; }
-    }
+        [SerializeField]
+        Transform nexus;
 
-    [SerializeField]
-    List<Transform> patrolPoint;
-    public void Init()
-    {
-        patrolPoint = transform.GetComponentsInChildren<Transform>().ToList();
-        patrolPoint.Remove(this.transform);
-    }
-    
+        public Transform Nexus
+        {
+            get { return nexus; }
+        }
 
-    public Transform SwpanPoint(int n)
-    {
+        [SerializeField]
+        List<PatrolPoint> patrolPoint;
+        public void Init()
+        {
+            patrolPoint = transform.GetComponentsInChildren<PatrolPoint>().ToList();
+            
+            foreach(var p in patrolPoint)
+            {
+                p.Init();
+            }
+        }
 
-        return patrolPoint[n];
+
+        public PatrolPoint SwpanPoint(int n)
+        {
+
+            return patrolPoint[n];
+        }
     }
 }
