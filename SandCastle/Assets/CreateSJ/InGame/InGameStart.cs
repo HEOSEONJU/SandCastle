@@ -81,6 +81,10 @@ namespace InGame
             waveManager.WaveInputStart(stagename);
 
 
+            
+            
+            mineMaker.EnableMine(0, WaveTable.FindInt(stagename, 0 + ",sand"), WaveTable.FindInt(stagename, 0 + ",mud"), WaveTable.FindInt(stagename, 0 + ",water"));
+
 
         }
 
