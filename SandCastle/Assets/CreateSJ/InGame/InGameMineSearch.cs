@@ -9,6 +9,9 @@ namespace InGame
     public class InGameMineSearch : MonoBehaviour
     {
         [SerializeField]
+        Animator animator;
+
+        [SerializeField]
         InGame_Harvest harvest;
         [SerializeField]
         Abstract_Mine target;
@@ -31,7 +34,12 @@ namespace InGame
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.CompareTag("Mine"))
+            if (animator.GetBool("RecallEnd"))
+            {
+                return;
+            }
+
+            if (collision.CompareTag("Mine"))
             {
                 collision.TryGetComponent<Abstract_Mine>(out  target);
                 if (!(target is null))

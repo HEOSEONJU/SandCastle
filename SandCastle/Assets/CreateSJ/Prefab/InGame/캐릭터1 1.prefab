@@ -45,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 6853689653900274195}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 98b634a9423ad164e83c0e57a095acf0, type: 2}
+  m_Controller: {fileID: 9100000, guid: df419bf9ddf43a04e9455904edb8bad0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 6853689654655104082}
   - component: {fileID: 6853689654655104081}
   m_Layer: 6
-  m_Name: "\uCE90\uB9AD\uD1301"
+  m_Name: "\uCE90\uB9AD\uD1301 1"
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53dfa731fbc2c944cbcc12c4c147b812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharName: character000001
+  CharName: character000005
   move: {fileID: 6853689654655104094}
   status: {fileID: 6853689654655104095}
   animator: {fileID: 6853689653900274199}
@@ -710,7 +710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30ba27e6b319a841befe12ed6aa7b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6853689653900274199}
   harvest: {fileID: 6853689654655104082}
   target: {fileID: 0}
   searchRange: 0.75

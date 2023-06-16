@@ -73,7 +73,11 @@ namespace InGame
             inventory.InitInventroy(0, 0, 0);
             mineMaker.InputMineData();
             waveManager.WaveInputStart(stagename);
-            mineMaker.EnableMine(0, WaveTable.FindInt(stagename, 0 + ",sand"), WaveTable.FindInt(stagename, 0 + ",mud"), WaveTable.FindInt(stagename, 0 + ",water"));
+            for(int i=0;i<=3;i++)
+            {
+                mineMaker.EnableMine(i, WaveTable.FindInt(stagename, i + ",sand"), WaveTable.FindInt(stagename, i + ",mud"), WaveTable.FindInt(stagename, i + ",water"));
+            }
+            
 
 
         }
