@@ -87,7 +87,7 @@ namespace Enemy
                     break;
             }
 
-            e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue,givetype, rewardAmount,skillPointProbability);
+            e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
             
         }
 
