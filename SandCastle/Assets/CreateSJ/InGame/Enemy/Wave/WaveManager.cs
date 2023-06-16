@@ -31,7 +31,7 @@ public class WaveManager : MonoBehaviour
         string giverewardtype = waveTable.FindString(stagename, "giveRewardType");
         int rewardamount = waveTable.FindInt(stagename, "rewardAmount");
         int skillpointprobability = waveTable.FindInt(stagename, "skillPointProbability");
-        
+
 
         patrolSetting.Init();
         currentWaveCount = 0;
@@ -42,21 +42,12 @@ public class WaveManager : MonoBehaviour
         {
             string enemyname = waveSpwanTable.FindString(wavespawnkey, "enemyKey");
             int summoncount = waveSpwanTable.FindInt(wavespawnkey, "count");
-            string[] zenposition =waveSpwanTable.FindString(wavespawnkey, "waveZenType").Split(",");
-            
 
-                
-            List<int> zenpositionkeylist=new List<int>();
-            foreach(string zenpositionkey in zenposition)
-            {
-                zenpositionkeylist.Add(Convert.ToInt32(zenpositionkey));
-            }
-            
 
             Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
             var e = Instantiate(spwanObject, this.transform);
             e.TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-            spwan.Init(enemyname, summoncount, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability, zenpositionkeylist);
+            spwan.Init(enemyname, summoncount, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability);
             spwanList.Add(spwan);
 
 

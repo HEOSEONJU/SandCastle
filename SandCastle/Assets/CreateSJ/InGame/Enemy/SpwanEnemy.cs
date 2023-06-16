@@ -1,11 +1,9 @@
-using InGameResourceEnums;
 using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using UnityEngine;
-using InGameResourceEnums;
 
 namespace Enemy
 {
@@ -40,12 +38,10 @@ namespace Enemy
         PatrolSetting patrolSetting;
         [SerializeField]
         float spwanTime=1f;
-
-        List<int> zenList;
-        public void Init(string enemykey, int count, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,List<int>zenlist )
+        public void Init(string enemykey, int count, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability)
         {
             patrolSetting=patrolsetting; ;
-            zenList=zenlist;
+            
             this.count = count;
             waveManager = wavemanager;
             
@@ -58,8 +54,6 @@ namespace Enemy
             float attackspeed = enemyTable.Findfloat(enemytablekey, "attackSpeed");
             float attackrange = enemyTable.Findfloat(enemytablekey, "attackRange");
             string resistancetypetemp = enemyTable.FindString(enemytablekey, "resistanceType");
-
-            
 
             string[] resistancetype=null;
             if(resistancetypetemp!=null)
@@ -75,18 +69,7 @@ namespace Enemy
             }
             movespeed *= defineTable.Findfloat("monsterdefaultspeed", "value");
             Enemy_Manager e = prefab.GetComponent<Enemy_Manager>();
-            ResourceEnum givetype= ResourceEnum.mud;
-            switch (giveRewardType)
-            {
-                case "water;":
-                    givetype = ResourceEnum.water;
-                    break;
-                case "sand":
-                    givetype = ResourceEnum.sand;
-                    break;
-            }
-
-            e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue,givetype, rewardAmount,skillPointProbability);
+            e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
             
         }
 
@@ -106,8 +89,7 @@ namespace Enemy
             while (count-- > 0)
             {
                 var a = ObjectPooling.GetObject(prefab, this.transform);
-                a.transform.position = patrolSetting.SwpanPoint(zenList.First()).position;
-                zenList.Remove(zenList.First());
+                a.transform.position = patrolSetting.SwpanPoint().position;
 
                 a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
                 if (!(em is null))

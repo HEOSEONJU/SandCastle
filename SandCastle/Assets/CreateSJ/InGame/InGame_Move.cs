@@ -29,7 +29,7 @@ namespace InGame
             if(Fix)
             { return; }
 
-            
+            Debug.Log(Distance());
             if (Distance() >= value)
             {
                 Vector3 direction = transform.position - defaultPosition.position;

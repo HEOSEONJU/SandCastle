@@ -1,9 +1,7 @@
-using InGame;
 using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-using InGameResourceEnums;
 
 namespace Enemy
 {
@@ -36,7 +34,6 @@ namespace Enemy
             enemyStatus.Hp -= value;
             if(enemyStatus.Hp <= 0)
             {
-                DieReward();
                 enemyMove.StopMove();
                 gameObject.SetActive(false);
             }
@@ -64,11 +61,6 @@ namespace Enemy
             gameObject.SetActive(false);
         }
 
-
-        public  void DieReward()
-        {
-            InGame_Inventory.Instance.Getter_Mine(enemyStatus.Amount, enemyStatus.GetRewardType);
-        }
 
 
     }
