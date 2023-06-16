@@ -32,22 +32,24 @@ namespace inGame
             StartCoroutine(moveCoroutine);
             collider2d.enabled = true;
         }
-        protected override void Damaged(Enemy_Manager enemymanager)
+        protected override void Damaged(IHit target)
         {
-            enemymanager.Hit(damagePoint);
+            target.Hit(damagePoint);
 
         }
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
             if(collision.CompareTag("Enemy"))
             {
-                collision.TryGetComponent<Enemy_Manager>(out Enemy_Manager enemymanager);
-                if(enemymanager is null)
+                collision.TryGetComponent<IHit>(out IHit target);
+                if(target is null)
                 {
                     return;
                 }
                 attackCount--;
-                Damaged(enemymanager);
+
+
+                Damaged(target);
                 if (igc != null)
                     igc.RegenMana(1);
                 if (attackCount >= 1)
@@ -57,7 +59,7 @@ namespace inGame
                 }
                 animator.SetTrigger("Fire");
 
-                Vector3 dircetion = target.position - transform.position;
+                Vector3 dircetion = collision.transform.position - transform.position;
 
                 float angle = Mathf.Atan2(dircetion.y, dircetion.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

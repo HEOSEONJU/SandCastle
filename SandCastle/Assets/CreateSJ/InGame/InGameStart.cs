@@ -66,7 +66,7 @@ namespace InGame
             for (int i=0;i< 2;i++) 
             {
                 InGame_Char sub = Instantiate(charPrefab, baseHp.transform.GetChild(i)).GetComponent<InGame_Char>();
-                sub.InitChar("character000001", inventory, sensor, skillPoolingParent, subBulletPoolingParent[i], skillTable);
+                sub.InitChar("character000001", inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent, subBulletPoolingParent[i], skillTable);
                 baseHp.InputChar(sub);
             }
             baseHp.InitBaseHP(inGameCharInit);

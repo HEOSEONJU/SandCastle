@@ -71,6 +71,7 @@ namespace InGame
             }
             animatorWeapon.SetTrigger("Fire");
             particleWeapon.SetTrigger("Fire");
+
             target = inGameEnemySearch.Target[0].transform;
         }
 

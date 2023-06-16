@@ -43,7 +43,7 @@ namespace inGame
         public abstract void Move(Transform target ,InGame_Char igc=null);
 
 
-        protected abstract void Damaged(Enemy_Manager enemymanager);
+        protected abstract void Damaged(IHit target);
 
         protected abstract void OnTriggerEnter2D(Collider2D collision);
 

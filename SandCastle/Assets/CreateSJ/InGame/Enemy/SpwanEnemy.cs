@@ -150,10 +150,15 @@ namespace Enemy
             StartCoroutine(WaveComplete());
             
         }
-        
+        string HASH = "Scene";
+
+        string OpenObjectName = "전투버툰캔버스";
         public void AllDestoryGate()
         {
-            Debug.Log("모든게이트파괴");
+            SceneMoveManager.Instance.ImmediatelyChangeScne("MainMenu");
+            PlayerPrefs.SetString(HASH, OpenObjectName);
+            Debug.Log(PlayerPrefs.GetString(HASH) + "저장한이름");
+            PlayerPrefs.Save();
         }
 
         IEnumerator WaveComplete()

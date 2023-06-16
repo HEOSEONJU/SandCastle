@@ -138,7 +138,7 @@ namespace InGame
 
                 float angle = InGameMove.Angle();
 
-                Debug.Log(angle);
+                
 
                 if (angle < 0)
                 {

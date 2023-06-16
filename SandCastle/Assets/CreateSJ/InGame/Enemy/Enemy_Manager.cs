@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class Enemy_Manager : MonoBehaviour
+    
+    public class Enemy_Manager : MonoBehaviour,IHit
     {
 
 
@@ -38,6 +39,17 @@ namespace Enemy
                 gameObject.SetActive(false);
             }
         }
+        public bool Alive()
+        {
+            if (enemyStatus.Hp <= 0)
+            {
+                return false;
+            }
+            else
+                return true;
+
+        }
+
         public void BaseAttack()
         {
             Debug.Log("베이스어택작동시작");

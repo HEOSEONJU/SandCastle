@@ -117,7 +117,7 @@ public class SkillObject : MonoBehaviour
 
                 attakList.Add(collision.gameObject);
                 Debug.Log("µ•πÃ¡ˆ¡‹");
-                collision.GetComponent<Enemy_Manager>().Hit(skillData.Damage);
+                collision.GetComponent<IHit>().Hit(skillData.Damage);
                 if (skillData.IsPiercing == 0)
                 {
                     gameObject.SetActive(false);

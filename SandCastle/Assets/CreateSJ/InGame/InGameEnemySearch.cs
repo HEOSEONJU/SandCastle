@@ -8,12 +8,12 @@ namespace InGame
     public class InGameEnemySearch : MonoBehaviour
     {
         [SerializeField]
-        List<Enemy_Manager> target;
+        List<Transform> target;
         
 
         [SerializeField]
         CircleCollider2D collider2d;
-        public List<Enemy_Manager> Target { get { return target; } }
+        public List<Transform> Target { get { return target; } }
         public CircleCollider2D Collider2d
         {
             get { return collider2d; }
@@ -22,7 +22,7 @@ namespace InGame
 
         private void OnEnable()
         {
-            target = new List<Enemy_Manager>();
+            target = new List<Transform>();
             
             TryGetComponent<InGameAttack>(out inGameAttack);
         }
@@ -31,15 +31,22 @@ namespace InGame
         {
             if (collision.CompareTag("Enemy"))
             {
-                collision.TryGetComponent<Enemy_Manager>(out Enemy_Manager temp);
-                if (!(temp is null))
-                {
-                    Target.Add(temp);
-                    if (Target.Count >= 2)
-                    {
-                        Target.Sort((a, b) => (a.transform.position - transform.position).magnitude.CompareTo((b.transform.position - transform.position).magnitude));
-                    }
+                collision.TryGetComponent<IHit>(out IHit temp);
 
+
+                if (temp is null)
+                {
+                    return;
+                }
+                if(!temp.Alive())
+                {
+                    return;
+                }
+
+                Target.Add(collision.transform);
+                if (Target.Count >= 2)
+                {
+                    Target.Sort((a, b) => (a.transform.position - transform.position).magnitude.CompareTo((b.transform.position - transform.position).magnitude));
                 }
             }
         }
@@ -47,10 +54,10 @@ namespace InGame
         {
             if (collision.CompareTag("Enemy"))
             {
-                collision.TryGetComponent<Enemy_Manager>(out Enemy_Manager temp);
+                collision.TryGetComponent<IHit>(out IHit temp);
                 if (!(Target is null))
                 {
-                    Target.Remove(temp);
+                    Target.Remove(collision.transform);
                     if (Target.Count >= 2)
                     {
                         Target.Sort((a, b) => (a.transform.position - transform.position).magnitude.CompareTo((b.transform.position - transform.position).magnitude));
