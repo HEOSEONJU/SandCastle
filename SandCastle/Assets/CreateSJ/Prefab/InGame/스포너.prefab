@@ -49,7 +49,6 @@ MonoBehaviour:
   defineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
   prefab: {fileID: 0}
   waveManager: {fileID: 0}
-  count: 30
   nextPoint: {fileID: 0}
   GOList: []
-  spwanTime: 0.3
+  spwanTime: 10

@@ -1,9 +1,13 @@
+using InGameResourceEnums;
 using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using UnityEngine;
+using InGameResourceEnums;
+using InGame;
+using Unity.VisualScripting;
 
 namespace Enemy
 {
@@ -25,24 +29,25 @@ namespace Enemy
         WaveManager waveManager;
 
 
-        [SerializeField]
-        int count = 30;
+
 
         [SerializeField]
         Transform nextPoint;
         [SerializeField]
         
         
-        List<Enemy_Manager> GOList;
+        List<GameObject> GOList;
 
         PatrolSetting patrolSetting;
         [SerializeField]
         float spwanTime=1f;
-        public void Init(string enemykey, int count, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability)
+
+        List<int> genList;
+        public void Init(string enemykey, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,List<int>genlist )
         {
             patrolSetting=patrolsetting; ;
+            genList=genlist;
             
-            this.count = count;
             waveManager = wavemanager;
             
             prefab = Resources.Load<GameObject>("Prefab/Enemy/" + enemykey);
@@ -54,6 +59,8 @@ namespace Enemy
             float attackspeed = enemyTable.Findfloat(enemytablekey, "attackSpeed");
             float attackrange = enemyTable.Findfloat(enemytablekey, "attackRange");
             string resistancetypetemp = enemyTable.FindString(enemytablekey, "resistanceType");
+
+            
 
             string[] resistancetype=null;
             if(resistancetypetemp!=null)
@@ -69,7 +76,18 @@ namespace Enemy
             }
             movespeed *= defineTable.Findfloat("monsterdefaultspeed", "value");
             Enemy_Manager e = prefab.GetComponent<Enemy_Manager>();
-            e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
+            ResourceEnum givetype= ResourceEnum.mud;
+            switch (giveRewardType)
+            {
+                case "water;":
+                    givetype = ResourceEnum.water;
+                    break;
+                case "sand":
+                    givetype = ResourceEnum.sand;
+                    break;
+            }
+
+            e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue,givetype, rewardAmount,skillPointProbability);
             
         }
 
@@ -83,23 +101,58 @@ namespace Enemy
             
         }
 
+        public int CountGen()
+        {
+            int count = 0;
+            foreach (int t in genList)
+            {
+                count += t;
+            }
+
+            return count;
+        }
+
         IEnumerator Spwan()
         {
+            
 
-            while (count-- > 0)
+
+            while (CountGen() > 0)
             {
-                var a = ObjectPooling.GetObject(prefab, this.transform);
-                a.transform.position = patrolSetting.SwpanPoint().position;
-
-                a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
-                if (!(em is null))
+                for(int i=0;i<genList.Count;i++)
                 {
-                    em.StartMove(patrolSetting.Nexus);
+                    if (genList[i] == 0)
+                        continue;
+
+                    PatrolPoint patrolpoint = patrolSetting.SwpanPoint(i);
+
+                    for(int j=0;j<patrolpoint.PatrolPoints.Count;j++)
+                    {
+                        if (genList[i] == 0)
+                            break;
+
+                        var a = ObjectPooling.GetObject(prefab, this.transform);
+                        a.transform.position = patrolpoint.ReturnPosition().position;
+                        a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
+                        if (!(em is null))
+                        {
+                            em.StartMove(patrolSetting.Nexus);
+
+                        }
+                        genList[i]--;
+                        GOList.Add(a.gameObject);
+                    }
                     
+
+
+
                 }
                 yield return new WaitForSeconds(spwanTime);
+
+
+
             }
-            GOList = transform.GetComponentsInChildren<Enemy_Manager>().ToList();
+            
             Debug.Log(GOList.Count);
             StartCoroutine(WaveComplete());
             
