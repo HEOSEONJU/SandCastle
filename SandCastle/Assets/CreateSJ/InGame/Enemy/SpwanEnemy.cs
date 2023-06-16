@@ -8,6 +8,7 @@ using UnityEngine;
 using InGameResourceEnums;
 using InGame;
 using Unity.VisualScripting;
+using Roulette;
 
 namespace Enemy
 {
@@ -42,12 +43,12 @@ namespace Enemy
         [SerializeField]
         float spwanTime=1f;
 
-        List<int> genList;
-        public void Init(string enemykey, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,List<int>genlist )
+        int genCount;
+        public void Init(string enemykey, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,int count )
         {
             patrolSetting=patrolsetting; ;
-            genList=genlist;
             
+            genCount = count;
             waveManager = wavemanager;
             
             prefab = Resources.Load<GameObject>("Prefab/Enemy/" + enemykey);
@@ -75,19 +76,11 @@ namespace Enemy
                 resistancevalue = float.Parse(resistanceValueTemp);
             }
             movespeed *= defineTable.Findfloat("monsterdefaultspeed", "value");
-            Enemy_Manager e = prefab.GetComponent<Enemy_Manager>();
-            ResourceEnum givetype= ResourceEnum.mud;
-            switch (giveRewardType)
-            {
-                case "water;":
-                    givetype = ResourceEnum.water;
-                    break;
-                case "sand":
-                    givetype = ResourceEnum.sand;
-                    break;
-            }
 
-            e.EnemyStatus.Init(hp*hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
+            prefab.GetComponent<Enemy_Manager>().EnemyStatus.Init(hp * hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
+
+
+            
             
         }
 
@@ -101,52 +94,52 @@ namespace Enemy
             
         }
 
-        public int CountGen()
-        {
-            int count = 0;
-            foreach (int t in genList)
-            {
-                count += t;
-            }
 
-            return count;
-        }
 
         IEnumerator Spwan()
         {
-            
 
 
-            while (CountGen() > 0)
+
+
+            int gennum = 0;
+
+            while (genCount > 0)
             {
-                for(int i=0;i<genList.Count;i++)
+                if (patrolSetting.CheckPoint())
                 {
-                    if (genList[i] == 0)
-                        continue;
-
-                    PatrolPoint patrolpoint = patrolSetting.SwpanPoint(i);
-
-                    for(int j=0;j<patrolpoint.PatrolPoints.Count;j++)
-                    {
-                        if (genList[i] == 0)
-                            break;
-
-                        var a = ObjectPooling.GetObject(prefab, this.transform);
-                        a.transform.position = patrolpoint.ReturnPosition().position;
-                        a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
-                        if (!(em is null))
-                        {
-                            em.StartMove(patrolSetting.Nexus);
-
-                        }
-                        genList[i]--;
-                        GOList.Add(a.gameObject);
-                    }
-                    
+                    genCount = 0;
+                    AllDestoryGate();
+                    yield break;
+                }
 
 
+                if (gennum == patrolSetting.GenCount)
+                {
+                    gennum = 0;
+                }
+
+
+
+                PatrolPoint patrolpoint = patrolSetting.SwpanPoint(gennum++);
+                Transform point = patrolpoint.ReturnPosition();
+                if (point == null)
+                {
+                    continue;
+                }
+                genCount--;
+                var a = ObjectPooling.GetObject(prefab, this.transform);
+                a.transform.position = point.position;
+                a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
+                if (!(em is null))
+                {
+                    em.StartMove(patrolSetting.Nexus);
 
                 }
+
+                GOList.Add(a.gameObject);
+
+
                 yield return new WaitForSeconds(spwanTime);
 
 
@@ -158,6 +151,11 @@ namespace Enemy
             
         }
         
+        public void AllDestoryGate()
+        {
+            Debug.Log("모든게이트파괴");
+        }
+
         IEnumerator WaveComplete()
         {
 

@@ -51,4 +51,4 @@ MonoBehaviour:
   waveManager: {fileID: 0}
   nextPoint: {fileID: 0}
   GOList: []
-  spwanTime: 10
+  spwanTime: 0.3

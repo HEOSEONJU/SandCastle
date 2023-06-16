@@ -145,8 +145,8 @@ public class SkillData
 
         duration = skillTable.Findfloat(key, "duration");
         speed = skillTable.Findfloat(key, "speed");
-        
-        isPiercing = skillTable.FindInt(key, "isPiercing");
+
+        isPiercing = 9999;
 
 
 

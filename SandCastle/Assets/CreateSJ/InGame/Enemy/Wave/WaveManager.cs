@@ -44,22 +44,11 @@ namespace InGame
             foreach (string wavespawnkey in WaveList)
             {
                 string enemyname = waveSpwanTable.FindString(wavespawnkey, "enemyKey");
+
+                int count = waveSpwanTable.FindInt(wavespawnkey, "count");
+                Instantiate(spwanObject, this.transform).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
                 
-                string[] genposition = waveSpwanTable.FindString(wavespawnkey, "waveZenType").Split(",") ;
-
-
-
-                List<int> genpositionkeylist = new List<int>();
-                foreach (string genpositionkey in genposition)
-                {
-                    genpositionkeylist.Add(Convert.ToInt32(genpositionkey));
-                }
-
-
-                //Debug.Log("소환할적" + wavespawnkey + "/ 소환수" + summoncount);
-                var e = Instantiate(spwanObject, this.transform);
-                e.TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-                spwan.Init(enemyname, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability, genpositionkeylist);
+                spwan.Init(enemyname, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability, count);
                 spwanList.Add(spwan);
 
 

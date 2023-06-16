@@ -18,6 +18,9 @@ namespace InGame
 
         public int count;
 
+
+        public bool Enable;
+
         public void Init()
         {
             count = 0;
@@ -27,12 +30,17 @@ namespace InGame
 
         public Transform ReturnPosition()
         {
-            if(count==patrolPoint.Count)
+            if (Enable)
             {
-                count = 0;
-            }
+                if (count == patrolPoint.Count)
+                {
+                    count = 0;
+                }
 
-            return patrolPoint[count++];
+                return patrolPoint[count++];
+            }
+            else
+                return null;
         }
     }
 }

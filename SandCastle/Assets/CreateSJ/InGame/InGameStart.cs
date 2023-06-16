@@ -52,15 +52,9 @@ namespace InGame
         private void Start()
         {
 
-            
             int T = PlayerPrefs.GetInt("Stage");
             string stagename=WaveTable.values[T + 1].ToString();
-            
-
-
-            
-            
-            
+           
             var maps= Instantiate(Resources.Load<GameObject>("Map/" + WaveTable.FindString(stagename, "stageResourceKey")));
             baseHp = maps.GetComponentInChildren<BaseHP>();
             mineMaker= maps.GetComponentInChildren<MineMaker>();
@@ -79,10 +73,6 @@ namespace InGame
             inventory.InitInventroy(0, 0, 0);
             mineMaker.InputMineData();
             waveManager.WaveInputStart(stagename);
-
-
-            
-            
             mineMaker.EnableMine(0, WaveTable.FindInt(stagename, 0 + ",sand"), WaveTable.FindInt(stagename, 0 + ",mud"), WaveTable.FindInt(stagename, 0 + ",water"));
 
 
