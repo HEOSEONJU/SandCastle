@@ -1,4 +1,5 @@
 using Enemy;
+using inGame;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace InGame
         [SerializeField] float coolTime;
 
         [SerializeField]
-        protected GameObject bulletPrefab;
+        protected Abstract_Bullet bulletPrefab;
 
         AttackType type;
 

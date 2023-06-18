@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MineTable: {fileID: 11400000, guid: f1527efbb79e0b140a8ee2e003000c21, type: 2}
+  Area: []
 --- !u!1 &337904803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1428,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ebfb75b806f4b0c4aa255c2837294a2c, type: 2}
   Active: 0
   mainSceneName: MainMenu
+  error: 0
 --- !u!4 &856536025
 Transform:
   m_ObjectHideFlags: 0
@@ -1884,6 +1886,7 @@ MonoBehaviour:
   WaveTable: {fileID: 11400000, guid: ebfb75b806f4b0c4aa255c2837294a2c, type: 2}
   map: {fileID: 7104054901353427844, guid: bca15618170921642be21eaf97ff6e31, type: 3}
   charPrefab: {fileID: 6853689654655104091, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
+  charPrefab2: {fileID: 6853689654655104091, guid: 1500d3e99b47bce4ca2a1e89c97385e6, type: 3}
   masterController: {fileID: 1126179527}
   inGameCharInit: {fileID: 1126179531}
   inventory: {fileID: 1126179526}
@@ -3545,6 +3548,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097056380}
     m_Modifications:
+    - target: {fileID: 6853689653900274194, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c89b7a38bb4d8434cadcb52a7a5685b9, type: 3}
+    - target: {fileID: 6853689653900274199, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: df419bf9ddf43a04e9455904edb8bad0, type: 2}
+    - target: {fileID: 6853689654277604488, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d7a7844f20906dc4282dd65e6fd4f4dd, type: 2}
     - target: {fileID: 6853689654277604490, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
       propertyPath: poolingParent
       value: 
@@ -3616,6 +3631,18 @@ PrefabInstance:
     - target: {fileID: 6853689654655104164, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853689655588612173, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 459953c5d1654ca4ca0a151261b2d866, type: 2}
+    - target: {fileID: 6853689655588612174, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853689655588612174, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.049999896
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e61bf62f02fffe4f847a8991c81d38f, type: 3}

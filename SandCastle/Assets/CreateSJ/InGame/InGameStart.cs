@@ -16,10 +16,11 @@ namespace InGame
         GameObject map;
         [SerializeField]
         InGame_Char charPrefab;
+        [SerializeField]
+        InGame_Char charPrefab2;
 
 
-        
-        
+
         [SerializeField]
         MasterController masterController;
         
@@ -60,8 +61,8 @@ namespace InGame
             mineMaker= maps.GetComponentInChildren<MineMaker>();
             waveManager= maps.GetComponentInChildren<WaveManager>();
 
-            var main = Instantiate(charPrefab).GetComponent<InGame_Char>();
-            main.InitChar("character000001", inventory, sensor, skillPoolingParent, mainBulletPoolingParent, skillTable, masterController.transform); ;
+            var main = Instantiate(charPrefab2).GetComponent<InGame_Char>();
+            main.InitChar("character000002", inventory, sensor, skillPoolingParent, mainBulletPoolingParent, skillTable, masterController.transform); ;
             masterController.InitMasterController(main, inGameCharInit);
             for (int i=0;i< 2;i++) 
             {

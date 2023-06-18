@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e2eedcdd366d2a488894cdc02bd0931
+guid: ffd90441f47064c4cb387bea77ec1a1a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_0
+      name: Weapon05_Pirate_Watergun_waterball_hit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7f65844d14d32468c091ad681d1abb
+      internalID: 1221042491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon05_Pirate_Watergun_waterball_hit_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7084760b3af32b4587f6512ac98b493
+      internalID: -1087622074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon05_Pirate_Watergun_waterball_hit_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 840
+        width: 320
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a210255b8c60d4240959f41bcfd401b4
+      internalID: 1916651062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon05_Pirate_Watergun_waterball_hit_3
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 835401ae6332f474599d7dac4087a460
-      internalID: 2105909027
+      spriteID: d46ea6d357e9a814bbbee78c31d7a597
+      internalID: 1028122488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_1
+      name: Weapon05_Pirate_Watergun_waterball_hit_4
       rect:
         serializedVersion: 2
         x: 320
@@ -164,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab0d9d4e451a9854194d3f0494520e74
-      internalID: 1418497722
+      spriteID: 626413ec6ca89284a8955b475977b26b
+      internalID: -846700273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_2
+      name: Weapon05_Pirate_Watergun_waterball_hit_5
       rect:
         serializedVersion: 2
         x: 640
@@ -185,35 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 517fb3dfb54430445bbe39777100753f
-      internalID: 377047580
+      spriteID: 50db27a781329b046b6ff4a4422abe35
+      internalID: -1042907597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_3
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 560
-        width: 320
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2a10b20118a35f49ae6135f3da00d1c
-      internalID: 266231603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_4
+      name: Weapon05_Pirate_Watergun_waterball_hit_6
       rect:
         serializedVersion: 2
         x: 0
@@ -227,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce75e1d925f1e2a40ab2f3a63ee50542
-      internalID: 2082800413
+      spriteID: bae832aea1fdf0e42833c412f1fd51ff
+      internalID: -599589496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_5
+      name: Weapon05_Pirate_Watergun_waterball_hit_7
       rect:
         serializedVersion: 2
         x: 320
@@ -248,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccfa50a572baec645973fd7e929cc156
-      internalID: 1151326987
+      spriteID: 08b9f249e600b0146b9f4cf887b4626b
+      internalID: -354489256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_6
+      name: Weapon05_Pirate_Watergun_waterball_hit_8
       rect:
         serializedVersion: 2
         x: 640
@@ -269,35 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86be784586daaa44896216279ae11840
-      internalID: 1166855281
+      spriteID: 52ae72d6dca6adb4a980013a540617b0
+      internalID: 1732763051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_7
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 280
-        width: 320
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da4bfdbdf877e764fbbdc918dd59aead
-      internalID: 1371453088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_8
+      name: Weapon05_Pirate_Watergun_waterball_hit_9
       rect:
         serializedVersion: 2
         x: 0
@@ -311,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47905147257355f409b1b40c86ace7d1
-      internalID: -73694786
+      spriteID: db39aaeda863b804094290afb3ff8cbe
+      internalID: 1012282240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_9
+      name: Weapon05_Pirate_Watergun_waterball_hit_10
       rect:
         serializedVersion: 2
         x: 320
@@ -332,50 +353,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ef95cd65f9dae4dbd0157210459abb
-      internalID: 2118026422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 320
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3aa11f25776df914ca70beb62746ff1c
-      internalID: 1384969694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon05_Duckhead_Loverduck_Attack_11
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 320
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a3629f8dacfdab4eafa7ff5b915e5b7
-      internalID: -1384167993
+      spriteID: 71b95ef3da3f29a4e8399d82b7f85d09
+      internalID: -1000606277
       vertices: []
       indices: 
       edges: []
@@ -391,18 +370,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Weapon05_Duckhead_Loverduck_Attack_0: 2105909027
-      Weapon05_Duckhead_Loverduck_Attack_1: 1418497722
-      Weapon05_Duckhead_Loverduck_Attack_10: 1384969694
-      Weapon05_Duckhead_Loverduck_Attack_11: -1384167993
-      Weapon05_Duckhead_Loverduck_Attack_2: 377047580
-      Weapon05_Duckhead_Loverduck_Attack_3: 266231603
-      Weapon05_Duckhead_Loverduck_Attack_4: 2082800413
-      Weapon05_Duckhead_Loverduck_Attack_5: 1151326987
-      Weapon05_Duckhead_Loverduck_Attack_6: 1166855281
-      Weapon05_Duckhead_Loverduck_Attack_7: 1371453088
-      Weapon05_Duckhead_Loverduck_Attack_8: -73694786
-      Weapon05_Duckhead_Loverduck_Attack_9: 2118026422
+      Weapon05_Pirate_Watergun_waterball_hit_0: 1221042491
+      Weapon05_Pirate_Watergun_waterball_hit_1: -1087622074
+      Weapon05_Pirate_Watergun_waterball_hit_10: -1000606277
+      Weapon05_Pirate_Watergun_waterball_hit_11: -1863446964
+      Weapon05_Pirate_Watergun_waterball_hit_2: 1916651062
+      Weapon05_Pirate_Watergun_waterball_hit_3: 1028122488
+      Weapon05_Pirate_Watergun_waterball_hit_4: -846700273
+      Weapon05_Pirate_Watergun_waterball_hit_5: -1042907597
+      Weapon05_Pirate_Watergun_waterball_hit_6: -599589496
+      Weapon05_Pirate_Watergun_waterball_hit_7: -354489256
+      Weapon05_Pirate_Watergun_waterball_hit_8: 1732763051
+      Weapon05_Pirate_Watergun_waterball_hit_9: 1012282240
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

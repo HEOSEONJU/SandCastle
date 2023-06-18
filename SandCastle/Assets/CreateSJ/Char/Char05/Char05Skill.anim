@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Char02Skill 1
+  m_Name: Char05Skill
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -207,7 +207,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.2333333
+  - time: 1.2
     functionName: SkillFireEvent
     data: 
     objectReferenceParameter: {fileID: 0}

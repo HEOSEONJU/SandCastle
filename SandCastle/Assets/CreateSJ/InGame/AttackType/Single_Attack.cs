@@ -19,7 +19,7 @@ namespace InGame
         {
             
 
-            ObjectPooling.GetObject(bulletPrefab, poolingParent).TryGetComponent<Abstract_Bullet>(out Abstract_Bullet bulletobject);
+            ObjectPooling.GetObject(bulletPrefab.gameObject, poolingParent).TryGetComponent<Abstract_Bullet>(out Abstract_Bullet bulletobject);
             if(bulletobject is null)
             {
                 return;

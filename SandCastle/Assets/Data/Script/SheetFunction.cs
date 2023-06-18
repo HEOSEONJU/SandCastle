@@ -28,6 +28,7 @@ public class SheetFunction : MonoBehaviour
 
     public bool error = false;
 
+    IEnumerator ErrorCorountine;
     private void Awake()
     {
         if(instance is null)
@@ -101,7 +102,8 @@ public class SheetFunction : MonoBehaviour
         checkCount++;
         if (checkCount == tables.Count)
         {
-            StartCoroutine(newWait());
+            ErrorCorountine = newWait();
+            StartCoroutine(ErrorCorountine);
         }
     }
     IEnumerator newWait()

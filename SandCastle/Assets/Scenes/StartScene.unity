@@ -415,6 +415,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ebfb75b806f4b0c4aa255c2837294a2c, type: 2}
   Active: 1
   mainSceneName: MainMenu
+  error: 0
 --- !u!4 &1685806041
 Transform:
   m_ObjectHideFlags: 0

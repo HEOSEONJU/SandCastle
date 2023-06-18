@@ -228,7 +228,7 @@ MonoBehaviour:
   igc: {fileID: 6853689654655104091}
   status: {fileID: 6853689654655104095}
   coolTime: 3
-  bulletPrefab: {fileID: 8043778565096238361, guid: 65a773eece7d69448931269f2c019592, type: 3}
+  bulletPrefab: {fileID: 3842256433410573450, guid: 65a773eece7d69448931269f2c019592, type: 3}
   poolingParent: {fileID: 0}
 --- !u!114 &6853689654277604491
 MonoBehaviour:
