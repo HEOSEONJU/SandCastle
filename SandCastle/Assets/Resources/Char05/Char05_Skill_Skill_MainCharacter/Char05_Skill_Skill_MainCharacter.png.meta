@@ -1,0 +1,1203 @@
+fileFormatVersion: 2
+guid: 6b829dc5f1f29314abfa9e3d43215295
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847c06c45f130b645b1dec515b56c627
+      internalID: -2057536855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b964f97a0eb7f704f9b7882541e444ed
+      internalID: 1098791592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1d4f459ef617c4796dc6671bd431b4
+      internalID: -944262475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870384756656a09429a68943c38249d0
+      internalID: 1300864600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b74aed68511464e8dbbc188a4067d7
+      internalID: 645168363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b65ec6757c47042ab737f052ecf3ea
+      internalID: 1281396220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36eb267aa54a5d488bf76494740b2a2
+      internalID: 854658545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_7
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2100
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c0fa751ae99f54c8085296c3338fac
+      internalID: -1425829891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b47582c60c69954dbd5096b3446bd76
+      internalID: -1288096605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374079be4bc615844beb7073fdceedd6
+      internalID: -23548600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af27d0c07d85360419c21cb6fecfdd7b
+      internalID: -1132188769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_11
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a66e1d101c706340813a0045bbe9d64
+      internalID: 1163852822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_12
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30192d7bb6f46254181c964eb9c37e0d
+      internalID: -77221598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_13
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658bb74e920473f4b8f49b22ef76379e
+      internalID: 2024145406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_14
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1949d87ba3de29458fa7d1c612bdfdd
+      internalID: 14545040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_15
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1680
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40904e82b5fd94d408e767816c18e756
+      internalID: -369728767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0aa54b7d342a0e41917f918c1d9c990
+      internalID: -1127647977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_17
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c428c0f92706a0449e8669fa05d9443
+      internalID: -1182227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_18
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92bae69ef649771499d173d88daf8034
+      internalID: -8867721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_19
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6830f962459622547b57dbe389585033
+      internalID: 893322553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_20
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fa72612d3ddfb44b9c21207518886f
+      internalID: 1508307880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_21
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b487170fce3900842b235e6565953650
+      internalID: 428283687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_22
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a46de5af52199248bd5e9abd0b27733
+      internalID: -288987704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_23
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1260
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc013b0e1f2597244964fb3ee46540eb
+      internalID: -1097767182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61212a906708d374fa84be87917ea358
+      internalID: -1442926558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f71aadc916d674e92c60ba91bad228
+      internalID: 1507678202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_26
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6eaabbd99e0f34dbf4254304b46644
+      internalID: 31300203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_27
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb42204cf52ed5419e9f5cd2bba4f10
+      internalID: -1394573218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_28
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48dd824554a326e4c9d29248105fee81
+      internalID: -774667988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_29
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766ffd63d0d98fe45a6ca71d9ca0fe5f
+      internalID: 1410504342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_30
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e725722ab3242546a13b78be9f313ea
+      internalID: -532448339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_31
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 840
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b881d29532873468a46a655c7aea6e
+      internalID: 1360290342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eaab2ccd0110984492bc2109c4ba205
+      internalID: -599323816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_33
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d9451003d88ca4cad2d3303eee7539
+      internalID: -1071247843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_34
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95dc6a70e21a6da4e86fc427f1656246
+      internalID: -561917134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_35
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a414866df22524184f2d0ab4dddbcd
+      internalID: -995445332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_36
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa4ec72507e5df43bcb8ae250840cdc
+      internalID: -2060816553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_37
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8727bef1a8c36247a1e632dfde8640a
+      internalID: -1323222465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_38
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fbe02a6ada75e40b1a8111484ae29d
+      internalID: -231585386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_39
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 420
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c01f3819c535474b988eb9c9de22b9f
+      internalID: -1730028761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23dcc7b799181849b31f9915f9ef9eb
+      internalID: 1933722525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_41
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3acc30df2a2c924e8afdf5a1e707531
+      internalID: -1732606949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_42
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b6a9ad1e07e0c47bd5e1b0e21fe0ef
+      internalID: -1283949413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_43
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204cefc03a503a345bec06de1c8206b0
+      internalID: 767541969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_44
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b003adea8842e4ebabcdf29e8a08fe
+      internalID: 1528851474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_45
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fc9fd41719c8a48be056eb2ed3c198
+      internalID: -185493258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_46
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bdc5825dce8e74cac00d25e5e0a01d
+      internalID: -1501597440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char05_Skill_Skill_MainCharacter_47
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697c387949f976d4780067e268974619
+      internalID: -846282937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Char05_Skill_Skill_MainCharacter_0: -2057536855
+      Char05_Skill_Skill_MainCharacter_1: 1098791592
+      Char05_Skill_Skill_MainCharacter_10: -1132188769
+      Char05_Skill_Skill_MainCharacter_11: 1163852822
+      Char05_Skill_Skill_MainCharacter_12: -77221598
+      Char05_Skill_Skill_MainCharacter_13: 2024145406
+      Char05_Skill_Skill_MainCharacter_14: 14545040
+      Char05_Skill_Skill_MainCharacter_15: -369728767
+      Char05_Skill_Skill_MainCharacter_16: -1127647977
+      Char05_Skill_Skill_MainCharacter_17: -1182227
+      Char05_Skill_Skill_MainCharacter_18: -8867721
+      Char05_Skill_Skill_MainCharacter_19: 893322553
+      Char05_Skill_Skill_MainCharacter_2: -944262475
+      Char05_Skill_Skill_MainCharacter_20: 1508307880
+      Char05_Skill_Skill_MainCharacter_21: 428283687
+      Char05_Skill_Skill_MainCharacter_22: -288987704
+      Char05_Skill_Skill_MainCharacter_23: -1097767182
+      Char05_Skill_Skill_MainCharacter_24: -1442926558
+      Char05_Skill_Skill_MainCharacter_25: 1507678202
+      Char05_Skill_Skill_MainCharacter_26: 31300203
+      Char05_Skill_Skill_MainCharacter_27: -1394573218
+      Char05_Skill_Skill_MainCharacter_28: -774667988
+      Char05_Skill_Skill_MainCharacter_29: 1410504342
+      Char05_Skill_Skill_MainCharacter_3: 1300864600
+      Char05_Skill_Skill_MainCharacter_30: -532448339
+      Char05_Skill_Skill_MainCharacter_31: 1360290342
+      Char05_Skill_Skill_MainCharacter_32: -599323816
+      Char05_Skill_Skill_MainCharacter_33: -1071247843
+      Char05_Skill_Skill_MainCharacter_34: -561917134
+      Char05_Skill_Skill_MainCharacter_35: -995445332
+      Char05_Skill_Skill_MainCharacter_36: -2060816553
+      Char05_Skill_Skill_MainCharacter_37: -1323222465
+      Char05_Skill_Skill_MainCharacter_38: -231585386
+      Char05_Skill_Skill_MainCharacter_39: -1730028761
+      Char05_Skill_Skill_MainCharacter_4: 645168363
+      Char05_Skill_Skill_MainCharacter_40: 1933722525
+      Char05_Skill_Skill_MainCharacter_41: -1732606949
+      Char05_Skill_Skill_MainCharacter_42: -1283949413
+      Char05_Skill_Skill_MainCharacter_43: 767541969
+      Char05_Skill_Skill_MainCharacter_44: 1528851474
+      Char05_Skill_Skill_MainCharacter_45: -185493258
+      Char05_Skill_Skill_MainCharacter_46: -1501597440
+      Char05_Skill_Skill_MainCharacter_47: -846282937
+      Char05_Skill_Skill_MainCharacter_5: 1281396220
+      Char05_Skill_Skill_MainCharacter_6: 854658545
+      Char05_Skill_Skill_MainCharacter_7: -1425829891
+      Char05_Skill_Skill_MainCharacter_8: -1288096605
+      Char05_Skill_Skill_MainCharacter_9: -23548600
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
