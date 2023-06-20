@@ -80,7 +80,7 @@ namespace InGame
             CharName = name;
             this.sensor= sensor;
             move.SettingPosi(defaultposi);
-            string skillname="";
+            string skillname= "Skill00001";
             skill.Init(sensor, skillpoolingparent, skilltable, skillname);
 
             InGameAttack.AbstractAttack.PoolingParent = attackpoolingparent;
