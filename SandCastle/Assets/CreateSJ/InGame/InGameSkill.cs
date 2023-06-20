@@ -25,13 +25,13 @@ namespace InGame
         Transform spwanposi;
         [SerializeField]
         Transform poolingParent;
-        public void Init(InGameSkillSensor sensor,Transform parent,ObjectTable skilltable)
+        public void Init(InGameSkillSensor sensor,Transform parent,ObjectTable skilltable,string skillname)
         {
             inGameSkillSensor= sensor;
             poolingParent= parent;
             skillData = new SkillData();
             
-            skillData.InitData("Skill00001", skilltable);
+            skillData.InitData(skillname, skilltable);
             
             
             
