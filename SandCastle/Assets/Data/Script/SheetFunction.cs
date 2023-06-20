@@ -102,6 +102,7 @@ public class SheetFunction : MonoBehaviour
         checkCount++;
         if (checkCount == tables.Count)
         {
+            checkCount = 0;
             ErrorCorountine = newWait();
             StartCoroutine(ErrorCorountine);
         }
@@ -110,6 +111,7 @@ public class SheetFunction : MonoBehaviour
     {
         if(error)
         {
+            yield return new WaitForSeconds(1f);
             Debug.Log("Àç½Ãµµ");
             error = false;
             checkCount = 0;
