@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 908108075802003841}
   - component: {fileID: -1441437481392588754}
   - component: {fileID: 5154044441680759181}
+  - component: {fileID: 109756118237557684}
   m_Layer: 0
-  m_Name: Skillobject00001
+  m_Name: Skillobject00002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6966596089616036222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.85, y: -0.146, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74696161e9042494db9af9c661bf64a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillKey: Skillobject00001
+  skillKey: Skillobject00002
   skillData:
     skillObjectKey: 
     spwan: 0
@@ -55,7 +56,7 @@ MonoBehaviour:
     duration: 0
     isPiercing: 0
   skillobjecttable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
-  pattern: 0
+  pattern: 1
   onMissTarget: 0
 --- !u!212 &5154044441680759181
 SpriteRenderer:
@@ -98,7 +99,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: ea2161993c658e34e960172ec1296a9f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23f35c4a688585f4d952f6484a91935d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -109,3 +110,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &109756118237557684
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966596089616036222}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 459953c5d1654ca4ca0a151261b2d866, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

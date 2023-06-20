@@ -3,7 +3,7 @@ using UnityEngine;
 using SkillEnums;
 
 using System.Linq;
-
+using Skill;
 namespace InGame
 {
     public class InGameSkill : MonoBehaviour
@@ -86,6 +86,7 @@ namespace InGame
             switch (skillData.Spwan)
             {
                 case SkillSpwan.Player:
+                    Debug.Log("스킬생성위치");
                     e.GetComponent<SkillObject>().Active(spwanposi, target);
                     break;
                 case SkillSpwan.Target:

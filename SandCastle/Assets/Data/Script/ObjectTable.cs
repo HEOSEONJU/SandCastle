@@ -92,6 +92,20 @@ public class ObjectTable : ScriptableObject
         ViewTableList.Add(viewdict);
         listCount = ViewTableList.Count;
     }
+    public List<SerializableDictionary<string, string>> FindDict(string key,string colum)
+    {
+        List<SerializableDictionary<string, string>> returnvalue=new List<SerializableDictionary<string, string>>();
+        foreach (SerializableDictionary<string, string> table in ViewTableList)
+        {
+            if (table[key].ToString()== colum)
+            {
+                returnvalue.Add(table);
+            }
+        }
+
+        return returnvalue;
+    }
+
     public string FindString(string Key, string colum)//  Key Value의 찾을오브젝트의아이디   colum 해시키리스트의 해시값
     {
         if (ViewTableList == null)

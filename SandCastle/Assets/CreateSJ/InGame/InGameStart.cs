@@ -1,5 +1,6 @@
 using inGame;
 using MainUI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,7 @@ namespace InGame
 {
     public class InGameStart : MonoBehaviour
     {
-        [SerializeField]
-        ObjectTable WaveTable;
+        
 
         [SerializeField]
         GameObject map;
@@ -48,26 +48,37 @@ namespace InGame
 
         [Header("Å×ÀÌºí")]
         [SerializeField]
+        ObjectTable waveTable;
+        [SerializeField]
         ObjectTable skillTable;
+        [SerializeField]
+        ObjectTable charSkillTable;
 
         private void Start()
         {
 
             int T = PlayerPrefs.GetInt("Stage");
-            string stagename=WaveTable.values[T + 1].ToString();
+            string stagename= waveTable.values[T + 1].ToString();
            
-            var maps= Instantiate(Resources.Load<GameObject>("Map/" + WaveTable.FindString(stagename, "stageResourceKey")));
+            var maps= Instantiate(Resources.Load<GameObject>("Map/" + waveTable.FindString(stagename, "stageResourceKey")));
             baseHp = maps.GetComponentInChildren<BaseHP>();
             mineMaker= maps.GetComponentInChildren<MineMaker>();
             waveManager= maps.GetComponentInChildren<WaveManager>();
 
             var main = Instantiate(charPrefab2).GetComponent<InGame_Char>();
-            main.InitChar("character000002", inventory, sensor, skillPoolingParent, mainBulletPoolingParent, skillTable, masterController.transform); ;
+
+
+
+
+
+            int level = 1;
+            
+            main.InitChar("character000002", level, inventory, sensor, skillPoolingParent, mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform); ;
             masterController.InitMasterController(main, inGameCharInit);
             for (int i=0;i< 2;i++) 
             {
                 InGame_Char sub = Instantiate(charPrefab, baseHp.transform.GetChild(i)).GetComponent<InGame_Char>();
-                sub.InitChar("character000001", inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent, subBulletPoolingParent[i], skillTable);
+                sub.InitChar("character000001", level, inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent, subBulletPoolingParent[i], skillTable, charSkillTable);
                 baseHp.InputChar(sub);
             }
             baseHp.InitBaseHP(inGameCharInit);
@@ -76,7 +87,7 @@ namespace InGame
             waveManager.WaveInputStart(stagename);
             for(int i=0;i<=3;i++)
             {
-                mineMaker.EnableMine(i, WaveTable.FindInt(stagename, i + ",sand"), WaveTable.FindInt(stagename, i + ",mud"), WaveTable.FindInt(stagename, i + ",water"));
+                mineMaker.EnableMine(i, waveTable.FindInt(stagename, i + ",sand"), waveTable.FindInt(stagename, i + ",mud"), waveTable.FindInt(stagename, i + ",water"));
             }
             
 
