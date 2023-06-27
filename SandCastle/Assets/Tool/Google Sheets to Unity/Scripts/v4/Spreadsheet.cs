@@ -129,7 +129,8 @@ namespace GoogleSheetsToUnity
             int end = valueRange.range.IndexOf(":", start);
             if (start == 0 && end == -1)
             {
-                SheetFunction.Instacne.error = true;
+                
+                SheetFunction.Instacne.ErrorCheck();
                 Debug.LogError("not find");
                 return "";
             }
@@ -319,6 +320,8 @@ namespace GoogleSheetsToUnity
 
         public GstuSpreadSheet(GSTU_SpreadsheetResponce data, string titleColumn, int titleRow)
         {
+            
+
             string startColumn = Regex.Replace(data.StartCell(), "[^a-zA-Z]", "");
             string startrowtemp = Regex.Replace(data.StartCell(), "[^0-9]", "");
             int startRow;
@@ -423,6 +426,8 @@ namespace GoogleSheetsToUnity
                     }
                 }
             }
+            Debug.Log(startColumn);
+            SheetFunction.Instacne.Check();
         }
 
         public GSTU_Cell this[string cellRef]

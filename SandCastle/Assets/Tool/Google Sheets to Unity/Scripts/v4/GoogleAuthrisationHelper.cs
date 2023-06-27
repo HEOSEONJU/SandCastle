@@ -180,7 +180,7 @@ namespace GoogleSheetsToUnity
         {
             if (DateTime.Now > SpreadsheetManager.Config.gdr.nextRefreshTime)
             {
-                SheetFunction.Instacne.Check();
+                
                 Debug.Log("Refreshing Token");
 
                 WWWForm f = new WWWForm();

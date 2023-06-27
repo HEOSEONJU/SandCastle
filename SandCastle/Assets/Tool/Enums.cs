@@ -23,6 +23,17 @@ namespace SandEnums
 
 namespace InGame
 {
+    public enum PlayerState 
+    {
+        Idle,
+        Move,
+        Recall,
+        Skill,
+        Harvest,
+        Death
+
+    }
+
     public enum AttackType
     {
         Single = 1,

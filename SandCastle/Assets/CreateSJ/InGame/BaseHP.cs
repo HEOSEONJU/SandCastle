@@ -37,7 +37,8 @@ public class BaseHP : MonoBehaviour
 
         foreach (InGame_Char IGC in inGameCharList)
         {
-            if(IGC.RecallChar())
+            
+            if (IGC.RecallChar())
             {
                 return;
             }

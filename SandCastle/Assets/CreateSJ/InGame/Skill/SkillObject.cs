@@ -36,6 +36,7 @@ namespace Skill
 
         IEnumerator moveCoroutine;
         IEnumerator destoryCorountine;
+        [SerializeField]
         List<GameObject> attakList;
 
 
@@ -45,7 +46,7 @@ namespace Skill
 
             yield return new WaitForSeconds(skillData.Duration);
             gameObject.SetActive(false);
-            StopCoroutine(moveCoroutine);
+            //StopCoroutine(moveCoroutine);
         }
         public void Init(SkillData skilldata)
         {
@@ -57,6 +58,7 @@ namespace Skill
                 case "Straight":
                     pattern = SkillPattern.Straight;
                     moveFunction = transform.AddComponent<StraightMove>();
+                    
                     break;
                 case "Bounce":
                     pattern = SkillPattern.Bounce;
@@ -100,6 +102,8 @@ namespace Skill
             }
         }
 
+
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
 
@@ -126,7 +130,7 @@ namespace Skill
                     if (skillData.IsPiercing == 0)
                     {
                         gameObject.SetActive(false);
-                        StopCoroutine(moveCoroutine);
+                        //StopCoroutine(moveCoroutine);
                         StopCoroutine(destoryCorountine);
                     }
                 }

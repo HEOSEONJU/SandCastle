@@ -35,7 +35,7 @@ public class ObjectTable : ScriptableObject
     [Header("무시할A열의 값들")]
     public List<string> igonoreNames;
     [Header("읽어올 A열의 값들")]
-    public List<string> values;
+    public List<string> values;//리스트로 써먹을 수 있음
     //public List<string> hashKeyList;
     public List<string> dictKeyList;
 

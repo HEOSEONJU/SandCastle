@@ -35,7 +35,7 @@ namespace InGame
         
         public void SkillEventend()
         {
-            
+            inGameChar.IsAction = false;
             animator.SetTrigger("SkillExit");
             //
 

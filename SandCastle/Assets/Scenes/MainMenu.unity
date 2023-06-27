@@ -30841,9 +30841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70521ad0464945049b247d6d52c7995a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openGameSceneObject:
-  - {fileID: 488840332}
-  - {fileID: 600489213062396491}
+  waveTable: {fileID: 0}
   stageUI: {fileID: 0}
   moveSceneName: 
 --- !u!1 &1640279728
@@ -34347,8 +34345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70521ad0464945049b247d6d52c7995a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openGameSceneObject:
-  - {fileID: 1639906153}
+  waveTable: {fileID: 11400000, guid: ebfb75b806f4b0c4aa255c2837294a2c, type: 2}
   stageUI: {fileID: 600489212527877552}
   moveSceneName: GameScene
 --- !u!114 &1870004101
@@ -35529,6 +35526,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ebfb75b806f4b0c4aa255c2837294a2c, type: 2}
   Active: 0
   mainSceneName: MainMenu
+  checkCount: 0
 --- !u!4 &1936518379
 Transform:
   m_ObjectHideFlags: 0

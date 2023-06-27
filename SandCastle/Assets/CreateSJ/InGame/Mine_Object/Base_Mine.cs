@@ -76,7 +76,7 @@ namespace InGame
                     igc.Inventory.Getter_Mine(AmountMax, resourceType);
                     Change_Image(spriteDead);
                     IsDestory = true;
-                    igc.Animator.SetTrigger("HarvestExit");
+                    igc.IsAction = false;
 
                     return;
                 }

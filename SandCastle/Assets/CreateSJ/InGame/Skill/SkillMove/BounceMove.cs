@@ -18,23 +18,22 @@ namespace Skill
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            moveCoroutine =Move(duration, speed);
+            moveCoroutine =Spread(duration, speed);
             
             StartCoroutine(moveCoroutine);
         }
-        IEnumerator Move(float duration,float speed)
+        IEnumerator Spread(float duration,float speed)
         {
             circleCollider=GetComponent<CircleCollider2D>();
             circleCollider.radius = 1f;
             float time = 0;
-            Vector2 S = new Vector2(1, 0);
+            Vector2 S = new Vector2(0, 0);
             Vector2 L = new Vector2(speed,0);
 
-            while (duration > 0)
+            while (time < duration)
             {
                 time+= Time.deltaTime;
-                duration -= Time.deltaTime;
-               Vector2 D=Vector2.Lerp(S, L, time);
+               Vector2 D=Vector2.Lerp(S, L, time/duration);
 
                 circleCollider.radius = D.x;
 

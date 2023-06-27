@@ -64,12 +64,16 @@ namespace InGame
                 if (!(target is null))
                 {
                     target.ConnectList.Remove(this.gameObject);
-                    
-                        
-                    
-                    
-                    
+                    if (target.ConnectList.Count == 0)
+                    {
+                        harvest.Do = false;
+                    }
+
+
+
+
                 }
+                
             }
         }
 

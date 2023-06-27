@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
@@ -8,7 +9,9 @@ namespace MainUI
     public class MoveGameScene : MonoBehaviour
     {
         [SerializeField]
-        List<GameObject> openGameSceneObject;
+        ObjectTable waveTable;
+
+
         [SerializeField]
         StageUI stageUI;
 
@@ -19,9 +22,11 @@ namespace MainUI
         public void MoveScene()
         {
 
-            PlayerPrefs.SetInt("Stage",stageUI.StageIndex);
-
-            SceneMoveManager.Instance.AsyncChangeScne(moveSceneName);
+            //PlayerPrefs.SetInt("Stage",stageUI.StageIndex);
+            //int T = PlayerPrefs.GetInt("Stage");
+            string stagename = waveTable.values[stageUI.StageIndex + 1].ToString();
+            
+            SceneMoveManager.Instance.AsyncChangeScne(waveTable.FindString(stagename, "stageResourceKey"));
 
 
         }

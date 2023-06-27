@@ -18,17 +18,22 @@ public class SheetFunction : MonoBehaviour
 
     [SerializeField]
     string mainSceneName;
-    
+    [SerializeField]
     int checkCount = 0;
     public static SheetFunction  Instacne
     {
         get { return instance; }
         
     }
-
-    public bool error = false;
+    bool error;
+    public bool Error
+    {
+        get { return error; }
+        set { error = value; }
+    }
 
     IEnumerator ErrorCorountine;
+    IEnumerator onLineCorountine;
     private void Awake()
     {
         if(instance is null)
@@ -38,8 +43,8 @@ public class SheetFunction : MonoBehaviour
             if(Active)
             {
                 checkCount = 0;
-                
-                OnlienReadSheets();
+                onLineCorountine = OnlienReadSheets();
+                StartCoroutine(onLineCorountine);
                 //OnlienReadSheets();
 
             }
@@ -67,21 +72,18 @@ public class SheetFunction : MonoBehaviour
         SceneMoveManager.Instance.ImmediatelyChangeScne(mainSceneName);
     }
 
-    
-        
 
 
-    public void OnlienReadSheets()
+
+
+    IEnumerator OnlienReadSheets()
     {
         Debug.Log("온라인리딩작동");
-            
         foreach (ObjectTable table in tables) 
         {
+            yield return null;
             table.OnLineReading();
         }
-
-        
-        
     }
     public int OffLineReadSheets()
     {
@@ -89,14 +91,16 @@ public class SheetFunction : MonoBehaviour
         foreach (ObjectTable table in tables)
         {
              c+=table.OffLineReading();
-            
 
         }
         return c;
 
 
     }
-
+    public void ErrorCheck()
+    {
+        Error = true;
+    }
     public void Check()
     {
         checkCount++;
@@ -109,21 +113,26 @@ public class SheetFunction : MonoBehaviour
     }
     IEnumerator newWait()
     {
-        if(error)
+        if(Error)
         {
             yield return new WaitForSeconds(1f);
             Debug.Log("재시도");
-            error = false;
+            Error = false;
             checkCount = 0;
-            OnlienReadSheets();
-            
+            StopCoroutine(onLineCorountine);
+            onLineCorountine = OnlienReadSheets();
+            StartCoroutine(onLineCorountine);
+
             yield break ;
         }
 
 
         while (true)
         {
-            yield return new WaitForSeconds(3f);
+            Debug.Log("넘어가는거 기다리는중"+"/ 마지막테이블카운트 "+tables.Last().ViewTableList.Count);
+            yield return new WaitForSeconds(1f);
+
+
 
             if(!(tables.Last().ViewTableList == null || tables.Last().ViewTableList.Count == 0))
             {

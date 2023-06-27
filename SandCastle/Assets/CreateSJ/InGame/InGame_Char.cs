@@ -20,9 +20,14 @@ namespace InGame
         [SerializeField]
         InGameSkill skill;
         [SerializeField]
+        InGame_Harvest harvest;
+
+        [SerializeField]
         InGameSkillSensor sensor;
         [SerializeField]
         InGame_Inventory inventory;
+
+
         [SerializeField]
         bool isAction;
 
@@ -30,6 +35,10 @@ namespace InGame
         SpriteRenderer spriteRenderer;
 
 
+        [SerializeField]
+        PlayerState state;
+        [SerializeField]
+        FSM fsm;
 
         public bool IsAction
         {
@@ -57,7 +66,14 @@ namespace InGame
         {
             get { return skill; }
         }
-
+        public InGame_Harvest Harvest
+        {
+            get { return harvest; }
+        }
+        public InGameSkillSensor Sensor
+        {
+            get { return sensor; }
+        }
 
         public SpriteRenderer SpriteRenderer
         {
@@ -68,18 +84,30 @@ namespace InGame
             get { return inventory; }
         }
 
-        private void LateUpdate()
+        public PlayerState State
         {
-            if(Input.GetKeyUp(KeyCode.Escape)) { BackMainScene(); }
-            }
+            get { return state; }
+            set { state = value; }
+        }
+        public FSM FSM
+        {
+            get { return fsm; }
+            set { fsm = value; }
+        }
+
+
 
 
         
         public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, ObjectTable charskilltable, Transform defaultposi=null)
         {
+            
+            state = PlayerState.Idle;
+            fsm= new FSM (new IdleState(this));
             this.inventory= inventory;
             CharName = name;
             this.sensor= sensor;
+            
             move.SettingPosi(defaultposi);
 
             var skills = charskilltable.FindDict("CharKey", name);
@@ -120,7 +148,7 @@ namespace InGame
                 //skill.Init(sensor, skillpoolingparent, skilltable, skillname2);
             }
             InGameAttack.AbstractAttack.PoolingParent = attackpoolingparent;
-
+            
 
             //하베스트인벤토리
         }
@@ -169,34 +197,26 @@ namespace InGame
             {
                 return false;
             }
-            if ((InGameMove.Distance() >= InGameMove.value))
+            float angle = InGameMove.Angle();
+
+
+
+            if (angle < 0)
             {
-
-                float angle = InGameMove.Angle();
-
-                
-
-                if (angle < 0)
-                {
-                    //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-                    SpriteRenderer.flipX = true;
-
-                }
-                else if (angle > 0)
-                {
-                    //IGC.transform.rotation = Quaternion.identity;
-                    SpriteRenderer.flipX = false;
-                }   
-
-                InGameMove.MoveChar(Animator, InGameStatus.MoveSpeed * 2f);
+                //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                SpriteRenderer.flipX = true;
 
             }
-            else
+            else if (angle > 0)
             {
-                InGameMove.StopChar(Animator);
-                Animator.SetBool("Infinity", false);
-                Animator.SetBool("RecallEnd", false);
+                //IGC.transform.rotation = Quaternion.identity;
+                SpriteRenderer.flipX = false;
             }
+
+            InGameMove.MoveChar(Animator, InGameStatus.MoveSpeed * 2f);
+
+            
+
             return true;
         }
 

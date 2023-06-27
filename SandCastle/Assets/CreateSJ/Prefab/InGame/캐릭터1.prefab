@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 6853689654655104083}
   - component: {fileID: 6853689654655104082}
   - component: {fileID: 6853689654655104081}
+  - component: {fileID: 7985069797101147733}
   m_Layer: 6
   m_Name: "\uCE90\uB9AD\uD1301"
   m_TagString: Player
@@ -358,10 +359,12 @@ MonoBehaviour:
   animator: {fileID: 6853689653900274199}
   attack: {fileID: 6853689654277604491}
   skill: {fileID: 6853689654655104081}
+  harvest: {fileID: 6853689654655104082}
   sensor: {fileID: 0}
   inventory: {fileID: 0}
   isAction: 0
   spriteRenderer: {fileID: 6853689653900274194}
+  state: 0
 --- !u!114 &6853689654655104094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,8 +378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fix: 0
+  agent: {fileID: 7985069797101147733}
   defaultPosition: {fileID: 0}
-  value: 0.01
+  value: 0.8
+  distacne: 0
 --- !u!114 &6853689654655104095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,6 +480,28 @@ MonoBehaviour:
   target: {fileID: 0}
   spwanposi: {fileID: 6853689654277604502}
   poolingParent: {fileID: 0}
+--- !u!195 &7985069797101147733
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853689654655104164}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.6
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.2
+  m_BaseOffset: 0.6
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6853689655588612175
 GameObject:
   m_ObjectHideFlags: 0
