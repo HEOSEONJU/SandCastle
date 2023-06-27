@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 7216006456397425276}
   - component: {fileID: 124112580107384601}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2490,8 +2490,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4363485649305373059}
   - component: {fileID: 6834492153240171231}
-  - component: {fileID: 7636599232122336748}
   - component: {fileID: 7264883231502733324}
+  - component: {fileID: 3458131630881367046}
   m_Layer: 0
   m_Name: "\uBCBD"
   m_TagString: Untagged
@@ -2566,7 +2566,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7636599232122336748
+--- !u!114 &7264883231502733324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664260939376467167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!61 &3458131630881367046
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2592,22 +2608,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41, y: 0.12}
   m_EdgeRadius: 0
---- !u!114 &7264883231502733324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664260939376467167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &1672588498631632643
 GameObject:
   m_ObjectHideFlags: 0
@@ -19978,11 +19978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2728389758182494957, guid: c2e0ee9ed139c7a448218bdffe141b61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -20.83
       objectReference: {fileID: 0}
     - target: {fileID: 2728389758182494957, guid: c2e0ee9ed139c7a448218bdffe141b61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.83
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2728389758182494957, guid: c2e0ee9ed139c7a448218bdffe141b61, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24842,31 +24842,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileColorArray.Array.data[1].m_Data.b
-      value: 0.5676989
+      value: 0.57852226
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileColorArray.Array.data[1].m_Data.g
-      value: 0.52010536
+      value: 0.43680352
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileColorArray.Array.data[1].m_Data.r
-      value: 0.9855306
+      value: 0.98315275
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileColorArray.Array.data[2].m_Data.a
-      value: 6.7543e-41
+      value: 8.6183e-41
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileColorArray.Array.data[2].m_Data.b
-      value: 6.7543e-41
+      value: 8.6183e-41
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileColorArray.Array.data[2].m_Data.g
-      value: 6.7543e-41
+      value: 8.6183e-41
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileColorArray.Array.data[2].m_Data.r
-      value: 6.7543e-41
+      value: 8.6183e-41
       objectReference: {fileID: 0}
     - target: {fileID: 286954437030387894, guid: 28d680a6616ed5a41b5670fd6db7e5bc, type: 3}
       propertyPath: m_TileAssetArray.Array.data[1].m_RefCount
