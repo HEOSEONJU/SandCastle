@@ -2747,6 +2747,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124112580107384601, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_CompressBounds
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 124112580107384601, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_OverrideByGrid
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 124112580107384601, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_OverrideVector.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124112580107384601, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_OverrideVector.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124112580107384601, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_OverrideVector.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 817427549686579104, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
       propertyPath: m_Name
       value: StageResource000001
@@ -2765,11 +2785,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913181323868359891, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 913181323868359891, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913181323868359891, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3323481914344195037, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
       propertyPath: m_TileAssetArray.Array.data[0].m_Data
@@ -2895,9 +2919,21 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: d2c7e250a3f9a0f44a1e3d116d76221f, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 8687673033800745793, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.6851873
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687673033800745793, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5562754
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687673033800745793, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.2515
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687673033800745793, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.3477
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}

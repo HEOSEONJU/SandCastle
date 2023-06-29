@@ -30,6 +30,7 @@ public class MineMaker : MonoBehaviour
         foreach (Abstract_Mine mine in mineList)
         {
 
+            
 
             string type = MineTable.FindString(mine.name, "resourceType");
             MineTable.FindInt(mine.name, "amount");

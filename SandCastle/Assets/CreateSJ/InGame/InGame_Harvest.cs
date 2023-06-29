@@ -24,35 +24,68 @@ namespace InGame
             get { return search; }
         }
 
-        public bool Do=false;
+        public bool Do
+        {
+            get
+            {
+                if (search.Target is null)
+                {
+                    //Debug.Log("타겟없음");
+                    return false;
+                    
+                }
+                if (iGC.IsAction == true)
+                {
+                    return false;
+                }
+                if (search.Target.IsDestory)
+                {
+                    //Debug.Log("전부디스트로이됨 ");
+                    
+                    return false;
+                }
+                if (search.Target.Hp<=0)
+                {
+                    //Debug.Log("캘 자원이 없음");
+
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+
+        }
 
 
 
 
         public void Harvest()//수확애니메이션시작
         {
-            if(search.Target is null)
-            {
-                Debug.Log("타겟없음");
-                Do= false;
-                return;
-            }
-            if (iGC.IsAction == true)
-            {
-                Debug.Log("행동중");
-                Do = false;
-                return;
-            }
-            if (search.Target.IsDestory)
-            {
-                Debug.Log("전부디스트로이됨 ");
-                Do = false;
-                return;
-            }
+            //if(search.Target is null)
+            //{
+            //    Debug.Log("타겟없음");
+            //    Do= false;
+            //    return;
+            //}
+            //if (iGC.IsAction == true)
+            //{
+            //    Debug.Log("행동중");
+            //    Do = false;
+            //    return;
+            //}
+            //if (search.Target.IsDestory)
+            //{
+            //    Debug.Log("전부디스트로이됨 ");
+            //    Do = false;
+            //    return;
+            //}
 
 
 
-            Do = true;
+            //Do = true;
 
 
 

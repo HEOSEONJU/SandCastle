@@ -11,11 +11,15 @@ namespace InGame
     {
         [SerializeField]
         public ResourceEnum resourceType;
+        [SerializeField]
+        protected ResourceState State=ResourceState.Full;
 
         [SerializeField]
         List<GameObject> connectList = new List<GameObject>();
         [SerializeField]
         protected string spriteFull;
+        [SerializeField]
+        protected string spriteHalf;
         [SerializeField]
         protected string spriteDead;
 
@@ -78,7 +82,7 @@ namespace InGame
         public abstract void Collection(float damgepoint ,InGame_Char igc);
 
 
-        public abstract void Change_Image(string name);
+        public abstract void Change_Image();
 
 
 

@@ -52,6 +52,12 @@ namespace InGameResourceEnums
         water,
         mud
     }
+    public enum ResourceState
+    {
+        Full=1,
+        Half=2,
+        Dead=4
+    }
 
 }
 namespace Roulette

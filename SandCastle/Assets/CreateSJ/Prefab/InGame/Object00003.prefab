@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 824307347, guid: 4a30431ef7b813d448af95bffb62cf9d, type: 3}
+  m_Sprite: {fileID: -518418542, guid: 4a30431ef7b813d448af95bffb62cf9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 3388201928865056239}
   - component: {fileID: 3388201928865056242}
   m_Layer: 5
-  m_Name: Object00001
+  m_Name: Object00003
   m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a214f11d551524c8334c301a5e7fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceType: 0
+  resourceType: 2
   connectList: []
   spriteFull: 
   spriteHalf: 

@@ -380,7 +380,7 @@ MonoBehaviour:
   fix: 0
   agent: {fileID: 7985069797101147733}
   defaultPosition: {fileID: 0}
-  value: 0.8
+  value: 1.1
   distacne: 0
 --- !u!114 &6853689654655104095
 MonoBehaviour:

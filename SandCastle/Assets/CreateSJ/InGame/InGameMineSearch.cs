@@ -66,7 +66,7 @@ namespace InGame
                     target.ConnectList.Remove(this.gameObject);
                     if (target.ConnectList.Count == 0)
                     {
-                        harvest.Do = false;
+                        //harvest.Do = false;
                     }
 
 
