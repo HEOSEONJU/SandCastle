@@ -64,9 +64,9 @@ namespace inGame
             cameraMove.Clamp_Camera(this.transform);
 
 
+            
 
-
-            switch(inGameChar.State)
+            switch (inGameChar.State)
             {
 
                 case PlayerState.Idle:

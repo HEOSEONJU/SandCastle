@@ -83,7 +83,7 @@ namespace InGame
         {
             get { return inventory; }
         }
-
+        
         public PlayerState State
         {
             get { return state; }

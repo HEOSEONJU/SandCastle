@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26b098d2f15d8d544a3b286d97986e20, type: 3}
-  m_Name: WaveTable
+  m_Name: RoundTable
   m_EditorClassIdentifier: 
-  associatedWorksheet: Wave
+  associatedWorksheet: Round
   ViewTableList:
   - keys:
     - DB_FIELD_NAMES
@@ -24,6 +24,18 @@ MonoBehaviour:
     - giveRewardType
     - rewardAmount
     - skillPointProbability
+    - 0,sand
+    - 0,mud
+    - 0,water
+    - 1,sand
+    - 1,mud
+    - 1,water
+    - 2,sand
+    - 2,mud
+    - 2,water
+    - 3,sand
+    - 3,mud
+    - 3,water
     values:
     - DB_FIELD_NAMES
     - stageType
@@ -34,6 +46,18 @@ MonoBehaviour:
     - giveRewardType
     - rewardAmount
     - skillPointProbability
+    - 0,sand
+    - 0,mud
+    - 0,water
+    - 1,sand
+    - 1,mud
+    - 1,water
+    - 2,sand
+    - 2,mud
+    - 2,water
+    - 3,sand
+    - 3,mud
+    - 3,water
   - keys:
     - DB_FIELD_NAMES
     - stageType
@@ -44,15 +68,39 @@ MonoBehaviour:
     - giveRewardType
     - rewardAmount
     - skillPointProbability
+    - 0,sand
+    - 0,mud
+    - 0,water
+    - 1,sand
+    - 1,mud
+    - 1,water
+    - 2,sand
+    - 2,mud
+    - 2,water
+    - 3,sand
+    - 3,mud
+    - 3,water
     values:
     - Wave000000
     - Main
     - StageResource000001
     - wave0001,wave0002,wave0003
     - Normal
-    - 4
+    - 1
     - mud
     - 1
+    - 0
+    - 4
+    - 3
+    - 1
+    - 10
+    - 10
+    - 10
+    - 20
+    - 20
+    - 20
+    - 0
+    - 50
     - 0
   - keys:
     - DB_FIELD_NAMES
@@ -64,16 +112,18 @@ MonoBehaviour:
     - giveRewardType
     - rewardAmount
     - skillPointProbability
+    - 0,sand
     values:
     - Wave000001
     - Main
-    - StageResource000001
+    - StageResource000002
     - 1_2
     - Normal
-    - 4
+    - 1
     - mud
     - 1
     - 0
+    - 2
   - keys:
     - DB_FIELD_NAMES
     - stageType
@@ -90,7 +140,7 @@ MonoBehaviour:
     - StageResource000001
     - 1_3
     - Normal
-    - 4
+    - 1
     - mud
     - 1
     - 0
@@ -110,7 +160,7 @@ MonoBehaviour:
     - StageResource000001
     - 1_4
     - Boss
-    - 4
+    - 1
     - mud
     - 1
     - 20
@@ -134,4 +184,16 @@ MonoBehaviour:
   - giveRewardType
   - rewardAmount
   - skillPointProbability
+  - 0,sand
+  - 0,mud
+  - 0,water
+  - 1,sand
+  - 1,mud
+  - 1,water
+  - 2,sand
+  - 2,mud
+  - 2,water
+  - 3,sand
+  - 3,mud
+  - 3,water
   listCount: 5

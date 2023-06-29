@@ -50,7 +50,7 @@ namespace InGame
 
         [Header("Å×ÀÌºí")]
         [SerializeField]
-        ObjectTable waveTable;
+        ObjectTable roundTable;
         [SerializeField]
         ObjectTable skillTable;
         [SerializeField]
@@ -60,7 +60,7 @@ namespace InGame
         {
 
             int T = PlayerPrefs.GetInt("Stage");
-            string stagename = waveTable.values[T + 1].ToString();
+            string stagename = roundTable.values[T + 1].ToString();
 
             //var maps = Instantiate(Resources.Load<GameObject>("Map/" + waveTable.FindString(stagename, "stageResourceKey")));
 
@@ -88,12 +88,15 @@ namespace InGame
             baseHp.InitBaseHP(inGameCharInit);
             inventory.InitInventroy(0, 0, 0);
             mineMaker.InputMineData();
+            
             waveManager.WaveInputStart(stagename);
+
+            /*
             for (int i = 0; i <= 3; i++)
             {
                 mineMaker.EnableMine(i, waveTable.FindInt(stagename, i + ",sand"), waveTable.FindInt(stagename, i + ",mud"), waveTable.FindInt(stagename, i + ",water"));
             }
-
+            */
 
 
         }
