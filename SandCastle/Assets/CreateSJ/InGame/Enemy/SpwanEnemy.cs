@@ -44,7 +44,7 @@ namespace Enemy
         float spwanTime=1f;
 
         int genCount;
-        public void Init(string enemykey, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,int count )
+        public void Init(string enemykey, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,float defaultspeed,int count )
         {
             patrolSetting=patrolsetting; ;
             

@@ -14,6 +14,8 @@ public class SkillState : BaseState
     // Start is called before the first frame update
     public override void OnStateEnter()
     {
+        IGC.IsAction = true;
+        IGC.InGameMove.StopChar(IGC.Animator);
         IGC.Animator.SetBool("Infinity", true);
         IGC.InGameStatus.CurrentMana = 0;
         IGC.Animator.CrossFade("CharSkill", 0.01f);

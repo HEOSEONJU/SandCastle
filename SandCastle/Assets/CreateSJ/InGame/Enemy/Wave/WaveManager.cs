@@ -27,7 +27,7 @@ namespace InGame
 
         IEnumerator WaveCorountine;
 
-        public void WaveInputStart(string stagename)
+        public void WaveInputStart(string stagename,float delay,float defaluthp,float multiply,float defaultspeed)
         {
 
             float hpmultiply = roundTable.Findfloat(stagename, "hpMultiply");
@@ -36,8 +36,9 @@ namespace InGame
             int skillpointprobability = roundTable.FindInt(stagename, "skillPointProbability");
 
 
-            patrolSetting.Init();
+            patrolSetting.Init(defaluthp,multiply);
             currentWaveCount = 0;
+            waitTime = delay;
             string waveGroup = roundTable.FindString(stagename, "waveGroup");
             string[] WaveList = waveGroup.Split(',');
             spwanList = new List<SpwanEnemy>();
@@ -48,7 +49,7 @@ namespace InGame
                 int count = waveSpwanTable.FindInt(wavespawnkey, "count");
                 Instantiate(spwanObject, this.transform).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
                 
-                spwan.Init(enemyname, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability, count);
+                spwan.Init(enemyname, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability,defaultspeed, count);
                 spwanList.Add(spwan);
 
 

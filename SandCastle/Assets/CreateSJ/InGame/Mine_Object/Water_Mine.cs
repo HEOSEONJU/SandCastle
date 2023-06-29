@@ -50,11 +50,11 @@ namespace InGame
                 {
                     case ResourceState.Full:
                         mainImage.sprite = sprites[0];
-                        Debug.Log("풀1");
+                        
                         break;
                     case ResourceState.Half:
                         mainImage.sprite = sprites[2];
-                        Debug.Log("하프3");
+                        
                         break;
                     case ResourceState.Dead:
                         mainImage.sprite = sprites[4];
@@ -71,11 +71,9 @@ namespace InGame
                 {
                     case ResourceState.Full:
                         mainImage.sprite = sprites[1];
-                        Debug.Log("풀2");
                         break;
                     case ResourceState.Half:
                         mainImage.sprite = sprites[3];
-                        Debug.Log("하프4");
                         break;
                     case ResourceState.Dead:
                         mainImage.sprite = sprites[5];

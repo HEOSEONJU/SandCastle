@@ -162,7 +162,7 @@ namespace inGame
 
         void ChangeState(PlayerState next)
         {
-            Debug.Log("상태변경"+next);
+            //Debug.Log("상태변경"+next);
             inGameChar.State = next;
             switch (inGameChar.State)
             {

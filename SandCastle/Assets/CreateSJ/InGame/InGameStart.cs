@@ -55,6 +55,8 @@ namespace InGame
         ObjectTable skillTable;
         [SerializeField]
         ObjectTable charSkillTable;
+        [SerializeField]
+        ObjectTable defineTable;
 
         private void Start()
         {
@@ -88,8 +90,11 @@ namespace InGame
             baseHp.InitBaseHP(inGameCharInit);
             inventory.InitInventroy(0, 0, 0);
             mineMaker.InputMineData();
-            
-            waveManager.WaveInputStart(stagename);
+            float delay = defineTable.Findfloat("waveDelay", "value");//기본라운드 대기시간
+            float multiply= roundTable.Findfloat(stagename, "gateMultiply");//적 게이트 이번 라운드 체력배율
+            float defaulthp = defineTable.Findfloat("defaultGateHp", "value");//적 게이트 기본체력
+            float defaultspeed= defineTable.Findfloat("monsterdefaultspeed", "value");//몬스터기본속도
+            waveManager.WaveInputStart(stagename, delay,defaulthp,multiply,defaultspeed);
 
             /*
             for (int i = 0; i <= 3; i++)

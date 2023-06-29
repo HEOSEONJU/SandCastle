@@ -26,9 +26,10 @@ namespace InGame
 
         public bool Enable;
 
-        public void Init()
+        public void Init(float defaluthp,float multiply)
         {
-            hp = 10;
+            
+            hp = defaluthp*multiply;
             Enable = true;
             count = 0;
             patrolPoint = transform.GetComponentsInChildren<Transform>().ToList();

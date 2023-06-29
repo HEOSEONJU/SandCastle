@@ -29,13 +29,13 @@ namespace InGame
 
         [SerializeField]
         List<PatrolPoint> patrolPoint;
-        public void Init()//게이트생성
+        public void Init(float defaulthp,float multiply)//게이트생성
         {
             patrolPoint = transform.GetComponentsInChildren<PatrolPoint>().ToList();
             
             foreach(var p in patrolPoint)
             {
-                p.Init();
+                p.Init(defaulthp,multiply);
             }
         }
 
