@@ -23,7 +23,7 @@ namespace InGame
         
 
 
-        public override void Init_Object(string type, int amount, float maxhp, int amountmax, string imagefull, string imagedead)
+        public override void Init_Object(string type, int amount, float maxhp, int amountmax)
         {
             sprites=new List<Sprite>();
             Sprite[] tempsprites = Resources.LoadAll<Sprite>("Object/Object_Atlasobject_farming/Atlas/");
@@ -57,11 +57,10 @@ namespace InGame
             Amount = amount;
             AmountMax = amountmax;
             Hp =MaxHp = maxhp;
-            spriteFull = imagefull;
-            spriteDead = imagedead;
+            
 
 
-            ConnectList.Clear();
+            
 
 
 

@@ -34,17 +34,14 @@ namespace InGame
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (animator.GetBool("RecallEnd"))
-            {
-                return;
-            }
+
 
             if (collision.CompareTag("Mine"))
             {
                 collision.TryGetComponent<Abstract_Mine>(out  target);
                 if (!(target is null))
                 {
-                    target.ConnectList.Add(this.gameObject);
+                    
                     
                     harvest.Harvest();
                         
@@ -60,14 +57,15 @@ namespace InGame
         {
             if (collision.CompareTag("Mine"))
             {
-                collision.TryGetComponent<Abstract_Mine>(out target);
-                if (!(target is null))
+
+                
+
+                collision.TryGetComponent<Abstract_Mine>(out Abstract_Mine mine);
+                if (mine == target )
                 {
-                    target.ConnectList.Remove(this.gameObject);
-                    if (target.ConnectList.Count == 0)
-                    {
-                        //harvest.Do = false;
-                    }
+                    
+                    target = null;
+                    
 
 
 

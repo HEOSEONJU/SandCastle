@@ -14,14 +14,8 @@ namespace InGame
         [SerializeField]
         protected ResourceState State=ResourceState.Full;
 
-        [SerializeField]
-        List<GameObject> connectList = new List<GameObject>();
-        [SerializeField]
-        protected string spriteFull;
-        [SerializeField]
-        protected string spriteHalf;
-        [SerializeField]
-        protected string spriteDead;
+
+        
 
 
 
@@ -44,16 +38,7 @@ namespace InGame
         
 
 
-        public List<GameObject> ConnectList
-        {
-            get { 
-                if(connectList is null)
-                {
-                    connectList = new List<GameObject>();
-                }
 
-                return connectList; }
-        }
         public int Amount
         {
             get { return amount; }
@@ -77,7 +62,7 @@ namespace InGame
 
 
 
-        public abstract void Init_Object(string type,int amount,float maxhp,int amountmax,string imagefull,string imagedead);//파밍할오브젝트 추가하기
+        public abstract void Init_Object(string type,int amount,float maxhp,int amountmax);//파밍할오브젝트 추가하기
 
         public abstract void Collection(float damgepoint ,InGame_Char igc);
 

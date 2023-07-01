@@ -23,11 +23,14 @@ namespace InGame
 
         [SerializeField]
         float delay=0.3f;
-        public void OnEnable()
+
+        public override void Init_Object(string type, int amount, float maxhp, int amountmax)
         {
+            base.Init_Object(type,amount,maxhp,amountmax);
             Ani = SwapImage();
             StartCoroutine(Ani);
         }
+        
         public void OnDisable()
         {
             StopCoroutine(Ani);
@@ -40,6 +43,7 @@ namespace InGame
             {
                 if(sprites==null || sprites.Count==0)
                 {
+                    Debug.Log("x종료");
                     yield break;
                 }
 
@@ -82,7 +86,7 @@ namespace InGame
 
                 }
                 yield return new WaitForSeconds(delay);
-                
+                Debug.Log("종료");
             }
             
 
