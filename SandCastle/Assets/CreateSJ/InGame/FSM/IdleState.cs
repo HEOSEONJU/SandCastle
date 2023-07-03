@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : BaseState
+public class IdleState : PlayerBaseState
 {
 
 

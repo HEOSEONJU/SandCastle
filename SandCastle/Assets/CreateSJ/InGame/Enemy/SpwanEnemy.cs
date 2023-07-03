@@ -119,7 +119,7 @@ namespace Enemy
                     gennum = 0;
                 }
 
-
+                
 
                 PatrolPoint patrolpoint = patrolSetting.SwpanPoint(gennum++);
                 Transform point = patrolpoint.ReturnPosition();

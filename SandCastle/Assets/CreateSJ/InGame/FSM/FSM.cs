@@ -2,45 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSM 
+namespace InGame
 {
-    BaseState current;
-    
-
-    public FSM(BaseState state)
+    public class FSM
     {
-        current = state;
-    }
+        BaseState current;
 
 
-
-
-    public void ChangeState(BaseState next)
-    {
-        
-        if(next==current)
+        public FSM(BaseState state)
         {
-            return;
-        }
-        if(current!=null)
-        {
-            current.OnStateExit();
+            current = state;
         }
 
-        current = next;
-        current.OnStateEnter();
 
 
 
-
-    }
-
-    public void UpdateState()
-    {
-        if (current != null)
+        public void ChangeState(BaseState next)
         {
-            current.OnStateUpdate();
-        }
-    }
 
+            if (next == current)
+            {
+                return;
+            }
+            if (current != null)
+            {
+                current.OnStateExit();
+            }
+
+            current = next;
+            current.OnStateEnter();
+
+
+
+
+        }
+
+        public void UpdateState()
+        {
+            if (current != null)
+            {
+                current.OnStateUpdate();
+            }
+        }
+
+    }
 }

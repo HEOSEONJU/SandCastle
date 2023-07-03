@@ -2794,6 +2794,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 1437268021453972695, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644957512270476548, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3323481914344195037, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
       propertyPath: m_TileAssetArray.Array.data[0].m_Data
       value: 

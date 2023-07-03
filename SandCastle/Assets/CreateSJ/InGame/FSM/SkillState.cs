@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillState : BaseState
+public class SkillState : PlayerBaseState
 {
 
 

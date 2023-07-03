@@ -86,6 +86,7 @@ namespace InGame
                 InGame_Char sub = Instantiate(charPrefab, baseHp.transform.GetChild(i)).GetComponent<InGame_Char>();
                 sub.InitChar("character000001", level, inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent, subBulletPoolingParent[i], skillTable, charSkillTable);
                 baseHp.InputChar(sub);
+                sub.InGameMove.Agent.enabled = false;
             }
             baseHp.InitBaseHP(inGameCharInit);
             inventory.InitInventroy(0, 0, 0);

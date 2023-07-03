@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HarvestState : BaseState
+public class HarvestState : PlayerBaseState
 {
 
 

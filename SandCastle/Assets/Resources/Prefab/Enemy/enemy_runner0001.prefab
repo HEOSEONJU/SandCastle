@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3717293672493234892}
   - component: {fileID: 2649030281739732227}
-  - component: {fileID: 1719390626475313076}
   m_Layer: 0
   m_Name: "\uD328\uD2B8\uB864\uCF5C\uB77C\uC774\uB354"
   m_TagString: Untagged
@@ -59,19 +58,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &1719390626475313076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45202162540653777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa9033fbe42194cacdda73f9ffa436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyManager: {fileID: 1615358515289129747}
 --- !u!1 &1615358515289129744
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +73,7 @@ GameObject:
   - component: {fileID: 1615358515289129745}
   - component: {fileID: 1615358515289129758}
   - component: {fileID: 1615358515289129759}
+  - component: {fileID: 7928683257057288253}
   m_Layer: 0
   m_Name: enemy_runner0001
   m_TagString: Enemy
@@ -174,8 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eafd178aaf162442b34096716e23fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   enemyMove: {fileID: 1615358515289129746}
   enemyStatus: {fileID: 1615358515289129745}
+  points: []
 --- !u!114 &1615358515289129746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,8 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemymanager: {fileID: 1615358515289129747}
-  targetVector: {x: 0, y: 0, z: 0}
-  speedValue: 5
+  target: {fileID: 0}
+  agent: {fileID: 7928683257057288253}
   active: 0
 --- !u!114 &1615358515289129745
 MonoBehaviour:
@@ -258,3 +247,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!195 &7928683257057288253
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615358515289129744}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.4
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 4.8
+  m_BaseOffset: 2.4
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

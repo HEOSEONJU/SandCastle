@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecallState : BaseState
+public class RecallState : PlayerBaseState
 {
 
 

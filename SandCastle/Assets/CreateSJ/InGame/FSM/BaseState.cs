@@ -6,9 +6,7 @@ using UnityEngine;
 using InGame;
 public abstract class BaseState
 {
-    protected InGame_Char IGC;
 
-    protected BaseState(InGame_Char igc) { this.IGC = igc; }
 
 
     public abstract void OnStateEnter();

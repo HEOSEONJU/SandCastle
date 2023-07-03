@@ -1,6 +1,9 @@
+using Google.GData.Extensions;
+using System;
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Enemy
 {
@@ -12,61 +15,63 @@ namespace Enemy
 
         [SerializeField]
         Transform target;
-        
-        
-        
+
+        [SerializeField]
+        NavMeshAgent agent;
+
+
         [SerializeField]
         bool active;//¿€µø¡ﬂ
 
-        
+
         public IEnumerator moveCoroutine;
 
         public bool Active
         {
-            get { return active;}
+            get { return active; }
         }
 
 
-        public void Move_Next_Point(Transform point)
+        public void SettingPoint(Transform point)
         {
-            target = point;   
+            
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+            target = point;
         }
 
         public void StopMove()
         {
-            StopCoroutine(moveCoroutine);
+            agent.enabled = false;
             active = false;
 
 
-            
+
 
 
         }
-        public void MovePoint()
+
+        public void MoveEnemy()
         {
-            moveCoroutine = MoveCoroutine();
-            StartCoroutine(moveCoroutine);
+            agent.enabled = true;
+
+
+
+            agent.speed = enemymanager.EnemyStatus.MoveSpeed;
+            Vector3 dir = target.position;
+            dir.z = transform.position.z;
+
+            agent.SetDestination(dir);
+
+
         }
+
         
-        public IEnumerator MoveCoroutine()
+
+        public float Distance()
         {
             
-            active = true;
-            while(active) {
-
-                if(Vector3.Distance(transform.position, target.position)<=0.1f)
-                {
-                    active = false;
-                }
-
-                
-                transform.position = Vector3.MoveTowards(gameObject.transform.position,target.position, Time.deltaTime* enemymanager.EnemyStatus.MoveSpeed);
-                yield return null;
-            }
-
-            enemymanager.BaseAttack();
-
+            return Vector3.Distance(transform.position, target.position);
         }
-        
     }
 }

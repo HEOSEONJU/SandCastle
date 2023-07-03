@@ -71,11 +71,10 @@ namespace inGame
 
                 case PlayerState.Idle:
 
-                    //Debug.Log(inGameChar.InGameStatus.CanSkill + "스킬조건");
+                    
                     if (inGameChar.InGameSkill.SettingTarget() && inGameChar.InGameStatus.CanSkill && inGameChar.Sensor.GameObjects.Count > 0)
                     {
-                        //Debug.Log("?");
-                            
+    
                         ChangeState(PlayerState.Skill);
                         break;
                     }
