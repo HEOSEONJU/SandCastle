@@ -99,7 +99,7 @@ namespace InGame
 
 
         
-        public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, ObjectTable charskilltable, Transform defaultposi=null)
+        public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, ObjectTable charskilltable, Transform defaultposi,bool fix)
         {
             
             state = PlayerState.Idle;
@@ -108,7 +108,7 @@ namespace InGame
             CharName = name;
             this.sensor= sensor;
             
-            move.SettingPosi(defaultposi);
+            move.SettingPosi(defaultposi,fix);
 
             var skills = charskilltable.FindDict("CharKey", name);
             string skillname1 = "";
@@ -191,34 +191,7 @@ namespace InGame
             IsAction = false;
         }
 
-        public bool RecallChar()
-        {
-            if (!Animator.GetBool("RecallEnd"))
-            {
-                return false;
-            }
-            float angle = InGameMove.Angle();
 
-
-
-            if (angle < 0)
-            {
-                //IGC.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-                SpriteRenderer.flipX = true;
-
-            }
-            else if (angle > 0)
-            {
-                //IGC.transform.rotation = Quaternion.identity;
-                SpriteRenderer.flipX = false;
-            }
-
-            InGameMove.MoveChar(Animator, InGameStatus.MoveSpeed * 2f);
-
-            
-
-            return true;
-        }
 
         string HASH= "Scene";
 

@@ -43,12 +43,12 @@ namespace InGame
             {
                 if(sprites==null || sprites.Count==0)
                 {
-                    Debug.Log("x종료");
+                    
                     yield break;
                 }
 
 
-                Debug.Log(State+gameObject.name);
+                
 
                 switch (State)
                 {
@@ -86,7 +86,7 @@ namespace InGame
 
                 }
                 yield return new WaitForSeconds(delay);
-                Debug.Log("종료");
+                
             }
             
 

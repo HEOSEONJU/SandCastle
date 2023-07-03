@@ -30,6 +30,20 @@ namespace inGame
         [SerializeField]
         float speed;
 
+        public InGame_Char InGameChar
+        {
+            get { return inGameChar; }
+        }
+
+        public void InputChar(InGame_Char igc)
+        {
+            inGameChar = igc;
+
+            inGameChar.transform.parent = null;
+            inGameChar.InGameMove.enabled = true;
+            inGameChar.InGameMove.Fix = false;
+        }
+
 
 
         public void InitMasterController(InGame_Char igc, InGameCharInit igci)
@@ -93,30 +107,23 @@ namespace inGame
 
 
                     break;
-                case PlayerState.Recall:
-                    if (!inGameChar.InGameMove.NeedMove())
-                    {
-                        ChangeState(PlayerState.Idle);
-                    }
-                    //inGameChar.RecallChar();
-                    break;
-                case PlayerState.Skill:
-                    if (inGameChar.IsAction==false)//스킬끝났을때 필요함
-                    {
-                        ChangeState(PlayerState.Recall);
-                    }
-                    //inGameChar.ActiveSKill();
-                    //inGameChar.InGameMove.StopChar(inGameChar.Animator);
-                    break;
-                case PlayerState.Harvest:
-                    if (inGameChar.IsAction == false)//수확끝났을때 필요함
-                    {
-                        ChangeState(PlayerState.Recall);
-                    }
-                    break;
+
                 case PlayerState.Death:
                     
 
+                    break;
+                case PlayerState.Skill:
+                    if(!inGameChar.IsAction)
+                    {
+                        ChangeState(PlayerState.Idle);
+                    }
+
+                    break;
+                case PlayerState.Harvest:
+                    if (!inGameChar.IsAction)
+                    {
+                        ChangeState(PlayerState.Idle);
+                    }
                     break;
                 case PlayerState.Move:
                     
@@ -169,9 +176,7 @@ namespace inGame
                 case PlayerState.Idle:
                     inGameChar.FSM.ChangeState(new IdleState(inGameChar));
                     break;
-                case PlayerState.Recall:
-                    inGameChar.FSM.ChangeState(new RecallState(inGameChar));
-                    break;
+
                 case PlayerState.Skill:
                     inGameChar.FSM.ChangeState(new SkillState(inGameChar));
                     break;

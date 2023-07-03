@@ -34,7 +34,7 @@ namespace InGame
         InGameSkillSensor sensor;
 
         [SerializeField]
-        Transform skillPoolingParent;
+        List<Transform> skillPoolingParent;
         [SerializeField]
         Transform mainBulletPoolingParent;
         [SerializeField]
@@ -78,17 +78,22 @@ namespace InGame
 
 
             int level = 1;
-
-            main.InitChar("character000002", level, inventory, sensor, skillPoolingParent, mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform); ;
+            bool dir = true;
+            main.InitChar("character000002", level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform,false); ;
             masterController.InitMasterController(main, inGameCharInit);
+            //transform.parent = masterController.transform;
             for (int i = 0; i < 2; i++)
             {
-                InGame_Char sub = Instantiate(charPrefab, baseHp.transform.GetChild(i)).GetComponent<InGame_Char>();
-                sub.InitChar("character000001", level, inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent, subBulletPoolingParent[i], skillTable, charSkillTable);
-                baseHp.InputChar(sub);
+                InGame_Char sub = Instantiate(charPrefab).GetComponent<InGame_Char>();
+                Debug.Log(baseHp.transform.GetChild(i).name);
+                sub.transform.parent= baseHp.transform.GetChild(i).transform;
+                sub.transform.localPosition = Vector3.zero;
+                sub.InitChar("character000001", level, inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent[1+i], subBulletPoolingParent[i], skillTable, charSkillTable, masterController.transform,true);
+                baseHp.InputChar(sub,dir);
+                dir = !dir;
                 sub.InGameMove.Agent.enabled = false;
             }
-            baseHp.InitBaseHP(inGameCharInit);
+            baseHp.InitBaseHP(inGameCharInit,masterController);
             inventory.InitInventroy(0, 0, 0);
             mineMaker.InputMineData();
             float delay = defineTable.Findfloat("waveDelay", "value");//기본라운드 대기시간

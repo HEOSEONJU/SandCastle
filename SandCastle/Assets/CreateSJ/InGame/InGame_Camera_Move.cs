@@ -20,6 +20,7 @@ namespace InGame
         Vector3 origin = new Vector3(-0.31f, 0, -10f);
         public void Clamp_Camera(Transform master)
         {
+            
             transform.position = Vector3.Lerp(transform.position, master.position + origin,
                                   Time.deltaTime * 1f);
 

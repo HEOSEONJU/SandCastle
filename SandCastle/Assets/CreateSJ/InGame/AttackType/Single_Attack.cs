@@ -63,6 +63,7 @@ namespace InGame
         }
         public void SkillEvent()
         {
+            
             Debug.Log("스킬발동");
 
             if(igc.InGameSkill.SettingTarget())

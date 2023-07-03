@@ -38,6 +38,7 @@ namespace InGame
         public bool Fix
         {
             get { return fix; }
+            set { fix = value;  }
         }
         [SerializeField]
         float distacne;
@@ -85,22 +86,17 @@ namespace InGame
 
         }
 
-        public void SettingPosi(Transform T=null)
+        public void SettingPosi(Transform T,bool fix)
         {
 
             agent.updateRotation = false;
             agent.updateUpAxis = false;
 
 
-
-            if (T is null)
-            {
-                defaultPosition = transform.parent;
-                fix = true;
-                return;
-            }
             defaultPosition = T;
-            fix = false;
+            this.fix = fix;
+
+            
         }
 
         public  float Distance()

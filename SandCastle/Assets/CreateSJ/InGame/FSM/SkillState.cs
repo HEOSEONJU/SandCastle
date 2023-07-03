@@ -29,6 +29,7 @@ public class SkillState : PlayerBaseState
     public override void OnStateExit()
     {
         IGC.Animator.SetBool("Infinity", false);
+        
     }
 
     
