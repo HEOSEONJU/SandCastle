@@ -21,13 +21,27 @@ namespace SandEnums
 
 }
 
+namespace Enemy
+{
+    public enum EnemyState
+    {
+        Idle,
+        Move,
+        Attack,
+        Skill,
+        Death
+        
+        
+
+    }
+}
+
 namespace InGame
 {
     public enum PlayerState 
     {
         Idle,
         Move,
-        Recall,
         Skill,
         Harvest,
         Death
