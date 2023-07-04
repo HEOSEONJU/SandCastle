@@ -42,14 +42,31 @@ namespace InGame
         }
         [SerializeField]
         float distacne;
+        [SerializeField]
+        Rigidbody2D rigid;
+
+
+        public Vector3 dir;
+
 
         public void MoveChar(Animator animator,float speed)
         {
             if(Fix)
             { return; }
 
-            agent.enabled = true;
-            if (Distance() >= value && agent.enabled)
+            
+            
+
+            rigid.velocity = dir * speed;
+            
+
+            animator.SetFloat("Amount", MathF.Abs(dir.x) + MathF.Abs(dir.y));
+            animator.SetFloat("Amount_X", dir.x);
+            animator.SetFloat("Amount_Y", dir.y);
+            
+
+            return;
+            if (Distance() >= value )
             {
                 
                 
@@ -64,8 +81,8 @@ namespace InGame
                 Vector3 dir = defaultPosition.position;
                 dir.z = transform.position.z;
 
-
-                agent.SetDestination(dir);
+                
+                //agent.SetDestination(dir);
 
                 //transform.position = Vector3.MoveTowards(transform.position, defaultPosition.position, step);
 
@@ -79,7 +96,7 @@ namespace InGame
         {
             
             agent.enabled = false;
-            
+            rigid.velocity = Vector3.zero;
             animator.SetFloat("Amount_X", 0f);
             animator.SetFloat("Amount_Y", 0f);
             animator.SetFloat("Amount", 0f);
@@ -106,10 +123,12 @@ namespace InGame
 
         public bool NeedMove()
         {
-            if (Distance() >= value && !Fix)
+            if(dir.magnitude>0.01f)
             {
                 return true;
             }
+
+            
                 return false;
         }
 
