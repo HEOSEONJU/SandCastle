@@ -38,7 +38,6 @@ namespace inGame
         public void InputChar(InGame_Char igc)
         {
             inGameChar = igc;
-
             inGameChar.transform.parent = null;
             inGameChar.InGameMove.enabled = true;
             inGameChar.InGameMove.Fix = false;

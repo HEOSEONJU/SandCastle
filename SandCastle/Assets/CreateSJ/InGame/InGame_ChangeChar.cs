@@ -43,8 +43,24 @@ namespace InGame
 
 
             basehp.ChangeChar(temp, dir);
+
+
+
+
+
+
+
+
+
+
+
+
             StartCoroutine(basehp.WaitCharChangeTime());
         }
+
+
+
+
 
     }
 }
