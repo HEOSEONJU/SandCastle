@@ -2900,7 +2900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1644957512270476548, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3323481914344195037, guid: a94c15bec6fba0842978a6c22c3c97f3, type: 3}
       propertyPath: m_TileSpriteArray.Array.size
