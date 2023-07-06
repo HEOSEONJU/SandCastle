@@ -12,7 +12,8 @@ namespace inGame
     public class MasterController : MonoBehaviour
     {
 
-
+        [SerializeField]
+        Camera camera;
 
 
         [SerializeField]
@@ -38,7 +39,8 @@ namespace inGame
         public void InputChar(InGame_Char igc)
         {
             inGameChar = igc;
-
+            camera.transform.parent = inGameChar.transform;
+            speed = inGameChar.InGameStatus.MoveSpeed;
             inGameChar.transform.parent = null;
             inGameChar.InGameMove.enabled = true;
             inGameChar.InGameMove.Fix = false;
@@ -49,7 +51,7 @@ namespace inGame
         public void InitMasterController(InGame_Char igc, InGameCharInit igci)
         {
             inGameChar = igc;
-
+            camera.transform.parent = inGameChar.transform;
             speed = igci.CharInit(inGameChar);
         }
 
@@ -74,11 +76,12 @@ namespace inGame
 
 
 
-            rigid.velocity = inputJoystick.inputVector.normalized * speed;
-            cameraMove.Clamp_Camera(this.transform);
+            inGameChar.InGameMove.dir = inputJoystick.inputVector.normalized;
+            //rigid.velocity = inputJoystick.inputVector.normalized * speed;
+            //cameraMove.Clamp_Camera(this.transform);
 
 
-            
+
 
             switch (inGameChar.State)
             {

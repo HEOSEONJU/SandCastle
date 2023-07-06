@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53dfa731fbc2c944cbcc12c4c147b812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharName: character000005
+  CharName: character000002
   move: {fileID: 6853689654655104094}
   status: {fileID: 6853689654655104095}
   animator: {fileID: 6853689653900274199}
@@ -382,6 +382,8 @@ MonoBehaviour:
   defaultPosition: {fileID: 0}
   value: 1.1
   distacne: 0
+  rigid: {fileID: 6853689654655104083}
+  dir: {x: 0, y: 0, z: 0}
 --- !u!114 &6853689654655104095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,7 +489,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6853689654655104164}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.6
   m_Speed: 3.5

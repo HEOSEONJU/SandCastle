@@ -61,10 +61,13 @@ namespace InGame
 
         public void ChangeChar(InGame_Char igc, bool dir)
         {
+            Vector3 tvector=igc.transform.position;
+            tvector.y += 1f;
             InGame_Char temp;
-            igc.InGameMove.Agent.enabled = false;
+            
             igc.InGameMove.Fix = true;
             igc.FSM.ChangeState(new IdleState(igc));
+            igc.transform.position = tvector;
             if (dir == true)
             {
                 temp = inGameCharLeft;
@@ -85,16 +88,6 @@ namespace InGame
 
         }
 
-
-
-
-
-
-
-
-
-
-        // Update is called once per frame
         void Update()
         {
 
@@ -105,34 +98,22 @@ namespace InGame
 
         }
 
-        void ActionChar(InGame_Char igc)
+        void ActionChar(InGame_Char igc)//아이들과 스킬만 작용
         {
             switch (igc.State)
             {
-
                 case PlayerState.Idle:
-
-
                     if (igc.InGameSkill.SettingTarget() && igc.InGameStatus.CanSkill && igc.Sensor.GameObjects.Count > 0)
                     {
-
                         ChangeState(igc, PlayerState.Skill);
-                        Debug.Log("스킬발동" + igc.name);
-                        break;
                     }
-
-                    
-
-
                     break;
-
 
                 case PlayerState.Skill:
                     if (!igc.IsAction)
                     {
                         ChangeState(igc, PlayerState.Idle);
                     }
-
                     break;
 
             }
