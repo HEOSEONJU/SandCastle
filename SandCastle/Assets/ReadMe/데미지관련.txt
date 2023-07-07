@@ -1,0 +1,5 @@
+Tool->DamagedNumberPro->Demo->DNP_UI 실행
+해상도 Free Aspect로 변경 실행
+
+마우스좌클릭 데미지출력
+마우스스크롤로 종류변경가능 20개까지있음
