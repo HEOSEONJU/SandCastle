@@ -1784,6 +1784,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 733953545437583797, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597798643810017479, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652415064230946443, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914834398588735872, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002069536599838419, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294977318450331125, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374952013286460398, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460903491103945014, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4114602956198310667, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1828,6 +1860,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4165426064270664003, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744206752335527940, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365104025314870046, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648196430480553044, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951434582175047075, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508497529375363054, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835453382213617777, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7104054901353427844, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
       propertyPath: m_Name
       value: StageResource000002
@@ -1836,6 +1896,34 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: ae8f8b718541e5f48b1275dbcb0833b9, type: 2}
+    - target: {fileID: 7295236536756077334, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313126661751330635, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325701922069659221, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514694180368326859, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640568117550650558, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432233662524957157, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526043271284948856, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_Area
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
 --- !u!114 &1959420409 stripped
