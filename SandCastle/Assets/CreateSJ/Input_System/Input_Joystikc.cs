@@ -13,12 +13,24 @@ public class Input_Joystikc : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public Vector2 inputVector;    // 추가
     public bool isInput;    // 추가
+    [SerializeField]
+    Vector2 origin;
 
+
+    [SerializeField]
+    float minXRange=250;
+    [SerializeField]
+    float maxXRange = 830;
+    [SerializeField]
+    float minYRange = 250;
+    [SerializeField]
+    float maxYRange = 1520;
     private void Awake()
     {
         inputVector = Vector2.zero;
         isInput = false;
-        rectTransform = GetComponent<RectTransform>();
+        rectTransform = transform.GetChild(0).GetComponent<RectTransform>();
+        origin = rectTransform.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -27,7 +39,12 @@ public class Input_Joystikc : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         // var clampedDir = inputDir.magnitude < leverRange ? inputDir 
         //     : inputDir.normalized * leverRange;
         // lever.anchoredPosition = clampedDir;
+
         
+        Vector2 posi = Input.mousePosition;
+        posi.x=Mathf.Clamp(posi.x,minXRange, maxXRange);
+        posi.y = Mathf.Clamp(posi.y, minYRange, maxYRange);
+        rectTransform.anchoredPosition = posi;
         ControlJoystickLever(eventData);  // 추가
         isInput = true;    // 추가
     }
@@ -57,6 +74,7 @@ public class Input_Joystikc : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        rectTransform.position = origin;
         inputVector = Vector2.zero;
         lever.anchoredPosition = Vector2.zero;
         isInput = false;    // 추가
