@@ -1832,6 +1832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StageResource000002
       objectReference: {fileID: 0}
+    - target: {fileID: 7149039832465493818, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: ae8f8b718541e5f48b1275dbcb0833b9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e20978206cc7346b913ee7a829164a, type: 3}
 --- !u!114 &1959420409 stripped
