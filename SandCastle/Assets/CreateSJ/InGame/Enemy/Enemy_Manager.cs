@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace Enemy
 {
@@ -22,6 +22,9 @@ namespace Enemy
         Enemy_Move enemyMove;
         [SerializeField]
         Enemy_Status enemyStatus;
+        [SerializeField]
+        Slider hpSlider;
+
         public Enemy_Move EnemyMove
         { get { return enemyMove; } 
         }
@@ -46,7 +49,8 @@ namespace Enemy
         public void Hit(float value)//공격받음
         {
             enemyStatus.Hp -= value;
-            if(enemyStatus.Hp <= 0)
+            hpSlider.value = enemyStatus.HPPercentage;
+            if (enemyStatus.Hp <= 0)
             {
                 enemyMove.StopMove();
                 gameObject.SetActive(false);

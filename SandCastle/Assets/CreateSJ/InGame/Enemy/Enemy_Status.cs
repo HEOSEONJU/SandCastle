@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy_Status : MonoBehaviour
 {
     [SerializeField]
+    float maxHp;
+    [SerializeField]
     float hp;
     [SerializeField]
     float moveSpeed;
@@ -20,7 +22,7 @@ public class Enemy_Status : MonoBehaviour
 
     public void Init(float hp,float movespeed,float attackspeed,float attackrange, string[] resistancetype,float resistancevalue)
     {
-        this.hp = hp;
+        maxHp = this.hp = hp;
         this.moveSpeed = movespeed;
         this.attackSpeed = attackspeed;
         this.attackRange = attackrange;
@@ -38,5 +40,9 @@ public class Enemy_Status : MonoBehaviour
     {
         get { return hp; }
         set { hp = value; }
+    }
+    public float HPPercentage
+    {
+        get { return this.hp/maxHp; }
     }
 }
