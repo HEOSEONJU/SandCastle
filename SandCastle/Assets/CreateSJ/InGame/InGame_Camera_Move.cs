@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 namespace InGame
 {
-    public class InGame_Camera_Move : MonoBehaviour
+    public class InGame_Camera_Move : MonoBehaviour//미사용 삭제예정
     {
         [SerializeField]
         float clampPlusX;

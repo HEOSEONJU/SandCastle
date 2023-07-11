@@ -18,6 +18,8 @@ namespace InGame
         InGame_Char charPrefab;
         [SerializeField]
         InGame_Char charPrefab2;
+        [SerializeField]
+        InGame_Char charPrefab3;
 
 
 
@@ -71,17 +73,32 @@ namespace InGame
             mineMaker = map.GetComponentInChildren<MineMaker>();
             waveManager = map.GetComponentInChildren<WaveManager>();
 
-            var main = Instantiate(charPrefab2).GetComponent<InGame_Char>();
-
-
-
-
-
+            var main = Instantiate(charPrefab3).GetComponent<InGame_Char>();
             int level = 1;
             bool dir = true;
-            main.InitChar("character000002", level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform,false); ;
+            main.InitChar("character000003", level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform,false); ;
             masterController.InitMasterController(main, inGameCharInit);
-            //transform.parent = masterController.transform;
+
+
+            InGame_Char sub0 = Instantiate(charPrefab).GetComponent<InGame_Char>();
+            Debug.Log(baseHp.transform.GetChild(0).name);
+            sub0.transform.parent = baseHp.transform.GetChild(0).transform;
+            sub0.transform.localPosition = Vector3.zero;
+            sub0.InitChar("character000001", level, inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent[1], subBulletPoolingParent[0], skillTable, charSkillTable, masterController.transform, true);
+            baseHp.InputChar(sub0, dir);
+            dir = !dir;
+            sub0.InGameMove.Agent.enabled = false;
+
+            InGame_Char sub1 = Instantiate(charPrefab2).GetComponent<InGame_Char>();
+            Debug.Log(baseHp.transform.GetChild(1).name);
+            sub1.transform.parent = baseHp.transform.GetChild(1).transform;
+            sub1.transform.localPosition = Vector3.zero;
+            sub1.InitChar("character000002", level, inventory, baseHp.transform.GetComponentInChildren<InGameSkillSensor>(), skillPoolingParent[2], subBulletPoolingParent[1], skillTable, charSkillTable, masterController.transform, true);
+            baseHp.InputChar(sub1, dir);
+            dir = !dir;
+            sub1.InGameMove.Agent.enabled = false;
+
+            /*
             for (int i = 0; i < 2; i++)
             {
                 InGame_Char sub = Instantiate(charPrefab).GetComponent<InGame_Char>();
@@ -93,6 +110,7 @@ namespace InGame
                 dir = !dir;
                 sub.InGameMove.Agent.enabled = false;
             }
+            */
             baseHp.InitBaseHP(inGameCharInit,masterController);
             inventory.InitInventroy(0, 0, 0);
             mineMaker.InputMineData();

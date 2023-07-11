@@ -30,7 +30,7 @@ namespace InGame
             inGameSkillSensor= sensor;
             poolingParent= parent;
             skillData = new SkillData();
-            
+            Debug.Log("생성스킬이름" + skillname);
             skillData.InitData(skillname, skilltable);
             
             

@@ -26,8 +26,7 @@ namespace inGame
         [SerializeField]
         Rigidbody2D rigid;
 
-        [SerializeField]
-        InGame_Camera_Move cameraMove;
+        
         [SerializeField]
         float speed;
 
