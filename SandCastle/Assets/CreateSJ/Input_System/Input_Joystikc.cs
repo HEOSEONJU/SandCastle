@@ -40,8 +40,10 @@ public class Input_Joystikc : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         //     : inputDir.normalized * leverRange;
         // lever.anchoredPosition = clampedDir;
 
+
         
         Vector2 posi = Input.mousePosition;
+        posi.y -= 200f;
         posi.x=Mathf.Clamp(posi.x,minXRange, maxXRange);
         posi.y = Mathf.Clamp(posi.y, minYRange, maxYRange);
         rectTransform.anchoredPosition = posi;

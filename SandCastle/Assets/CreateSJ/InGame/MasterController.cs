@@ -94,7 +94,7 @@ namespace inGame
                         ChangeState(PlayerState.Skill);
                         break;
                     }
-                    if (inGameChar.Harvest.Do)
+                    if (inGameChar.Harvest.CanHarveest)
                     {
                         ChangeState(PlayerState.Harvest);
                         break;
@@ -134,7 +134,7 @@ namespace inGame
                         ChangeState(PlayerState.Skill);
                         break;
                     }
-                    if (inGameChar.Harvest.Do && !inGameChar.IsAction)
+                    if (inGameChar.Harvest.CanHarveest && !inGameChar.IsAction)
                     {
                         ChangeState(PlayerState.Harvest);
                         break;

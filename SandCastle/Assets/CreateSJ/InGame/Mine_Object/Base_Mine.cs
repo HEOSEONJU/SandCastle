@@ -1,4 +1,5 @@
 using InGameResourceEnums;
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,7 +76,7 @@ namespace InGame
         
 
 
-        public override void Collection(float damagepoint,InGame_Char igc)
+        public override void Collection(InGame_Char igc)
         {
             
             if(IsDestory)
@@ -86,11 +87,25 @@ namespace InGame
                 return;
             }
 
-            
 
 
-            if(Hp>0)
+            float damagepoint = 0;
+            if (Hp>0)
             {
+                switch(resourceType)
+                {
+                    case ResourceEnum.sand:
+                        damagepoint = igc.InGameStatus.SandGet;
+                        break;
+                    case ResourceEnum.water:
+                        damagepoint = igc.InGameStatus.WaterGet;
+                        break;
+                    case ResourceEnum.mud:
+                        damagepoint = igc.InGameStatus.MudGet;
+                        break;
+                }
+
+
                 Hp -= damagepoint;
                 
                 

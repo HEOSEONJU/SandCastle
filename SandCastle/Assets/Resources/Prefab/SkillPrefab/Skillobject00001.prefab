@@ -57,6 +57,7 @@ MonoBehaviour:
   skillobjecttable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
   pattern: 0
   onMissTarget: 0
+  attakList: []
 --- !u!212 &5154044441680759181
 SpriteRenderer:
   m_ObjectHideFlags: 0

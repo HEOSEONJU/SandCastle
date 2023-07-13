@@ -64,7 +64,7 @@ namespace InGame
 
         public abstract void Init_Object(string type,int amount,float maxhp,int amountmax);//파밍할오브젝트 추가하기
 
-        public abstract void Collection(float damgepoint ,InGame_Char igc);
+        public abstract void Collection(InGame_Char igc);
 
 
         public abstract void Change_Image();

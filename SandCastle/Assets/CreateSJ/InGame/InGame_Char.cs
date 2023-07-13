@@ -110,11 +110,42 @@ namespace InGame
             
             move.SettingPosi(defaultposi,fix);
 
-            var skills = charskilltable.FindDict("CharKey", name);
+            //var skills = charskilltable.FindDict("CharKey", name);
             string skillname1 = "";
             string skillname2 = "";
 
             
+            if(level<5)
+            {
+                skillname1 = charskilltable.FindString(name + "/" + 1, "Skill00001");
+                skillname2 = charskilltable.FindString(name + "/" + 1, "Skill00002");
+            }
+            else if (level<10)
+            {
+                skillname1 = charskilltable.FindString(name + "/" + 5, "Skill00001");
+                skillname2 = charskilltable.FindString(name + "/" + 5, "Skill00002");
+            }
+            else if (level < 15)
+            {
+                skillname1 = charskilltable.FindString(name + "/" + 10, "Skill00001");
+                skillname2 = charskilltable.FindString(name + "/" + 10, "Skill00002");
+            }
+            else if (level < 20)
+            {
+                skillname1 = charskilltable.FindString(name + "/" + 15, "Skill00001");
+                skillname2 = charskilltable.FindString(name + "/" + 15, "Skill00002");
+            }
+            else if (level < 25)
+            {
+                skillname1 = charskilltable.FindString(name + "/" + 20, "Skill00001");
+                skillname2 = charskilltable.FindString(name + "/" + 20, "Skill00002");
+            }
+            else
+            {
+                skillname1 = charskilltable.FindString(name + "/" + 25, "Skill00001");
+                skillname2 = charskilltable.FindString(name + "/" + 25, "Skill00002");
+            }
+            /*
             foreach (var skill in skills)
             {
                 if (Convert.ToInt32((skill["LV"].ToString())) <= level)
@@ -139,11 +170,11 @@ namespace InGame
                     break;
                 }
             }
+            */
 
 
-            
             skill.Init(sensor, skillpoolingparent, skilltable, skillname1);
-            if(skillname2!="")
+            if(skillname2!=null)
             {
                 //skill.Init(sensor, skillpoolingparent, skilltable, skillname2);
             }

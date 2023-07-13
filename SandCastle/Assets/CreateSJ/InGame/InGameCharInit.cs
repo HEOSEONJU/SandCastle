@@ -14,7 +14,9 @@ public class InGameCharInit : MonoBehaviour
   
     float defaultSpeed=0;
     float attackDamage=0;
-     float DefaultSpeed
+    float defaultCRP = 0;
+    float defaultCRD = 0;
+    float DefaultSpeed
     {
         get 
         {
@@ -31,25 +33,42 @@ public class InGameCharInit : MonoBehaviour
         }   
     }
 
+    float DefaultCRP
+    {
+        get
+        {
+            if (defaultCRP == 0) defaultCRP = DefineTable.Findfloat("defaultCRP", "value");
+            return defaultCRP;
+        }
+    }
+    float DefaultCRD
+    {
+        get
+        {
+            if (defaultCRD == 0) defaultCRD = DefineTable.Findfloat("defaultCRD", "value");
+            return defaultCRD;
+        }
+    }
+
 
 
     public float CharsInit(List<InGame_Char> inGameCharList)
     {
         foreach (InGame_Char IGC in inGameCharList)
         {
-            CharSingle(IGC, DefaultSpeed, AttackDamage);
+            CharSingle(IGC, DefaultSpeed, AttackDamage, DefaultCRP, DefaultCRD);
         }
          return 0;
 
     }
     public float CharInit(InGame_Char IGC)
     {
-        return CharSingle(IGC, DefaultSpeed, AttackDamage);
+        return CharSingle(IGC, DefaultSpeed, AttackDamage,DefaultCRP, DefaultCRD);
     }
 
 
 
-    float CharSingle(InGame_Char IGC, float defaultspeed, float attackdamage)
+    float CharSingle(InGame_Char IGC, float defaultspeed, float attackdamage,float crp,float crd)
     {
         float movespeed = CharTable.Findfloat(IGC.CharName, "moveSpeed");
         float animationSpeed = CharTable.Findfloat(IGC.CharName, "animationSpeed");
@@ -74,7 +93,7 @@ public class InGameCharInit : MonoBehaviour
 
         
 
-        IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana, maxhp);
+        IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana, maxhp,crp,crd);
 
         IGC.SettingAttack(attackspeed, defaultspeed, attackdamage);
         return movespeed;

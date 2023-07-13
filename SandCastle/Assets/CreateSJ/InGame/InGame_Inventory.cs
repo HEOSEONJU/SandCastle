@@ -17,6 +17,24 @@ namespace InGame
         [SerializeField]
         float mudCount;
 
+
+        public float SandCount
+        {
+            get { return sandCount; }
+            set { sandCount = value; sandText.text = sandCount.ToString(); }
+        }
+        public float WaterCount
+        {
+            get { return waterCount; }
+            set { waterCount = value; waterText.text = waterCount.ToString(); }
+        }
+        public float MudCount
+        {
+            get { return mudCount; }
+            set { mudCount = value; mudText.text = mudCount.ToString(); }
+        }
+
+
         [SerializeField]
          TextMeshProUGUI sandText;
         [SerializeField]
@@ -25,32 +43,32 @@ namespace InGame
          TextMeshProUGUI mudText;
 
 
-        public void InitInventroy(float sand,float water,float mud)
+        public void InitInventroy(float sand, float water, float mud)
         {
 
-            sandCount = sand;
-            waterCount = water;
-            mudCount = mud;
-            sandText.text = sandCount.ToString();
-            waterText.text = waterCount.ToString();
-            mudText.text = mudCount.ToString();
+            SandCount = sand;
+            WaterCount = water;
+            MudCount = mud;
+
         }
+
+
 
         public void Getter_Mine(float amount,ResourceEnum resourceenum )
         {
             switch(resourceenum)
             {
                 case ResourceEnum.sand:
-                    sandCount += amount;
-                    sandText.text = sandCount.ToString();
+                    SandCount += amount;
+                    
                     break;
                 case ResourceEnum.water:
-                    waterCount += amount;
-                    waterText.text = waterCount.ToString();
+                    WaterCount += amount;
+                    
                     break;
                 case ResourceEnum.mud:
-                    mudCount += amount;
-                    mudText.text = mudCount.ToString();
+                    MudCount += amount;
+                    
                     break;
             }
             

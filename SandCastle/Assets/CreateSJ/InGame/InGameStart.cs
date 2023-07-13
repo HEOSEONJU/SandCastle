@@ -3,6 +3,7 @@ using MainUI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -25,7 +26,8 @@ namespace InGame
 
         [SerializeField]
         MasterController masterController;
-
+        [SerializeField]
+        List<InGameBaseUpgrade> upgradeSystem;
 
 
         [SerializeField]
@@ -72,6 +74,15 @@ namespace InGame
             baseHp = map.GetComponentInChildren<BaseHP>();
             mineMaker = map.GetComponentInChildren<MineMaker>();
             waveManager = map.GetComponentInChildren<WaveManager>();
+
+            int maxupgrade=defineTable.FindInt("maxInGameUpgrade", "value");
+
+
+            foreach (InGameBaseUpgrade grade in upgradeSystem) 
+            {
+                grade.SettingMaxUpgrade(maxupgrade);
+            }
+
 
             var main = Instantiate(charPrefab3).GetComponent<InGame_Char>();
             int level = 1;

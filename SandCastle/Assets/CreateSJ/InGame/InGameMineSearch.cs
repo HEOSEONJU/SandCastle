@@ -39,37 +39,17 @@ namespace InGame
             if (collision.CompareTag("Mine"))
             {
                 collision.TryGetComponent<Abstract_Mine>(out  target);
-                if (!(target is null))
-                {
-                    
-                    
-                    harvest.Harvest();
-                        
-                    
 
-                    
-                    
-                    
-                }
             }
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.CompareTag("Mine"))
             {
-
-                
-
                 collision.TryGetComponent<Abstract_Mine>(out Abstract_Mine mine);
                 if (mine == target )
                 {
-                    
                     target = null;
-                    
-
-
-
-
                 }
                 
             }

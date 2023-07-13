@@ -24,7 +24,7 @@ namespace InGame
             get { return search; }
         }
 
-        public bool Do
+        public bool CanHarveest
         {
             get
             {
@@ -98,7 +98,7 @@ namespace InGame
         public void TargetHarvest()
         {
             
-            search.Target.Collection(1, iGC);
+            search.Target.Collection(iGC);
             
             
             
