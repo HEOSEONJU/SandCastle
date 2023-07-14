@@ -12,7 +12,10 @@ namespace inGame
         [SerializeField]
         protected float speed;
 
-        
+        [SerializeField]
+        protected float crp;
+        [SerializeField]
+        protected float crd;
 
         [SerializeField]
         protected float damagePoint;
@@ -36,7 +39,7 @@ namespace inGame
         [SerializeField]
         protected int attackCount=1;
 
-        public abstract void Init(float defaultspeed, float defaultdamage);
+        public abstract void Init(float defaultspeed, float defaultdamage,float crp,float crd);
 
 
 

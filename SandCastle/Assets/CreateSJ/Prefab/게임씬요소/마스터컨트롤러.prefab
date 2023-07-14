@@ -87,9 +87,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3721ffcc4449765459f20fa65d4e389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sandCount: 0
-  waterCount: 0
-  mudCount: 0
+  sandCount: 1000
+  waterCount: 1000
+  mudCount: 1000
   sandText: {fileID: 0}
   waterText: {fileID: 0}
   mudText: {fileID: 0}

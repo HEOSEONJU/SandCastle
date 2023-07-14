@@ -1,9 +1,6 @@
 using Enemy;
 using InGame;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 namespace inGame
@@ -14,14 +11,17 @@ namespace inGame
         [SerializeField]
         Transform target;
 
-        public override void Init(float defaultspeed, float defaultdamage)
+
+        public override void Init(float defaultspeed, float defaultdamage, float crp, float crd)
         {
-
             this.speed = defaultspeed;
-
+            this.crp = 1-crp;
+            this.crd = crd;
+            
 
             damagePoint = defaultdamage;
         }
+        
         public override void Move(Transform target,InGame_Char igc=null)
         {
             if(igc!=null)
@@ -34,6 +34,14 @@ namespace inGame
         }
         protected override void Damaged(IHit target)
         {
+            float probability = Random.Range(0f, 1f);
+            
+            if(crp<=probability)
+            {
+                Debug.Log(probability + "확률 /" +"현재데미지:"+ damagePoint +"/현재치명타데미지"+ damagePoint * crd);
+                target.Hit(damagePoint*crd);
+            }
+            else
             target.Hit(damagePoint);
 
         }

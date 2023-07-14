@@ -31,7 +31,7 @@ namespace InGame
 
 
             bulletobject.DamagePoint = status.GiveDamage;
-            bulletobject.Init(defaultspeed, defaultdamage*status.GiveDamage);
+            bulletobject.Init(defaultspeed, defaultdamage*status.GiveDamage,status.CurrentCRP,status.CurrentCRD);
             bulletobject.Move(target, igc);
             CanAttack = false;
             StartCoroutine(Delay());

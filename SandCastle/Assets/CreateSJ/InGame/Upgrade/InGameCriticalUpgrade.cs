@@ -10,7 +10,6 @@ namespace InGame
         {
             base.Upgrade(key, needsand, needwater);
             float gradevalue = inGameUpgradeTable.Findfloat(key, "upgradeValue");
-            
             controller.InGameChar.InGameStatus.LevelUpCRT(gradevalue);
         }
     }

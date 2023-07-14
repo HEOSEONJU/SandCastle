@@ -26,6 +26,11 @@ namespace InGame
         }
         public void TryUpgrade()
         {
+            if (maxGrade <= grade)
+            {
+                return;
+            }
+
             string key = upgradeName + grade;
             int needsand=inGameUpgradeTable.FindInt(key, "needSand");
             int needwater = inGameUpgradeTable.FindInt(key, "needWater");
@@ -47,10 +52,7 @@ namespace InGame
 
          bool Require( float needsand, float needwater)
         {
-            if(maxGrade<=grade)
-            {
-                return false;
-            }
+
             if(inventory.SandCount<needsand || inventory.WaterCount<needwater)
             {
                 return false;

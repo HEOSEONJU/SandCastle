@@ -19,6 +19,8 @@ namespace InGame
         [SerializeField]
         float baseDamage;
         [SerializeField]
+        int gradeDamage = 0;
+        [SerializeField]
         float giveDamage;
         [SerializeField]
         float sandGet;
@@ -43,18 +45,28 @@ namespace InGame
         [Header("Local")]
         [SerializeField]
         string localKeyName;
-        
+
 
         [SerializeField]
         InGameEnemySearch search;
 
-        int gradeHp=0;
-        int gradeDamage = 0;
-        float gradeCRT = 0;
+        [SerializeField]
+        int gradeHp = 0;
+        
+        
 
+        [SerializeField]
         float baseCRP = 0.05f;
-        float currentCRT = 0f;
+        [SerializeField]
+        float gradeCRP = 0;
+        [SerializeField]
+        float currentCRP = 0f;
+
+
+        [SerializeField]
         float baseCRD = 1.5f;
+        
+        [SerializeField]
         float currentCRD = 0f;
 
         int tmephp = 0;
@@ -77,12 +89,12 @@ namespace InGame
         {
             get { return waterGet; }
         }
-        
+
         public float MudGet
         {
             get { return mudGet; }
         }
-        
+
         public float SandGet
         {
             get { return sandGet; }
@@ -94,6 +106,12 @@ namespace InGame
             get { return giveDamage; }
 
         }
+        public float CurrentCRP
+        { get { return currentCRP; } }
+
+        public float CurrentCRD
+        { get { return currentCRD; } }
+
         public int CurrentMana
         {
             get { return currentMana; }
@@ -126,7 +144,7 @@ namespace InGame
             maxMana = maxmana;
             baseHp = currentHp = maxHp = maxhp;
 
-            gradeHp = gradeDamage = 0; gradeCRT = 0f;
+            gradeHp = gradeDamage = 0; gradeCRP = 0f;
             baseCRP = crp;
             baseCRD = crd;
 
@@ -145,15 +163,16 @@ namespace InGame
             
             maxHp = baseHp + gradeHp;
             currentHp += tmephp;
-            giveDamage = baseDamage + gradeDamage; ;
-            currentCRT=baseCRP+ gradeCRT;
-
+            giveDamage = baseDamage + gradeDamage;
+            currentCRP=baseCRP+ gradeCRP;
+            currentCRD = baseCRD;
         }
 
         public void LevelUpHp(int grade)
         {
             tmephp = grade - gradeHp;
             gradeHp = grade;
+            
             Calculation();
 
         }
@@ -166,7 +185,7 @@ namespace InGame
         }
         public void LevelUpCRT(float grade)
         {
-            gradeCRT = grade;
+            gradeCRP = grade;
             Calculation();
         }
     }
