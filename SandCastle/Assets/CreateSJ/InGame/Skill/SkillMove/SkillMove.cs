@@ -10,7 +10,7 @@ namespace Skill
     {
 
         protected IEnumerator moveCoroutine;
-        public abstract void ObjectMove(float duration, float speed,Vector3 direction);
+        public abstract void ObjectMove(float duration, float speed,Vector3 direction, bool fix=false);
 
 
     }

@@ -39,7 +39,8 @@ namespace Skill
         [SerializeField]
         List<GameObject> attakList;
 
-
+        [SerializeField]
+        bool fix = false;
 
         IEnumerator DestoryTime()
         {
@@ -58,17 +59,20 @@ namespace Skill
                 case "Straight":
                     pattern = SkillPattern.Straight;
                     moveFunction = transform.AddComponent<StraightMove>();
-                    
                     break;
                 case "Bounce":
                     pattern = SkillPattern.Bounce;
-                    moveFunction = transform.AddComponent<BouncetMove>();
+                    moveFunction = transform.AddComponent<BounceMove>();
                     break;
                 case "Wave":
                     pattern = SkillPattern.Wave;
                     break;
                 case "Spin":
                     pattern = SkillPattern.Spin;
+                    break;
+                case "Stop":
+                    pattern = SkillPattern.Stop;
+                    moveFunction = transform.AddComponent<StopMove>();
                     break;
             }
             if (skillobjecttable.FindString(skilldata.SkillObjectKey, "onMissTarget") == "TRUE")
@@ -144,7 +148,7 @@ namespace Skill
         {
             transform.position = spwan.position;
             Vector3 direction = target.position - spwan.position;
-            moveFunction.ObjectMove(skillData.Duration, skillData.Speed, direction);
+            moveFunction.ObjectMove(skillData.Duration, skillData.Speed, direction,fix);
             
 
             

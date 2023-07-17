@@ -86,12 +86,16 @@ namespace Roulette
 
 namespace SkillEnums
 {
+
+
     public enum SkillPattern
     {
         Straight,
         Bounce,
         Wave,
-        Spin
+        Spin,
+        Stop
+
     }
     public enum SkillSpwan
     {

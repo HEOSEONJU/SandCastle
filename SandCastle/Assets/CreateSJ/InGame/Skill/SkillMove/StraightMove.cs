@@ -8,11 +8,15 @@ namespace Skill
 {
     public class StraightMove : SkillMove
     {
-
-        public override void ObjectMove(float duration, float speed,Vector3 direction)
+            
+        public override void ObjectMove(float duration, float speed, Vector3 direction, bool fix = false)
         {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            if (fix == false)
+            {
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
+            
             moveCoroutine =Move(duration, speed);
             
             StartCoroutine(moveCoroutine);

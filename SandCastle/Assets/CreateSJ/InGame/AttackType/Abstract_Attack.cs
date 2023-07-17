@@ -14,6 +14,8 @@ namespace InGame
         [SerializeField]
         protected InGame_Status status;
 
+        
+
         protected bool CanAttack;
         [SerializeField] float coolTime;
 

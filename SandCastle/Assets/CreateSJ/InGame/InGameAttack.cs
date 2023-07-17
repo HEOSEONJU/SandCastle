@@ -20,6 +20,9 @@ namespace InGame
         int value=-180;//
 
         [SerializeField]
+        bool fix=false;
+
+        [SerializeField]
         Animator animatorWeapon;
         [SerializeField]
         Animator particleWeapon;
@@ -42,7 +45,7 @@ namespace InGame
 
         private void Update()
         {
-            if (inGameEnemySearch.Target.Count != 0)
+            if (inGameEnemySearch.Target.Count != 0 && !fix)
             {
                 Vector2 T = new Vector2(transform.position.x - inGameEnemySearch.Target[0].transform.position.x, transform.position.y - inGameEnemySearch.Target[0].transform.position.y);
                 float angle = Mathf.Atan2(T.y,T.x) * Mathf.Rad2Deg;

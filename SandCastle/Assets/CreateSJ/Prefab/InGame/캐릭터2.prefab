@@ -245,6 +245,7 @@ MonoBehaviour:
   inGameEnemySearch: {fileID: 6853689654277604501}
   abstractAttack: {fileID: 6853689654277604490}
   value: 0
+  fix: 0
   animatorWeapon: {fileID: 6853689654277604488}
   particleWeapon: {fileID: 6853689655588612173}
   target: {fileID: 0}
@@ -396,10 +397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d4442b2b218bf46849c2f6eadd6d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currenthp: 0
+  currentHp: 0
+  baseHp: 0
   maxHp: 0
   moveSpeed: 0
   animationSpeed: 0
+  baseDamage: 0
+  gradeDamage: 0
   giveDamage: 0
   sandGet: 0
   waterGet: 0
@@ -412,6 +416,12 @@ MonoBehaviour:
   water: 
   localKeyName: 
   search: {fileID: 6853689654277604501}
+  gradeHp: 0
+  baseCRP: 0.05
+  gradeCRP: 0
+  currentCRP: 0
+  baseCRD: 1.5
+  currentCRD: 0
 --- !u!58 &6853689654655104093
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -480,7 +490,7 @@ MonoBehaviour:
   inGameSkillSensor: {fileID: 0}
   skillPrefab: {fileID: 0}
   target: {fileID: 0}
-  spwanposi: {fileID: 6853689654277604502}
+  spwanposi: {fileID: 6853689654655104090}
   poolingParent: {fileID: 0}
 --- !u!195 &2816115899133929167
 NavMeshAgent:
