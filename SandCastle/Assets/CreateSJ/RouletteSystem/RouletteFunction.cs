@@ -6,6 +6,8 @@ using TMPro;
 
 using System.Linq;
 using AT.SerializableDictionary;
+using Player;
+
 namespace Roulette
 {
     public class RouletteFunction : MonoBehaviour
@@ -181,6 +183,11 @@ namespace Roulette
                     if (appaer>=random)
                     {
                         Debug.Log(ht["key"] +ht["group"] +ht["giveNum"].ToString()+"»πµÊ¿Ã∏ß");
+                        if(ht["givenum"].ToString()=="10")
+                        {
+
+                        }
+                        //PlayerDataManager.Instacne.Data.GetChar()
                         break;
                     }
                 }

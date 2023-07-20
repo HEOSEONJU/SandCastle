@@ -20,6 +20,18 @@ namespace SandEnums
     }
 
 }
+namespace Player
+{
+    public enum StageState
+    {
+        Clerar,
+        Unlock,
+        Lock
+    }
+
+
+}
+
 
 namespace Enemy
 {

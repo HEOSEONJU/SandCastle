@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac557a5b11cfc3745a269510bd369cdb, type: 3}
+  m_Name: PlayerDataScriptTable
+  m_EditorClassIdentifier: 
+  data:
+    gem: 0
+    gold: 0
+    mud: 0
+    havetCharIds:
+    - id: character000001
+      level: 1
+      breaKLim: 1
+    - id: character000002
+      level: 1
+      breaKLim: 1
+    - id: character000003
+      level: 1
+      breaKLim: 1
+    fightCharIds:
+    - id: character000001
+      level: 1
+      breaKLim: 1
+    - id: character000002
+      level: 1
+      breaKLim: 1
+    - id: character000003
+      level: 1
+      breaKLim: 1
+    StageClear: 010000000200000002000000

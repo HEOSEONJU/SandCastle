@@ -1,3 +1,4 @@
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ namespace MainUI
 {
     public class SceneStartEventManger : MonoBehaviour
     {
+        
+
 
         [SerializeField]
         UIOpenClose defaultGameObject;

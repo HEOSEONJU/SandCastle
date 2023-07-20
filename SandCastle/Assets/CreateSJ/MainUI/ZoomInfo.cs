@@ -11,16 +11,17 @@ namespace MainUI
         GameObject ZoomWindow;
 
         [SerializeField]
-        TextMeshProUGUI textMeshProUGUI;
+        CharSlotData charSlotData;
+
 
         public void Zoom()
         {
             ZoomWindow.SetActive(true);
         }
-        public void Zoom_INDEX()
+        public void Zoom_Char()
         {
             ZoomWindow.SetActive(true);
-            textMeshProUGUI.text = gameObject.name;
+            ZoomWindow.GetComponent<ZoomCharInfo>().OpenZoom(charSlotData.ID);
         }
     }
 }

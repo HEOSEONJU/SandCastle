@@ -9,17 +9,17 @@ namespace MainUI
     {
 
         [SerializeField]
-        MainUI mainUi;
+        protected MainUI mainUi;
 
 
         [SerializeField]
-        GameObject Default;
+        protected GameObject Default;
 
         [SerializeField]
         ChildUiManager childUiManager;
         
 
-        public void OpenButton()
+        public virtual void OpenButton()
         {
             if (mainUi.Open_Main(this.gameObject) && Default != null)
             {

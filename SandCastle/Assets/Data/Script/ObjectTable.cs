@@ -11,6 +11,9 @@ using Newtonsoft.Json;
 using System;
 using System.Linq;
 
+
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/ObjectTable", order = 1)]
+
 public class ObjectTable : ScriptableObject
 {
     [SerializeField]
