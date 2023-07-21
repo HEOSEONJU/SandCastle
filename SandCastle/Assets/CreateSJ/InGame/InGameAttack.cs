@@ -24,8 +24,7 @@ namespace InGame
 
         [SerializeField]
         Animator animatorWeapon;
-        [SerializeField]
-        Animator particleWeapon;
+        
 
         [SerializeField]
         Transform target;
@@ -38,10 +37,7 @@ namespace InGame
         {
             get { return animatorWeapon; }
         }
-        public Animator ParticleWeapon
-        {
-            get { return particleWeapon; }
-        }
+        
 
         private void Update()
         {
@@ -73,7 +69,7 @@ namespace InGame
                 return;
             }
             animatorWeapon.SetTrigger("Fire");
-            particleWeapon.SetTrigger("Fire");
+            
 
             target = inGameEnemySearch.Target[0].transform;
         }

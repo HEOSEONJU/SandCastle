@@ -25,14 +25,23 @@ namespace InGame
         }
 
 
-        public void SkillFireEvent()
+        public void SkillFireEvent() //무기에서 나가는 경우
         {
             inGameChar.InGameAttack.AnimatorWeapon.SetTrigger("Skill");
-            inGameChar.InGameAttack .ParticleWeapon.SetTrigger("Skill");
+            
             
         }
 
-        
+        public void SkillEvent() //스킬 애니메이션과 같이 실행되는경우
+        {
+            Debug.Log("스킬발동");
+
+            if (inGameChar.InGameSkill.SettingTarget())
+                inGameChar.InGameSkill.ActiveSkill();
+        }
+
+
+
         public void SkillEventend()
         {
             inGameChar.IsAction = false;

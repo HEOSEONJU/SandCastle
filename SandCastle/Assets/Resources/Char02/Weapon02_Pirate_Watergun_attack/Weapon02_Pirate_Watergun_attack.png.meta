@@ -133,9 +133,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 870
-        width: 330
-        height: 290
+        y: 640
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_1
       rect:
         serializedVersion: 2
-        x: 330
-        y: 870
-        width: 330
-        height: 290
+        x: 340
+        y: 640
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_2
       rect:
         serializedVersion: 2
-        x: 660
-        y: 870
-        width: 330
-        height: 290
+        x: 680
+        y: 640
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 580
-        width: 330
-        height: 290
+        x: 1020
+        y: 640
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_4
       rect:
         serializedVersion: 2
-        x: 330
-        y: 580
-        width: 330
-        height: 290
+        x: 0
+        y: 320
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_5
       rect:
         serializedVersion: 2
-        x: 660
-        y: 580
-        width: 330
-        height: 290
+        x: 340
+        y: 320
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 290
-        width: 330
-        height: 290
+        x: 680
+        y: 320
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_7
       rect:
         serializedVersion: 2
-        x: 330
-        y: 290
-        width: 330
-        height: 290
+        x: 1020
+        y: 320
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,10 +300,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_8
       rect:
         serializedVersion: 2
-        x: 660
-        y: 290
-        width: 330
-        height: 290
+        x: 0
+        y: 0
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: Weapon02_Pirate_Watergun_attack_9
       rect:
         serializedVersion: 2
-        x: 0
+        x: 340
         y: 0
-        width: 330
-        height: 290
+        width: 340
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,6 +334,27 @@ TextureImporter:
       bones: []
       spriteID: dd493642a7e3d2842815346eb2d53f33
       internalID: -1306458358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon02_Pirate_Watergun_attack_10
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 340
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3930f15557b514e99799ccafcbb59a
+      internalID: 31464253
       vertices: []
       indices: 
       edges: []
@@ -351,6 +372,7 @@ TextureImporter:
     nameFileIdTable:
       Weapon02_Pirate_Watergun_attack_0: -1351187846
       Weapon02_Pirate_Watergun_attack_1: -966105162
+      Weapon02_Pirate_Watergun_attack_10: 31464253
       Weapon02_Pirate_Watergun_attack_2: -2128339824
       Weapon02_Pirate_Watergun_attack_3: -1905822969
       Weapon02_Pirate_Watergun_attack_4: -1310814542
