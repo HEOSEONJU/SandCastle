@@ -52,9 +52,17 @@ namespace Enemy
             hpSlider.value = enemyStatus.HPPercentage;
             if (enemyStatus.Hp <= 0)
             {
-                enemyMove.StopMove();
-                gameObject.SetActive(false);
+                state = EnemyState.Death;
+                
             }
+        }
+
+        public void Died()
+        {
+
+            //경험치드랍
+            enemyMove.StopMove();
+            gameObject.SetActive(false);
         }
         public bool Alive()//살아있는지 체크
         {
@@ -67,7 +75,7 @@ namespace Enemy
 
         }
 
-        public void BaseAttack()//기지공격
+        public void PlayerMeleeAttack()//플레이어 닿았을때공격
         {
 
             if (enemyStatus.Hp <= 0)
@@ -84,9 +92,12 @@ namespace Enemy
 
             foreach (var hit in hitlist)
             {
-                hit.collider.transform.TryGetComponent<BaseHP>(out BaseHP basehp);
-                
+                if(hit.collider.transform.TryGetComponent<InGame_Char>(out InGame_Char player))
+                {
+                    break;
+                }
             }
+            //player 데미지
             gameObject.SetActive(false);
         }
 

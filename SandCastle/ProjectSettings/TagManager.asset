@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Bullet
   - Nexus
+  - MapTrace
   layers:
   - Default
   - TransparentFX

@@ -9398,7 +9398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ade9df6908615947a8cd90d0824a2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nexus: {fileID: 4533194348230949664}
+  playerTransform: {fileID: 0}
   patrolPoint: []
 --- !u!1 &6260485371952030535
 GameObject:

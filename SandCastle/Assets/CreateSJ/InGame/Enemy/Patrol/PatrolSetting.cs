@@ -1,3 +1,4 @@
+using inGame;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,15 @@ namespace InGame
 {
     public class PatrolSetting : MonoBehaviour
     {
+        
         [SerializeField]
-        Transform nexus;
-
-        public Transform Nexus
+        MasterController playerTransform;
+        
+        public Transform PlayerTransform
         {
-            get { return nexus; }
+            get { return playerTransform.transform; }
         }
+
 
         public int GenCount
         {

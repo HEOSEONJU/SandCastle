@@ -133,7 +133,7 @@ namespace Enemy
                 a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
                 if (!(em is null))
                 {
-                    em.StartMove(patrolSetting.Nexus);
+                    em.StartMove(patrolSetting.PlayerTransform);
 
                 }
 

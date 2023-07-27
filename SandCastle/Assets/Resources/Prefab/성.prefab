@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 2728389758182494957}
   - component: {fileID: 2728389758182494958}
   - component: {fileID: 2728389758182494959}
-  - component: {fileID: 2728389758182494956}
   m_Layer: 0
   m_Name: "\uC131"
   m_TagString: Nexus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2728389758182494957
 Transform:
   m_ObjectHideFlags: 0
@@ -116,20 +115,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.14, y: 1.19}
   m_EdgeRadius: 0
---- !u!114 &2728389758182494956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2728389758182494944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef72877d0e024354fa8ad4ea348b1a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 3
-  wait: 0
 --- !u!1 &2728389759401832593
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa846821136ca0b4783b35b341c94380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basehp: {fileID: 2728389758182494956}
+  basehp: {fileID: 0}
   dir: 0
 --- !u!61 &3102620191931749627
 BoxCollider2D:
@@ -310,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa846821136ca0b4783b35b341c94380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basehp: {fileID: 2728389758182494956}
+  basehp: {fileID: 0}
   dir: 1
 --- !u!61 &5769599831320659102
 BoxCollider2D:

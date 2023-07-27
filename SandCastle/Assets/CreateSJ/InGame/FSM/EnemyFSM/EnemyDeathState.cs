@@ -13,11 +13,11 @@ namespace Enemy
         {
 
         }
-        
+
 
         public override void OnStateEnter()
         {
-
+            em.Died();
         }
         public override void OnStateUpdate()
         {

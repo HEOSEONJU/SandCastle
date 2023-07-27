@@ -84,7 +84,7 @@ namespace InGame
                 inGameCharRight.transform.localPosition = Vector3.zero;
 
             }
-            mc.InputChar(temp);
+            //mc.InputChar(temp);
 
         }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2956350055194391907}
   - component: {fileID: 2956350055194391906}
   - component: {fileID: 2956350055194391905}
+  - component: {fileID: 5591373864945215374}
   m_Layer: 0
   m_Name: "\uBA54\uC778\uCE74\uBA54\uB77C"
   m_TagString: MainCamera
@@ -114,6 +115,7 @@ MonoBehaviour:
   subBulletPoolingParent:
   - {fileID: 0}
   - {fileID: 0}
+  cameraMove: {fileID: 0}
   mineMaker: {fileID: 0}
   waveManager: {fileID: 0}
   baseHp: {fileID: 0}
@@ -121,6 +123,23 @@ MonoBehaviour:
   skillTable: {fileID: 11400000, guid: 67ca76fcc1156af47878c803fc1b6b3c, type: 2}
   charSkillTable: {fileID: 11400000, guid: c2848ec2e725bba40b53985eceba7fd1, type: 2}
   defineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
+--- !u!114 &5591373864945215374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956350055194391964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14833e8b2d73b404982d3b67e84d5de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clampPlusX: 0
+  clampMinusX: 0
+  clampPlusY: 0
+  clampMinusY: 0
+  origin: {x: -0.31, y: 0, z: -10}
 --- !u!1 &2956350055399108137
 GameObject:
   m_ObjectHideFlags: 0

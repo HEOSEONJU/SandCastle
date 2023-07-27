@@ -17,7 +17,7 @@ namespace Enemy
 
         public override void OnStateEnter()
         {
-            em.BaseAttack();
+            em.PlayerMeleeAttack();
         }
         public override void OnStateUpdate()
         {

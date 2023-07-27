@@ -13,7 +13,7 @@ namespace inGame
     {
 
         [SerializeField]
-        Camera camera;
+        InGame_Camera_Move cameraMove;
 
 
         [SerializeField]
@@ -38,7 +38,7 @@ namespace inGame
         public void InputChar(InGame_Char igc)
         {
             inGameChar = igc;
-            camera.transform.parent = inGameChar.transform;
+            GetComponent<Camera>().transform.parent = inGameChar.transform;
             speed = inGameChar.InGameStatus.MoveSpeed;
             inGameChar.transform.parent = null;
             inGameChar.InGameMove.enabled = true;
@@ -50,7 +50,7 @@ namespace inGame
         public void InitMasterController(InGame_Char igc, InGameCharInit igci)
         {
             inGameChar = igc;
-            camera.transform.parent = inGameChar.transform;
+            
             speed = igci.CharInit(inGameChar);
         }
 
@@ -77,7 +77,7 @@ namespace inGame
 
             inGameChar.InGameMove.dir = inputJoystick.inputVector.normalized;
             //rigid.velocity = inputJoystick.inputVector.normalized * speed;
-            //cameraMove.Clamp_Camera(this.transform);
+            cameraMove.TraceChar(this.InGameChar.transform);
 
 
 
@@ -105,7 +105,7 @@ namespace inGame
                         break;
 
                     }
-                    //Ã¼·Â³·À¸¸é»ç¸Á
+                    //Ã¼ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
                     break;
@@ -155,7 +155,7 @@ namespace inGame
                         //IGC.transform.rotation = Quaternion.identity;
                         inGameChar.SpriteRenderer.flipX = false;
                     }
-                    //Ã¼·Â³·À¸¸é»ç¸Á
+                    //Ã¼ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
                     break;
@@ -170,7 +170,7 @@ namespace inGame
 
         void ChangeState(PlayerState next)
         {
-            //Debug.Log("»óÅÂº¯°æ"+next);
+            //Debug.Log("ï¿½ï¿½ï¿½Âºï¿½ï¿½ï¿½"+next);
             inGameChar.State = next;
             switch (inGameChar.State)
             {

@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 namespace InGame
 {
-    public class InGame_Camera_Move : MonoBehaviour//미사용 삭제예정
+    public class InGame_Camera_Move : MonoBehaviour
     {
         [SerializeField]
         float clampPlusX;
@@ -38,6 +38,11 @@ namespace InGame
             
 
         }
-
+        public void TraceChar(Transform posi)
+        {
+            Vector3 temp = transform.position;
+            temp.y=posi.transform.position.y;
+            transform.position = temp;
+        }
     }
 }

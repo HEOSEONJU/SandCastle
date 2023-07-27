@@ -26,8 +26,7 @@ namespace InGame
 
         [SerializeField]
         MasterController masterController;
-        [SerializeField]
-        List<InGameBaseUpgrade> upgradeSystem;
+        
 
 
         [SerializeField]
@@ -43,6 +42,7 @@ namespace InGame
         Transform mainBulletPoolingParent;
         [SerializeField]
         List<Transform> subBulletPoolingParent;
+
 
 
         [SerializeField]
@@ -75,22 +75,19 @@ namespace InGame
             mineMaker = map.GetComponentInChildren<MineMaker>();
             waveManager = map.GetComponentInChildren<WaveManager>();
 
-            int maxupgrade=defineTable.FindInt("maxInGameUpgrade", "value");
 
 
-            foreach (InGameBaseUpgrade grade in upgradeSystem) 
-            {
-                grade.SettingMaxUpgrade(maxupgrade);
-            }
-
+            
 
             var main = Instantiate(charPrefab3).GetComponent<InGame_Char>();
             int level = 1;
-            bool dir = true;
+            
             main.InitChar("character000003", level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform,false); ;
             masterController.InitMasterController(main, inGameCharInit);
 
 
+            /*
+            bool dir = true;
             InGame_Char sub0 = Instantiate(charPrefab).GetComponent<InGame_Char>();
             Debug.Log(baseHp.transform.GetChild(0).name);
             sub0.transform.parent = baseHp.transform.GetChild(0).transform;
@@ -108,8 +105,8 @@ namespace InGame
             baseHp.InputChar(sub1, dir);
             dir = !dir;
             sub1.InGameMove.Agent.enabled = false;
-
-            /*
+            
+            
             for (int i = 0; i < 2; i++)
             {
                 InGame_Char sub = Instantiate(charPrefab).GetComponent<InGame_Char>();
@@ -122,8 +119,10 @@ namespace InGame
                 sub.InGameMove.Agent.enabled = false;
             }
             */
-            baseHp.InitBaseHP(inGameCharInit,masterController);
             inventory.InitInventroy(0, 0, 0);
+            return;
+            //baseHp.InitBaseHP(inGameCharInit,masterController);
+            
             mineMaker.InputMineData();
             float delay = defineTable.Findfloat("waveDelay", "value");//기본라운드 대기시간
             float multiply= roundTable.Findfloat(stagename, "gateMultiply");//적 게이트 이번 라운드 체력배율
