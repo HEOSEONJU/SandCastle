@@ -21,10 +21,12 @@ namespace Enemy
         }
         public override void OnStateUpdate()
         {
-
+            
+            em.EnemyMove.MoveEnemy();
         }
         public override void OnStateExit()
         {
+            em.EnemyMove.StopMove();
 
         }
     }

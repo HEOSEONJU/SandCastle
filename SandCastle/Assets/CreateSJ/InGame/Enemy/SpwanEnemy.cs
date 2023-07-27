@@ -1,14 +1,11 @@
-using InGameResourceEnums;
-using Mono.Cecil.Cil;
+
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+
 using UnityEngine;
-using InGameResourceEnums;
+
 using InGame;
-using Unity.VisualScripting;
-using Roulette;
+
 
 namespace Enemy
 {
@@ -103,7 +100,7 @@ namespace Enemy
                 a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
                 if (!(em is null))
                 {
-                    em.StartMove(reSpwanSystem.Player);
+                    em.Init(reSpwanSystem.Player);
                 }
                 yield return new WaitForSeconds(spwanTime);
             }

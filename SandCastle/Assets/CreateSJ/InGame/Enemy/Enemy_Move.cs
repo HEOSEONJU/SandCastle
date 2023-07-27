@@ -17,7 +17,7 @@ namespace Enemy
         Transform target;
 
         [SerializeField]
-        NavMeshAgent agent;
+        Rigidbody2D rigid;
 
 
         [SerializeField]
@@ -32,17 +32,16 @@ namespace Enemy
         }
 
 
-        public void SettingPoint(Transform point)
+        public void SettingPlayer(Transform playertransform)
         {
             
-            agent.updateRotation = false;
-            agent.updateUpAxis = false;
-            target = point;
+            
+            target = playertransform;
         }
 
         public void StopMove()
         {
-            agent.enabled = false;
+            rigid.velocity= Vector3.zero;
             active = false;
 
 
@@ -53,15 +52,14 @@ namespace Enemy
 
         public void MoveEnemy()
         {
-            agent.enabled = true;
-
-
-
-            agent.speed = enemymanager.EnemyStatus.MoveSpeed;
-            Vector3 dir = target.position;
+            Vector3 dir = target.position-transform.position;
             dir.z = transform.position.z;
+            rigid.velocity = dir.normalized * enemymanager.EnemyStatus.MoveSpeed;
+            //rigid.AddForce(dir*Time.deltaTime);
+            //rigid.velocity = rigid.velocity.normalized * enemymanager.EnemyStatus.MoveSpeed;
 
-            agent.SetDestination(dir);
+
+
 
 
         }

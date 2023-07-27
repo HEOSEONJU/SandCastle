@@ -34,14 +34,13 @@ namespace Enemy
         }
 
 
-
         [SerializeField]
-        List<Transform> points;
+        float distance=0.1f;
+        
 
-        public void StartMove(Transform point)//이동명령
+        public void Init(Transform player)//FSM 캐릭터위치 입력
         {
-            enemyMove.SettingPoint(point);
-            enemyMove.MoveEnemy();
+            enemyMove.SettingPlayer(player);
             fsm = new FSM(new EnemyMoveState(this));
             
 
@@ -94,11 +93,13 @@ namespace Enemy
             {
                 if(hit.collider.transform.TryGetComponent<InGame_Char>(out InGame_Char player))
                 {
+                    Debug.Log(player.name);
                     break;
                 }
             }
             //player 데미지
-            gameObject.SetActive(false);
+            return;
+            
         }
 
 
@@ -111,7 +112,11 @@ namespace Enemy
             {
 
                 case EnemyState.Idle:
+                    if (enemyMove.Distance() > distance)
+                    {
+                        ChangeState(EnemyState.Move);
 
+                    }
                     break;
                 case EnemyState.Skill:
 
@@ -123,9 +128,10 @@ namespace Enemy
 
                     break;
                 case EnemyState.Move:
-                    if(enemyMove.Distance()<0.2f)
+                    if(enemyMove.Distance()< distance)
                     {
                         ChangeState(EnemyState.Idle);
+                        Debug.Log("Idle상태");
                         
                     }
                     break;
@@ -135,8 +141,9 @@ namespace Enemy
             }
 
 
+            
             fsm.UpdateState();
-
+            
         }
 
 
