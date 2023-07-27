@@ -26,11 +26,14 @@ namespace Enemy
         GameObject prefab;
 
 
+        
         [SerializeField]
-        WaveManager waveManager;
+        ReSpwanSystem reSpwanSystem;
 
 
 
+        [SerializeField]
+        Transform pooling;
 
         [SerializeField]
         Transform nextPoint;
@@ -44,13 +47,14 @@ namespace Enemy
         float spwanTime=1f;
 
         int genCount;
-        public void Init(string enemykey, WaveManager wavemanager, PatrolSetting patrolsetting, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability,float defaultspeed,int count )
+
+        public void Init(string enemykey, ReSpwanSystem respwansystem,Transform pooling, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability, float defaultspeed, int count)
         {
-            patrolSetting=patrolsetting; ;
-            
+            reSpwanSystem = respwansystem;
+
             genCount = count;
-            waveManager = wavemanager;
-            
+            this.pooling=pooling;
+
             prefab = Resources.Load<GameObject>("Prefab/Enemy/" + enemykey);
             string enemytablekey = enemyResourceTable.FindString(enemykey, "enemyKey");
             string category = enemyTable.FindString(enemytablekey, "category");
@@ -61,13 +65,13 @@ namespace Enemy
             float attackrange = enemyTable.Findfloat(enemytablekey, "attackRange");
             string resistancetypetemp = enemyTable.FindString(enemytablekey, "resistanceType");
 
-            
 
-            string[] resistancetype=null;
-            if(resistancetypetemp!=null)
+
+            string[] resistancetype = null;
+            if (resistancetypetemp != null)
             {
                 resistancetype = enemyTable.FindString(enemytablekey, "resistanceType").Split(",");
-            
+
             }
             float resistancevalue = 0;
             string resistanceValueTemp = enemyTable.FindString(enemytablekey, "resistanceValue");
@@ -78,102 +82,39 @@ namespace Enemy
             movespeed *= defineTable.Findfloat("monsterdefaultspeed", "value");
 
             prefab.GetComponent<Enemy_Manager>().EnemyStatus.Init(hp * hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
-
-
-            
-            
         }
+
+
 
         public void Active()
         {
             StartCoroutine(Spwan());
         }
 
-        public void Complete()
-        {
-            
-        }
-
-
 
         IEnumerator Spwan()
         {
-
-
-
-
-            int gennum = 0;
-
             while (genCount > 0)
             {
-                if (patrolSetting.CheckPoint())
-                {
-                    genCount = 0;
-                    AllDestoryGate();
-                    yield break;
-                }
-
-
-                if (gennum == patrolSetting.GenCount)
-                {
-                    gennum = 0;
-                }
-
-                
-
-                PatrolPoint patrolpoint = patrolSetting.SwpanPoint(gennum++);
-                Transform point = patrolpoint.ReturnPosition();
-                if (point == null)
-                {
-                    continue;
-                }
+                Transform point = reSpwanSystem.ReturnGate();
                 genCount--;
-                var a = ObjectPooling.GetObject(prefab, this.transform);
+                var a = ObjectPooling.GetObject(prefab, pooling);
                 a.transform.position = point.position;
                 a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
                 if (!(em is null))
                 {
-                    em.StartMove(patrolSetting.PlayerTransform);
-
+                    em.StartMove(reSpwanSystem.Player);
                 }
-
-                GOList.Add(a.gameObject);
-
-
                 yield return new WaitForSeconds(spwanTime);
-
-
-
             }
+
+            reSpwanSystem.PlayNextWave();
             
-            Debug.Log(GOList.Count);
-            StartCoroutine(WaveComplete());
             
         }
-        string HASH = "Scene";
+        
 
-        string OpenObjectName = "전투버툰캔버스";
-        public void AllDestoryGate()
-        {
-            SceneMoveManager.Instance.ImmediatelyChangeScne("MainMenu");
-            PlayerPrefs.SetString(HASH, OpenObjectName);
-            Debug.Log(PlayerPrefs.GetString(HASH) + "저장한이름");
-            PlayerPrefs.Save();
-        }
 
-        IEnumerator WaveComplete()
-        {
-
-            
-            while (GOList.FindIndex(x => x.gameObject.activeSelf == true) >=0)
-            {
-                
-                yield return null;
-
-            }
-            Debug.Log("모든웨이브처치완료");
-            waveManager.PlayNextWave();
-        }
 
     }
 }

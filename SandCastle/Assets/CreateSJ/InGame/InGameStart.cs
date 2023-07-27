@@ -1,3 +1,4 @@
+using Enemy;
 using inGame;
 using MainUI;
 using System;
@@ -49,6 +50,8 @@ namespace InGame
         MineMaker mineMaker;
         [SerializeField]
         WaveManager waveManager;
+        [SerializeField]
+        ReSpwanSystem reSpwanSystem;
         [SerializeField]
         BaseHP baseHp;
 
@@ -120,17 +123,19 @@ namespace InGame
             }
             */
             inventory.InitInventroy(0, 0, 0);
+            float delay = defineTable.Findfloat("waveDelay", "value");//기본라운드 대기시간
+            float defaultspeed = defineTable.Findfloat("monsterdefaultspeed", "value");//몬스터기본속도
+            reSpwanSystem.WaveInputStart(stagename, delay, defaultspeed, masterController.InGameChar.transform);
             return;
             //baseHp.InitBaseHP(inGameCharInit,masterController);
-            
+            /*
             mineMaker.InputMineData();
             float delay = defineTable.Findfloat("waveDelay", "value");//기본라운드 대기시간
             float multiply= roundTable.Findfloat(stagename, "gateMultiply");//적 게이트 이번 라운드 체력배율
             float defaulthp = defineTable.Findfloat("defaultGateHp", "value");//적 게이트 기본체력
             float defaultspeed= defineTable.Findfloat("monsterdefaultspeed", "value");//몬스터기본속도
             waveManager.WaveInputStart(stagename, delay,defaulthp,multiply,defaultspeed);
-
-            /*
+            
             for (int i = 0; i <= 3; i++)
             {
                 mineMaker.EnableMine(i, waveTable.FindInt(stagename, i + ",sand"), waveTable.FindInt(stagename, i + ",mud"), waveTable.FindInt(stagename, i + ",water"));

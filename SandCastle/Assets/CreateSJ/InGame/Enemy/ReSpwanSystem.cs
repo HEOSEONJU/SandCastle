@@ -1,34 +1,70 @@
-using Enemy;
-using System;
+using InGame;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace InGame
+namespace Enemy
 {
-    public class WaveManager : MonoBehaviour
+    public class ReSpwanSystem : MonoBehaviour
     {
+        [SerializeField]
+        Transform player;
+
+        [SerializeField]
+        List<Transform> childs;
+
+        [SerializeField]
+        Transform pooling;
+
+
         [SerializeField]
         ObjectTable roundTable;
         [SerializeField]
         ObjectTable waveSpwanTable;
-        [SerializeField]
-        PatrolSetting patrolSetting;
+
 
 
         int currentWaveCount;
         float waitTime = 10f;
 
         List<SpwanEnemy> spwanList;
-        [SerializeField]
-        GameObject spwanObject;
+        
 
         IEnumerator WaveCorountine;
+        [SerializeField]
+        GameObject spwanObject;
+        [SerializeField]
+        Transform spwanParent;
 
-        public void WaveInputStart(string stagename,float delay,float defaluthp,float multiply,float defaultspeed)
+        int gatecount = 0;
+        public Transform ReturnGate()
         {
+            if(gatecount==childs.Count) { gatecount = 0; }
+
+            return childs[gatecount++];
+
+        }
+        public Transform Player
+        {
+            get { return player; }
+            
+        }
+
+
+
+
+        public void WaveInputStart(string stagename, float delay, float defaultspeed,Transform playertransform)
+        {
+            player = playertransform;
+            childs = new List<Transform>();
+            
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                
+                childs.Add(transform.GetChild(i));
+                
+            }
+
 
             float hpmultiply = roundTable.Findfloat(stagename, "hpMultiply");
             string giverewardtype = roundTable.FindString(stagename, "giveRewardType");
@@ -36,7 +72,6 @@ namespace InGame
             int skillpointprobability = roundTable.FindInt(stagename, "skillPointProbability");
 
 
-            patrolSetting.Init(defaluthp,multiply);
             currentWaveCount = 0;
             waitTime = delay;
             string waveGroup = roundTable.FindString(stagename, "waveGroup");
@@ -47,14 +82,15 @@ namespace InGame
                 string enemyname = waveSpwanTable.FindString(wavespawnkey, "enemyKey");
 
                 int count = waveSpwanTable.FindInt(wavespawnkey, "count");
-                Instantiate(spwanObject, this.transform).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
                 
-                //spwan.Init(enemyname, this, patrolSetting, hpmultiply, giverewardtype, rewardamount, skillpointprobability,defaultspeed, count);
+                Instantiate(spwanObject, spwanParent).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
+                spwan.Init(enemyname, this, pooling, hpmultiply, giverewardtype, rewardamount, skillpointprobability, defaultspeed, count);
                 spwanList.Add(spwan);
 
 
             }
-            //spwanList[currentWaveCount++].Active();
+
+            spwanList[currentWaveCount++].Active();
             WaveCorountine = WaitWaveTime();
         }
 
@@ -68,7 +104,7 @@ namespace InGame
         }
         IEnumerator WaitWaveTime()
         {
-            Debug.Log(currentWaveCount +"/" + spwanList.Count);
+            Debug.Log(currentWaveCount + "/" + spwanList.Count);
             if (currentWaveCount == spwanList.Count)
             {
                 yield break;
@@ -76,7 +112,10 @@ namespace InGame
             yield return new WaitForSeconds(waitTime);
 
 
-            //spwanList[currentWaveCount++].Active();
+            
+            spwanList[currentWaveCount++].Active();
         }
     }
+
+
 }
