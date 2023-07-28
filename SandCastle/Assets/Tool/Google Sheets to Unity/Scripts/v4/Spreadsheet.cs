@@ -131,7 +131,7 @@ namespace GoogleSheetsToUnity
             {
                 
                 SheetFunction.Instacne.ErrorCheck();
-                Debug.LogError("not find");
+                Debug.Log("not find  [뜬다고 작동안되는거 아닙니다]");
                 return "";
             }
             return valueRange.range.Substring(start, end - start);
