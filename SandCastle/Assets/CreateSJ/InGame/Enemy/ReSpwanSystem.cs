@@ -40,8 +40,8 @@ namespace Enemy
         public Transform ReturnGate()
         {
             if(gatecount==childs.Count) { gatecount = 0; }
-
-            return childs[gatecount++];
+            
+            return childs[Random.Range(0, childs.Count)];
 
         }
         public Transform Player
