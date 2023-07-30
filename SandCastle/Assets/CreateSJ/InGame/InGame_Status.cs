@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace InGame
 {
     public class InGame_Status : MonoBehaviour
     {
+        int level;
         [Header("Status")]
         [SerializeField]
         int currentHp;
@@ -71,6 +73,11 @@ namespace InGame
 
         int tmephp = 0;
 
+        [SerializeField]
+        float exp;
+        [SerializeField]
+        List<float> needExp;
+
         public int CurrentHp
         {
             get { return currentHp; }
@@ -128,11 +135,14 @@ namespace InGame
                     return false;
             }
         }
-        
 
+
+        
 
         public void Init(float movespeed, float animationspeed, float givedamage, float sandget, float waterget, float mudget, float range, int maxmana, int startmana,int maxhp,float crp,float crd)
         {
+            exp = 0;
+            level = 1;
             moveSpeed = movespeed;
             animationSpeed = animationspeed;
             baseDamage = giveDamage = givedamage;
@@ -148,6 +158,8 @@ namespace InGame
             baseCRP = crp;
             baseCRD = crd;
 
+            needExp = new List<float>();
+
             if (range==0)
             {
                 search.Collider2d.enabled= false;
@@ -156,6 +168,10 @@ namespace InGame
 
             search.Collider2d.radius = range;
             Calculation();
+        }
+        public void InputLevel(List<float> needexp)
+        {
+            needExp = needexp;
         }
 
         public void Calculation()//시작할때 업그레이드 레벨 늘리는거나오면 체력 생성시 다시 리셋팅
@@ -166,6 +182,21 @@ namespace InGame
             giveDamage = baseDamage + gradeDamage;
             currentCRP=baseCRP+ gradeCRP;
             currentCRD = baseCRD;
+        }
+
+        public void GetEXP(float value)
+        {
+            exp += value;
+            if(level<needExp.Count)
+            {
+                if(needExp[level-1]<=exp)
+                {
+                    exp -= needExp[level - 1];
+                    level++;
+                    Debug.Log("레벨업이벤트");
+                }
+            }
+
         }
 
         public void LevelUpHp(int grade)

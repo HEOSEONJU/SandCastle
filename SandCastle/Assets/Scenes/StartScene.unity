@@ -413,6 +413,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67ca76fcc1156af47878c803fc1b6b3c, type: 2}
   - {fileID: 11400000, guid: 9426fa3393a03664fa49c71aa60fca5f, type: 2}
   - {fileID: 11400000, guid: eb3d6bf8c7300c848bb993f5968a1f77, type: 2}
+  - {fileID: 11400000, guid: 74b46323ca0ed7140afed61e0410ce4a, type: 2}
   Active: 1
   mainSceneName: MainMenu
   checkCount: 0

@@ -38,31 +38,43 @@ namespace Enemy
         float distance=0.1f;
         
 
-        public void Init(Transform player)//FSM 캐릭터위치 입력
+        public void Init(Transform player,float multiply)//FSM 캐릭터위치 입력
         {
-            enemyMove.SettingPlayer(player);
+            enemyMove.Target=player;
+            enemyStatus.ResetHP(multiply);
             fsm = new FSM(new EnemyMoveState(this));
-            
-
+            ChangeState(EnemyState.Idle);
+            hpSlider.value = enemyStatus.HPPercentage;
         }
         public void Hit(float value)//공격받음
         {
             enemyStatus.Hp -= value;
             hpSlider.value = enemyStatus.HPPercentage;
-            if (enemyStatus.Hp <= 0)
-            {
-                state = EnemyState.Death;
-                
-            }
+
         }
 
         public void Died()
         {
 
-            //경험치드랍
+            
+            InGameEvent.Instance.EXP(transform.position, enemyStatus.EXP);
+            Disable();
+            
+        }
+        public void Disable()
+        {
             enemyMove.StopMove();
             gameObject.SetActive(false);
         }
+        public void DeleteDistance()
+        {
+            if(Vector3.Distance(enemyMove.Target.position,transform.position)>=30)
+            {
+                Disable();
+            }
+        }
+
+
         public bool Alive()//살아있는지 체크
         {
             if (enemyStatus.Hp <= 0)
@@ -117,6 +129,12 @@ namespace Enemy
                         ChangeState(EnemyState.Move);
 
                     }
+                    if (enemyStatus.Hp <= 0)
+                    {
+                        ChangeState(EnemyState.Death);
+
+
+                    }
                     break;
                 case EnemyState.Skill:
 
@@ -133,6 +151,12 @@ namespace Enemy
                         ChangeState(EnemyState.Idle);
                         Debug.Log("Idle상태");
                         
+                    }
+                    if (enemyStatus.Hp <= 0)
+                    {
+                        ChangeState(EnemyState.Death);
+
+
                     }
                     break;
 

@@ -11,7 +11,9 @@ public class InGameCharInit : MonoBehaviour
     ObjectTable DefineTable;
     [SerializeField]
     ObjectTable CharTable;
-  
+    [SerializeField]
+    ObjectTable LevelTable;
+
     float defaultSpeed=0;
     float attackDamage=0;
     float defaultCRP = 0;
@@ -91,7 +93,13 @@ public class InGameCharInit : MonoBehaviour
         int maxhp = CharTable.FindInt(IGC.CharName, "maxHP");
         float attackspeed = CharTable.Findfloat(IGC.CharName, "attackSpeed");
 
-        
+        List<float> needexp=new List<float>();
+        for(int i=1;i< LevelTable.values.Count;i++)
+        {
+            
+            needexp.Add(float.Parse(LevelTable.ViewTableList[i]["needExp"].ToString()));
+        }
+
 
         IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana, maxhp,crp,crd);
 

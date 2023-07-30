@@ -1,6 +1,7 @@
 using InGame;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Enemy
@@ -36,6 +37,8 @@ namespace Enemy
         [SerializeField]
         Transform spwanParent;
 
+
+        List<float> hpMultiply;
         int gatecount = 0;
         public Transform ReturnGate()
         {
@@ -65,11 +68,16 @@ namespace Enemy
                 
             }
 
+            hpMultiply=new List<float>();
+            
+            string[] templist = roundTable.FindString(stagename, "hpMultiply").Split(",");
 
-            float hpmultiply = roundTable.Findfloat(stagename, "hpMultiply");
-            string giverewardtype = roundTable.FindString(stagename, "giveRewardType");
-            int rewardamount = roundTable.FindInt(stagename, "rewardAmount");
-            int skillpointprobability = roundTable.FindInt(stagename, "skillPointProbability");
+            for(int i=0; i < templist.Length;i++)
+            {
+                hpMultiply.Add (float.Parse(templist[i]));
+            }
+
+            
 
 
             currentWaveCount = 0;
@@ -84,13 +92,13 @@ namespace Enemy
                 int count = waveSpwanTable.FindInt(wavespawnkey, "count");
                 
                 Instantiate(spwanObject, spwanParent).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-                spwan.Init(enemyname, this, pooling, hpmultiply, giverewardtype, rewardamount, skillpointprobability, defaultspeed, count);
+                spwan.Init(enemyname, this, pooling, defaultspeed, count);
                 spwanList.Add(spwan);
 
 
             }
 
-            spwanList[currentWaveCount++].Active();
+            spwanList[0].Active(hpMultiply[0]);
             WaveCorountine = WaitWaveTime();
         }
 
@@ -98,6 +106,13 @@ namespace Enemy
         public void PlayNextWave()
         {
             WaveCorountine = WaitWaveTime();
+            if (currentWaveCount <= spwanList.Count)
+            {
+                currentWaveCount++;
+            }
+            
+
+            
             StartCoroutine(WaveCorountine);
 
 
@@ -111,9 +126,11 @@ namespace Enemy
             }
             yield return new WaitForSeconds(waitTime);
 
-
+            for(int i=0;i<= currentWaveCount;i++)
+            {
+                spwanList[i].Active(hpMultiply[i]);
+            }
             
-            spwanList[currentWaveCount++].Active();
         }
     }
 

@@ -45,7 +45,7 @@ namespace Enemy
 
         int genCount;
 
-        public void Init(string enemykey, ReSpwanSystem respwansystem,Transform pooling, float hpmultiply, string giveRewardType, int rewardAmount, int skillPointProbability, float defaultspeed, int count)
+        public void Init(string enemykey, ReSpwanSystem respwansystem,Transform pooling, float defaultspeed, int count)
         {
             reSpwanSystem = respwansystem;
 
@@ -60,39 +60,36 @@ namespace Enemy
             float hp = enemyTable.Findfloat(enemytablekey, "hp");
             float attackspeed = enemyTable.Findfloat(enemytablekey, "attackSpeed");
             float attackrange = enemyTable.Findfloat(enemytablekey, "attackRange");
-            string resistancetypetemp = enemyTable.FindString(enemytablekey, "resistanceType");
+            float exp= enemyTable.Findfloat(enemytablekey, "exp");
 
 
 
-            string[] resistancetype = null;
-            if (resistancetypetemp != null)
-            {
-                resistancetype = enemyTable.FindString(enemytablekey, "resistanceType").Split(",");
+            movespeed *= defaultspeed;
 
-            }
-            float resistancevalue = 0;
-            string resistanceValueTemp = enemyTable.FindString(enemytablekey, "resistanceValue");
-            if (resistanceValueTemp != "")
-            {
-                resistancevalue = float.Parse(resistanceValueTemp);
-            }
-            movespeed *= defineTable.Findfloat("monsterdefaultspeed", "value");
-
-            prefab.GetComponent<Enemy_Manager>().EnemyStatus.Init(hp * hpmultiply, movespeed, attackspeed, attackrange, resistancetype, resistancevalue);
+            prefab.GetComponent<Enemy_Manager>().EnemyStatus.Init(hp, movespeed, attackspeed, attackrange,exp );
         }
 
 
 
-        public void Active()
+        public void Active(float multiply)
         {
-            StartCoroutine(Spwan());
+            
+            StartCoroutine(Spwan(multiply));
         }
 
 
-        IEnumerator Spwan()
+        IEnumerator Spwan(float multiply)
         {
             while (genCount > 0)
             {
+                int countactive = pooling.transform.GetComponentsInChildren<Enemy_Manager>().Length;
+                Debug.Log(countactive + "활성화수");
+                if (countactive >= 300)
+                {
+                    yield return new WaitForSeconds(spwanTime);
+                    continue;
+                }
+
                 Transform point = reSpwanSystem.ReturnGate();
                 genCount--;
                 var a = ObjectPooling.GetObject(prefab, pooling);
@@ -100,7 +97,7 @@ namespace Enemy
                 a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
                 if (!(em is null))
                 {
-                    em.Init(reSpwanSystem.Player);
+                    em.Init(reSpwanSystem.Player, multiply);
                 }
                 yield return new WaitForSeconds(spwanTime);
             }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -1441437481392588754}
   - component: {fileID: 5154044441680759181}
   - component: {fileID: 109756118237557684}
+  - component: {fileID: 8089831908115546455}
   m_Layer: 0
   m_Name: Skillobject00002
   m_TagString: Untagged
@@ -58,6 +59,8 @@ MonoBehaviour:
   skillobjecttable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
   pattern: 1
   onMissTarget: 0
+  attakList: []
+  fix: 0
 --- !u!212 &5154044441680759181
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,3 +134,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &8089831908115546455
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966596089616036222}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.4

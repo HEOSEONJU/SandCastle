@@ -30,10 +30,13 @@ public class InGameEvent : MonoBehaviour
     }
 
 
-    public void EXP()
+    public void EXP(Vector3 posi,float value)
     {
-        ObjectPooling.GetObject(expPrefab.gameObject, poolingParent).TryGetComponent<Abstract_Bullet>(out Abstract_Bullet bulletobject);
+        ObjectPooling.GetObject(expPrefab.gameObject, poolingParent).TryGetComponent<EXP>(out EXP expobject);
+        expobject.Init(this.transform, value);
+        expobject.transform.position = posi;
         
+
     }
     
 }

@@ -92,14 +92,14 @@ namespace Skill
             switch (skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxShape"))
             {
                 case "Square":
-                    skillcollider = transform.AddComponent<BoxCollider2D>();
+                    skillcollider = transform.GetComponent<BoxCollider2D>();
                     skillcollider.isTrigger = true;
                     int Wide = Convert.ToInt32(sizelist[0]);
                     int Height = Convert.ToInt32(sizelist[1]);
                     (skillcollider as BoxCollider2D).size = new Vector2(Wide, Height);
                     break;
                 case "Circle":
-                    skillcollider = transform.AddComponent<CircleCollider2D>();
+                    skillcollider = transform.GetComponent<CircleCollider2D>();
                     skillcollider.isTrigger = true;
                     (skillcollider as CircleCollider2D).radius = Convert.ToInt32(sizelist[0]);
                     break;

@@ -34,8 +34,7 @@ namespace InGame
 
         public void SkillEvent() //스킬 애니메이션과 같이 실행되는경우
         {
-            Debug.Log("스킬발동");
-
+            
             if (inGameChar.InGameSkill.SettingTarget())
                 inGameChar.InGameSkill.ActiveSkill();
         }

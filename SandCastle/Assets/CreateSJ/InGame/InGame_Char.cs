@@ -216,6 +216,10 @@ namespace InGame
         }
 
 
+        public void GetEXP(float value)
+        {
+            status.GetEXP(value);
+        }
         public void OrderHarvestTrigget()
         {
             //harvest.TargetHarvest();

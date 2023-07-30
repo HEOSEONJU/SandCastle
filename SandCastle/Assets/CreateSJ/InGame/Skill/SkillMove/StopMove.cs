@@ -15,6 +15,10 @@ public class StopMove : SkillMove
         
     }
 
+    private void OnEnable()
+    {
+        DIsableCollider();
+    }
 
     public void EnableCollider()
     {
@@ -25,5 +29,10 @@ public class StopMove : SkillMove
     {
         if (_collider != null)
             _collider.enabled = false;
+    }
+
+    public void setoff()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -31,13 +31,13 @@ namespace Enemy
             get { return active; }
         }
 
-
-        public void SettingPlayer(Transform playertransform)
+        public Transform Target
         {
-            
-            
-            target = playertransform;
+            get { return target; }
+            set { target = value; }
         }
+
+
 
         public void StopMove()
         {
