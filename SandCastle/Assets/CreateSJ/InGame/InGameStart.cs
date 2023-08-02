@@ -47,13 +47,10 @@ namespace InGame
 
 
         [SerializeField]
-        MineMaker mineMaker;
-        [SerializeField]
-        WaveManager waveManager;
-        [SerializeField]
+        
         ReSpwanSystem reSpwanSystem;
         [SerializeField]
-        BaseHP baseHp;
+        HaveSkillList haveSkillList;
 
         [Header("Å×ÀÌºí")]
         [SerializeField]
@@ -74,13 +71,11 @@ namespace InGame
             //var maps = Instantiate(Resources.Load<GameObject>("Map/" + waveTable.FindString(stagename, "stageResourceKey")));
 
 
-            baseHp = map.GetComponentInChildren<BaseHP>();
-            mineMaker = map.GetComponentInChildren<MineMaker>();
-            waveManager = map.GetComponentInChildren<WaveManager>();
+
+            haveSkillList.InitSkill();
 
 
 
-            
 
             var main = Instantiate(charPrefab3).GetComponent<InGame_Char>();
             int level = 1;

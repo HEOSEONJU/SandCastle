@@ -404,7 +404,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
   - {fileID: 11400000, guid: 5d16c7160da546f42862c890b78c958e, type: 2}
   - {fileID: 11400000, guid: 72d59a2e1ebfe984bb96da87ec3a0622, type: 2}
-  - {fileID: 11400000, guid: da111c545456ac346a1ebd57d131d2e0, type: 2}
   - {fileID: 11400000, guid: d6abb8dfe17861245ba06f34906ba604, type: 2}
   - {fileID: 11400000, guid: f1527efbb79e0b140a8ee2e003000c21, type: 2}
   - {fileID: 11400000, guid: a6c2d52cb6be5354087f4486b4dec4e2, type: 2}
@@ -414,6 +413,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9426fa3393a03664fa49c71aa60fca5f, type: 2}
   - {fileID: 11400000, guid: eb3d6bf8c7300c848bb993f5968a1f77, type: 2}
   - {fileID: 11400000, guid: 74b46323ca0ed7140afed61e0410ce4a, type: 2}
+  - {fileID: 11400000, guid: 6ee0c5fe2e3558746bb604385ce697ce, type: 2}
+  - {fileID: 11400000, guid: 5cbc2ac15e31fe641ac10af412724bc5, type: 2}
   Active: 1
   mainSceneName: MainMenu
   checkCount: 0

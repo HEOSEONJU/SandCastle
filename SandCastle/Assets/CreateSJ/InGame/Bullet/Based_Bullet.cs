@@ -35,14 +35,20 @@ namespace inGame
         protected override void Damaged(IHit target)
         {
             float probability = Random.Range(0f, 1f);
-            
-            if(crp<=probability)
+
+            float value = damagePoint;
+
+            if (crp<=probability)
             {
-                Debug.Log(probability + "확률 /" +"현재데미지:"+ damagePoint +"/현재치명타데미지"+ damagePoint * crd);
-                target.Hit(damagePoint*crd);
+                value *= crd;
+                Debug.Log(probability + "확률 /" +"현재데미지:"+ damagePoint +"/현재치명타데미지"+ value);
             }
-            else
-            target.Hit(damagePoint);
+            
+            target.Hit(value);
+
+            InGameEvent.Instance.InitDamage(damagePoint, transform.position);
+
+
 
         }
         protected override void OnTriggerEnter2D(Collider2D collision)

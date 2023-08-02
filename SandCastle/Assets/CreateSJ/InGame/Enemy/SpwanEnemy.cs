@@ -59,9 +59,9 @@ namespace Enemy
 
             foreach(string key in enemykey)
             {
-                Debug.Log("키는"+key);
+                //Debug.Log("키는"+key);
                 prefabs.Add(Resources.Load<GameObject>("Prefab/Enemy/" + key));
-                Debug.Log(key + prefabs.Last().name);
+                //Debug.Log(key + prefabs.Last().name);
                 float movespeed = enemyTable.Findfloat(key, "moveSpeed");
                 float hp = enemyTable.Findfloat(key, "hp");
                 float exp = enemyTable.Findfloat(key, "exp");
@@ -84,7 +84,7 @@ namespace Enemy
             while (Timer > 0)
             {
                 int countactive = pooling.transform.GetComponentsInChildren<Enemy_Manager>().Length;
-                Debug.Log(countactive + "활성화수");
+                //Debug.Log(countactive + "활성화수");
                 if (countactive >= 300)
                 {
                     yield return new WaitForSeconds(regenTimer);

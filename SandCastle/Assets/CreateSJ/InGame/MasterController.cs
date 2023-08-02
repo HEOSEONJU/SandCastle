@@ -30,6 +30,7 @@ namespace inGame
         [SerializeField]
         float speed;
 
+        
         public InGame_Char InGameChar
         {
             get { return inGameChar; }
