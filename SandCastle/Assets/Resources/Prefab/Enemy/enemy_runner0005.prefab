@@ -144,6 +144,7 @@ MonoBehaviour:
   resistanceType:
   - all
   resistanceValue: 0.5
+  exp: 0
 --- !u!61 &1615358515289129758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\uCCB4\uB825\uBC14\uCE94\uBC84\uC2A4"
       objectReference: {fileID: 0}
+    - target: {fileID: 6026612668935462719, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -244,11 +249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.744
+      value: 0.0946
       objectReference: {fileID: 0}
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1.128
+      value: 0.0219
       objectReference: {fileID: 0}
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -284,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.014
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -193,7 +193,7 @@ namespace InGame
                 {
                     exp -= needExp[level - 1];
                     level++;
-                    Debug.Log("레벨업이벤트");
+                    InGameEvent.Instance.LevelUpEvent();
                 }
             }
 

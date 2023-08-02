@@ -102,7 +102,7 @@ public class InGameCharInit : MonoBehaviour
 
 
         IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana, maxhp,crp,crd);
-
+        IGC.InGameStatus.InputLevel(needexp);
         IGC.SettingAttack(attackspeed, defaultspeed, attackdamage);
         return movespeed;
     }

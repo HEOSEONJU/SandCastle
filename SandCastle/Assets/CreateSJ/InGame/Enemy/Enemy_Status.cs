@@ -13,25 +13,18 @@ public class Enemy_Status : MonoBehaviour
     float hp;
     [SerializeField]
     float moveSpeed;
-    [SerializeField]
-    float attackSpeed;
-    [SerializeField]
-    float attackRange;
-    [SerializeField]
-    string[] resistanceType;
-    [SerializeField]
-    float resistanceValue;
+    
+    
     [SerializeField]
     float exp;
     
 
-    public void Init(float hp,float movespeed,float attackspeed,float attackrange,float exp)
+    public void Init(float hp,float movespeed ,float exp)
     {
         
         baseHp = maxHp = this.hp = hp;
         this.moveSpeed = movespeed;
-        this.attackSpeed = attackspeed;
-        this.attackRange = attackrange;
+        
         this.exp = exp;
 
     }

@@ -5,14 +5,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using InGame;
-
+using System.Linq;
 
 namespace Enemy
 {
     public class SpwanEnemy : MonoBehaviour
     {
-        [SerializeField]
-        ObjectTable enemyResourceTable;
+        
         [SerializeField]
         ObjectTable enemyTable;
 
@@ -20,10 +19,12 @@ namespace Enemy
         ObjectTable defineTable;
 
         [SerializeField]
-        GameObject prefab;
+        List<GameObject> prefabs;
+        [SerializeField]
+        List<int> counts;
 
 
-        
+
         [SerializeField]
         ReSpwanSystem reSpwanSystem;
 
@@ -41,32 +42,32 @@ namespace Enemy
 
         PatrolSetting patrolSetting;
         [SerializeField]
-        float spwanTime=1f;
+        float regenTimer = 1f;
+        [SerializeField]
+        float Timer = 60f;
+        
 
-        int genCount;
-
-        public void Init(string enemykey, ReSpwanSystem respwansystem,Transform pooling, float defaultspeed, int count)
+        public void Init(string[] enemykey, ReSpwanSystem respwansystem,Transform pooling, float defaultspeed, List<int> counts,float regentimer)
         {
             reSpwanSystem = respwansystem;
 
-            genCount = count;
+            this.counts = counts;
             this.pooling=pooling;
+            this.regenTimer = regentimer;
+            Timer = 60f;
+            prefabs =new List<GameObject>();
 
-            prefab = Resources.Load<GameObject>("Prefab/Enemy/" + enemykey);
-            string enemytablekey = enemyResourceTable.FindString(enemykey, "enemyKey");
-            string category = enemyTable.FindString(enemytablekey, "category");
-            string type = enemyTable.FindString(enemytablekey, "type");
-            float movespeed = enemyTable.Findfloat(enemytablekey, "moveSpeed");
-            float hp = enemyTable.Findfloat(enemytablekey, "hp");
-            float attackspeed = enemyTable.Findfloat(enemytablekey, "attackSpeed");
-            float attackrange = enemyTable.Findfloat(enemytablekey, "attackRange");
-            float exp= enemyTable.Findfloat(enemytablekey, "exp");
-
-
-
-            movespeed *= defaultspeed;
-
-            prefab.GetComponent<Enemy_Manager>().EnemyStatus.Init(hp, movespeed, attackspeed, attackrange,exp );
+            foreach(string key in enemykey)
+            {
+                Debug.Log("키는"+key);
+                prefabs.Add(Resources.Load<GameObject>("Prefab/Enemy/" + key));
+                Debug.Log(key + prefabs.Last().name);
+                float movespeed = enemyTable.Findfloat(key, "moveSpeed");
+                float hp = enemyTable.Findfloat(key, "hp");
+                float exp = enemyTable.Findfloat(key, "exp");
+                movespeed *= defaultspeed;
+                prefabs.Last().GetComponent<Enemy_Manager>().EnemyStatus.Init(hp, movespeed, exp);
+            }
         }
 
 
@@ -80,26 +81,42 @@ namespace Enemy
 
         IEnumerator Spwan(float multiply)
         {
-            while (genCount > 0)
+            while (Timer > 0)
             {
                 int countactive = pooling.transform.GetComponentsInChildren<Enemy_Manager>().Length;
                 Debug.Log(countactive + "활성화수");
                 if (countactive >= 300)
                 {
-                    yield return new WaitForSeconds(spwanTime);
+                    yield return new WaitForSeconds(regenTimer);
                     continue;
                 }
 
-                Transform point = reSpwanSystem.ReturnGate();
-                genCount--;
-                var a = ObjectPooling.GetObject(prefab, pooling);
-                a.transform.position = point.position;
-                a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
-                if (!(em is null))
+                
+                Timer-= regenTimer;
+
+
+                for(int i=0;i< prefabs.Count; i++)
                 {
-                    em.Init(reSpwanSystem.Player, multiply);
+                    for(int j = 0; j < counts[i];j++)
+                    {
+                        var a = ObjectPooling.GetObject(prefabs[i], pooling);
+                        
+                        a.transform.position = reSpwanSystem.ReturnGate().position;
+                        a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
+                        if (!(em is null))
+                        {
+                            em.Init(reSpwanSystem.Player, multiply);
+                        }
+
+                    }
+
+                    
                 }
-                yield return new WaitForSeconds(spwanTime);
+
+
+
+                
+                yield return new WaitForSeconds(regenTimer);
             }
 
             reSpwanSystem.PlayNextWave();

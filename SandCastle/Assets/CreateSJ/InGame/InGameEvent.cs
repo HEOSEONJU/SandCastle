@@ -13,6 +13,9 @@ public class InGameEvent : MonoBehaviour
 
     [SerializeField]
     GameObject expPrefab;
+
+    [SerializeField]
+    GameObject LevelUpPrefab;
     public static InGameEvent Instance
     {
         get { return instance; }
@@ -22,6 +25,7 @@ public class InGameEvent : MonoBehaviour
         if(instance == null) 
         {
             instance = this;
+            LevelUpPrefab.SetActive(false);
         }
         else
         {
@@ -38,5 +42,17 @@ public class InGameEvent : MonoBehaviour
         
 
     }
+
+    public void LevelUpEvent()
+    {
+        Time.timeScale = 0;
+        LevelUpPrefab.SetActive(true);
+    }
     
+
+    public void TimeStart()
+    {
+        Time.timeScale = 1;
+        LevelUpPrefab.SetActive(false);
+    }
 }
