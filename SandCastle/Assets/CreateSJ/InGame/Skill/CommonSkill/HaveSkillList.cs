@@ -1,54 +1,73 @@
+using Google.GData.Extensions;
+using InGame;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HaveSkillList : MonoBehaviour
+namespace Skill
 {
-
-    [SerializeField]
-    List<string> skillNames;
-    [SerializeField]
-    List<int> skillLevels;
-
-
-    public void InitSkill()
+    public class HaveSkillList : MonoBehaviour
     {
-        skillNames= new List<string>();
-        skillLevels= new List<int>();
-    }
+        [SerializeField]
+        ObjectTable skillTable;
+        [SerializeField]
+        Transform skillpooling;
 
 
-    public void InputData(string name, int level)
-    {
-        int temp = skillNames.FindIndex(x => x == name);
-        if(temp==-1)
+        [SerializeField]
+        InGameSkill skill;
+        List<BasicCommonSkill> skillList;
+        public void InitSkill(InGameSkill skill)
         {
-            skillNames.Add(name);
-            skillLevels.Add(level);
-        }
-        else
-        {
-            skillLevels[temp]=level;
+
+            skillList = new List<BasicCommonSkill>();
+            this.skill = skill;
         }
 
 
-    }
-
-    public int FindSkillLevel(string key)
-    {
-
-        
-       int temp = skillNames.FindIndex(x=>x==key);
-
-        
-        if(temp==-1 || skillNames.Count==0)
+        public void InputData(string name)
         {
-            return -1;
+            int temp = skillList.FindIndex(x => x.SkillName == name);
+            if (temp == -1)
+            {
+                ;
+                Debug.Log(name.Replace('/', '_'));
+                Resources.Load<GameObject>("Prefab/CommonSkillPrefab/" + name.Replace('/', '_')).TryGetComponent<BasicCommonSkill>(out BasicCommonSkill GO);
+                GO.InitSkill(skillTable, skill);
+                skillList.Add(GO);
+                GameObject objectInPool = Instantiate(GO.gameObject) as GameObject;
+                
+                objectInPool.transform.SetParent(skillpooling);
+
+                GO.ActiveSkill(objectInPool.transform);
+
+            }
+            else
+            {
+                skillList[temp].SkillLevelUp(skillTable);
+                
+
+            }
+
+
         }
-        
-        return skillLevels[temp];
+
+        public int FindSkillLevel(string key)
+        {
+
+
+            int temp = skillList.FindIndex(x => x.SkillName == key);
+
+
+            if (temp == -1 || skillList.Count == 0)
+            {
+                return -1;
+            }
+
+            return skillList[temp].SkillLevel;
 
 
 
+        }
     }
 }

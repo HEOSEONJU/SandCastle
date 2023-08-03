@@ -1,3 +1,4 @@
+using Skill;
 using Enemy;
 using inGame;
 using MainUI;
@@ -72,7 +73,7 @@ namespace InGame
 
 
 
-            haveSkillList.InitSkill();
+            
 
 
 
@@ -81,6 +82,7 @@ namespace InGame
             int level = 1;
             
             main.InitChar("character000003", level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform,false); ;
+            haveSkillList.InitSkill(main.InGameSkill);
             masterController.InitMasterController(main, inGameCharInit);
 
 

@@ -17,27 +17,32 @@ namespace Skill
     public class SkillObject : MonoBehaviour
     {
 
-        public string skillKey;
+        
         
 
         [SerializeField]
         SkillData skillData;
 
-
+        
         SkillMove moveFunction;
 
         [SerializeField]
         ObjectTable skillobjecttable;
         [SerializeField]
         SkillPattern pattern;
-        [SerializeField]
-        bool onMissTarget;
+        
 
 
         IEnumerator moveCoroutine;
         IEnumerator destoryCorountine;
         [SerializeField]
         List<GameObject> attakList;
+
+
+        public SkillData SkillData
+        {
+            get { return skillData; }
+        }
 
         [SerializeField]
         bool fix = false;
@@ -54,54 +59,23 @@ namespace Skill
 
             skillData = skilldata.Clone();
 
-            switch (skillobjecttable.FindString(skilldata.SkillObjectKey, "pattern"))
-            {
-                case "Straight":
-                    pattern = SkillPattern.Straight;
-                    moveFunction = transform.AddComponent<StraightMove>();
-                    break;
-                case "Bounce":
-                    pattern = SkillPattern.Bounce;
-                    moveFunction = transform.AddComponent<BounceMove>();
-                    break;
-                case "Wave":
-                    pattern = SkillPattern.Wave;
-                    break;
-                case "Spin":
-                    pattern = SkillPattern.Spin;
-                    break;
-                case "Stop":
-                    pattern = SkillPattern.Stop;
-                    moveFunction = transform.AddComponent<StopMove>();
-                    break;
-            }
-            if (skillobjecttable.FindString(skilldata.SkillObjectKey, "onMissTarget") == "TRUE")
-            {
-                onMissTarget = true;
-            }
-            else
-            {
-                onMissTarget = false;
-            }
-
-
             string[] sizelist = skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxSize").Split(",");
 
-
+            moveFunction = GetComponent<SkillMove>();
             Collider2D skillcollider;
             switch (skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxShape"))
             {
                 case "Square":
                     skillcollider = transform.GetComponent<BoxCollider2D>();
                     skillcollider.isTrigger = true;
-                    int Wide = Convert.ToInt32(sizelist[0]);
-                    int Height = Convert.ToInt32(sizelist[1]);
+                    float Wide = float.Parse(sizelist[0]);
+                    float Height = float.Parse(sizelist[1]);
                     (skillcollider as BoxCollider2D).size = new Vector2(Wide, Height);
                     break;
                 case "Circle":
                     skillcollider = transform.GetComponent<CircleCollider2D>();
                     skillcollider.isTrigger = true;
-                    (skillcollider as CircleCollider2D).radius = Convert.ToInt32(sizelist[0]);
+                    (skillcollider as CircleCollider2D).radius = float.Parse(sizelist[0]);
                     break;
             }
         }

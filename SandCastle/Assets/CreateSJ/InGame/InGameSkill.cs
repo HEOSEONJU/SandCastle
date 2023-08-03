@@ -70,27 +70,30 @@ namespace InGame
         }
 
 
-        public void ActiveSkill()
+        public void ActiveSkill(SkillObject skill=null)
         {
             if(target== null)
             {
                 return;
             }
+            if(skill == null)
+            {
+                skill=ObjectPooling.Instance.GetObject(skillPrefab.gameObject, poolingParent).GetComponent<SkillObject>();
 
-            var e = ObjectPooling.GetObject(skillPrefab.gameObject, poolingParent);//.TryGetComponent<Abstract_Bullet>(out Abstract_Bullet bulletobject);
-
-            e.GetComponent<SkillObject>().Init(skillData);
+                skill.Init(skillData);
+            }
             
             
             
-            switch (skillData.Spwan)
+            
+            switch (skill.SkillData.Spwan)
             {
                 case SkillSpwan.Player:
                     Debug.Log("스킬생성위치");
-                    e.GetComponent<SkillObject>().Active(spwanposi, target);
+                    skill.Active(spwanposi, target);
                     break;
                 case SkillSpwan.Target:
-                    e.GetComponent<SkillObject>().Active(target, target);
+                    skill.Active(target, target);
                     break;
                 case SkillSpwan.Position:
 

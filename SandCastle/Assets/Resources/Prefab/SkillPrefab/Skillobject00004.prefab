@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6871256818414145060}
   - component: {fileID: 21498631759517531}
   m_Layer: 0
-  m_Name: Skillobject00001
+  m_Name: Skillobject00004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,15 +47,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74696161e9042494db9af9c661bf64a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillKey: Skillobject00001
   skillData:
     skillObjectKey: Skillobject00001
     spwan: 0
     target: 0
     applyDamageTiming: 0
-    chainTiming: 0
-    duration: 0
+    damage: 0
+    damageTime: 0
     isPiercing: 0
+    duration: 0
+    damageDelay: 0
+    bulletCount: 0
+    delay: 0
   skillobjecttable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
   pattern: 0
   attakList: []

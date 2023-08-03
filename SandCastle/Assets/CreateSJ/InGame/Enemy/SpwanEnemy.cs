@@ -99,7 +99,7 @@ namespace Enemy
                 {
                     for(int j = 0; j < counts[i];j++)
                     {
-                        var a = ObjectPooling.GetObject(prefabs[i], pooling);
+                        var a = ObjectPooling.Instance.GetObject(prefabs[i], pooling);
                         
                         a.transform.position = reSpwanSystem.ReturnGate().position;
                         a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);

@@ -20,25 +20,31 @@ namespace Skill
         SkillSpwan spwan;
         [SerializeField]
         SkillTarget target;
-        int repeat;
-        int repeatInterval;
+        
 
 
-        bool targetAmount;//리피트할때마다 true면 재계산
+        
         [SerializeField]
         SkillTiming applyDamageTiming;
+        [SerializeField]
         float damage;
-        float damageTime;
-        string AbnormalKey;
-        string chainSkillKey;
         [SerializeField]
-        SkillTiming chainTiming;
-        [SerializeField]
-        float duration;
-        float speed;
+        float damageTime;//데미지간격?
+
+
         [SerializeField]
         int isPiercing;
 
+        [SerializeField]
+        float duration;
+        float speed;
+        
+        [SerializeField]
+        float damageDelay;
+        [SerializeField]
+        int bulletCount;
+        [SerializeField]
+        float delay;
 
         public string SkillObjectKey
         {
@@ -73,10 +79,28 @@ namespace Skill
         {
             get { return damage; }
         }
+        public float Delay
+        {
+            get { return delay; }
+        }
+
 
         public void InitData(string key, ObjectTable skillTable)
         {
+
             skillObjectKey = skillTable.FindString(key, "skillObjectKey");
+
+
+            damage = skillTable.Findfloat(key, "damage");
+            damageDelay = skillTable.Findfloat(key, "damageDelay");
+            isPiercing = skillTable.FindInt(key, "isPiercing");
+            speed = skillTable.Findfloat(key, "speed");
+            duration = skillTable.Findfloat(key, "duration");
+            delay = skillTable.Findfloat(key, "delay");
+            bulletCount = skillTable.FindInt(key, "bulletCount");
+
+
+
             switch (skillTable.FindString(key, "spawnType"))
             {
                 case "Player":
@@ -89,8 +113,8 @@ namespace Skill
                     spwan = SkillSpwan.Position;
                     break;
             }
-            repeat = skillTable.FindInt(key, "repeat");
-            repeatInterval = skillTable.FindInt(key, "repeatInterval");
+            
+            
 
 
 
@@ -107,14 +131,6 @@ namespace Skill
                     break;
             }
 
-            if (skillTable.FindString(key, "targetAmount") == "TRUE")
-            {
-                targetAmount = true;
-            }
-            else
-            {
-                targetAmount = false;
-            }
             switch (skillTable.FindString(key, "applyDamageTiming"))
             {
                 case "Enter":
@@ -128,34 +144,21 @@ namespace Skill
                     break;
             }
 
-            switch (skillTable.FindString(key, "chainTiming"))
-            {
-                case "Enter":
-                    chainTiming = SkillTiming.Enter;
-                    break;
-                case "Stay":
-                    chainTiming = SkillTiming.Stay;
-                    break;
-                case "Exit":
-                    chainTiming = SkillTiming.Exit;
-                    break;
-            }
+
+        }
+
+        public void LevelUP(string key, ObjectTable skillTable)
+        {
+            skillObjectKey = skillTable.FindString(key, "skillObjectKey");
+
 
             damage = skillTable.Findfloat(key, "damage");
-            damageTime = skillTable.Findfloat(key, "damageTime");
-            AbnormalKey = skillTable.FindString(key, "AbnormalKey");
-            chainSkillKey = skillTable.FindString(key, "chainSkillKey");
-
-
-
-            duration = skillTable.Findfloat(key, "duration");
+            damageDelay = skillTable.Findfloat(key, "damageDelay");
+            isPiercing = skillTable.FindInt(key, "isPiercing");
             speed = skillTable.Findfloat(key, "speed");
-
-            isPiercing = 9999;
-
-
-
-
+            duration = skillTable.Findfloat(key, "duration");
+            delay = skillTable.Findfloat(key, "delay");
+            bulletCount = skillTable.FindInt(key, "bulletCount");
         }
         public SkillData Clone()
         {
