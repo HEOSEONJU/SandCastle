@@ -3137,6 +3137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\uBA54\uC778\uCE74\uBA54\uB77C"
       objectReference: {fileID: 0}
+    - target: {fileID: 2956350055399108142, guid: e6892df1349abc546a5b48516edca1f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6892df1349abc546a5b48516edca1f6, type: 3}
 --- !u!4 &2956350056374528995 stripped

@@ -50,7 +50,7 @@ namespace Enemy
         {
             enemyStatus.Hp -= value;
             hpSlider.value = enemyStatus.HPPercentage;
-
+            InGameEvent.Instance.InitDamage(value, transform.position);
         }
 
         public void Died()

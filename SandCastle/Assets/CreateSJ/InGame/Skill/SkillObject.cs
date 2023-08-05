@@ -120,6 +120,7 @@ namespace Skill
 
         public void Active(Transform spwan, Transform target)
         {
+            transform.localScale = new Vector3(SkillData.Size, SkillData.Size, 1);
             transform.position = spwan.position;
             Vector3 direction = target.position - spwan.position;
             moveFunction.ObjectMove(skillData.Duration, skillData.Speed, direction,fix);

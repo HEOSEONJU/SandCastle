@@ -46,7 +46,7 @@ namespace inGame
             
             target.Hit(value);
 
-            InGameEvent.Instance.InitDamage(damagePoint, transform.position);
+            
 
 
 

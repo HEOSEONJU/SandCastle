@@ -22,16 +22,16 @@ namespace Skill
 
 
         [SerializeField]
-        SkillObject skillEffectPrefab;
+        protected SkillObject skillEffectPrefab;
         
         
 
         [SerializeField]
-        SkillData skillData;
+        protected SkillData skillData;
         [SerializeField]
-        InGameSkill skill;
+        protected InGameSkill skill;
+        WaitForSeconds delayValue;
 
-        
         public string SkillName
         {
             get { return skillName; }
@@ -47,8 +47,8 @@ namespace Skill
             this.skill = skill;
             skillData = new SkillData();
             
-            skillData.InitData(skillName, skilltable);
-
+            skillData.InitData(skillName.Replace("_","/"), skilltable);
+            delayValue = new WaitForSeconds(skillData.Delay);
 
 
             Resources.Load<GameObject>("Prefab/SkillPrefab/" + skillData.SkillObjectKey).TryGetComponent<SkillObject>(out skillEffectPrefab);
@@ -56,50 +56,39 @@ namespace Skill
         }
 
 
-        public virtual void ActiveSkill()
+        public  void ActiveSkill()
         {
             
-            InvokeRepeating("InvokSkill", 0.5f, skillData.Delay);
-            
+            //InvokeRepeating("InvokSkill", 0.5f, skillData.Delay);
+            StartCoroutine(Active());
             
             
 
         }
-
-
-        public virtual void InvokSkill()
+         IEnumerator  Active()
         {
-
-            for (int i = 0; i < skillData.BulletCount; i++)
+            while(true)
             {
-                if (skill.SettingTarget(skillData))
-                {
-                    Debug.Log(skill.Target);
-                    ObjectPooling.Instance.GetObject(skillEffectPrefab.gameObject, transform).TryGetComponent<SkillObject>(out SkillObject bulletobject);
-                    bulletobject.Init(skillData);
-                    skill.ActiveSkill(bulletobject);
-                }
+                Effect();
+                
+
+                yield return delayValue;
+                
             }
-            
 
             
         }
-
-        public IEnumerator Delay()
+        
+        protected virtual void  Effect()
         {
-            yield return skillData.Delay;
-            ActiveSkill();
+            Debug.Log("∞°ªÛ¿Ã∆Â∆Æ");
         }
 
 
         public void  SkillLevelUp(ObjectTable skilltable)
         {
-
-            
-            
-            
-            
             skillData.LevelUP(skillName + "/" + (++skillLevel), skilltable);
+            delayValue = new WaitForSeconds(skillData.Delay);
         }
 
 

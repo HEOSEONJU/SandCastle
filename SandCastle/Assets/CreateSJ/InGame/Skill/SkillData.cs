@@ -31,7 +31,8 @@ namespace Skill
         [SerializeField]
         float damageTime;//데미지간격?
 
-
+        [SerializeField]
+        float size;
         [SerializeField]
         int isPiercing;
 
@@ -83,6 +84,10 @@ namespace Skill
         {
             get { return delay; }
         }
+        public float Size
+        {
+            get { return size; }
+        }
         public int BulletCount
         {
             get { return bulletCount; }
@@ -91,16 +96,8 @@ namespace Skill
         public void InitData(string key, ObjectTable skillTable)
         {
             key += ("/" + 1);
-            skillObjectKey = skillTable.FindString(key, "skillObjectKey");
-
-
-            damage = skillTable.Findfloat(key, "damage");
-            damageDelay = skillTable.Findfloat(key, "damageDelay");
-            isPiercing = skillTable.FindInt(key, "isPiercing");
-            speed = skillTable.Findfloat(key, "speed");
-            duration = skillTable.Findfloat(key, "duration");
-            delay = skillTable.Findfloat(key, "delay");
-            bulletCount = skillTable.FindInt(key, "bulletCount");
+            Debug.Log(key);
+            ReadData(key,skillTable);
 
 
 
@@ -152,7 +149,12 @@ namespace Skill
 
         public void LevelUP(string key, ObjectTable skillTable)
         {
-            
+            ReadData( key,  skillTable);
+
+        }
+
+        public void  ReadData(string key, ObjectTable skillTable)
+        {
             skillObjectKey = skillTable.FindString(key, "skillObjectKey");
 
 
@@ -163,6 +165,7 @@ namespace Skill
             duration = skillTable.Findfloat(key, "duration");
             delay = skillTable.Findfloat(key, "delay");
             bulletCount = skillTable.FindInt(key, "bulletCount");
+            size = skillTable.FindInt(key, "sizeUp");
         }
         public SkillData Clone()
         {

@@ -55,7 +55,11 @@ public class CommonSkiillSelect : MonoBehaviour
             }
             current.Add(temp);
             string skillimagekey = commonSkillListTable.FindString(key, "CSkillImage");
-            skillImage[i].sprite = Resources.Load<Sprite>("Prefab/CSkill/" + skillimagekey);
+            if(Resources.Load<Sprite>("Prefab/CSkill/" + skillimagekey) ==null)
+            {
+                Debug.Log(skillimagekey + "¸øÃ£À½");
+            }
+            skillImage[i].sprite = Resources.Load<Sprite>("CSkillIcon/" + skillimagekey);
             skillName[i].text = commonSkillListTable.FindString(key, "name");
 
             
