@@ -83,11 +83,14 @@ namespace Skill
         {
             get { return delay; }
         }
-
+        public int BulletCount
+        {
+            get { return bulletCount; }
+        }
 
         public void InitData(string key, ObjectTable skillTable)
         {
-
+            key += ("/" + 1);
             skillObjectKey = skillTable.FindString(key, "skillObjectKey");
 
 
@@ -149,6 +152,7 @@ namespace Skill
 
         public void LevelUP(string key, ObjectTable skillTable)
         {
+            
             skillObjectKey = skillTable.FindString(key, "skillObjectKey");
 
 

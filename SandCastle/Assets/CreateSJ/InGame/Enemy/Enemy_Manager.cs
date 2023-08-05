@@ -105,7 +105,7 @@ namespace Enemy
             {
                 if(hit.collider.transform.TryGetComponent<InGame_Char>(out InGame_Char player))
                 {
-                    Debug.Log(player.name);
+                    //Debug.Log(player.name);
                     break;
                 }
             }
@@ -149,7 +149,7 @@ namespace Enemy
                     if(enemyMove.Distance()< distance)
                     {
                         ChangeState(EnemyState.Idle);
-                        Debug.Log("Idle»óÅÂ");
+                        
                         
                     }
                     if (enemyStatus.Hp <= 0)

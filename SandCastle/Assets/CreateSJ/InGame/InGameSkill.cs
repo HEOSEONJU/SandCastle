@@ -19,18 +19,26 @@ namespace InGame
         [SerializeField]
         SkillObject skillPrefab;
 
-        public Transform target;
+
+
+        Transform target;
 
         [SerializeField]
         Transform spwanposi;
         [SerializeField]
         Transform poolingParent;
+
+        public Transform Target
+        {
+            get { return target; }
+            set { target = value; }
+        }
         public void Init(InGameSkillSensor sensor,Transform parent,ObjectTable skilltable,string skillname)
         {
             inGameSkillSensor= sensor;
             poolingParent= parent;
             skillData = new SkillData();
-            Debug.Log("생성스킬이름" + skillname);
+            
             skillData.InitData(skillname, skilltable);
             
             
@@ -42,27 +50,32 @@ namespace InGame
             //ActiveSkill();
         }
 
-        public bool SettingTarget()
+        public bool SettingTarget(SkillData skillData=null)
         {
             if(inGameSkillSensor.GameObjects.Count==0)
             {
                 return false;
             }
+            if(skillData==null)
+            {
+                skillData = this.skillData;
+            }
+
             switch (skillData.Target)
             {
                 case SkillTarget.Near:
                     inGameSkillSensor.GameObjects =inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position)).ToList();
-                    
-                    target = inGameSkillSensor.GameObjects.First().transform;
+
+                    Target = inGameSkillSensor.GameObjects.First().transform;
 
                     break;
                 case SkillTarget.Random:
-                    target = inGameSkillSensor.GameObjects[UnityEngine.Random.Range(0, inGameSkillSensor.GameObjects.Count)].transform;
+                    Target = inGameSkillSensor.GameObjects[UnityEngine.Random.Range(0, inGameSkillSensor.GameObjects.Count)].transform;
 
                     break;
                 case SkillTarget.Far:
                     inGameSkillSensor.GameObjects = inGameSkillSensor.GameObjects.OrderBy(x => Vector2.Distance(transform.position, x.transform.position)).ToList();
-                    target = inGameSkillSensor.GameObjects.Last().transform;
+                    Target = inGameSkillSensor.GameObjects.Last().transform;
 
                     break;
             }
@@ -72,7 +85,7 @@ namespace InGame
 
         public void ActiveSkill(SkillObject skill=null)
         {
-            if(target== null)
+            if(Target== null)
             {
                 return;
             }

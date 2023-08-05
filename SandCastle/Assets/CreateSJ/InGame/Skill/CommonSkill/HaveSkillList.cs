@@ -27,24 +27,23 @@ namespace Skill
 
         public void InputData(string name)
         {
-            int temp = skillList.FindIndex(x => x.SkillName == name);
-            if (temp == -1)
+            BasicCommonSkill temp =FindSkill(name);
+            
+            if (temp == null)
             {
-                ;
-                Debug.Log(name.Replace('/', '_'));
-                Resources.Load<GameObject>("Prefab/CommonSkillPrefab/" + name.Replace('/', '_')).TryGetComponent<BasicCommonSkill>(out BasicCommonSkill GO);
-                GO.InitSkill(skillTable, skill);
-                skillList.Add(GO);
-                GameObject objectInPool = Instantiate(GO.gameObject) as GameObject;
                 
-                objectInPool.transform.SetParent(skillpooling);
-
-                GO.ActiveSkill(objectInPool.transform);
+                
+                
+                BasicCommonSkill BCS = ObjectPooling.Instance.GetObject(Resources.Load<GameObject>("Prefab/CommonSkillPrefab/" + name.Replace('/', '_')), transform).GetComponent<BasicCommonSkill>();
+                BCS.InitSkill(skillTable, skill);
+                skillList.Add(BCS);
+                BCS.transform.SetParent(skillpooling);
+                BCS.ActiveSkill();
 
             }
             else
             {
-                skillList[temp].SkillLevelUp(skillTable);
+                temp.SkillLevelUp(skillTable);
                 
 
             }
@@ -52,22 +51,21 @@ namespace Skill
 
         }
 
-        public int FindSkillLevel(string key)
+        public BasicCommonSkill FindSkill(string key)
         {
-
-
-            int temp = skillList.FindIndex(x => x.SkillName == key);
-
-
-            if (temp == -1 || skillList.Count == 0)
+            
+            
+            foreach (BasicCommonSkill skill in skillList)
             {
-                return -1;
+                if (skill.SkillName.Contains(key))
+                {
+                    return skill;
+                }
+
             }
-
-            return skillList[temp].SkillLevel;
-
-
-
+            return null;
         }
+
+
     }
 }

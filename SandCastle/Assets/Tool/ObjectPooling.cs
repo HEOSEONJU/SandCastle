@@ -12,11 +12,12 @@ public class ObjectPooling : MonoBehaviour
         get { return instance; }
     }
 
-
+    int i = 0;
     void Awake()
     {
         if (instance is null)
         {
+            i = 1;
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             
@@ -44,7 +45,8 @@ public class ObjectPooling : MonoBehaviour
         }
 
         GameObject objectInPool = Instantiate(prefab) as GameObject;
-        Debug.Log(objectInPool.name + "?" + parent.name);
+        objectInPool.name += i++;
+        //Debug.Log(objectInPool.name + "?" + parent.name);
         objectInPool.transform.SetParent(parent);
         //objectInPool.gameObject.SetActive(true);
         

@@ -41,8 +41,13 @@ public class CommonSkiillSelect : MonoBehaviour
             int temp=Random.Range(1, commonSkillListTable.ViewTableList.Count);
             string key = "CSkill/" + temp;
 
-
-            int haveskilllevel = haveSkillList.FindSkillLevel(key);
+            BasicCommonSkill tempskill = haveSkillList.FindSkill(key);
+            int haveskilllevel=-1;
+            if (tempskill != null)
+            {
+                haveskilllevel = tempskill.SkillLevel;
+            }
+            
             if (haveskilllevel == commonSkillListTable.FindInt(key, "maxLevel") || current.FindIndex(x=>x==temp)!=-1) //이미만렙 이거나 이미 뽑은 스킬
             {
                 i--;
@@ -52,18 +57,21 @@ public class CommonSkiillSelect : MonoBehaviour
             string skillimagekey = commonSkillListTable.FindString(key, "CSkillImage");
             skillImage[i].sprite = Resources.Load<Sprite>("Prefab/CSkill/" + skillimagekey);
             skillName[i].text = commonSkillListTable.FindString(key, "name");
+
+            
             if (haveskilllevel == -1)//보유하지않은스킬
             {
-                Debug.Log("보유하지않음");
-                key += "/"+ 1;                
+                
+                skillExp[i].text = commonSkillTable.FindString(key+("/" + 1), "exp");
+                           
             }
             else//보유한스킬
             {
-                Debug.Log("보유함");
-                key += "/" + (haveskilllevel + 1);
+                
+                skillExp[i].text = commonSkillTable.FindString(key + ("/" + (haveskilllevel + 1)), "exp");
                 
             }
-            skillExp[i].text = commonSkillTable.FindString(key, "exp");
+            
             names.Add(key);
 
         }

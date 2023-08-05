@@ -31,8 +31,7 @@ namespace Skill
         [SerializeField]
         InGameSkill skill;
 
-        [SerializeField]
-        Transform pooling;
+        
         public string SkillName
         {
             get { return skillName; }
@@ -57,10 +56,12 @@ namespace Skill
         }
 
 
-        public virtual void ActiveSkill(Transform pooling)
+        public virtual void ActiveSkill()
         {
-            this.pooling = pooling;
-            Invoke("InvokSkill", 0.5f);
+            
+            InvokeRepeating("InvokSkill", 0.5f, skillData.Delay);
+            
+            
             
 
         }
@@ -68,34 +69,37 @@ namespace Skill
 
         public virtual void InvokSkill()
         {
-            Debug.Log(transform.name);
-            ObjectPooling.Instance.GetObject(skillEffectPrefab.gameObject, pooling).TryGetComponent<SkillObject>(out SkillObject bulletobject);
 
-            bulletobject.Init(skillData);
+            for (int i = 0; i < skillData.BulletCount; i++)
+            {
+                if (skill.SettingTarget(skillData))
+                {
+                    Debug.Log(skill.Target);
+                    ObjectPooling.Instance.GetObject(skillEffectPrefab.gameObject, transform).TryGetComponent<SkillObject>(out SkillObject bulletobject);
+                    bulletobject.Init(skillData);
+                    skill.ActiveSkill(bulletobject);
+                }
+            }
+            
 
-            skill.ActiveSkill(bulletobject);
-
-
-
-
-
-            Invoke("InvokSkill", skillData.Delay);
-
-
+            
         }
 
         public IEnumerator Delay()
         {
             yield return skillData.Delay;
-            ActiveSkill(pooling);
+            ActiveSkill();
         }
 
 
         public void  SkillLevelUp(ObjectTable skilltable)
         {
-            skillName.Replace(skillName[skillName.Length - 1],Convert.ToChar(SkillLevel));
+
             
-            skillData.LevelUP(skillName, skilltable);
+            
+            
+            
+            skillData.LevelUP(skillName + "/" + (++skillLevel), skilltable);
         }
 
 

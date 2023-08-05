@@ -41,7 +41,7 @@ namespace inGame
             if (crp<=probability)
             {
                 value *= crd;
-                Debug.Log(probability + "확률 /" +"현재데미지:"+ damagePoint +"/현재치명타데미지"+ value);
+                //Debug.Log(probability + "확률 /" +"현재데미지:"+ damagePoint +"/현재치명타데미지"+ value);
             }
             
             target.Hit(value);
