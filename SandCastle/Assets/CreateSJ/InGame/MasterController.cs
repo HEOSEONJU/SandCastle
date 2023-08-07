@@ -27,8 +27,7 @@ namespace inGame
         Rigidbody2D rigid;
 
         
-        [SerializeField]
-        float speed;
+
 
         
         public InGame_Char InGameChar
@@ -40,7 +39,7 @@ namespace inGame
         {
             inGameChar = igc;
             GetComponent<Camera>().transform.parent = inGameChar.transform;
-            speed = inGameChar.InGameStatus.MoveSpeed;
+            
             inGameChar.transform.parent = null;
             inGameChar.InGameMove.enabled = true;
             
@@ -52,7 +51,7 @@ namespace inGame
         {
             inGameChar = igc;
             
-            speed = igci.CharInit(inGameChar);
+            igci.CharInit(inGameChar);
         }
 
         public void RotateAngle()

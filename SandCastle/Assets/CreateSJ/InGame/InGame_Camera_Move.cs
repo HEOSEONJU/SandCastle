@@ -18,6 +18,8 @@ namespace InGame
         
         [SerializeField]
         Vector3 origin = new Vector3(-0.31f, 0, -10f);
+
+
         public void Clamp_Camera(Transform master)
         {
             
@@ -41,7 +43,10 @@ namespace InGame
         public void TraceChar(Transform posi)
         {
             Vector3 temp = transform.position;
+            temp.x = Mathf.Clamp(temp.x, clampMinusX, clampPlusX);
             temp.y=posi.transform.position.y;
+
+
             transform.position = temp;
         }
     }

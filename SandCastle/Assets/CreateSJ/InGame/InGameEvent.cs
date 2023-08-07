@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Skill;
+using TMPro;
 
 public class InGameEvent : MonoBehaviour
 {
@@ -21,10 +22,13 @@ public class InGameEvent : MonoBehaviour
     Canvas LevelUpPrefab;
 
     [SerializeField]
-     DamageNumber numberPrefab;
+    DamageNumber numberPrefab;
     [SerializeField]
     Transform numberparent;
 
+    int deathCount;
+    [SerializeField]
+    TextMeshProUGUI deathCountText;
     [SerializeField]
     CommonSkiillSelect skillSelect;
     [SerializeField]
@@ -37,9 +41,11 @@ public class InGameEvent : MonoBehaviour
     }
     void Awake()
     {
-        if(instance == null) 
+        if (instance == null)
         {
             instance = this;
+            DeathCount = 0;
+
             LevelUpPrefab.enabled = false;
         }
         else
@@ -49,12 +55,23 @@ public class InGameEvent : MonoBehaviour
     }
 
 
+    int DeathCount
+    {
+        get { return deathCount; }
+        set 
+        {
+            deathCountText.text = value.ToString();
+            deathCount = value; 
+        }
+    }
+
+
     public void EXP(Vector3 posi,float value)
     {
         ObjectPooling.Instance.GetObject(expPrefab.gameObject, poolingParent).TryGetComponent<EXP>(out EXP expobject);
         expobject.Init(this.transform, value);
         expobject.transform.position = posi;
-        
+        ++DeathCount;
 
     }
 

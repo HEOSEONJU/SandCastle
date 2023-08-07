@@ -3,7 +3,9 @@ using GoogleSheetsToUnity;
 using InGame;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameCharInit : MonoBehaviour
 {
@@ -14,6 +16,10 @@ public class InGameCharInit : MonoBehaviour
     [SerializeField]
     ObjectTable LevelTable;
 
+    [SerializeField]
+    List<Slider> SliderList;
+    [SerializeField]
+    TextMeshProUGUI levelText;
     float defaultSpeed=0;
     float attackDamage=0;
     float defaultCRP = 0;
@@ -54,40 +60,27 @@ public class InGameCharInit : MonoBehaviour
 
 
 
-    public float CharsInit(List<InGame_Char> inGameCharList)
-    {
-        foreach (InGame_Char IGC in inGameCharList)
-        {
-            CharSingle(IGC, DefaultSpeed, AttackDamage, DefaultCRP, DefaultCRD);
-        }
-         return 0;
 
-    }
-    public float CharInit(InGame_Char IGC)
+    public void CharInit(InGame_Char IGC)
     {
-        return CharSingle(IGC, DefaultSpeed, AttackDamage,DefaultCRP, DefaultCRD);
+        CharSingle(IGC, DefaultSpeed, AttackDamage,DefaultCRP, DefaultCRD);
     }
 
 
 
-    float CharSingle(InGame_Char IGC, float defaultspeed, float attackdamage,float crp,float crd)
+    void CharSingle(InGame_Char IGC, float defaultspeed, float attackdamage,float crp,float crd)
     {
         float movespeed = CharTable.Findfloat(IGC.CharName, "moveSpeed");
-        float animationSpeed = CharTable.Findfloat(IGC.CharName, "animationSpeed");
+        
 
         float giveDamage = CharTable.Findfloat(IGC.CharName, "giveDamage");
         float sandGet = CharTable.Findfloat(IGC.CharName, "sandGet");
         float waterGet = CharTable.Findfloat(IGC.CharName, "waterGet");
         float mudGet = CharTable.Findfloat(IGC.CharName, "mudGet");
-        string localKeyName = CharTable.FindString(IGC.CharName, "localKeyName");
+        
 
         float range = CharTable.Findfloat(IGC.CharName, "range");
-        float moveSpeedLV = CharTable.Findfloat(IGC.CharName, "moveSpeedLV");
-        float animationSpeedLV = CharTable.Findfloat(IGC.CharName, "animationSpeedLV");
-        float giveDamageLV = CharTable.Findfloat(IGC.CharName, "giveDamageLV");
-        float sandGetLV = CharTable.Findfloat(IGC.CharName, "sandGetLV");
-        float waterGetLV = CharTable.Findfloat(IGC.CharName, "waterGetLV");
-        float mudGetLV = CharTable.Findfloat(IGC.CharName, "mudGetLV");
+        
         int maxMana = CharTable.FindInt(IGC.CharName, "maxMana");
         int startMana = CharTable.FindInt(IGC.CharName, "startMana");
         int maxhp = CharTable.FindInt(IGC.CharName, "maxHP");
@@ -100,10 +93,11 @@ public class InGameCharInit : MonoBehaviour
             needexp.Add(float.Parse(LevelTable.ViewTableList[i]["needExp"].ToString()));
         }
 
-
-        IGC.InGameStatus.Init(movespeed, animationSpeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana, maxhp,crp,crd);
+        IGC.InGameStatus.InputUI(SliderList,levelText);
         IGC.InGameStatus.InputLevel(needexp);
+        IGC.InGameStatus.Init(movespeed, giveDamage, sandGet, waterGet, mudGet, range, maxMana, startMana, maxhp,crp,crd);
+        
         IGC.SettingAttack(attackspeed, defaultspeed, attackdamage);
-        return movespeed;
+        
     }
 }
