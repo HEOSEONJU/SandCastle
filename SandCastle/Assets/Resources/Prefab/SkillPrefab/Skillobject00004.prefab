@@ -63,7 +63,7 @@ MonoBehaviour:
     delay: 0
   skillobjecttable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
   pattern: 4
-  attakList: []
+  attackList: []
   fix: 1
 --- !u!212 &5154044441680759181
 SpriteRenderer:
@@ -151,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.05}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 12}
+  m_Size: {x: 0.4, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &7023656429712735606
 MonoBehaviour:

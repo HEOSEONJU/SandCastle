@@ -130,6 +130,11 @@ namespace SkillEnums
         Exit,
 
     }
+    public enum BuffType
+    {
+        exp
 
+
+    }
 
 }

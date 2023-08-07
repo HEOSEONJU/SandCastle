@@ -11,8 +11,8 @@ namespace InGame
 {
     public class BaseHP : MonoBehaviour
     {
-
-
+        //이제 불필요
+        /*
         [SerializeField]
         InGame_Char inGameCharLeft;
         [SerializeField]
@@ -136,7 +136,7 @@ namespace InGame
                     igc.FSM.ChangeState(new SkillState(igc));
                     break;
             }
-        }
+        }*/
 
     }
 

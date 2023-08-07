@@ -18,7 +18,9 @@ namespace Skill
         [SerializeField]
         string skillName;
         [SerializeField]
-        int skillLevel;
+        int skillLevel=0;
+        [SerializeField]
+        int maxSkillLevel;
 
 
         [SerializeField]
@@ -42,19 +44,44 @@ namespace Skill
             set { skillLevel = value; }
         }
 
-        public virtual void InitSkill(ObjectTable skilltable, InGameSkill skill)
+        public bool Max
         {
+            get 
+            {
+                if (skillLevel == maxSkillLevel)
+                {
+                    return true;
+                }
+                else
+                    return false;
+
+            }
+        }
+
+        public virtual void InitSkill(ObjectTable skilltable, InGameSkill skill,ObjectTable skilllist)
+        {
+
             this.skill = skill;
             skillData = new SkillData();
-            
+            skillLevel = 1;
             skillData.InitData(skillName.Replace("_","/"), skilltable);
             delayValue = new WaitForSeconds(skillData.Delay);
-
+            maxSkillLevel = skilllist.FindInt(SkillName, "maxLevel");
 
             Resources.Load<GameObject>("Prefab/SkillPrefab/" + skillData.SkillObjectKey).TryGetComponent<SkillObject>(out skillEffectPrefab);
 
         }
 
+        public void ApplyBuff(InGame_Char igc)
+        {
+            switch (skillData.BuffType)
+            {
+                case BuffType:
+                    igc.ExpRange = skillData.Value;
+                    break;
+            }
+
+        }
 
         public  void ActiveSkill()
         {

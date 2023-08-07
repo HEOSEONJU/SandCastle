@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: CSkill/2
-  skillLevel: 1
+  skillLevel: 0
+  maxSkillLevel: 5
   skillEffectPrefab: {fileID: -1441437481392588754, guid: a318730217f55ee4fa917b19301d9d92, type: 3}
   skillData:
     skillObjectKey: Skillobject00005

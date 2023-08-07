@@ -45,16 +45,16 @@ public class EXP : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.TryGetComponent<InGame_Char>(out InGame_Char player) && !state)
+        if(collision.CompareTag("ExpSearch"))
         {
-            state= true;
-            StartCoroutine(Trace(player));
-
+            state = true;
+            StartCoroutine(Trace(collision.transform.root));
         }
+
     }
 
 
-    IEnumerator Trace(InGame_Char player)
+    IEnumerator Trace(Transform player)
     {
         while(Vector3.Distance(player.transform.position,this.transform.position)>0.01f)
         {
@@ -62,7 +62,7 @@ public class EXP : MonoBehaviour
             transform.position += (player.transform.position - transform.position).normalized*Time.deltaTime*speed;
             yield return null;
         }
-        player.GetEXP(Value);
+        player.GetComponent<InGame_Char>().GetEXP(Value);
         transform.parent = origin;
         gameObject.SetActive(false);
         

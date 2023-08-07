@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4057328825360606215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2439917852182899031}
+  - component: {fileID: 3478062896285054869}
+  m_Layer: 0
+  m_Name: "\uACBD\uD5D8\uCE58\uC0C9\uC801"
+  m_TagString: ExpSearch
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2439917852182899031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057328825360606215}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6853689654655104090}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &3478062896285054869
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057328825360606215}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &6853689653900274195
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +385,7 @@ Transform:
   - {fileID: 6853689653900274192}
   - {fileID: 6853689654277604502}
   - {fileID: 6853689655895314536}
+  - {fileID: 2439917852182899031}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -364,6 +413,7 @@ MonoBehaviour:
   isAction: 0
   spriteRenderer: {fileID: 6853689653900274194}
   state: 0
+  expRange: {fileID: 3478062896285054869}
 --- !u!114 &6853689654655104094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4686028b693f02428965051169b1388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fix: 0
   agent: {fileID: 7985069797101147733}
   defaultPosition: {fileID: 0}
   value: 1.1
@@ -420,6 +469,9 @@ MonoBehaviour:
   currentCRP: 0
   baseCRD: 1.5
   currentCRD: 0
+  exp: 0
+  needExp: []
+  baseExpRange: 0
 --- !u!58 &6853689654655104093
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -487,7 +539,6 @@ MonoBehaviour:
   inGameChar: {fileID: 6853689654655104091}
   inGameSkillSensor: {fileID: 0}
   skillPrefab: {fileID: 0}
-  target: {fileID: 0}
   spwanposi: {fileID: 6853689654277604502}
   poolingParent: {fileID: 0}
 --- !u!195 &7985069797101147733

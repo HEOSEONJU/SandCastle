@@ -29,6 +29,8 @@ public class InGameEvent : MonoBehaviour
     CommonSkiillSelect skillSelect;
     [SerializeField]
     HaveSkillList haveSkill;
+    [SerializeField]
+    MasterController mastercontroller;
     public static InGameEvent Instance
     {
         get { return instance; }
@@ -86,9 +88,12 @@ public class InGameEvent : MonoBehaviour
         //string[] temp=skillSelect.names[i].Split("/");
 
         haveSkill.InputData(skillSelect.names[i]);
+        haveSkill.ApplyBuff(mastercontroller.InGameChar);
 
 
-        
+
         TimeStart();
     }
+
+
 }

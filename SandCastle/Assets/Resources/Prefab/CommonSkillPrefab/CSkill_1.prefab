@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead8ce05920e9f149a038cd68498fd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: CSkill_1
-  skillLevel: 1
+  skillName: CSkill/1
+  skillLevel: 0
+  maxSkillLevel: 5
   skillEffectPrefab: {fileID: 0}
   skillData:
     skillObjectKey: Skillobject00004
@@ -54,6 +55,7 @@ MonoBehaviour:
     applyDamageTiming: 0
     damage: 1
     damageTime: 0
+    size: 0
     isPiercing: 999
     duration: 1
     damageDelay: 1

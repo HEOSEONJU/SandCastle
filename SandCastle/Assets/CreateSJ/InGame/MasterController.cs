@@ -43,7 +43,7 @@ namespace inGame
             speed = inGameChar.InGameStatus.MoveSpeed;
             inGameChar.transform.parent = null;
             inGameChar.InGameMove.enabled = true;
-            inGameChar.InGameMove.Fix = false;
+            
         }
 
 

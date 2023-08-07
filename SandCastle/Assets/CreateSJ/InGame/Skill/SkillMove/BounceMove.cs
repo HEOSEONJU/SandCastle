@@ -24,23 +24,36 @@ namespace Skill
             
             StartCoroutine(moveCoroutine);
         }
+
+        public void EnableCollider()
+        {
+            if (circleCollider != null)
+                circleCollider.enabled = true;
+        }
+
         IEnumerator Spread(float duration,float speed)
         {
             circleCollider=GetComponent<CircleCollider2D>();
             circleCollider.radius = 1f;
             float time = 0;
             Vector2 S = new Vector2(0, 0);
-            Vector2 L = new Vector2(speed,0);
+            Vector2 L = new Vector2(speed,speed);
 
             while (time < duration)
             {
                 time+= Time.deltaTime;
                Vector2 D=Vector2.Lerp(S, L, time/duration);
-
+                transform.localScale = D;
+                transform.localScale = L;
                 circleCollider.radius = D.x;
 
                 yield return null;
             }
+        }
+
+        private void OnDisable()
+        {
+            circleCollider.enabled = false;
         }
     }
 }

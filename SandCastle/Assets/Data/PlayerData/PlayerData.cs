@@ -14,10 +14,11 @@ namespace Player
         public int gold;
         public int mud;
         public List<CharInfo> havetCharIds;
-        public List<CharInfo> fightCharIds;
+        public CharInfo fightCharIds;
 
 
-
+        public List<bool> CharUnlock;
+        
         public List<StageState> StageClear;
 
 
@@ -29,21 +30,22 @@ namespace Player
         {
 
             havetCharIds=new List<CharInfo>();
-            fightCharIds=new List<CharInfo>();
+            CharUnlock = new List<bool>();
             gem = 0;
             gold = 0;
             mud = 0;
 
             CharInfo temp = new CharInfo("character000001");
             havetCharIds.Add(temp);
-            fightCharIds.Add(temp);
+            fightCharIds = temp;
+            CharUnlock.Add(true);
             temp = new CharInfo("character000002");
             havetCharIds.Add(temp);
-            fightCharIds.Add(temp);
+            CharUnlock.Add(false);
             temp = new CharInfo("character000003");
             havetCharIds.Add(temp);
-            fightCharIds.Add(temp);
 
+            CharUnlock.Add(false);
             StageClear = new List<StageState>();
             for (int i = 0; i < 3; i++)
             {

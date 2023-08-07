@@ -12,13 +12,23 @@ public class StopMove : SkillMove
         transform.GetComponent<Animator>().SetTrigger("Skill");
         TryGetComponent<Collider2D>(out _collider);
         DIsableCollider();
+        StartCoroutine(DisabeTime(duration));
         
+    }
+
+    IEnumerator DisabeTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
     {
         DIsableCollider();
     }
+
+
+
 
     public void EnableCollider()
     {
@@ -33,6 +43,6 @@ public class StopMove : SkillMove
 
     public void setoff()
     {
-        gameObject.SetActive(false);
+        
     }
 }

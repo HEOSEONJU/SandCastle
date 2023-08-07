@@ -1,23 +1,26 @@
-using Skill;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InitCommonSkill : BasicCommonSkill
+namespace Skill
 {
-
-    protected override void Effect()
+    public class InitCommonSkill : BasicCommonSkill
     {
-        for (int i = 0; i < skillData.BulletCount; i++)
+
+        protected override void Effect()
         {
-            if (skill.SettingTarget(skillData))
+            for (int i = 0; i < skillData.BulletCount; i++)
             {
-                Debug.Log(skill.Target);
-                ObjectPooling.Instance.GetObject(skillEffectPrefab.gameObject, transform).TryGetComponent<SkillObject>(out SkillObject bulletobject);
-                bulletobject.Init(skillData);
-                skill.ActiveSkill(bulletobject);
+                if (skill.SettingTarget(skillData))
+                {
+                    Debug.Log(skill.Target);
+                    ObjectPooling.Instance.GetObject(skillEffectPrefab.gameObject, transform).TryGetComponent<SkillObject>(out SkillObject bulletobject);
+                    bulletobject.Init(skillData);
+                    skill.ActiveSkill(bulletobject);
+                }
             }
         }
-    }
 
+    }
 }

@@ -78,10 +78,10 @@ namespace InGame
 
 
 
-            var main = Instantiate(charPrefab3).GetComponent<InGame_Char>();
+            var main = Instantiate(charPrefab2).GetComponent<InGame_Char>();
             int level = 1;
-            
-            main.InitChar("character000003", level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform,false); ;
+            float exprange = defineTable.Findfloat("ExpRange", "value");
+            main.InitChar("character000002", level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charSkillTable, masterController.transform, exprange); 
             haveSkillList.InitSkill(main.InGameSkill);
             masterController.InitMasterController(main, inGameCharInit);
 

@@ -11,12 +11,24 @@ namespace Skill
         [SerializeField]
         ObjectTable skillTable;
         [SerializeField]
+        ObjectTable skillListTable;
+        [SerializeField]
         Transform skillpooling;
 
 
         [SerializeField]
         InGameSkill skill;
         List<BasicCommonSkill> skillList;
+
+        public int HaveMaxSkillCount
+        {
+            get 
+            {
+                Debug.Log(skillList.FindAll(x => x.Max == true).Count + "½ºÅ³¸¸·¾°¹¼ö");
+                return skillList.FindAll(x => x.Max == true).Count;
+                
+            }
+        }
         public void InitSkill(InGameSkill skill)
         {
 
@@ -35,7 +47,7 @@ namespace Skill
                 
                 
                 BasicCommonSkill BCS = ObjectPooling.Instance.GetObject(Resources.Load<GameObject>("Prefab/CommonSkillPrefab/" + name.Replace('/', '_')), transform).GetComponent<BasicCommonSkill>();
-                BCS.InitSkill(skillTable, skill);
+                BCS.InitSkill(skillTable, skill, skillListTable);
                 skillList.Add(BCS);
                 BCS.transform.SetParent(skillpooling);
                 BCS.ActiveSkill();
@@ -67,5 +79,13 @@ namespace Skill
         }
 
 
+        public void ApplyBuff(InGame_Char igc)
+        {
+            foreach (BasicCommonSkill skill in skillList)
+            {
+                skill.ApplyBuff(igc);
+
+            }
+        }
     }
 }

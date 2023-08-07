@@ -47,6 +47,11 @@ namespace Skill
         [SerializeField]
         float delay;
 
+        [SerializeField]
+        float value;
+        [SerializeField]
+        BuffType type;
+
         public string SkillObjectKey
         {
             get { return skillObjectKey; }
@@ -92,6 +97,19 @@ namespace Skill
         {
             get { return bulletCount; }
         }
+        public float DamageDelay
+        {
+            get { return damageDelay; }
+        }
+        public float Value
+        {
+            get { return value; }
+        }
+        public BuffType BuffType
+        {
+            get { return type; }
+        }
+
 
         public void InitData(string key, ObjectTable skillTable)
         {
@@ -143,7 +161,12 @@ namespace Skill
                     applyDamageTiming = SkillTiming.Exit;
                     break;
             }
-
+            switch (skillTable.FindString(key, "buffType"))
+            {
+                case "exp":
+                    type = BuffType.exp;
+                    break;
+            }
 
         }
 
@@ -166,6 +189,7 @@ namespace Skill
             delay = skillTable.Findfloat(key, "delay");
             bulletCount = skillTable.FindInt(key, "bulletCount");
             size = skillTable.FindInt(key, "sizeUp");
+            value = skillTable.Findfloat(key, "value");
         }
         public SkillData Clone()
         {

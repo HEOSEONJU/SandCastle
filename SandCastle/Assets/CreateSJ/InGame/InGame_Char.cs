@@ -40,6 +40,11 @@ namespace InGame
         [SerializeField]
         FSM fsm;
 
+        [SerializeField]
+        CircleCollider2D expRange;
+
+        
+
         public bool IsAction
         {
             get { return isAction; }
@@ -95,11 +100,18 @@ namespace InGame
             set { fsm = value; }
         }
 
+        public float ExpRange
+        {
+            set 
+            {
+                expRange.radius= status.BaseExpRange+value;
+            }
+        }
 
 
 
         
-        public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, ObjectTable charskilltable, Transform defaultposi,bool fix)
+        public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, ObjectTable charskilltable, Transform defaultposi,float exprange)
         {
             
             state = PlayerState.Idle;
@@ -107,44 +119,13 @@ namespace InGame
             this.inventory= inventory;
             CharName = name;
             this.sensor= sensor;
-            
-            move.SettingPosi(defaultposi,fix);
+            InGameStatus.BaseExpRange= exprange;
+            move.SettingPosi(defaultposi);
 
             //var skills = charskilltable.FindDict("CharKey", name);
-            string skillname1 = "";
-            string skillname2 = "";
+            string skillname1 = charskilltable.FindString(name + "/" + 1, "Skill00001");
 
-            
-            if(level<5)
-            {
-                skillname1 = charskilltable.FindString(name + "/" + 1, "Skill00001");
-                skillname2 = charskilltable.FindString(name + "/" + 1, "Skill00002");
-            }
-            else if (level<10)
-            {
-                skillname1 = charskilltable.FindString(name + "/" + 5, "Skill00001");
-                skillname2 = charskilltable.FindString(name + "/" + 5, "Skill00002");
-            }
-            else if (level < 15)
-            {
-                skillname1 = charskilltable.FindString(name + "/" + 10, "Skill00001");
-                skillname2 = charskilltable.FindString(name + "/" + 10, "Skill00002");
-            }
-            else if (level < 20)
-            {
-                skillname1 = charskilltable.FindString(name + "/" + 15, "Skill00001");
-                skillname2 = charskilltable.FindString(name + "/" + 15, "Skill00002");
-            }
-            else if (level < 25)
-            {
-                skillname1 = charskilltable.FindString(name + "/" + 20, "Skill00001");
-                skillname2 = charskilltable.FindString(name + "/" + 20, "Skill00002");
-            }
-            else
-            {
-                skillname1 = charskilltable.FindString(name + "/" + 25, "Skill00001");
-                skillname2 = charskilltable.FindString(name + "/" + 25, "Skill00002");
-            }
+
             /*
             foreach (var skill in skills)
             {
@@ -174,10 +155,6 @@ namespace InGame
 
 
             skill.Init(sensor, skillpoolingparent, skilltable, skillname1);
-            if(skillname2!=null)
-            {
-                //skill.Init(sensor, skillpoolingparent, skilltable, skillname2);
-            }
             InGameAttack.AbstractAttack.PoolingParent = attackpoolingparent;
             
 

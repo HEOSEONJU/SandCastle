@@ -12,8 +12,7 @@ namespace InGame
 {
     public class InGame_Move : MonoBehaviour
     {
-        [SerializeField]
-        bool fix;
+        
 
         [SerializeField]
         NavMeshAgent agent;
@@ -35,11 +34,7 @@ namespace InGame
             get { return agent; }
         }
 
-        public bool Fix
-        {
-            get { return fix; }
-            set { fix = value;  }
-        }
+
         [SerializeField]
         float distacne;
         [SerializeField]
@@ -51,8 +46,7 @@ namespace InGame
 
         public void MoveChar(Animator animator,float speed)
         {
-            if(Fix)
-            { return; }
+            
 
             
             
@@ -103,7 +97,7 @@ namespace InGame
 
         }
 
-        public void SettingPosi(Transform T,bool fix)
+        public void SettingPosi(Transform T)
         {
 
             agent.updateRotation = false;
@@ -111,7 +105,7 @@ namespace InGame
 
 
             defaultPosition = T;
-            this.fix = fix;
+            
 
             
         }

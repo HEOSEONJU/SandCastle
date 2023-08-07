@@ -8,6 +8,8 @@ namespace InGame
 {
     public class InGame_ChangeChar : MonoBehaviour
     {
+
+        /*¾È¾¸
         [SerializeField]
         BaseHP basehp;
         [SerializeField]
@@ -59,7 +61,7 @@ namespace InGame
         }
 
 
-
+        */
 
 
     }

@@ -54,8 +54,8 @@ namespace InGame
 
         [SerializeField]
         int gradeHp = 0;
-        
-        
+
+
 
         [SerializeField]
         float baseCRP = 0.05f;
@@ -67,7 +67,7 @@ namespace InGame
 
         [SerializeField]
         float baseCRD = 1.5f;
-        
+
         [SerializeField]
         float currentCRD = 0f;
 
@@ -78,6 +78,8 @@ namespace InGame
         [SerializeField]
         List<float> needExp;
 
+        [SerializeField]
+        float baseExpRange;
         public int CurrentHp
         {
             get { return currentHp; }
@@ -122,9 +124,15 @@ namespace InGame
         public int CurrentMana
         {
             get { return currentMana; }
-            set { currentMana= value; }
+            set { currentMana = value; }
 
         }
+        public float BaseExpRange
+        {
+            get { return baseExpRange; }
+            set { baseExpRange = value; }
+        }
+
         public bool CanSkill
         {
             get

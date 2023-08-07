@@ -13,5 +13,8 @@ namespace Skill
         public abstract void ObjectMove(float duration, float speed,Vector3 direction, bool fix=false);
 
 
+
+
+
     }
 }

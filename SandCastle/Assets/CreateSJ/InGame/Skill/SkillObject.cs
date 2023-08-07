@@ -10,6 +10,8 @@ using System;
 using Enemy;
 using UnityEditor.SceneManagement;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
+using System.Linq;
 
 namespace Skill
 {
@@ -36,16 +38,19 @@ namespace Skill
         IEnumerator moveCoroutine;
         IEnumerator destoryCorountine;
         [SerializeField]
-        List<GameObject> attakList;
+        List<GameObject> attackList;
 
+        
 
         public SkillData SkillData
         {
             get { return skillData; }
         }
 
+        [Header("회전하지않고 고정된 스킬")]
         [SerializeField]
-        bool fix = false;
+        bool fix;
+        
 
         IEnumerator DestoryTime()
         {
@@ -56,7 +61,8 @@ namespace Skill
         }
         public void Init(SkillData skilldata)
         {
-
+            
+            attackList = new List<GameObject>();
             skillData = skilldata.Clone();
 
             string[] sizelist = skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxSize").Split(",");
@@ -94,7 +100,7 @@ namespace Skill
             
             if (collision.CompareTag("Enemy"))
             {
-                if (attakList.Contains(collision.gameObject))
+                if (attackList.Contains(collision.gameObject))
                 {
                     return;
                 }
@@ -102,7 +108,7 @@ namespace Skill
                 if (skillData.IsPiercing-- >= 1)
                 {
 
-                    attakList.Add(collision.gameObject);
+                    attackList.Add(collision.gameObject);
                     
                     collision.GetComponent<IHit>().Hit(skillData.Damage);
                     if (skillData.IsPiercing == 0)
@@ -116,7 +122,50 @@ namespace Skill
             }
         }
 
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (skillData.ApplyDamageTiming != SkillTiming.Stay)
+            {
+                return;
 
+            }
+
+
+            if (collision.CompareTag("Enemy"))
+            {
+                if (attackList.Contains(collision.gameObject))
+                {
+                    return;
+                }
+
+                if (skillData.IsPiercing-- >= 1)
+                {
+
+                    attackList.Add(collision.gameObject);
+                    
+
+                    collision.GetComponent<IHit>().Hit(skillData.Damage);
+                    StartCoroutine( RemoveEnemy(collision.gameObject));
+                    
+                    if (skillData.IsPiercing == 0)
+                    {
+                        gameObject.SetActive(false);
+                        //StopCoroutine(moveCoroutine);
+                        StopCoroutine(destoryCorountine);
+                    }
+                }
+                return;
+            }
+        }
+
+
+        IEnumerator RemoveEnemy(GameObject GO)
+        {
+            
+            yield return new WaitForSeconds(skillData.DamageDelay);
+            Debug.Log(GO.name + "삭제");
+            attackList.Remove(GO);
+        }
 
         public void Active(Transform spwan, Transform target)
         {
@@ -126,19 +175,25 @@ namespace Skill
             moveFunction.ObjectMove(skillData.Duration, skillData.Speed, direction,fix);
             
 
-            
-            if (attakList == null)
-                attakList = new List<GameObject>();
-            attakList.Clear();
+
+
+            //if (attackList == null) attackList = new List<GameObject>();
+            attackList.Clear();
             destoryCorountine = DestoryTime();
             StartCoroutine(destoryCorountine);
         }
 
 
 
-       
 
 
+        private void OnDisable()
+        {
+            StopAllCoroutines();
+
+            
+        }
 
     }
+    
 }
