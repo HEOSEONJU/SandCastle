@@ -77,7 +77,7 @@ namespace inGame
 
             inGameChar.InGameMove.dir = inputJoystick.inputVector.normalized;
             //rigid.velocity = inputJoystick.inputVector.normalized * speed;
-            cameraMove.TraceChar(this.InGameChar.transform);
+            cameraMove.TraceChar(this.InGameChar.transform.position.x, this.InGameChar.transform.position.y);
 
 
 

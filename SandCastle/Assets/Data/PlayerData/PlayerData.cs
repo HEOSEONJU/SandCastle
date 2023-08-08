@@ -14,7 +14,7 @@ namespace Player
         public int gold;
         public int mud;
         public List<CharInfo> havetCharIds;
-        public CharInfo fightCharIds;
+        public string fightCharIds;
 
 
         public List<bool> CharUnlock;
@@ -37,7 +37,7 @@ namespace Player
 
             CharInfo temp = new CharInfo("character000001");
             havetCharIds.Add(temp);
-            fightCharIds = temp;
+            fightCharIds = "character000001";
             CharUnlock.Add(true);
             temp = new CharInfo("character000002");
             havetCharIds.Add(temp);

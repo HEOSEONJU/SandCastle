@@ -111,7 +111,7 @@ namespace InGame
 
 
         
-        public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, ObjectTable charskilltable, Transform defaultposi,float exprange)
+        public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, string  skillname, Transform defaultposi,float exprange)
         {
             
             state = PlayerState.Idle;
@@ -122,39 +122,7 @@ namespace InGame
             InGameStatus.BaseExpRange= exprange;
             move.SettingPosi(defaultposi);
 
-            //var skills = charskilltable.FindDict("CharKey", name);
-            string skillname1 = charskilltable.FindString(name + "/" + 1, "Skill00001");
-
-
-            /*
-            foreach (var skill in skills)
-            {
-                if (Convert.ToInt32((skill["LV"].ToString())) <= level)
-                {
-                    skillname1 = skill["Skill00001"].ToString();
-
-                    if(skill.Keys.Contains("Skill00002"))
-                    {
-                        skillname2 = skill["Skill00002"].ToString();
-                    }
-                    else 
-                    {
-                        skillname2= "";
-                    }
-
-                    
-
-
-                }
-                else
-                {
-                    break;
-                }
-            }
-            */
-
-
-            skill.Init(sensor, skillpoolingparent, skilltable, skillname1);
+            skill.Init(sensor, skillpoolingparent, skilltable, skillname);
             InGameAttack.AbstractAttack.PoolingParent = attackpoolingparent;
             
 

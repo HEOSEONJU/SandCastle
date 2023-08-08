@@ -3262,7 +3262,7 @@ MonoBehaviour:
   haveSkillList: {fileID: 2109271234474598957}
   roundTable: {fileID: 11400000, guid: ebfb75b806f4b0c4aa255c2837294a2c, type: 2}
   skillTable: {fileID: 11400000, guid: 67ca76fcc1156af47878c803fc1b6b3c, type: 2}
-  charSkillTable: {fileID: 11400000, guid: c2848ec2e725bba40b53985eceba7fd1, type: 2}
+  charTable: {fileID: 11400000, guid: f8ca78cb7ec180544b39cbc34244c6f0, type: 2}
   defineTable: {fileID: 11400000, guid: fe473db031b9ec74abed30f861d8bc04, type: 2}
 --- !u!1 &1328999024
 GameObject:
@@ -8212,9 +8212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clampPlusX: 3.7
   clampMinusX: -3.7
-  clampPlusY: 0
-  clampMinusY: 0
-  origin: {x: -0.31, y: 0, z: -10}
 --- !u!224 &7400706544880913734
 RectTransform:
   m_ObjectHideFlags: 0
