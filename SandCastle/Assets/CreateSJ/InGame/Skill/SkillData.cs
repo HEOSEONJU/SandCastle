@@ -130,6 +130,9 @@ namespace Skill
                 case "Position":
                     spwan = SkillSpwan.Position;
                     break;
+                case "Trace":
+                    spwan = SkillSpwan.Trace;
+                    break;
             }
             
             
@@ -146,6 +149,9 @@ namespace Skill
                     break;
                 case "Far":
                     target = SkillTarget.Far;
+                    break;
+                case "None":
+                    target = SkillTarget.None;
                     break;
             }
 

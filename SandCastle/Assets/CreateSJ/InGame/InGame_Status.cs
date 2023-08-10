@@ -207,7 +207,7 @@ namespace InGame
             baseCRP = crp;
             baseCRD = crd;
 
-            needExp = new List<float>();
+            
 
             if (range==0)
             {
@@ -220,9 +220,11 @@ namespace InGame
         }
         public void InputLevel(List<float> needexp)
         {
+            
             LEVEL = 1;
 
             needExp = needexp;
+            
             EXP = 0;
         }
 

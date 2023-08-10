@@ -58,6 +58,13 @@ namespace Skill
             }
         }
 
+        public SkillSpwan SpwanPosi
+        {
+            get
+            {
+                return skillData.Spwan;
+            }
+        }
         public virtual void InitSkill(ObjectTable skilltable, InGameSkill skill,ObjectTable skilllist)
         {
 
@@ -74,9 +81,11 @@ namespace Skill
 
         public void ApplyBuff(InGame_Char igc)
         {
+            Debug.Log("어플리적용" + name);
             switch (skillData.BuffType)
             {
                 case BuffType:
+                    Debug.Log("경험치버프적용");
                     igc.ExpRange = skillData.Value;
                     break;
             }

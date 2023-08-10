@@ -1,5 +1,7 @@
 using Google.GData.Extensions;
+using inGame;
 using InGame;
+using SkillEnums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +21,8 @@ namespace Skill
         [SerializeField]
         InGameSkill skill;
         List<BasicCommonSkill> skillList;
+        [SerializeField]
+        MasterController masterController;
 
         public int HaveMaxSkillCount
         {
@@ -49,7 +53,13 @@ namespace Skill
                 BasicCommonSkill BCS = ObjectPooling.Instance.GetObject(Resources.Load<GameObject>("Prefab/CommonSkillPrefab/" + name.Replace('/', '_')), transform).GetComponent<BasicCommonSkill>();
                 BCS.InitSkill(skillTable, skill, skillListTable);
                 skillList.Add(BCS);
+                if (BCS.SpwanPosi == SkillSpwan.Trace)
+                {
+                    BCS.transform.SetParent(masterController.InGameChar.transform);
+                }
+                else
                 BCS.transform.SetParent(skillpooling);
+                
                 BCS.ActiveSkill();
 
             }

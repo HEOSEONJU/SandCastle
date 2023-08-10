@@ -30,8 +30,7 @@ namespace Skill
 
         [SerializeField]
         ObjectTable skillobjecttable;
-        [SerializeField]
-        SkillPattern pattern;
+        
         
 
 
@@ -69,17 +68,18 @@ namespace Skill
 
             moveFunction = GetComponent<SkillMove>();
             Collider2D skillcollider;
+            
             switch (skillobjecttable.FindString(skilldata.SkillObjectKey, "hitBoxShape"))
             {
                 case "Square":
-                    skillcollider = transform.GetComponent<BoxCollider2D>();
+                    skillcollider = transform.GetComponentInChildren<BoxCollider2D>();
                     skillcollider.isTrigger = true;
                     float Wide = float.Parse(sizelist[0]);
                     float Height = float.Parse(sizelist[1]);
                     (skillcollider as BoxCollider2D).size = new Vector2(Wide, Height);
                     break;
                 case "Circle":
-                    skillcollider = transform.GetComponent<CircleCollider2D>();
+                    skillcollider = transform.GetComponentInChildren<CircleCollider2D>();
                     skillcollider.isTrigger = true;
                     (skillcollider as CircleCollider2D).radius = float.Parse(sizelist[0]);
                     break;
@@ -171,7 +171,12 @@ namespace Skill
         {
             transform.localScale = new Vector3(SkillData.Size, SkillData.Size, 1);
             transform.position = spwan.position;
-            Vector3 direction = target.position - spwan.position;
+            Vector3 direction = Vector3.zero;
+            if (target !=null)
+            {
+                direction = target.position - spwan.position;
+            }
+            
             moveFunction.ObjectMove(skillData.Duration, skillData.Speed, direction,fix);
             
 

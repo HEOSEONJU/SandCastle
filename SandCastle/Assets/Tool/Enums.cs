@@ -114,13 +114,14 @@ namespace SkillEnums
         Player,
         Target,
         Position,
-        
+        Trace
     }
     public enum SkillTarget
     {
         Near,
         Random,
         Far,
+        None
 
     }
     public enum SkillTiming

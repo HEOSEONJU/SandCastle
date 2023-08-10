@@ -78,6 +78,10 @@ namespace InGame
                     Target = inGameSkillSensor.GameObjects.Last().transform;
 
                     break;
+                case SkillTarget.None:
+                    Target = null;
+
+                    break;
             }
             return true;
         }
@@ -85,10 +89,7 @@ namespace InGame
 
         public void ActiveSkill(SkillObject skill=null)
         {
-            if(Target== null)
-            {
-                return;
-            }
+
             if(skill == null)
             {
                 skill=ObjectPooling.Instance.GetObject(skillPrefab.gameObject, poolingParent).GetComponent<SkillObject>();
@@ -102,15 +103,30 @@ namespace InGame
             switch (skill.SkillData.Spwan)
             {
                 case SkillSpwan.Player:
+
+                    if (Target == null)
+                    {
+                        return;
+                    }
                     Debug.Log("스킬생성위치");
                     skill.Active(spwanposi, target);
                     break;
                 case SkillSpwan.Target:
+
+                    if (Target == null)
+                    {
+                        return;
+                    }
                     skill.Active(target, target);
                     break;
                 case SkillSpwan.Position:
 
                     break;
+                case SkillSpwan.Trace:
+                    Debug.Log("추적형");
+                    skill.Active(spwanposi, target);
+                    break;
+
             }
             //e.GetComponent<SkillObject>().Active()
             /*

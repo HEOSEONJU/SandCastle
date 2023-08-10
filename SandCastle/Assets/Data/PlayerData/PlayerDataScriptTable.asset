@@ -26,14 +26,6 @@ MonoBehaviour:
     - id: character000003
       level: 1
       breaKLim: 1
-    fightCharIds:
-    - id: character000001
-      level: 1
-      breaKLim: 1
-    - id: character000002
-      level: 1
-      breaKLim: 1
-    - id: character000003
-      level: 1
-      breaKLim: 1
+    fightCharIds: character000001
+    CharUnlock: 010000
     StageClear: 010000000200000002000000
