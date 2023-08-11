@@ -12,7 +12,7 @@ namespace Skill
         [SerializeField]
         CircleCollider2D circleCollider;
         
-        public override void ObjectMove(float duration, float speed,Vector3 direction , bool fix=false)
+        public override void ObjectMove(float duration, float speed,Vector3 direction )
         {
             transform.GetComponent<Animator>().SetTrigger("Skill");
             if (fix == false)

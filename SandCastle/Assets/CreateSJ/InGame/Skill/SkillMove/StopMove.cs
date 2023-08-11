@@ -7,7 +7,7 @@ public class StopMove : SkillMove
 {
 
     Collider2D _collider;
-    public override void ObjectMove(float duration, float speed, Vector3 direction , bool fix = false)
+    public override void ObjectMove(float duration, float speed, Vector3 direction)
     {
         transform.GetComponent<Animator>().SetTrigger("Skill");
         TryGetComponent<Collider2D>(out _collider);

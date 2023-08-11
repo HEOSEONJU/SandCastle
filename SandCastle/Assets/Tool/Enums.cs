@@ -133,7 +133,8 @@ namespace SkillEnums
     }
     public enum BuffType
     {
-        exp
+        Exp,
+         None,
 
 
     }

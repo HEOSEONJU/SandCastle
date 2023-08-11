@@ -8,9 +8,11 @@ namespace Skill
 {
     public abstract class SkillMove : MonoBehaviour
     {
-
+        [SerializeField]
+        
+        protected bool fix;
         protected IEnumerator moveCoroutine;
-        public abstract void ObjectMove(float duration, float speed,Vector3 direction, bool fix=false);
+        public abstract void ObjectMove(float duration, float speed,Vector3 direction);
 
 
 

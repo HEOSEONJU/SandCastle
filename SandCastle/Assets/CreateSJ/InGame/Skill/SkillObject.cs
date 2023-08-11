@@ -46,9 +46,7 @@ namespace Skill
             get { return skillData; }
         }
 
-        [Header("회전하지않고 고정된 스킬")]
-        [SerializeField]
-        bool fix;
+
         
 
         IEnumerator DestoryTime()
@@ -177,7 +175,7 @@ namespace Skill
                 direction = target.position - spwan.position;
             }
             
-            moveFunction.ObjectMove(skillData.Duration, skillData.Speed, direction,fix);
+            moveFunction.ObjectMove(skillData.Duration, skillData.Speed, direction);
             
 
 

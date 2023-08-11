@@ -16,7 +16,7 @@ namespace Skill
         Transform child;
         [SerializeField]
         SkillObject skillObject;
-        public override void ObjectMove(float duration, float speed, Vector3 direction, bool fix = false)
+        public override void ObjectMove(float duration, float speed, Vector3 direction)
         {
             
 

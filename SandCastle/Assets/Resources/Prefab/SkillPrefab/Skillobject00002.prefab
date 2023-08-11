@@ -61,10 +61,10 @@ MonoBehaviour:
     damageDelay: 0
     bulletCount: 0
     delay: 0
+    value: 0
+    type: 0
   skillobjecttable: {fileID: 11400000, guid: d35d85fd3fe091d40ab48c3318ac6037, type: 2}
-  pattern: 1
   attackList: []
-  fix: 1
 --- !u!212 &5154044441680759181
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -166,4 +166,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b5598461ff0b46bc7b3358a2fa786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fix: 1
   circleCollider: {fileID: 0}

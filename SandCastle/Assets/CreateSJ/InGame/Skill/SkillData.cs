@@ -170,8 +170,13 @@ namespace Skill
             switch (skillTable.FindString(key, "buffType"))
             {
                 case "exp":
-                    type = BuffType.exp;
+                    type = BuffType.Exp;
                     break;
+
+                default:
+                    type = BuffType.None;
+                    break;
+
             }
 
         }
