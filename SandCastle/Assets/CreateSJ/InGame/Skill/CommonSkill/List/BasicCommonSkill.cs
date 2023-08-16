@@ -33,6 +33,7 @@ namespace Skill
         [SerializeField]
         protected InGameSkill skill;
         WaitForSeconds delayValue;
+        
 
         public string SkillName
         {
@@ -105,7 +106,7 @@ namespace Skill
         {
             while(true)
             {
-                Effect();
+                Effect(skillData.FireDelay);
                 
 
                 yield return delayValue;
@@ -115,7 +116,7 @@ namespace Skill
             
         }
         
-        protected virtual void  Effect()
+        protected virtual void  Effect(float delay)
         {
             Debug.Log("∞°ªÛ¿Ã∆Â∆Æ");
         }

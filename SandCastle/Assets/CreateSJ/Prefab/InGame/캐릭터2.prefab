@@ -448,7 +448,6 @@ MonoBehaviour:
   baseHp: 0
   maxHp: 0
   moveSpeed: 0
-  animationSpeed: 0
   baseDamage: 0
   gradeDamage: 0
   giveDamage: 0
@@ -461,7 +460,6 @@ MonoBehaviour:
   CharcaterImage: 
   tree: 
   water: 
-  localKeyName: 
   search: {fileID: 6853689654277604501}
   gradeHp: 0
   baseCRP: 0.05
@@ -541,6 +539,14 @@ MonoBehaviour:
   skillPrefab: {fileID: 0}
   spwanposi: {fileID: 6853689654655104090}
   poolingParent: {fileID: 0}
+  skilInitXrange:
+  - -6
+  - -4
+  - -2
+  - 0
+  - 2
+  - 4
+  - 6
 --- !u!195 &2816115899133929167
 NavMeshAgent:
   m_ObjectHideFlags: 0

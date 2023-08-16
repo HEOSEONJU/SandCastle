@@ -4,6 +4,8 @@ using SkillEnums;
 
 using System.Linq;
 using Skill;
+using System.Collections.Generic;
+
 namespace InGame
 {
     public class InGameSkill : MonoBehaviour
@@ -108,7 +110,7 @@ namespace InGame
                     {
                         return;
                     }
-                    Debug.Log("스킬생성위치");
+                    
                     skill.Active(spwanposi, target);
                     break;
                 case SkillSpwan.Target:
@@ -120,10 +122,13 @@ namespace InGame
                     skill.Active(target, target);
                     break;
                 case SkillSpwan.Position:
+                    Debug.Log("위치생성형");
+                    skill.transform.position = new Vector3(transform.position.x, transform.position.y+10, 0);
 
+                    skill.Active(skill.transform, target);
                     break;
                 case SkillSpwan.Trace:
-                    Debug.Log("추적형");
+                    
                     skill.Active(spwanposi, target);
                     break;
 

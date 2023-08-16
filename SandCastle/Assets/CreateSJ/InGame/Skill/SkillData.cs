@@ -5,7 +5,7 @@ using UnityEngine;
 using SkillEnums;
 using System;
 using Google.GData.Extensions;
-
+using System.Linq;
 
 namespace Skill
 {
@@ -52,6 +52,11 @@ namespace Skill
         [SerializeField]
         BuffType type;
 
+
+        [SerializeField]
+        int multiple;
+        [SerializeField]
+        float fireDelay;
         public string SkillObjectKey
         {
             get { return skillObjectKey; }
@@ -109,6 +114,14 @@ namespace Skill
         {
             get { return type; }
         }
+        public float FireDelay
+        {
+            get { return fireDelay; }
+        }
+        public int Multiple
+        {
+            get { return multiple; }
+        }
 
 
         public void InitData(string key, ObjectTable skillTable)
@@ -129,6 +142,8 @@ namespace Skill
                     break;
                 case "Position":
                     spwan = SkillSpwan.Position;
+                    
+                    
                     break;
                 case "Trace":
                     spwan = SkillSpwan.Trace;
@@ -201,6 +216,8 @@ namespace Skill
             bulletCount = skillTable.FindInt(key, "bulletCount");
             size = skillTable.FindInt(key, "sizeUp");
             value = skillTable.Findfloat(key, "value");
+            fireDelay = skillTable.Findfloat(key, "fireDelay");
+            multiple = skillTable.FindInt(key, "Multiple");
         }
         public SkillData Clone()
         {

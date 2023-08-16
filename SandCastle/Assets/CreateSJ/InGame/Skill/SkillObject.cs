@@ -169,6 +169,9 @@ namespace Skill
         {
             transform.localScale = new Vector3(SkillData.Size, SkillData.Size, 1);
             transform.position = spwan.position;
+
+
+
             Vector3 direction = Vector3.zero;
             if (target !=null)
             {
