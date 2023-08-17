@@ -43,7 +43,24 @@ namespace InGame
         [SerializeField]
         CircleCollider2D expRange;
 
-        
+        [SerializeField]
+        bool infitiny = false;
+        [SerializeField]
+        float infinityTime = 0;
+        [SerializeField]
+        SpriteRenderer mainChar;
+
+        public bool Infitiny
+        {
+            get 
+            {
+                if(animator.GetBool("Infinity")|| infitiny)
+                {
+                    return true;
+                }
+                return false; 
+            }
+        }
 
         public bool IsAction
         {
@@ -62,7 +79,7 @@ namespace InGame
         {
             get { return attack; }
         }
-        [SerializeField]
+        
         public InGame_Status InGameStatus
         {
             get{ return status; }
@@ -128,7 +145,10 @@ namespace InGame
 
             //하베스트인벤토리
         }
-        
+        public void SettingInfinity(float time)
+        {
+            infinityTime=time;
+        }
 
         
         public void SettingAttack(float attackspped,float dspeed,float ddamage)
@@ -170,6 +190,23 @@ namespace InGame
             //harvest.TargetHarvest();
             IsAction = false;
         }
+
+        public void Damaged(int damage)
+        {
+            InGameStatus.CurrentHp = -1*damage;
+            mainChar.color = Color.red;
+            infitiny = true;
+            StartCoroutine(InfinityCorountine());
+        }
+
+        IEnumerator InfinityCorountine()
+        {
+            Debug.Log(infinityTime + "만큼 기다림");
+            yield return new WaitForSeconds(infinityTime);
+            mainChar.color = Color.white;
+            infitiny = false;
+        }
+
 
 
 

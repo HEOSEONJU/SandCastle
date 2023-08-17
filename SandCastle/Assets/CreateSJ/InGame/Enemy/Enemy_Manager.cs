@@ -105,6 +105,10 @@ namespace Enemy
             {
                 if(hit.collider.transform.TryGetComponent<InGame_Char>(out InGame_Char player))
                 {
+                    if(player.Infitiny==false)
+                    {
+                        player.Damaged(enemyStatus.Attackpoint);
+                    }
                     //Debug.Log(player.name);
                     break;
                 }

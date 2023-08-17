@@ -134,6 +134,8 @@ namespace SkillEnums
     public enum BuffType
     {
         Exp,
+        Hp,
+        Regen,
          None,
 
 

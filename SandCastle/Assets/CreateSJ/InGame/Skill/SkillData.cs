@@ -187,6 +187,12 @@ namespace Skill
                 case "exp":
                     type = BuffType.Exp;
                     break;
+                case "hp":
+                    type = BuffType.Hp;
+                    break;
+                case "regen":
+                    type = BuffType.Regen;
+                    break;
 
                 default:
                     type = BuffType.None;

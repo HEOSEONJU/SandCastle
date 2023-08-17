@@ -4,6 +4,7 @@ using InGame;
 using SkillEnums;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Skill
@@ -65,6 +66,8 @@ namespace Skill
             }
             else
             {
+                skillList.Remove(temp);
+                skillList.Add(temp);
                 temp.SkillLevelUp(skillTable);
                 
 
@@ -91,9 +94,10 @@ namespace Skill
 
         public void ApplyBuff(InGame_Char igc)
         {
+            skillList.Last().ApplyBuff(igc);
             foreach (BasicCommonSkill skill in skillList)
             {
-                skill.ApplyBuff(igc);
+                //skill.ApplyBuff(igc);
 
             }
         }

@@ -414,6 +414,9 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6853689653900274194}
   state: 0
   expRange: {fileID: 2598152353813708235}
+  infitiny: 0
+  infinityTime: 0
+  mainChar: {fileID: 6853689653900274194}
 --- !u!114 &6853689654655104094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,6 +473,7 @@ MonoBehaviour:
   exp: 0
   needExp: []
   baseExpRange: 0
+  regen: 0
 --- !u!58 &6853689654655104093
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -539,14 +543,6 @@ MonoBehaviour:
   skillPrefab: {fileID: 0}
   spwanposi: {fileID: 6853689654655104090}
   poolingParent: {fileID: 0}
-  skilInitXrange:
-  - -6
-  - -4
-  - -2
-  - 0
-  - 2
-  - 4
-  - 6
 --- !u!195 &2816115899133929167
 NavMeshAgent:
   m_ObjectHideFlags: 0

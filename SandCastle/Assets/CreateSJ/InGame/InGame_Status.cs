@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -80,6 +81,10 @@ namespace InGame
 
         [SerializeField]
         float baseExpRange;
+        [SerializeField]
+        int regen = 0;
+        IEnumerator regenCoroutine;
+
         TextMeshProUGUI levelText;
         Slider hpGage;
         Slider expGage;
@@ -89,8 +94,23 @@ namespace InGame
             get { return currentHp; }
             set 
             {
-                hpGage.value = value / maxHp;
-                currentHp = value; 
+                currentHp += value;
+                if (maxHp < currentHp)
+                {
+                    currentHp = maxHp;
+                }
+                hpGage.value = currentHp*1f / maxHp;
+                
+            }
+        }
+        public int MaxHP
+        {
+            get { return maxHp; }
+            set
+            {
+                maxHp += value;
+                CurrentHp = value;
+                
             }
         }
         public float EXP
@@ -175,7 +195,18 @@ namespace InGame
                     return false;
             }
         }
-        
+        public int Regen
+        {
+            set 
+            {    regen = value; 
+                if(regenCoroutine==null)
+                {
+                    regenCoroutine = RegenSystem();
+                    StartCoroutine(regenCoroutine);
+                }
+            }
+            
+        }
 
 
         public void InputUI(List<Slider> sliders,TextMeshProUGUI leveltext)
@@ -202,6 +233,7 @@ namespace InGame
             CurrentMana = startmana;
             
             baseHp  = maxHp = maxhp;
+            currentHp = 0;
             CurrentHp = maxhp;
             gradeHp = gradeDamage = 0; gradeCRP = 0f;
             baseCRP = crp;
@@ -272,6 +304,20 @@ namespace InGame
         {
             gradeCRP = grade;
             Calculation();
+        }
+
+        IEnumerator RegenSystem()
+        {
+            WaitForSeconds delay = new WaitForSeconds(5);
+            while(true)
+            {
+                
+
+                yield return delay;
+                Debug.Log("È¸º¹"+regen+Time.deltaTime);
+                CurrentHp = regen;
+            }
+
         }
     }
 }

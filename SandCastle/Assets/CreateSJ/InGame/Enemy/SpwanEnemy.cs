@@ -65,8 +65,9 @@ namespace Enemy
                 float movespeed = enemyTable.Findfloat(key, "moveSpeed");
                 float hp = enemyTable.Findfloat(key, "hp");
                 float exp = enemyTable.Findfloat(key, "exp");
+                int ap = enemyTable.FindInt(key, "ap");
                 movespeed *= defaultspeed;
-                prefabs.Last().GetComponent<Enemy_Manager>().EnemyStatus.Init(hp, movespeed, exp);
+                prefabs.Last().GetComponent<Enemy_Manager>().EnemyStatus.Init(hp, movespeed, exp, ap);
             }
         }
 
@@ -129,3 +130,4 @@ namespace Enemy
 
     }
 }
+

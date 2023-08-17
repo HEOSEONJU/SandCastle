@@ -85,9 +85,15 @@ namespace Skill
             Debug.Log("어플리적용" + name);
             switch (skillData.BuffType)
             {
-                case BuffType:
+                case BuffType.Exp:
                     Debug.Log("경험치버프적용");
                     igc.ExpRange = skillData.Value;
+                    break;
+                case BuffType.Hp:
+                    igc.InGameStatus.MaxHP = Convert.ToInt32( skillData.Value);
+                    break;
+                case BuffType.Regen:
+                    igc.InGameStatus.Regen = Convert.ToInt32(skillData.Value);
                     break;
             }
 

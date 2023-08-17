@@ -92,7 +92,7 @@ namespace InGame
 
 
 
-
+            charobject.SettingInfinity(defineTable.Findfloat("Infinity", "value"));
             charobject.InitChar(PlayerDataManager.Instacne.Data.fightCharIds, level, inventory, sensor, skillPoolingParent[0], mainBulletPoolingParent, skillTable, charTable.FindString(PlayerDataManager.Instacne.Data.fightCharIds, "skill"), masterController.transform, exprange); 
             haveSkillList.InitSkill(charobject.InGameSkill);
             masterController.InitMasterController(charobject, inGameCharInit);
