@@ -18,8 +18,6 @@ namespace InGame
 
 
         [SerializeField]
-        GameObject map;
-        [SerializeField]
         InGame_Char charPrefab;
         [SerializeField]
         InGame_Char charPrefab2;
@@ -52,6 +50,9 @@ namespace InGame
         [SerializeField]
         
         ReSpwanSystem reSpwanSystem;
+        [SerializeField]
+
+        BossSpwanSystem bossSpwanSystem;
         [SerializeField]
         HaveSkillList haveSkillList;
 
@@ -97,10 +98,16 @@ namespace InGame
             haveSkillList.InitSkill(charobject.InGameSkill);
             masterController.InitMasterController(charobject, inGameCharInit);
             inventory.InitInventroy(0, 0, 0);
-            float delay = defineTable.Findfloat("waveDelay", "value");//기본라운드 대기시간
+            int delay = defineTable.FindInt("waveDelay", "value");//기본라운드 대기시간
             float defaultspeed = defineTable.Findfloat("monsterdefaultspeed", "value");//몬스터기본속도
             reSpwanSystem.WaveInputStart(stagename, delay, defaultspeed, masterController.InGameChar.transform);
 
+            List<int> bossdelay = new List<int>();
+            bossdelay.Add(defineTable.FindInt("firstBoss", "value"));
+            bossdelay.Add(defineTable.FindInt("secondBoss", "value"));
+            bossdelay.Add(defineTable.FindInt("thirdBoss", "value"));
+            bossdelay.Add(defineTable.FindInt("lastBoss", "value"));
+            bossSpwanSystem.BossInputStart(stagename, delay, defaultspeed, masterController.InGameChar.transform, bossdelay);
 
 
         }

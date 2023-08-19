@@ -23,7 +23,6 @@ namespace Skill
                 
                 if (skill.SettingTarget(skillData))
                 {
-                    Debug.Log(skill.Target);
                     ObjectPooling.Instance.GetObject(skillEffectPrefab.gameObject, transform).TryGetComponent<SkillObject>(out SkillObject bulletobject);
                     bulletobject.Init(skillData);
 
@@ -31,7 +30,6 @@ namespace Skill
 
                     for(int j= bulletobject.transform.childCount; j< skillData.Multiple;j++)
                     {
-                        Debug.Log("복사생성번호" +j);
                         var e = Instantiate(bulletobject.transform.GetChild(0).gameObject, bulletobject.transform);
                         int t = j - 1;
                         float range = Mathf.Pow(-1, t) * 1 * ((t / 2)+1);

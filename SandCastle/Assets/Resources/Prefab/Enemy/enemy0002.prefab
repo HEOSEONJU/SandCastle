@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1615358515289129758}
   - component: {fileID: 1615358515289129759}
   m_Layer: 9
-  m_Name: enemy_runner0001
+  m_Name: enemy0002
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 90b3b296e309d224993bca6996e2e05e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8113554a16af2245a2448f2b57d9606, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -216,14 +216,6 @@ PrefabInstance:
       value: "\uCCB4\uB825\uBC14\uCE94\uBC84\uC2A4"
       objectReference: {fileID: 0}
     - target: {fileID: 6026612668935462719, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6026612668935462719, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6026612668935462719, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -262,14 +254,6 @@ PrefabInstance:
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0.0219
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7108133721928400976, guid: b011d7a233b348147ad248205ffe1cb0, type: 3}
       propertyPath: m_LocalPosition.x

@@ -36,6 +36,7 @@ public class ObjectPooling : MonoBehaviour
             if(parent.GetChild(i).gameObject.activeSelf is false)
             {
                 var temp = parent.GetChild(i).gameObject;
+
                 temp.SetActive(true);
                 return temp ;
                 

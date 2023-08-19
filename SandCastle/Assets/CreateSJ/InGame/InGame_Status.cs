@@ -173,7 +173,7 @@ namespace InGame
             get { return currentMana; }
             set 
             {
-                Debug.Log("마나통" + value);
+                
                 manaGage.value = value*1f/ maxMana;
                 currentMana = value; 
             }
@@ -298,7 +298,7 @@ namespace InGame
 
             gradeDamage = grade;
             Calculation();
-            Debug.Log("실적용");
+            
         }
         public void LevelUpCRT(float grade)
         {
@@ -314,7 +314,7 @@ namespace InGame
                 
 
                 yield return delay;
-                Debug.Log("회복"+regen+Time.deltaTime);
+                
                 CurrentHp = regen;
             }
 

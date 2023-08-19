@@ -14,16 +14,16 @@ namespace Enemy
 
 
         [SerializeField]
-        InGame.FSM fsm;
+        protected InGame.FSM fsm;
         [SerializeField]
         protected EnemyState state;
 
         [SerializeField]
-        Enemy_Move enemyMove;
+         Enemy_Move enemyMove;
         [SerializeField]
-        Enemy_Status enemyStatus;
+         Enemy_Status enemyStatus;
         [SerializeField]
-        Slider hpSlider;
+        protected Slider hpSlider;
 
         public Enemy_Move EnemyMove
         { get { return enemyMove; } 
@@ -35,21 +35,21 @@ namespace Enemy
 
 
         [SerializeField]
-        float distance=0.1f;
+        protected float distance=0.1f;
         
 
         public void Init(Transform player,float multiply)//FSM 캐릭터위치 입력
         {
-            enemyMove.Target=player;
-            enemyStatus.ResetHP(multiply);
+            EnemyMove.Target=player;
+            EnemyStatus.ResetHP(multiply);
             fsm = new FSM(new EnemyMoveState(this));
             ChangeState(EnemyState.Idle);
             hpSlider.value = enemyStatus.HPPercentage;
         }
         public void Hit(float value)//공격받음
         {
-            enemyStatus.Hp -= value;
-            hpSlider.value = enemyStatus.HPPercentage;
+            EnemyStatus.Hp -= value;
+            hpSlider.value = EnemyStatus.HPPercentage;
             InGameEvent.Instance.InitDamage(value, transform.position);
         }
 
@@ -57,18 +57,35 @@ namespace Enemy
         {
 
             
-            InGameEvent.Instance.EXP(transform.position, enemyStatus.EXP);
+            InGameEvent.Instance.EXP(transform.position, EnemyStatus.EXP);
             Disable();
             
         }
         public void Disable()
         {
-            enemyMove.StopMove();
+            EnemyMove.StopMove();
+
+            if(transform.parent.GetComponent<SpwanEnemy>().Timer<=0)
+            {
+                for(int i=0;i<transform.parent.childCount;i++) 
+                {
+                    Transform t=transform.parent.GetChild(i);
+                    if(t.gameObject.activeSelf==true &&t != transform)
+                    {
+                        gameObject.SetActive(false);
+                    }
+                }
+
+                Destroy(transform.parent.gameObject);
+            }
+
             gameObject.SetActive(false);
+            
+
         }
-        public void DeleteDistance()
+        public virtual void DeleteDistance()
         {
-            if(Vector3.Distance(enemyMove.Target.position,transform.position)>=30)
+            if(Vector3.Distance(EnemyMove.Target.position,transform.position)>=30)
             {
                 Disable();
             }
@@ -89,7 +106,7 @@ namespace Enemy
         public void PlayerMeleeAttack()//플레이어 닿았을때공격
         {
 
-            if (enemyStatus.Hp <= 0)
+            if (EnemyStatus.Hp <= 0)
             {
                 return;
             }
@@ -107,7 +124,7 @@ namespace Enemy
                 {
                     if(player.Infitiny==false)
                     {
-                        player.Damaged(enemyStatus.Attackpoint);
+                        player.Damaged(EnemyStatus.Attackpoint);
                     }
                     //Debug.Log(player.name);
                     break;
@@ -121,19 +138,19 @@ namespace Enemy
 
 
 
-        void Update()
+        protected virtual void Update()
         {
 
             switch (state)
             {
 
                 case EnemyState.Idle:
-                    if (enemyMove.Distance() > distance)
+                    if (EnemyMove.Distance() > distance)
                     {
                         ChangeState(EnemyState.Move);
 
                     }
-                    if (enemyStatus.Hp <= 0)
+                    if (EnemyStatus.Hp <= 0)
                     {
                         ChangeState(EnemyState.Death);
 
@@ -150,13 +167,13 @@ namespace Enemy
 
                     break;
                 case EnemyState.Move:
-                    if(enemyMove.Distance()< distance)
+                    if(EnemyMove.Distance()< distance)
                     {
                         ChangeState(EnemyState.Idle);
                         
                         
                     }
-                    if (enemyStatus.Hp <= 0)
+                    if (EnemyStatus.Hp <= 0)
                     {
                         ChangeState(EnemyState.Death);
 
@@ -180,7 +197,7 @@ namespace Enemy
 
 
 
-        void ChangeState(EnemyState next)
+        protected void ChangeState(EnemyState next)
         {
             //Debug.Log("상태변경"+next);
             state = next;

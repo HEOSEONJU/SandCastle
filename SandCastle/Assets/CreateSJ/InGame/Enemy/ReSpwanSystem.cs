@@ -3,6 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemy
@@ -10,40 +12,39 @@ namespace Enemy
     public class ReSpwanSystem : MonoBehaviour
     {
         [SerializeField]
-        Transform player;
+        protected Transform player;
 
         [SerializeField]
-        List<Transform> childs;
+        protected List<Transform> childs;
 
         [SerializeField]
-        Transform pooling;
+        protected Transform pooling;
 
 
         [SerializeField]
-        ObjectTable roundTable;
+        protected ObjectTable roundTable;
         [SerializeField]
-        ObjectTable waveSpwanTable;
+        protected ObjectTable waveSpwanTable;
 
 
 
-        int currentWaveCount;
-        float waitTime = 10f;
+        
+        protected int waitTime = 10;
 
-        List<SpwanEnemy> spwanList;
+        protected List<SpwanEnemy> spwanList;
         
 
-        IEnumerator WaveCorountine;
         [SerializeField]
-        GameObject spwanObject;
+        protected GameObject spwanObject;
         [SerializeField]
-        Transform spwanParent;
+        protected Transform spwanParent;
 
 
-        List<float> hpMultiply;
-        int gatecount = 0;
+        protected List<float> hpMultiply;
+        
         public Transform ReturnGate()
         {
-            if(gatecount==childs.Count) { gatecount = 0; }
+            
             
             return childs[UnityEngine.Random.Range(0, childs.Count)];
 
@@ -57,32 +58,42 @@ namespace Enemy
 
 
 
-        public void WaveInputStart(string stagename, float delay, float defaultspeed,Transform playertransform)
+        public virtual void WaveInputStart(string stagename, int delay, float defaultspeed,Transform playertransform)
         {
             player = playertransform;
-            childs = new List<Transform>();
+            waitTime = delay;
+            FindChild();
+            InputMultiply(stagename);
+            InputWaveGroup(stagename, defaultspeed);
+            PlayNextWave();
             
+            
+        }
+        protected void FindChild()
+        {
+            childs = new List<Transform>();
+
             for (int i = 0; i < transform.childCount; i++)
             {
-                
-                childs.Add(transform.GetChild(i));
-                
-            }
 
-            hpMultiply=new List<float>();
-            
+                childs.Add(transform.GetChild(i));
+
+            }
+        }
+
+        protected void InputMultiply(string stagename)
+        {
+            hpMultiply = new List<float>();
+
             string[] templist = roundTable.FindString(stagename, "hpMultiply").Split(",");
 
-            for(int i=0; i < templist.Length;i++)
+            for (int i = 0; i < templist.Length; i++)
             {
-                hpMultiply.Add (float.Parse(templist[i]));
+                hpMultiply.Add(float.Parse(templist[i]));
             }
-
-            
-
-
-            currentWaveCount = 0;
-            waitTime = delay;
+        }
+        protected void InputWaveGroup(string stagename, float defaultspeed)
+        {
             string waveGroup = roundTable.FindString(stagename, "waveGroup");
             string[] WaveList = waveGroup.Split(',');
             spwanList = new List<SpwanEnemy>();
@@ -91,56 +102,45 @@ namespace Enemy
 
                 Debug.Log(waveSpwanTable.FindString(wavespawnkey, "enemyKey"));
                 string[] enemynames = waveSpwanTable.FindString(wavespawnkey, "enemyKey").Split(",");
-                
+
 
                 string[] enemycount = waveSpwanTable.FindString(wavespawnkey, "count").Split(",");
-                List<int> counts=new List<int>();
+                List<int> counts = new List<int>();
 
-                foreach(string count in enemycount)
+                foreach (string count in enemycount)
                 {
                     counts.Add(Convert.ToInt32(count));
                 }
-
                 float regentimer = waveSpwanTable.Findfloat(wavespawnkey, "regenTimer");
-                Debug.Log("소환주기"+regentimer);
                 Instantiate(spwanObject, spwanParent).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-                spwan.Init(enemynames, this, pooling, defaultspeed, counts, regentimer);
+                spwan.Init(enemynames, this, pooling, defaultspeed, counts, regentimer, waitTime);
                 spwanList.Add(spwan);
-
-
             }
-
-            spwanList[currentWaveCount].Active(hpMultiply[currentWaveCount++]);
-            WaveCorountine = WaitWaveTime();
         }
+
+
 
 
         public void PlayNextWave()
         {
-            WaveCorountine = WaitWaveTime();
-
-            
-
-            
-            StartCoroutine(WaveCorountine);
-
-
-        }
-        IEnumerator WaitWaveTime()
-        {
-            Debug.Log(currentWaveCount + "/" + spwanList.Count);
-            if (currentWaveCount == spwanList.Count)
+            if (spwanList.Count == 0)
             {
-                yield break;
+                //게임끝
+                return;
             }
-            yield return new WaitForSeconds(waitTime);
+
+            spwanList.First().Active(hpMultiply.First());
+            spwanList.Remove(spwanList.First());
+            hpMultiply.Remove(hpMultiply.First());
 
 
-            spwanList[currentWaveCount].Active(currentWaveCount++);
             
 
 
+
+
         }
+
     }
 
 

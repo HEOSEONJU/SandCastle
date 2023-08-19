@@ -201,7 +201,6 @@ namespace InGame
 
         IEnumerator InfinityCorountine()
         {
-            Debug.Log(infinityTime + "만큼 기다림");
             yield return new WaitForSeconds(infinityTime);
             mainChar.color = Color.white;
             infitiny = false;

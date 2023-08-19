@@ -36,7 +36,7 @@ public class TopDownMove : SkillMove
         }
         IEnumerator Move(float duration, float speed)
         {
-            Debug.Log("탑다운작동");
+            
             while (duration > 0)
             {
                 if (!fix)

@@ -40,7 +40,6 @@ namespace Skill
             
             
 
-            Debug.Log("스핀작동");
             while (duration > 0)
             {
                 duration -= Time.deltaTime;
@@ -53,7 +52,6 @@ namespace Skill
         void Rotating()
         {
             int index = FindIndex(); ;
-            Debug.Log(transform.GetComponentInParent<BasicCommonSkill>().SkillLevel + "패턴");
             transform.rotation = Quaternion.identity;
             switch (transform.GetComponentInParent<BasicCommonSkill>().SkillLevel)
             {
