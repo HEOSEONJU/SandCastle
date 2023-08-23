@@ -12,8 +12,8 @@ namespace Enemy
     public class Boss_Manager : Enemy_Manager
     {
 
-
-
+        [SerializeField]
+        List<BossBaiscSkillObject> bbso;
         public override void DeleteDistance()
         {
             if (Vector3.Distance(EnemyMove.Target.position, transform.position) >= 30)
@@ -22,6 +22,27 @@ namespace Enemy
             }
         }
 
+        public void InputSkill(List<BossBaiscSkillObject> skills)
+        {
+            if(skills==null)
+            {
+                Debug.Log("¿Ö³Î");
+            }
+            bbso = skills;
+        }
+
+
+        public void ActiveSKill()
+        {
+            Debug.Log(bbso == null);
+            if (bbso != null)
+            {
+                foreach (BossBaiscSkillObject bb in bbso)
+                {
+                    bb.Active();
+                }
+            }
+        }
 
         protected override void Update()
         {

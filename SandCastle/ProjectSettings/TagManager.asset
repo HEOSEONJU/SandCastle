@@ -12,6 +12,7 @@ TagManager:
   - MapTrace
   - Map
   - ExpSearch
+  - BossAttackRange
   layers:
   - Default
   - TransparentFX

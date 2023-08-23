@@ -38,7 +38,7 @@ namespace Enemy
         protected float distance=0.1f;
         
 
-        public void Init(Transform player,float multiply)//FSM 캐릭터위치 입력
+        public  void Init(Transform player,float multiply)//FSM 캐릭터위치 입력
         {
             EnemyMove.Target=player;
             EnemyStatus.ResetHP(multiply);

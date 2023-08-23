@@ -11,9 +11,11 @@ namespace Enemy
 {
     public class BossSpwanSystem : ReSpwanSystem
     {
+        
         [SerializeField]
-        protected ObjectTable bossTable;
- 
+        protected ObjectTable bossSpwanTable;
+        [SerializeField]
+        protected ObjectTable bossSkillTable;
 
 
         public void BossInputStart(string stagename, int delay, float defaultspeed, Transform playertransform, List<int> bosstimer)
@@ -30,10 +32,13 @@ namespace Enemy
             for (int i=0;i<4;i++) 
             {
 
-                string enemynames = bossTable.FindString(bossList[i], "enemyKey");
-                int enemycount = bossTable.FindInt(bossList[i], "count");
+                string enemynames = bossSpwanTable.FindString(bossList[i], "enemyKey");
+                int enemycount = bossSpwanTable.FindInt(bossList[i], "count");
                 Instantiate(spwanObject, spwanParent).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-                spwan.InitBoss(enemynames, this, pooling, defaultspeed, enemycount, bosstimer[i], hpMultiply[i]);
+                spwan.InitBoss(enemynames, this, pooling, defaultspeed, enemycount, bosstimer[i], hpMultiply[i], bossSkillTable);
+                
+
+
                 spwan.gameObject.name = "보스스폰" + enemynames;
             }
 

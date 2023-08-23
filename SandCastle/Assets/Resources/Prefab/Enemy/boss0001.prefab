@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615358515289129757}
   - component: {fileID: 1615358515289129756}
-  - component: {fileID: 1615358515289129747}
+  - component: {fileID: 8338187754377705348}
   - component: {fileID: 1615358515289129746}
   - component: {fileID: 1615358515289129745}
   - component: {fileID: 1615358515289129758}
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615358515289129744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c1ffc21a33daa68418ecbf9693581b15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1615358515289129747
+--- !u!114 &8338187754377705348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1615358515289129744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eafd178aaf162442b34096716e23fec, type: 3}
+  m_Script: {fileID: 11500000, guid: f18efca1f2b57a94081632f2f6174414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f759b309fdbeeb6429f931071b8bcdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemymanager: {fileID: 1615358515289129747}
+  enemymanager: {fileID: 8338187754377705348}
   target: {fileID: 0}
   rigid: {fileID: 1615358515289129759}
   active: 0
@@ -139,11 +139,7 @@ MonoBehaviour:
   maxHp: 0
   hp: 80
   moveSpeed: 0.5
-  attackSpeed: 0
-  attackRange: 0
-  resistanceType:
-  - all
-  resistanceValue: 0.5
+  attackpoint: 0
   exp: 0
 --- !u!61 &1615358515289129758
 BoxCollider2D:
