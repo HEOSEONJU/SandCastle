@@ -1,4 +1,6 @@
 using InGame;
+using MainUI;
+using Player;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,7 +43,8 @@ namespace Enemy
 
 
         protected List<float> hpMultiply;
-        
+        protected List<float> dmgMultiply;
+
         public Transform ReturnGate()
         {
             
@@ -84,12 +87,13 @@ namespace Enemy
         protected void InputMultiply(string stagename)
         {
             hpMultiply = new List<float>();
-
+            dmgMultiply = new List<float>();
             string[] templist = roundTable.FindString(stagename, "hpMultiply").Split(",");
-
+            string[] templistdmg = roundTable.FindString(stagename, "dmgMultiply").Split(",");
             for (int i = 0; i < templist.Length; i++)
             {
                 hpMultiply.Add(float.Parse(templist[i]));
+                dmgMultiply.Add(float.Parse(templistdmg[i]));
             }
         }
         protected void InputWaveGroup(string stagename, float defaultspeed)
@@ -125,16 +129,22 @@ namespace Enemy
         {
             if (spwanList.Count == 0)
             {
-                //°ÔÀÓ³¡
+                
+                PlayerDataManager.Instacne.Data.StageClearFunction(PlayerPrefs.GetInt("Stage"));
+
+                SceneMoveManager.Instance.ImmediatelyChangeScne("MainMenu");
+
                 return;
             }
 
-            spwanList.First().Active(hpMultiply.First());
+            spwanList.First().Active(hpMultiply.First(),dmgMultiply.First());
+            
             spwanList.Remove(spwanList.First());
             hpMultiply.Remove(hpMultiply.First());
+            dmgMultiply.Remove(dmgMultiply.First());
 
 
-            
+
 
 
 

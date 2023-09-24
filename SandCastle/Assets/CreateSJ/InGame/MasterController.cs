@@ -1,10 +1,6 @@
-using Google.GData.Documents;
+
 using InGame;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.U2D;
+
 using UnityEngine;
 
 namespace inGame
@@ -87,7 +83,11 @@ namespace inGame
 
                 case PlayerState.Idle:
 
-                    
+                    if (!inGameChar.Live)
+                    {
+                        ChangeState(PlayerState.Death);
+                        break;
+                    }
                     if (inGameChar.InGameSkill.SettingTarget() && inGameChar.InGameStatus.CanSkill && inGameChar.Sensor.GameObjects.Count > 0)
                     {
     
@@ -105,7 +105,7 @@ namespace inGame
                         break;
 
                     }
-                    //ü�³�������
+                    
 
 
                     break;
@@ -129,6 +129,12 @@ namespace inGame
                     break;
                 case PlayerState.Move:
                     
+                    if(!inGameChar.Live)
+                    {
+                        ChangeState(PlayerState.Death);
+                        break;
+                    }
+
                     if(inGameChar.InGameSkill.SettingTarget() && inGameChar.InGameStatus.CanSkill && inGameChar.Sensor.GameObjects.Count > 0 )
                     {
                         ChangeState(PlayerState.Skill);
@@ -155,7 +161,7 @@ namespace inGame
                         //IGC.transform.rotation = Quaternion.identity;
                         inGameChar.SpriteRenderer.flipX = false;
                     }
-                    //ü�³�������
+                    
 
 
                     break;
@@ -168,9 +174,12 @@ namespace inGame
 
         }
 
+
+
+
         void ChangeState(PlayerState next)
         {
-            //Debug.Log("���º���"+next);
+            
             inGameChar.State = next;
             switch (inGameChar.State)
             {

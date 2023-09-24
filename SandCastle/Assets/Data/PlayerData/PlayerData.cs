@@ -82,6 +82,31 @@ namespace Player
             mud += value;
         }
 
+        public void UnlockChar()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                StageClear[i] = StageState.Unlock;
+            }
+
+
+            
+        }
+        public void StageClearFunction(int i)
+        {
+            if(i==2)
+            {
+                StageClear[i] = StageState.Clerar;
+
+            }
+            else
+            {
+                StageClear[i] = StageState.Clerar;
+                StageClear[i+1] = StageState.Unlock;
+            }
+
+        }
+
     }
 
 

@@ -92,6 +92,12 @@ namespace Skill
                 case BuffType.Hp:
                     igc.InGameStatus.MaxHP = Convert.ToInt32( skillData.Value);
                     break;
+                case BuffType.Heal:
+                    igc.InGameStatus.CurrentHp += igc.InGameStatus.MaxHP / 2;
+                    break;
+                case BuffType.MP:
+                    igc.InGameStatus.CurrentMana = igc.InGameStatus.MaxMana;
+                    break;
                 case BuffType.Regen:
                     igc.InGameStatus.Regen = Convert.ToInt32(skillData.Value);
                     break;

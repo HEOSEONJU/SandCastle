@@ -1,6 +1,7 @@
+using Player;
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,9 @@ namespace MainUI
 
         [SerializeField]
         List<Sprite> stageList;
+
+        [SerializeField]
+        TextMeshProUGUI StageText;
 
         public int StageIndex
         {
@@ -44,7 +48,9 @@ namespace MainUI
             {
                 rightBtn.SetActive(false);
             }
-            
+            StageText.text = "Stage : " + (stageIndex+1);
+
+
         }
 
 
@@ -61,9 +67,15 @@ namespace MainUI
                 if (!rightBtn.activeSelf)
                     rightBtn.SetActive(true);
             }
+            StageText.text = ("Stage : " + (stageIndex + 1));
         }
         public void NextStage()
         {
+            if (PlayerDataManager.Instacne.Data.StageClear[(stageIndex+1)]==StageState.Lock)
+            {
+                return;
+            }
+
             mainImage.sprite = stageList[++stageIndex];
             if (stageIndex == stageList.Count - 1)
             {
@@ -75,6 +87,7 @@ namespace MainUI
                     leftBtn.SetActive(true);
 
             }
+            StageText.text = ("Stage : " + (stageIndex + 1));
         }
 
 

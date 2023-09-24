@@ -60,11 +60,11 @@ namespace Enemy
 
             foreach (string key in enemykey)
             {
-                //Debug.Log("키는"+key);
+                
                 prefabs.Add(Resources.Load<GameObject>("Prefab/Enemy/" + key));
-                Debug.Log(prefabs.Last().gameObject.name);
+                
 
-                //Debug.Log(key + prefabs.Last().name);
+                
                 float movespeed = enemyTable.Findfloat(key, "moveSpeed");
                 float hp = enemyTable.Findfloat(key, "hp");
                 float exp = enemyTable.Findfloat(key, "exp");
@@ -75,18 +75,18 @@ namespace Enemy
         }
 
 
-        public void InitBoss(string enemykey, BossSpwanSystem respwansystem, Transform pooling, float defaultspeed, int counts, float regentimer,float multiply,ObjectTable bossskilltable)
+        public void InitBoss(string enemykey, BossSpwanSystem respwansystem, Transform pooling, float defaultspeed , float regentimer,float multiply,ObjectTable bossskilltable)
         {
             reSpwanSystem = respwansystem;
 
-            this.counts = new List<int>(counts);
+            
 
 
             this.pooling = pooling;
             
             
             prefabs = new List<GameObject>();
-            prefabs.Add(Resources.Load<GameObject>("Prefab/Enemy/" + enemykey));
+            prefabs.Add(Resources.Load<GameObject>("Prefab/Enemy/Boss/" + enemykey));
             float movespeed = enemyTable.Findfloat(enemykey, "moveSpeed");
             float hp = enemyTable.Findfloat(enemykey, "hp");
             float exp = enemyTable.Findfloat(enemykey, "exp");
@@ -100,13 +100,20 @@ namespace Enemy
                 em.EnemyStatus.Init(hp, movespeed, exp, ap);
                 float size = enemyTable.Findfloat(enemykey,"scale");
                 em.transform.localScale = new Vector3(size, size, 1);
+                List<BossBaiscSkillObject> bbso = new List<BossBaiscSkillObject>();
+                if (enemyTable.FindString(enemykey, "skill").Length==0)
+                {
+                    em.InputSkill(bbso, enemyTable.Findfloat(enemykey, "coolTime"));
+                    StartCoroutine(BossSpwan(multiply, regentimer));
+                    return;
+                }
                 string[] bossskills = enemyTable.FindString(enemykey, "skill").Split(",");
                 
-                List<BossBaiscSkillObject> bbso= new List<BossBaiscSkillObject>();
+                
                 foreach(string skillname in bossskills)
                 {
                     var e = Resources.Load<GameObject>("Prefab/SkillPrefab/BossSkill/" + skillname);
-                    Debug.Log(skillname);
+                    
                     
                     int damage = bossskilltable.FindInt(skillname, "damage");
                     
@@ -120,8 +127,9 @@ namespace Enemy
                     bbso.Add(temp);
                     
                 }
-                Debug.Log("갯수" + bbso.Count);
-                em.InputSkill(bbso);
+                
+
+                em.InputSkill(bbso, enemyTable.Findfloat(enemykey, "coolTime"));
 
 
 
@@ -134,10 +142,10 @@ namespace Enemy
 
 
 
-        public void Active(float multiply)
+        public void Active(float multiply,float dmgmultiply)
         {
 
-            StartCoroutine(Spwan(multiply));
+            StartCoroutine(Spwan(multiply, dmgmultiply));
         }
 
 
@@ -146,7 +154,7 @@ namespace Enemy
             yield return new WaitForSeconds(delay);
             
             var a = ObjectPooling.Instance.GetObject(prefabs.First(), this.transform);
-            Debug.Log("생적 이름" + a.name);
+            
             a.transform.position = reSpwanSystem.ReturnGate().position;
             a.TryGetComponent<Boss_Manager>(out Boss_Manager em);
             if (!(em is null))
@@ -156,7 +164,7 @@ namespace Enemy
             }
         }
 
-        IEnumerator Spwan(float multiply)
+        IEnumerator Spwan(float multiply, float dmgmultiply)
         {
             WaitForSeconds time = new WaitForSeconds(regenTimer);
             while (Timer > 0)
@@ -171,16 +179,16 @@ namespace Enemy
                 }
                 for (int i = 0; i < prefabs.Count; i++)
                 {
-                    for (int j = 0; j < counts[i]; j++)
+                    for (int j = 0; j < counts[j]; j++)
                     {
-                        Debug.Log("찾는오브젝트네임" + prefabs[i].name);
+                        
                         var a = ObjectPooling.Instance.GetObject(prefabs[i], this.transform);
-                        Debug.Log("생적 이름" + a.name);
+                        
                         a.transform.position = reSpwanSystem.ReturnGate().position;
                         a.TryGetComponent<Enemy_Manager>(out Enemy_Manager em);
                         if (!(em is null))
                         {
-                            em.Init(reSpwanSystem.Player, multiply);
+                            em.Init(reSpwanSystem.Player, multiply,dmgmultiply);
                         }
                     }
                 }

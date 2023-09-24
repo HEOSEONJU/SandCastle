@@ -17,7 +17,13 @@ namespace Enemy
 
         public override void OnStateEnter()
         {
-            
+            /*
+            if(em is Boss_Manager)
+            {
+                Debug.Log("Çüº¯È¯µÊ");
+                (em as Boss_Manager).StopSkill();
+            }
+            */
             em.Died();
         }
         public override void OnStateUpdate()

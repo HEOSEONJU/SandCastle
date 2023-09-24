@@ -1,3 +1,4 @@
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
@@ -22,10 +23,10 @@ namespace MainUI
         public void MoveScene()
         {
 
-            //PlayerPrefs.SetInt("Stage",stageUI.StageIndex);
-            //int T = PlayerPrefs.GetInt("Stage");
-            string stagename = waveTable.values[stageUI.StageIndex + 1].ToString();
+            PlayerPrefs.SetInt("Stage",stageUI.StageIndex);
             
+            string stagename = waveTable.values[stageUI.StageIndex + 1].ToString();
+            PlayerDataManager.Instacne.Data.fightCharIds = PlayerDataManager.Instacne.Data.havetCharIds[stageUI.StageIndex].id;
             SceneMoveManager.Instance.AsyncChangeScne(waveTable.FindString(stagename, "stageResourceKey"));
 
 

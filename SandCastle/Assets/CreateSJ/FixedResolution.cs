@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class FixedResolution : MonoBehaviour
@@ -8,6 +7,8 @@ public class FixedResolution : MonoBehaviour
     int setWidth = 1440; // 사용자 설정 너비
     [SerializeField]
     int setHeight = 2960; // 사용자 설정 높이
+    [SerializeField]
+    Camera cam;
     private void Start()
         {
             SetResolution(); // 초기에 게임 해상도 고정
@@ -16,9 +17,30 @@ public class FixedResolution : MonoBehaviour
         /* 해상도 설정하는 함수 */
         public void SetResolution()
         {
-            
+        
 
-            int deviceWidth = Screen.width; // 기기 너비 저장
+        // 카메라 컴포넌트의 Viewport Rect
+        Rect rt = cam.rect;
+
+        // 현재 세로 모드 9:16, 반대로 하고 싶으면 16:9를 입력.
+        float scale_height = ((float)Screen.width / Screen.height) / ((float)9 / 16); // (가로 / 세로)
+        float scale_width = 1f / scale_height;
+
+        if (scale_height < 1)
+        {
+            rt.height = scale_height;
+            rt.y = (1f - scale_height) / 2f;
+        }
+        else
+        {
+            rt.width = scale_width;
+            rt.x = (1f - scale_width) / 2f;
+        }
+
+        cam.rect = rt;
+
+        return;
+        int deviceWidth = Screen.width; // 기기 너비 저장
             int deviceHeight = Screen.height; // 기기 높이 저장
 
             Screen.SetResolution(setWidth, (int)(((float)deviceHeight / deviceWidth) * setWidth), true); // SetResolution 함수 제대로 사용하기

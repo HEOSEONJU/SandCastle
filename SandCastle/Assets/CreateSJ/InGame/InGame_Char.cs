@@ -44,6 +44,8 @@ namespace InGame
         CircleCollider2D expRange;
 
         [SerializeField]
+        bool live = true;
+        [SerializeField]
         bool infitiny = false;
         [SerializeField]
         float infinityTime = 0;
@@ -59,6 +61,14 @@ namespace InGame
                     return true;
                 }
                 return false; 
+            }
+        }
+        public bool Live
+        {
+            get
+            {
+                
+                return live;
             }
         }
 
@@ -130,7 +140,7 @@ namespace InGame
         
         public void InitChar(string name,int level,InGame_Inventory inventory,InGameSkillSensor sensor,Transform skillpoolingparent, Transform attackpoolingparent, ObjectTable skilltable, string  skillname, Transform defaultposi,float exprange)
         {
-            
+            live = true;
             state = PlayerState.Idle;
             fsm= new FSM (new IdleState(this));
             this.inventory= inventory;
@@ -194,9 +204,16 @@ namespace InGame
         public void Damaged(int damage)
         {
             InGameStatus.CurrentHp = -1*damage;
-            mainChar.color = Color.red;
-            infitiny = true;
-            StartCoroutine(InfinityCorountine());
+            if (InGameStatus.CurrentHp > 0)
+            {
+                mainChar.color = Color.red;
+                infitiny = true;
+                StartCoroutine(InfinityCorountine());
+            }
+            else
+            {
+                live = false;
+            }
         }
 
         IEnumerator InfinityCorountine()
@@ -206,20 +223,13 @@ namespace InGame
             infitiny = false;
         }
 
-
-
-
-        string HASH= "Scene";
-
-        string OpenObjectName = "전투버툰캔버스";
-        void BackMainScene()
+        public void  DeathAnimation(Animator animator)
         {
-            SceneMoveManager.Instance.ImmediatelyChangeScne("MainMenu");
-            PlayerPrefs.SetString(HASH, OpenObjectName);
-            Debug.Log(PlayerPrefs.GetString(HASH) + "저장한이름");
-            PlayerPrefs.Save();
-
+            animator.SetTrigger("Death");
         }
+
+
+
     }
 
 

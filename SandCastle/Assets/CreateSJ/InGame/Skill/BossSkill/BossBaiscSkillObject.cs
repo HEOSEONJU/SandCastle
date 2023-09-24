@@ -9,16 +9,18 @@ using Unity.VisualScripting;
 public class BossBaiscSkillObject : MonoBehaviour
 {
 
-    
-    
+
+
     float duration;
     float delay;
-    float warnnig;
-    
+    float warnningTime;
+    bool stop;
+
+    bool coolTime = false;
 
     Transform player;
 
-    
+
 
     [SerializeField]
     GameObject warnning;
@@ -30,28 +32,50 @@ public class BossBaiscSkillObject : MonoBehaviour
     List<Transform> startPoint;
     [SerializeField]
     List<Transform> endPoint;
+
+    public bool CoolTime
+    {
+        get { return coolTime; }
+    }
+
     public void Init(int damage ,float duration,float delay,float warnnig ,Transform player)//생성
     {
 
-        
-        
+
+        coolTime = false;
         this.duration = duration;
         this.delay = delay;
-        this.warnnig= warnnig;
-        
+        warnningTime= warnnig;
+        stop = false;
         this.player = player;
-        warnning.SetActive(false);
-        
-        for(int i=0;i<bossBullet.Count;i++) 
+        if(warnning != null)
         {
-            bossBullet[i].InputData(startPoint[i], endPoint[i], duration,damage);
-            
+            warnning.SetActive(false);
         }
-        
+
+        if (bossBullet != null)
+        {
+
+            for (int i = 0; i < bossBullet.Count; i++)
+            {
+                bossBullet[i].InputData(startPoint[i], endPoint[i], duration, damage);
+
+            }
+        }
 
     }
+    public void Stop()
+    {
+        stop= true;
+    }
+
     public void Active()//발동
     {
+        if (warnning == null)
+        {
+            return;
+        }
+        coolTime = true;
         warnning.SetActive(true);
         StartCoroutine( Warnning());
     }
@@ -59,11 +83,14 @@ public class BossBaiscSkillObject : MonoBehaviour
     {
 
         WaitForSeconds delaytime= new WaitForSeconds(Time.deltaTime);
-        float time = warnnig;
-
+        float time = warnningTime;
+        Vector3 t= new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
         while (time > 0) 
         {
-            transform.position = new Vector3(transform.position.x,player.transform.position.y,transform.position.z);
+            
+            t.y = player.transform.position.y;
+            
+            transform.position = t;
 
             
             time-= Time.deltaTime;
@@ -71,7 +98,7 @@ public class BossBaiscSkillObject : MonoBehaviour
         }
 
 
-        yield return new WaitForSeconds(warnnig);
+        yield return new WaitForSeconds(warnningTime);
         warnning.SetActive(false);
         StartCoroutine(Attack());
     }
@@ -88,8 +115,16 @@ public class BossBaiscSkillObject : MonoBehaviour
     }
     public IEnumerator Delay()//완료
     {
+        
+
         yield return new WaitForSeconds(delay);
-        Active();
+        coolTime = false;
+        if (stop)
+        {
+            Destroy(gameObject);
+            yield break;
+        }
+        
     }
 }
 

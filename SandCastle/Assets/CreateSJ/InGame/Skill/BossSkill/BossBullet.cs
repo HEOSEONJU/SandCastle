@@ -1,9 +1,6 @@
-using Enemy;
+
 using InGame;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class BossBullet : MonoBehaviour
@@ -15,13 +12,17 @@ public class BossBullet : MonoBehaviour
     Transform end;
     float duration;
     int damage;
+    float time = 1f;
     public void InputData(Transform start, Transform end, float duration,int damage)
     {
         this.start = start;
         this.end = end;
         this.duration = duration;
         this.damage = damage;
+        transform.position = start.position;
+        transform.rotation = Quaternion.identity;
         gameObject.SetActive(false);
+        
     }
 
 
@@ -29,35 +30,34 @@ public class BossBullet : MonoBehaviour
     {
         if(start!= null) 
         {
-            StartCoroutine(MoveCoroutine());
+            transform.position = start.position;
+            time = 1f;
         }
 
         
     }
-    public  void OnDisable()
-    {
-        StopAllCoroutines();
-    }
 
-    IEnumerator MoveCoroutine()
+
+
+    public void Update()
     {
-        transform.position = start.position;
-        float time = duration;
-        Vector3 dir = (end.position - start.position);
-        dir = dir.magnitude * dir.normalized * Time.deltaTime;
-        Debug.Log(dir);
-        WaitForSeconds delay =new WaitForSeconds(Time.deltaTime);
-        while (time>=0) 
+        if (start == null)
         {
-            transform.position += dir;
-            time -= Time.deltaTime;
-            yield return delay;
+            return;
+        }
+        transform.position = Vector3.Lerp(start.position, end.position, time);
+        time -= Time.deltaTime / duration;
+
+        if(time<=0f)
+        {
+            gameObject.SetActive(false);
         }
 
 
-        gameObject.SetActive(false);
-
+        
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -66,13 +66,14 @@ public class BossBullet : MonoBehaviour
         {
             if (player.Infitiny == false)
             {
+                Debug.Log("보스스킬데미지");
                 player.Damaged(damage);
             }
-            
-            
+            gameObject.SetActive(false);
+
         }
 
-        gameObject.SetActive(false);
+        
     }
 
 }

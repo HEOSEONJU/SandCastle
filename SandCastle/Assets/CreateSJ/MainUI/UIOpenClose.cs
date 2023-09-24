@@ -21,6 +21,7 @@ namespace MainUI
 
         public virtual void OpenButton()
         {
+            return;
             if (mainUi.Open_Main(this.gameObject) && Default != null)
             {
                 

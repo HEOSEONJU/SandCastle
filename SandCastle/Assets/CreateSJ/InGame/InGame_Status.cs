@@ -179,6 +179,12 @@ namespace InGame
             }
 
         }
+
+        public int MaxMana
+        {
+            get { return maxMana; }
+        }
+
         public float BaseExpRange
         {
             get { return baseExpRange; }

@@ -21,27 +21,33 @@ namespace InGame
         public float SandCount
         {
             get { return sandCount; }
-            set { sandCount = value; sandText.text = sandCount.ToString(); }
+            set { sandCount = value; 
+                //sandText.text = sandCount.ToString();
+            }
         }
         public float WaterCount
         {
             get { return waterCount; }
-            set { waterCount = value; waterText.text = waterCount.ToString(); }
+            set { waterCount = value; 
+                //waterText.text = waterCount.ToString();
+            }
         }
         public float MudCount
         {
             get { return mudCount; }
-            set { mudCount = value; mudText.text = mudCount.ToString(); }
+            set { mudCount = value; 
+            //    mudText.text = mudCount.ToString(); 
+            }
         }
 
-
+        /*
         [SerializeField]
          TextMeshProUGUI sandText;
         [SerializeField]
          TextMeshProUGUI waterText;
         [SerializeField]
          TextMeshProUGUI mudText;
-
+        */
 
         public void InitInventroy(float sand, float water, float mud)
         {

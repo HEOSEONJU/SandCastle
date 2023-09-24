@@ -15,6 +15,9 @@ public class DeathState : PlayerBaseState
     public override void OnStateEnter()
     {
         IGC.InGameMove.StopChar(IGC.Animator);
+        IGC.DeathAnimation(IGC.Animator);
+        EndEvent.Instance.EndEventActive();
+
     }
     public override void OnStateUpdate()
     {

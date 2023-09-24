@@ -29,13 +29,13 @@ namespace Enemy
             
             string[] bossList = roundTable.FindString(stagename, "bossGroup").Split(',');
 
-            for (int i=0;i<4;i++) 
+            for (int i=0;i< bossList.Length; i++) 
             {
 
                 string enemynames = bossSpwanTable.FindString(bossList[i], "enemyKey");
-                int enemycount = bossSpwanTable.FindInt(bossList[i], "count");
+                
                 Instantiate(spwanObject, spwanParent).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-                spwan.InitBoss(enemynames, this, pooling, defaultspeed, enemycount, bosstimer[i], hpMultiply[i], bossSkillTable);
+                spwan.InitBoss(enemynames, this, pooling, defaultspeed, bosstimer[i], hpMultiply[i], bossSkillTable);
                 
 
 

@@ -19,8 +19,7 @@ namespace MainUI
 
         [SerializeField]
         List<GameObject> objectList = new List<GameObject>();
-        [SerializeField]
-        SubUI Reward;
+        
 
 
         private void Awake()
@@ -48,26 +47,15 @@ namespace MainUI
             if(PlayerPrefs.HasKey("Scene"))
             {
                 
-                ChangeLast(PlayerPrefs.GetString("Scene"));
-                PlayerPrefs.DeleteKey("Scene");
-                PlayerPrefs.Save();
+                //ChangeLast(PlayerPrefs.GetString("Scene"));
+                //PlayerPrefs.DeleteKey("Scene");
+                //PlayerPrefs.Save();
             }
-            
-            
-            
 
 
-            if (LastGameObject == null)
-            {
-                
-                StartEvent(defaultGameObject);
-            }
-            else
-            {
-                
-                StartEvent(LastGameObject.GetComponent<UIOpenClose>());
-                Reward.OpenMy();
-            }
+
+            StartEvent(defaultGameObject);
+
         }
         void StartEvent(UIOpenClose go)
         {

@@ -57,6 +57,10 @@ namespace Skill
         int multiple;
         [SerializeField]
         float fireDelay;
+        [SerializeField]
+        bool knockBack;
+        [SerializeField]
+        float knockBackPower;
         public string SkillObjectKey
         {
             get { return skillObjectKey; }
@@ -122,8 +126,14 @@ namespace Skill
         {
             get { return multiple; }
         }
-
-
+        public bool KnockBack
+        {
+            get { return knockBack; }
+        }
+        public float KnockBackPower
+        {
+            get { return knockBackPower; }
+        }
         public void InitData(string key, ObjectTable skillTable)
         {
             key += ("/" + 1);
@@ -193,12 +203,19 @@ namespace Skill
                 case "regen":
                     type = BuffType.Regen;
                     break;
+                case "heal":
+                    type = BuffType.Heal;
+                    break;
+                case "mp":
+                    type = BuffType.MP;
+                    break;
 
                 default:
                     type = BuffType.None;
                     break;
 
             }
+
 
         }
 
@@ -224,6 +241,19 @@ namespace Skill
             value = skillTable.Findfloat(key, "value");
             fireDelay = skillTable.Findfloat(key, "fireDelay");
             multiple = skillTable.FindInt(key, "Multiple");
+
+            switch (skillTable.FindString(key, "knockBack"))
+            {
+                case "TRUE":
+                    knockBack = true;
+                    break;
+                case "FALSE":
+                    knockBack = false;
+                    break;
+
+
+            }
+            knockBackPower= skillTable.Findfloat(key, "knockBackPower");
         }
         public SkillData Clone()
         {

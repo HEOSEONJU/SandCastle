@@ -136,6 +136,8 @@ namespace SkillEnums
         Exp,
         Hp,
         Regen,
+        Heal,
+        MP,
          None,
 
 

@@ -10,12 +10,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using Player;
 using System.Linq;
+using TMPro;
+using Unity.VisualScripting;
 
 namespace InGame
 {
     public class InGameStart : MonoBehaviour
     {
-
+        [SerializeField]
+        EndEvent endEvent;
 
         [SerializeField]
         InGame_Char charPrefab;
@@ -66,9 +69,22 @@ namespace InGame
         [SerializeField]
         ObjectTable defineTable;
 
+
+        [SerializeField]
+        TextMeshProUGUI timeUGUI;
+
+        [SerializeField]
+        float time_timer;
+        [SerializeField]
+        private float time_min;
+        [SerializeField]
+        private float time_sec;
+        [SerializeField]
+        private float time_Max = 900f;
+
         private void Start()
         {
-
+            Time.timeScale = 1;
             int T = PlayerPrefs.GetInt("Stage");
             string stagename = roundTable.values[T + 1].ToString();
 
@@ -106,13 +122,66 @@ namespace InGame
             bossdelay.Add(defineTable.FindInt("firstBoss", "value"));
             bossdelay.Add(defineTable.FindInt("secondBoss", "value"));
             bossdelay.Add(defineTable.FindInt("thirdBoss", "value"));
+            bossdelay.Add(defineTable.FindInt("fourthBoss", "value"));
             bossdelay.Add(defineTable.FindInt("lastBoss", "value"));
             bossSpwanSystem.BossInputStart(stagename, delay, defaultspeed, masterController.InGameChar.transform, bossdelay);
+            time_Max = defineTable.Findfloat("EndTime", "value");
 
+            time_timer = 0;
 
         }
 
+        public void Update()
+        {
+
+            string minutesS;
+            string secondsS;
+            time_timer += Time.deltaTime;
+
+            if(time_Max<=time_timer)
+            {
+                Check();
+            }
+
+            time_min = Mathf.Floor(time_timer / 60);
+            time_sec = Mathf.RoundToInt(time_timer % 60);
+
+
+                if (time_min < 10)
+                {
+                    minutesS = "0" + time_min.ToString();
+                }
+                else
+                {
+                    minutesS = time_min.ToString();
+                }
+                if (time_sec < 10)
+                {
+                    secondsS = "0" + Mathf.RoundToInt(time_sec).ToString();
+                }
+                else
+                {
+                    secondsS = Mathf.RoundToInt(time_sec).ToString();
+                }
+                timeUGUI.text = string.Format("{0}:{1}", minutesS, secondsS);
+
+
+            
+
+            
+        }
+
+        public void Check()
+        {
+
+            Time.timeScale = 0;
+            endEvent.SucessActive();
+        }
+
+
 
     }
+
+    
 
 }

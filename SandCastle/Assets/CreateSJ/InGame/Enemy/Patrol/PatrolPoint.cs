@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace InGame
 {
-    public class PatrolPoint : MonoBehaviour,IHit
+    public class PatrolPoint : MonoBehaviour
     {
         [SerializeField]
         List<Transform> patrolPoint;
@@ -36,15 +36,6 @@ namespace InGame
             patrolPoint.Remove(this.transform);
         }
 
-        public void Hit(float value)
-        {
-            hp -= value;   
-            if(hp<=0)
-            {
-                Enable = false;
-                gameObject.SetActive(false);
-            }
-        }
 
         public bool Alive()
         {

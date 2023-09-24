@@ -1,12 +1,6 @@
-using Google.GData.Extensions;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.Windows;
+
 
 namespace InGame
 {
@@ -15,24 +9,12 @@ namespace InGame
         
 
         [SerializeField]
-        NavMeshAgent agent;
-            
-
-        
-
-
-
-
-        [SerializeField]
         Transform defaultPosition;
         
         public float value=0.1f;//거리보정값
 
         
-        public NavMeshAgent Agent
-        {
-            get { return agent; }
-        }
+        
 
 
         [SerializeField]
@@ -59,28 +41,6 @@ namespace InGame
             animator.SetFloat("Amount_Y", dir.y);
             
 
-            return;
-            if (Distance() >= value )
-            {
-                
-                
-                distacne = Distance();
-                
-                Vector3 direction = transform.position - defaultPosition.position;
-                animator.SetFloat("Amount", MathF.Abs(direction.x) + MathF.Abs(direction.y));
-                animator.SetFloat("Amount_X", direction.x);
-                animator.SetFloat("Amount_Y", direction.y);
-
-                agent.speed = speed;
-                Vector3 dir = defaultPosition.position;
-                dir.z = transform.position.z;
-
-                
-                //agent.SetDestination(dir);
-
-                //transform.position = Vector3.MoveTowards(transform.position, defaultPosition.position, step);
-
-            }
 
             
 
@@ -89,7 +49,7 @@ namespace InGame
         public void StopChar(Animator animator)
         {
             
-            agent.enabled = false;
+            
             rigid.velocity = Vector3.zero;
             animator.SetFloat("Amount_X", 0f);
             animator.SetFloat("Amount_Y", 0f);
@@ -100,8 +60,7 @@ namespace InGame
         public void SettingPosi(Transform T)
         {
 
-            agent.updateRotation = false;
-            agent.updateUpAxis = false;
+            
 
 
             defaultPosition = T;

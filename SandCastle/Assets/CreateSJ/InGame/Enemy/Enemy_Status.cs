@@ -1,4 +1,5 @@
 using InGame;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,12 @@ public class Enemy_Status : MonoBehaviour
     [SerializeField]
     float moveSpeed;
     [SerializeField]
+    int baseattackpoint;
+
+    [SerializeField]
     int attackpoint;
-    
-    
+
+
     [SerializeField]
     float exp;
     
@@ -28,6 +32,7 @@ public class Enemy_Status : MonoBehaviour
         this.moveSpeed = movespeed;
         
         this.exp = exp;
+        baseattackpoint= attackpoint;
         this.attackpoint = attackpoint;
 
     }
@@ -35,6 +40,10 @@ public class Enemy_Status : MonoBehaviour
     public void ResetHP(float multiply = 1)
     {
         maxHp=this.hp= baseHp * multiply;
+    }
+    public void Resetdmg(float multiply = 1)
+    {
+        attackpoint = Convert.ToInt32(baseattackpoint * multiply);
     }
 
 

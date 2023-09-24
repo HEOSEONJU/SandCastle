@@ -28,4 +28,4 @@ MonoBehaviour:
       breaKLim: 1
     fightCharIds: character000001
     CharUnlock: 010000
-    StageClear: 010000000200000002000000
+    StageClear: 000000000200000002000000

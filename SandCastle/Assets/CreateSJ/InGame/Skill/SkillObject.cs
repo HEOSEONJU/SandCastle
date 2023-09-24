@@ -1,17 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
 using SkillEnums;
-
-using System;
-
 using Enemy;
-using UnityEditor.SceneManagement;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Collections;
-using System.Linq;
+
 
 namespace Skill
 {
@@ -108,7 +100,7 @@ namespace Skill
 
                     attackList.Add(collision.gameObject);
                     
-                    collision.GetComponent<IHit>().Hit(skillData.Damage);
+                    collision.GetComponent<IHit>().Hit(skillData.Damage,skillData.KnockBack, skillData.KnockBackPower);
                     if (skillData.IsPiercing == 0)
                     {
                         gameObject.SetActive(false);
@@ -142,7 +134,7 @@ namespace Skill
                     attackList.Add(collision.gameObject);
                     
 
-                    collision.GetComponent<IHit>().Hit(skillData.Damage);
+                    collision.GetComponent<IHit>().Hit(skillData.Damage, skillData.KnockBack, skillData.KnockBackPower);
                     StartCoroutine( RemoveEnemy(collision.gameObject));
                     
                     if (skillData.IsPiercing == 0)

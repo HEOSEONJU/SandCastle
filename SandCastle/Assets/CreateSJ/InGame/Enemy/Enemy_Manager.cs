@@ -38,22 +38,29 @@ namespace Enemy
         protected float distance=0.1f;
         
 
-        public  void Init(Transform player,float multiply)//FSM 캐릭터위치 입력
+        public  void Init(Transform player,float multiply,float dmgmultiply=1)//FSM 캐릭터위치 입력
         {
             EnemyMove.Target=player;
             EnemyStatus.ResetHP(multiply);
+            EnemyStatus.Resetdmg(dmgmultiply);
             fsm = new FSM(new EnemyMoveState(this));
             ChangeState(EnemyState.Idle);
             hpSlider.value = enemyStatus.HPPercentage;
         }
-        public void Hit(float value)//공격받음
+        public void Hit(float value,bool knockback=false,float power=0f)//공격받음
         {
             EnemyStatus.Hp -= value;
             hpSlider.value = EnemyStatus.HPPercentage;
             InGameEvent.Instance.InitDamage(value, transform.position);
+            if(knockback)
+            {
+                transform.position -= (EnemyMove.Target.position - transform.position).normalized*power;
+            }
+
+
         }
 
-        public void Died()
+        public virtual void Died()
         {
 
             

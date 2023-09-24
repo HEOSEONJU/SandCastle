@@ -1,9 +1,7 @@
 using InGame;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Linq;
-using UnityEditor.PackageManager;
+using System.Diagnostics;
 using UnityEngine;
 
 public class EXP : MonoBehaviour
@@ -14,10 +12,14 @@ public class EXP : MonoBehaviour
     public float Value = 0;
     float speed=1;
 
-    bool state = false;
+    [SerializeField]
+    Transform trace;
+
+    
     private void OnEnable()
     {
-        state = false;
+        trace = null;
+        
         speed = 1f;
     }
 
@@ -45,10 +47,28 @@ public class EXP : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("ExpSearch"))
+        if(collision.CompareTag("ExpSearch") && trace==null)
         {
-            state = true;
-            StartCoroutine(Trace(collision.transform.root));
+            trace = collision.transform.root;
+            
+        }
+
+    }
+
+    public void Update()
+    {
+        if(trace !=null)
+        {
+            speed += Time.deltaTime * 5;
+            transform.position += (trace.transform.position - transform.position).normalized * Time.deltaTime * speed;
+            if(Vector3.Distance(trace.transform.position, this.transform.position) <= 0.01f)
+            {
+                trace.GetComponent<InGame_Char>().GetEXP(Value);
+                transform.parent = origin;
+                trace = null;
+                gameObject.SetActive(false);
+
+            }
         }
 
     }

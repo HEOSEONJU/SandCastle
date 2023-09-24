@@ -1,11 +1,9 @@
-using Google.GData.Extensions;
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.PackageManager;
+
 using UnityEngine;
-using static Unity.VisualScripting.Metadata;
+
 
 public class InGameMapMove : MonoBehaviour
 {

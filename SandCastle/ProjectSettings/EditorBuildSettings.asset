@@ -12,15 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 7a0e97bcca8c1374eb9e6986b3188775
   - enabled: 1
-    path: Assets/Scenes/TestScene/adTestScene.unity
-    guid: 87df0d371ea9d094eb57a9b3095185cc
-  - enabled: 1
     path: Assets/Scenes/StageResource000001.unity
     guid: d98950754ae13d94b895c6dd2fa6d435
   - enabled: 1
-    path: Assets/Scenes/StageResource000002.unity
-    guid: d9a0cf27158564b4690d01c5c9f98ae2
-  - enabled: 1
-    path: Assets/Scenes/StageResource000003.unity
-    guid: 531281976f190614cb458ed0985a9f9e
+    path: Assets/Scenes/RetryScene.unity
+    guid: 49d1e6be2fdd3fa4fad1917e5577dff2
   m_configObjects: {}

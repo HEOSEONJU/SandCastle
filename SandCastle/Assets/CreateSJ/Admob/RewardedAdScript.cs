@@ -1,4 +1,5 @@
 using GoogleMobileAds.Api;
+using Player;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -71,10 +72,98 @@ public class RewardedAdScript : MonoBehaviour
         LoadRewardedAd(adf);
         
     }
+    public void Showad()
+    {
+
+
+
+
+        LoadRewardedAd();
+
+    }
 
 
 
     private RewardedAd rewardedAd;
+
+
+    public void LoadRewardedAd()
+    {
+        if (state)
+        {
+            return;
+        }
+
+        state = true;
+        // Clean up the old ad before loading a new one.
+        if (rewardedAd != null)
+        {
+            rewardedAd.Destroy();
+            rewardedAd = null;
+        }
+
+        Debug.Log("Loading the rewarded ad.");
+
+        // create our request used to load the ad.
+        var adRequest = new AdRequest();
+        adRequest.Keywords.Add("unity-admob-sample");
+
+        // send the request to load the ad.
+        RewardedAd.Load(_adUnitId, adRequest,
+            (RewardedAd ad, LoadAdError error) =>
+            {
+                // if error is not null, the load request failed.
+                if (error != null || ad == null)
+                {
+                    if (ad == null)
+                    {
+
+                    }
+                    if (error != null)
+                    {
+                        Debug.LogError("Rewarded ad failed to load an ad " + "with error : " + error);
+                    }
+                    state = false;
+                    return;
+                }
+
+
+                Debug.Log("Rewarded ad loaded with response : "
+                          + ad.GetResponseInfo());
+
+                rewardedAd = ad;
+                state = false;
+                ShowRewardedAd();
+            });
+    }
+
+    public void ShowRewardedAd()//보상형광고 출시
+    {
+        const string rewardMsg = "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
+
+        if (rewardedAd == null)
+        {
+
+        }
+        if (!rewardedAd.CanShowAd())
+        {
+
+        }
+
+
+        if (rewardedAd != null && rewardedAd.CanShowAd())
+        {
+
+            rewardedAd.Show((Reward reward) =>
+            {
+                //보상리스트작성하면됨
+                PlayerDataManager.Instacne.Data.UnlockChar();
+                Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
+            });
+        }
+    }
+
+
 
     /// <summary>
     /// Loads the rewarded ad.
