@@ -201,9 +201,9 @@ namespace InGame
             IsAction = false;
         }
 
-        public void Damaged(int damage)
+        public void Damaged(float damage)
         {
-            InGameStatus.CurrentHp = -1*damage;
+            InGameStatus.CurrentHp = -1*Convert.ToInt32(damage);
             if (InGameStatus.CurrentHp > 0)
             {
                 mainChar.color = Color.red;

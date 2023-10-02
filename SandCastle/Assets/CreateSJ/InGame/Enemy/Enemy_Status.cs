@@ -15,17 +15,17 @@ public class Enemy_Status : MonoBehaviour
     [SerializeField]
     float moveSpeed;
     [SerializeField]
-    int baseattackpoint;
+    float baseattackpoint;
 
     [SerializeField]
-    int attackpoint;
+    float attackpoint;
 
 
     [SerializeField]
     float exp;
     
 
-    public void Init(float hp,float movespeed ,float exp,int attackpoint)
+    public void Init(float hp,float movespeed ,float exp,float attackpoint)
     {
         
         baseHp = maxHp = this.hp = hp;
@@ -68,7 +68,7 @@ public class Enemy_Status : MonoBehaviour
     {
         get { return this.hp/maxHp; }
     }
-    public int Attackpoint
+    public float Attackpoint
     {
         get { return attackpoint; }
     }
