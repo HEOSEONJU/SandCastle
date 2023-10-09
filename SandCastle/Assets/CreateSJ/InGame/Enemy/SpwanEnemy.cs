@@ -171,7 +171,7 @@ namespace Enemy
             while (Timer > 0)
             {
                 int countactive = pooling.transform.GetComponentsInChildren<Enemy_Manager>().Length;
-
+                
                 Timer -= regenTimer;
                 if (countactive >= MaxCount)
                 {

@@ -109,7 +109,7 @@ namespace InGame
             set
             {
                 maxHp += value;
-                CurrentHp = value;
+                CurrentHp += value;
                 
             }
         }

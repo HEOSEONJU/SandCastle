@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead8ce05920e9f149a038cd68498fd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: CSkill/9
+  skillName: CSkill/11
   skillLevel: 0
   maxSkillLevel: 3
   skillEffectPrefab: {fileID: 1993769061253629316, guid: 06cb4fc46645a3146b237869b9641a22, type: 3}
@@ -63,4 +63,8 @@ MonoBehaviour:
     delay: 0
     value: 0
     type: 0
+    multiple: 0
+    fireDelay: 0
+    knockBack: 0
+    knockBackPower: 0
   skill: {fileID: 0}

@@ -192,8 +192,11 @@ namespace Skill
                     applyDamageTiming = SkillTiming.Exit;
                     break;
             }
+
+            
             switch (skillTable.FindString(key, "buffType"))
             {
+
                 case "exp":
                     type = BuffType.Exp;
                     break;

@@ -103,7 +103,7 @@ public class InGameEvent : MonoBehaviour
     public void SelectSkill(int i)
     {
         //string[] temp=skillSelect.names[i].Split("/");
-
+        
         haveSkill.InputData(skillSelect.names[i]);
         haveSkill.ApplyBuff(mastercontroller.InGameChar);
 
