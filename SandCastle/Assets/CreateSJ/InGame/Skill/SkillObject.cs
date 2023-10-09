@@ -135,7 +135,7 @@ namespace Skill
                     
 
                     collision.GetComponent<IHit>().Hit(skillData.Damage, skillData.KnockBack, skillData.KnockBackPower);
-                    StartCoroutine( RemoveEnemy(collision.gameObject));
+                    StartCoroutine(RemoveEnemy(collision.gameObject));
                     
                     if (skillData.IsPiercing == 0)
                     {
@@ -153,8 +153,10 @@ namespace Skill
         {
             
             yield return new WaitForSeconds(skillData.DamageDelay);
-            Debug.Log(GO.name + "ªË¡¶");
-            attackList.Remove(GO);
+            if (GO != null)
+            {
+                attackList.Remove(GO);
+            }
         }
 
         public void Active(Transform spwan, Transform target)
