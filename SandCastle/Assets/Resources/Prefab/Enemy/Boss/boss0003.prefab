@@ -107,6 +107,8 @@ MonoBehaviour:
   enemyStatus: {fileID: 1615358515289129745}
   hpSlider: {fileID: 5369131585868942029}
   distance: 0.5
+  bbso: []
+  delayTime: 0
 --- !u!114 &1615358515289129746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +141,7 @@ MonoBehaviour:
   maxHp: 0
   hp: 80
   moveSpeed: 0.5
+  baseattackpoint: 0
   attackpoint: 0
   exp: 0
 --- !u!61 &1615358515289129758

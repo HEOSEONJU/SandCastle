@@ -52,7 +52,7 @@ namespace Enemy
             EnemyStatus.Hp -= value;
             hpSlider.value = EnemyStatus.HPPercentage;
             InGameEvent.Instance.InitDamage(value, transform.position);
-            if(knockback)
+            if(knockback && !(this is Boss_Manager))
             {
                 transform.position -= (EnemyMove.Target.position - transform.position).normalized*power;
             }

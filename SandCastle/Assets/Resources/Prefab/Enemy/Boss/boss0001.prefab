@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1615358515289129744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3257504968120252828}
@@ -107,6 +107,9 @@ MonoBehaviour:
   enemyStatus: {fileID: 1615358515289129745}
   hpSlider: {fileID: 5369131585868942029}
   distance: 0.5
+  bbso:
+  - {fileID: 0}
+  delayTime: 10
 --- !u!114 &1615358515289129746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,12 +138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73cfb545289555144bebbcbbe8d7be2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHp: 0
-  maxHp: 0
-  hp: 80
-  moveSpeed: 0.5
-  attackpoint: 0
-  exp: 0
+  baseHp: 1000
+  maxHp: 1000
+  hp: 1000
+  moveSpeed: 1.2
+  baseattackpoint: 1
+  attackpoint: 1
+  exp: 1
 --- !u!61 &1615358515289129758
 BoxCollider2D:
   m_ObjectHideFlags: 0
