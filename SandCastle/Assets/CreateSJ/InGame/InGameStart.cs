@@ -116,7 +116,8 @@ namespace InGame
             inventory.InitInventroy(0, 0, 0);
             int delay = defineTable.FindInt("waveDelay", "value");//기본라운드 대기시간
             float defaultspeed = defineTable.Findfloat("monsterdefaultspeed", "value");//몬스터기본속도
-            reSpwanSystem.WaveInputStart(stagename, delay, defaultspeed, masterController.InGameChar.transform);
+            int max= defineTable.FindInt("MaxCount", "value");//몬스터기본속도
+            reSpwanSystem.WaveInputStart(stagename, delay, defaultspeed, masterController.InGameChar.transform, max);
 
             List<int> bossdelay = new List<int>();
             bossdelay.Add(defineTable.FindInt("firstBoss", "value"));

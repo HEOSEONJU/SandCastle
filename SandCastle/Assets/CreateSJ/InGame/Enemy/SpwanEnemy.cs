@@ -47,11 +47,12 @@ namespace Enemy
         [SerializeField]
         public float Timer = 60f;
 
+        public int MaxCount;
 
-        public void Init(string[] enemykey, ReSpwanSystem respwansystem, Transform pooling, float defaultspeed, List<int> counts, float regentimer, int timer)
+        public void Init(string[] enemykey, ReSpwanSystem respwansystem, Transform pooling, float defaultspeed, List<int> counts, float regentimer, int timer,int max)
         {
             reSpwanSystem = respwansystem;
-
+            MaxCount = max;
             this.counts = counts;
             this.pooling = pooling;
             this.regenTimer = regentimer;
@@ -172,14 +173,14 @@ namespace Enemy
                 int countactive = pooling.transform.GetComponentsInChildren<Enemy_Manager>().Length;
 
                 Timer -= regenTimer;
-                if (countactive >= 300)
+                if (countactive >= MaxCount)
                 {
                     yield return time;
                     continue;
                 }
                 for (int i = 0; i < prefabs.Count; i++)
                 {
-                    for (int j = 0; j < counts[j]; j++)
+                    for (int j = 0; j < counts[i]; j++)
                     {
                         
                         var a = ObjectPooling.Instance.GetObject(prefabs[i], this.transform);

@@ -61,13 +61,13 @@ namespace Enemy
 
 
 
-        public virtual void WaveInputStart(string stagename, int delay, float defaultspeed,Transform playertransform)
+        public virtual void WaveInputStart(string stagename, int delay, float defaultspeed,Transform playertransform,int max)
         {
             player = playertransform;
             waitTime = delay;
             FindChild();
             InputMultiply(stagename);
-            InputWaveGroup(stagename, defaultspeed);
+            InputWaveGroup(stagename, defaultspeed,max);
             PlayNextWave();
             
             
@@ -96,7 +96,7 @@ namespace Enemy
                 dmgMultiply.Add(float.Parse(templistdmg[i]));
             }
         }
-        protected void InputWaveGroup(string stagename, float defaultspeed)
+        protected void InputWaveGroup(string stagename, float defaultspeed,int max)
         {
             string waveGroup = roundTable.FindString(stagename, "waveGroup");
             string[] WaveList = waveGroup.Split(',');
@@ -117,7 +117,8 @@ namespace Enemy
                 }
                 float regentimer = waveSpwanTable.Findfloat(wavespawnkey, "regenTimer");
                 Instantiate(spwanObject, spwanParent).TryGetComponent<SpwanEnemy>(out SpwanEnemy spwan);
-                spwan.Init(enemynames, this, pooling, defaultspeed, counts, regentimer, waitTime);
+                
+                spwan.Init(enemynames, this, pooling, defaultspeed, counts, regentimer, waitTime,max);
                 spwanList.Add(spwan);
             }
         }
