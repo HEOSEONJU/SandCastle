@@ -139,8 +139,9 @@ namespace InGame
             string secondsS;
             time_timer += Time.deltaTime;
 
-            if(time_Max<=time_timer)
+            if(time_Max<=time_timer )
             {
+                if (masterController.InGameChar.State!=PlayerState.Death)
                 Check();
             }
 
